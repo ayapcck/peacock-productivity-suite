@@ -2,11 +2,14 @@ echo What is the page called?
 
 read page_name
 
+page_suffix="Page"
+page=$page_name$page_suffix
+
 cd src/pages
 
 # create directories
-mkdir $page_name
-cd $page_name
+mkdir $page
+cd $page
 mkdir stories test
 
 # create JavaScript files for page
@@ -17,7 +20,7 @@ touch test/index.test.js
 cat << EOT >> index.js
 import React, { useState } from 'react';
 
-const TestPage = () => {
+const $page = () => {
 
 	return (
 		<div>
@@ -26,5 +29,5 @@ const TestPage = () => {
 	);
 };
 
-export default TestPage;
+export default $page;
 EOT
