@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo What is the page called?
 
 read page_name

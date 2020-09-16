@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo What is the component called?
 
 read component_name
