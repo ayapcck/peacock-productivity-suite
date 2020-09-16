@@ -24,6 +24,7 @@ if [ $class_component = y ]; then
 
 cat << EOT >> index.js
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 export default class $component_name extends Component {
     constructor(props) {
@@ -40,6 +41,7 @@ else
 
 cat << EOT >> index.js
 import React from 'react';
+import styled from 'styled-components';
 
 const $component_name = () => (
     <div></div>
