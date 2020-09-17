@@ -22,7 +22,6 @@ touch test/index.test.js
 # add content to index.js
 if [ $class_component = y ]; then
 
-# cp ../../templates/classComponent.txt index.js
 sed "s/\$component_name/$component_name/g" ../../templates/classComponent.txt > index.js
 
 else 
