@@ -22,30 +22,10 @@ touch test/index.test.js
 # add content to index.js
 if [ $class_component = y ]; then
 
-cat << EOT >> index.js
-import React, { Component } from 'react';
-
-export default class $component_name extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        
-    }
-}
-EOT
+sed "s/\$component_name/$component_name/g" ../../templates/classComponent.txt > index.js
 
 else 
 
-cat << EOT >> index.js
-import React from 'react';
-
-const $component_name = () => (
-    <div></div>
-);
-
-export default $component_name;
-EOT
+sed "s/\$component_name/$component_name/g" ../../templates/functionalComponent.txt > index.js
 
 fi

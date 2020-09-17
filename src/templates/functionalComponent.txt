@@ -1,0 +1,8 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const $component_name = () => (
+    <div></div>
+);
+
+export default $component_name;
