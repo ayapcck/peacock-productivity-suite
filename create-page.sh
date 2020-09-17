@@ -19,17 +19,4 @@ touch index.js
 touch test/index.test.js
 
 # add content to index.js
-cat << EOT >> index.js
-import React, { useState } from 'react';
-
-const $page = () => {
-
-	return (
-		<div>
-			
-		</div>
-	);
-};
-
-export default $page;
-EOT
+sed "s/\$page/$page/g" ../../templates/page.txt > index.js
