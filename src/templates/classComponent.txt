@@ -7,6 +7,6 @@ export default class $component_name extends Component {
     }
 
     render() {
-        
+        return <div></div>
     }
 }
