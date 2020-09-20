@@ -3,7 +3,7 @@ import React from 'react';
 import Popup from '../index';
 
 export default {
-    title: 'Popup',
+    title: 'Components/Popup',
     component: Popup,
     argTypes: {
         

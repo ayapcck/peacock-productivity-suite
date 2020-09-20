@@ -9,12 +9,12 @@ const CenterPanel = styled.div`
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 ${({ theme }) => theme.shadowColor};
     box-sizing: border-box;
-    height: ${({ tall }) => tall ? `60vh` : `30vh`};
+    height: ${({ tall }) => tall ? `60%` : `30%`};
     margin: auto;
     padding: 10px;
     position: relative;
     transition: 0.3s;
-    width: 30vw;
+    width: 30%;
 
     &:hover {
         box-shadow: 0 8px 16px 0 ${({ theme }) => theme.shadowColor};
@@ -38,15 +38,15 @@ const CloseIcon = styled(FontAwesomeIcon)`
 
 const OpaqueBackground = styled.div`
     background-color: ${(props) => props.theme.backgroundColor};
-    height: 100vh;
+    height: 100%;
     opacity: 0.5;
     position: absolute;
-    width: 100vw;
+    width: 100%;
 `;
 
 const PanelContainer = styled.div`
     display: flex;
-    height: 100vh;
+    height: 100%;
 `;
 
 const Popup = (props) => {
