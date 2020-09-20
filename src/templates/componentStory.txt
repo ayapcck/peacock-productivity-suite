@@ -1,0 +1,16 @@
+import React from 'react';
+
+import $component_name from '../index';
+
+export default {
+    title: '$component_name',
+    component: $component_name,
+    argTypes: {
+        
+    },
+};
+
+const Template = (args) => <$component_name {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {};
