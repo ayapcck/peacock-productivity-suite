@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Styled$component_name = styled.div`
+
+`;
+
 const $component_name = () => (
-    <div></div>
+    <Styled$component_name></Styled$component_name>
 );
 
 export default $component_name;
