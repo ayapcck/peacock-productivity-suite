@@ -1,4 +1,5 @@
 import React from 'react';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import LoginForm from '../index';
 import Popup from '../../Popup';
@@ -6,6 +7,7 @@ import Popup from '../../Popup';
 export default {
     title: 'Components/LoginForm',
     component: LoginForm,
+    decorators: [withKnobs],
     argTypes: {
         
     },

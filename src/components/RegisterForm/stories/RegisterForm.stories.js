@@ -1,4 +1,5 @@
 import React from 'react';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import Popup from '../../Popup';
 import RegisterForm from '../index';
@@ -6,6 +7,7 @@ import RegisterForm from '../index';
 export default {
     title: 'Components/RegisterForm',
     component: RegisterForm,
+    decorators: [withKnobs],
     argTypes: {
         
     },

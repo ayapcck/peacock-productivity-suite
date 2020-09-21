@@ -7,20 +7,20 @@ const black = '#000000';
 const darkGrey = '#5b5b5b';
 const white = '#ffffff';
 
+export const DarkTheme = {
+    accentColor: lightGreen,
+    backgroundColor: darkGrey,
+    darkerAccentColor: darkGreen,
+    hoverColor: white,
+    shadowColor: white,
+    textColor: black
+};
 
-// Component colors 
-const accentColor = lightGreen;
-const backgroundColor = darkGrey;
-const darkerAccentColor = darkGreen;
-const hoverColor = black;
-const shadowColor = black;
-const textColor = white;
-
-export const ColorTheme = {
-    accentColor,
-    backgroundColor,
-    darkerAccentColor,
-    hoverColor,
-    shadowColor,
-    textColor
+export const LightTheme = {
+    accentColor: lightGreen,
+    backgroundColor: white,
+    darkerAccentColor: darkGreen,
+    hoverColor: black,
+    shadowColor: black,
+    textColor: black
 };
