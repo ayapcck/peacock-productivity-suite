@@ -1,4 +1,6 @@
 import React from 'react';
+
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
@@ -24,12 +26,29 @@ const StyledButton = styled.button`
 
 const Button = (props) => {
     const {
-        text
+        text,
+        type
     } = props;
 
+    const buttonText = text || (type === 'submit' && 'Submit');
+
     return (
-        <StyledButton>{text}</StyledButton>
+        <StyledButton 
+            type={type}
+        >
+            {buttonText}
+        </StyledButton>
     );
 };
+
+Button.defaultProps = {
+    text: '',
+    type: 'button'
+};
+
+Button.propTypes = {
+    text: PropTypes.string,
+    type: PropTypes.oneOf(['button', 'submit'])
+}
 
 export default Button;

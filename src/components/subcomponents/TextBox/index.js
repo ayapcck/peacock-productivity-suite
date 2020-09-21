@@ -5,6 +5,7 @@ const StyledTextBox = styled.input`
     border-color: ${({ theme }) => theme.accentColor};
     border-style: solid;
     border-width: 0 0 2px 0;
+    margin: 5px;
 
     &:focus {
         outline: 0;
@@ -13,13 +14,13 @@ const StyledTextBox = styled.input`
 
 const TextBox = (props) => {
     const {
-        placeholderText
+        placeHolder
     } = props;
 
     return (
         <StyledTextBox 
             type="text"
-            placeholder={placeholderText}
+            placeholder={placeHolder}
         />
     );
 };
