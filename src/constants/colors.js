@@ -12,8 +12,9 @@ export const DarkTheme = {
     backgroundColor: darkGrey,
     darkerAccentColor: darkGreen,
     hoverColor: white,
-    shadowColor: white,
-    textColor: black
+    overlayColor: white,
+    shadowColor: black,
+    textColor: white
 };
 
 export const LightTheme = {
@@ -21,6 +22,7 @@ export const LightTheme = {
     backgroundColor: white,
     darkerAccentColor: darkGreen,
     hoverColor: black,
+    overlayColor: darkGrey,
     shadowColor: black,
     textColor: black
 };
