@@ -6,13 +6,12 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { addDecorator } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 
-import { ColorTheme } from '../src/constants/colors';
+import ThemeKnob from './ThemeKnob';
 
 library.add(far, faTimesCircle);
 
-addDecorator(storyFn => <ThemeProvider theme={ColorTheme}>{storyFn()}</ThemeProvider>);
+addDecorator(storyFn => <ThemeKnob>{storyFn()}</ThemeKnob>);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
