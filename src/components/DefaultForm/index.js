@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Button from '../subcomponents/Button';
-import TextBox from '../subcomponents/TextBox';
 
 const StyledDefaultForm = styled.form`
     display: flex;
