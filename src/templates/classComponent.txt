@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export default class $component_name extends Component {
@@ -10,3 +12,11 @@ export default class $component_name extends Component {
         return <div></div>
     }
 }
+
+$component_name.defaultProps = {
+
+};
+
+$component_name.propTypes = {
+
+};

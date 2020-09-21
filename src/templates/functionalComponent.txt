@@ -1,4 +1,6 @@
 import React from 'react';
+
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Styled$component_name = styled.div`
@@ -8,5 +10,13 @@ const Styled$component_name = styled.div`
 const $component_name = () => (
     <Styled$component_name></Styled$component_name>
 );
+
+$component_name.defaultProps = {
+
+};
+
+$component_name.propTypes = {
+
+};
 
 export default $component_name;
