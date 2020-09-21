@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledTextBox = styled.input`
+    background-color: ${({ theme }) => theme.backgroundColor};
     border-color: ${({ theme }) => theme.accentColor};
     border-style: solid;
     border-width: 0 0 2px 0;
@@ -9,6 +10,9 @@ const StyledTextBox = styled.input`
 
     &:focus {
         outline: 0;
+    }
+    ::placeholder {
+        color: ${({ theme }) => theme.textColor};
     }
 `;
 

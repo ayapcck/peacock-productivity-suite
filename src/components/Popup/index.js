@@ -37,7 +37,7 @@ const CloseIcon = styled(FontAwesomeIcon)`
 `;
 
 const OpaqueBackground = styled.div`
-    background-color: ${(props) => props.theme.backgroundColor};
+    background-color: ${(props) => props.theme.overlayColor};
     height: 100%;
     opacity: 0.5;
     position: absolute;
