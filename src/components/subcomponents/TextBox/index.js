@@ -6,7 +6,8 @@ const StyledTextBox = styled.input`
     border-color: ${({ theme }) => theme.accentColor};
     border-style: solid;
     border-width: 0 0 2px 0;
-    margin: 5px;
+    color: ${({ theme }) => theme.textColor};
+    margin: 7.5px 5px;
 
     &:focus {
         outline: 0;

@@ -9,7 +9,7 @@ const StyledButton = styled.button`
     border-radius: 5px;
     border-style: solid;
     box-shadow: 2px 2px ${({ theme }) => theme.darkerAccentColor};
-    margin: 5px;
+    margin: 10px;
     padding: 2.5px 5px;
 
     &:active {
