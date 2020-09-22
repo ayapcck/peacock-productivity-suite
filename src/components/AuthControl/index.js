@@ -30,7 +30,7 @@ const ContentWrapper = styled.div`
     padding-top: 10px;
 `;
 
-const AuthControl = () => {
+const AuthControl = ({ handleClose }) => {
     const [ currentForm, changeForm ] = useState('Register');
 
     const loginShown = () => currentForm === 'Login';
@@ -40,7 +40,10 @@ const AuthControl = () => {
         : changeForm('Login');
 
     return (
-        <Popup popupContent={renderPopupContent(loginShown, toggleForm)} />
+        <Popup 
+            closePopup={handleClose}
+            popupContent={renderPopupContent(loginShown, toggleForm)} 
+        />
     );
 };
 

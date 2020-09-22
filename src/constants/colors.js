@@ -10,7 +10,7 @@ const white = '#ffffff';
 export const DarkTheme = {
     accentColor: lightGreen,
     backgroundColor: darkGrey,
-    darkerAccentColor: darkGreen,
+    altAccentColor: darkGreen,
     hoverColor: white,
     overlayColor: white,
     shadowColor: black,
@@ -18,9 +18,9 @@ export const DarkTheme = {
 };
 
 export const LightTheme = {
-    accentColor: lightGreen,
+    accentColor: darkGreen,
     backgroundColor: white,
-    darkerAccentColor: darkGreen,
+    altAccentColor: lightGreen,
     hoverColor: black,
     overlayColor: darkGrey,
     shadowColor: black,
