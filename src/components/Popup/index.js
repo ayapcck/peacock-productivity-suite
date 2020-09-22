@@ -47,19 +47,26 @@ const OpaqueBackground = styled.div`
 const PanelContainer = styled.div`
     display: flex;
     height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
 `;
 
 const Popup = (props) => {
     const {
+        closePopup,
         popupContent,
         tall
     } = props;
 
     return (
         <PanelContainer>
-            <OpaqueBackground />
+            <OpaqueBackground onClick={closePopup} />
             <CenterPanel tall={tall}>
-                <CloseIcon icon={['far', 'times-circle']} />
+                <CloseIcon 
+                    onClick={closePopup}
+                    icon={['far', 'times-circle']} 
+                />
                 {popupContent}
             </CenterPanel>
         </PanelContainer>
