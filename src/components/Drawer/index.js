@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Navigation from '../Navigation';
@@ -14,12 +13,13 @@ const Icon = styled(FontAwesomeIcon)`
     }
 `;
 
-const CloseIcon = styled(Icon)`
-    margin: 10px 10px 0 auto;
-`;
+// const CloseIcon = styled(Icon)`
+//     margin: 10px 10px 0 auto;
+// `;
 
 const MenuIcon = styled(Icon)`
-    margin: 10px auto;
+    align-self: flex-end;
+    margin: 10px 10px 0 10px;
 `;
 
 const StyledDrawer = styled.div`
@@ -28,33 +28,47 @@ const StyledDrawer = styled.div`
     border-width: 0 2px 0 0;
     box-shadow: 2px 0 4px 0 ${({ theme }) => theme.shadowColor};
     display: flex;
+    flex: ${({ open }) => open ? 0.25 : 0};
     flex-direction: column;
     height: 100%;
     transition: 0.4s;
-    width: ${({ open }) => open ? `30%` : `3%`};
+    width: auto;
 `;
 
 const Drawer = () => {
     const [ open, setOpen ] = useState(false);
+    const [ showNavigation, setShowNavigation ] = useState(false);
 
-    const closeDrawer = () => setOpen(false);
-    const openDrawer = () => setOpen(true);
+    // const closeDrawer = () => setOpen(false);
+    // const openDrawer = () => setOpen(true);
+    const toggleDrawer = () => { 
+        if (open) {
+            setShowNavigation(false);
+            setOpen(false);
+        } else {
+            setOpen(true);
+            setTimeout(() => { setShowNavigation(true); }, 100);
+        }
+    };
 
     return (
         <StyledDrawer open={open}>
-            { !open && renderMenuIcon(openDrawer) }
-            { open && renderCloseIcon(closeDrawer) }
-            { open && <Navigation /> }
+            { renderMenuIcon(open, toggleDrawer) }
+            { showNavigation && <Navigation /> }
         </StyledDrawer>
     );
 }
 
 
-const renderCloseIcon = (onClick) => (
-    <CloseIcon icon="times-circle" onClick={onClick} />
-);
-const renderMenuIcon = (onClick) => (
-    <MenuIcon icon="bars" onClick={onClick}/>
+// const renderCloseIcon = (onClick) => (
+//     <CloseIcon icon="times-circle" onClick={onClick} />
+// );
+const renderMenuIcon = (open, onClick) => (
+    <MenuIcon 
+        icon="bars" 
+        onClick={onClick}
+        open={open}
+    />
 );
 
 Drawer.defaultProps = {

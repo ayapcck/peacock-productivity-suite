@@ -7,10 +7,14 @@ const black = '#000000';
 const darkGrey = '#5b5b5b';
 const white = '#ffffff';
 
+// Reds
+const red = '#fa1919';
+
 export const DarkTheme = {
     accentColor: lightGreen,
-    backgroundColor: darkGrey,
     altAccentColor: darkGreen,
+    backgroundColor: darkGrey,
+    errorColor: red,
     hoverColor: white,
     overlayColor: white,
     shadowColor: black,
@@ -19,8 +23,9 @@ export const DarkTheme = {
 
 export const LightTheme = {
     accentColor: darkGreen,
-    backgroundColor: white,
     altAccentColor: lightGreen,
+    backgroundColor: white,
+    errorColor: red,
     hoverColor: black,
     overlayColor: darkGrey,
     shadowColor: black,
