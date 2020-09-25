@@ -5,18 +5,16 @@ import { ThemeProvider } from 'styled-components';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { addIcons } from './config/fontawesome';
 
 import App from './App';
-import { ColorTheme } from './constants/colors';
+import { DarkTheme, LightTheme } from './constants/colors';
 import Firebase, { FirebaseContext } from './config/firebase';
 
-library.add(far, faTimesCircle);
+addIcons();
 
 ReactDOM.render(
-  <ThemeProvider theme={ColorTheme}>
+  <ThemeProvider theme={DarkTheme}>
     <FirebaseContext.Provider value={new Firebase()}>
       <App />
     </FirebaseContext.Provider>

@@ -3,24 +3,41 @@ import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom';
+import styled, {
+    createGlobalStyle
+} from 'styled-components';
 
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 
-import Navigation from './components/Navigation';
+import Drawer from './components/Drawer';
 
 import * as ROUTES from './constants/routes';
 
+const GlobalStyle = createGlobalStyle`
+    html, body, #root {
+        height: 100%;
+    }
+
+    body {
+        background-color: ${({ theme }) => theme.backgroundColor};
+    }
+`;
+
+const Container = styled.div`
+    display: flex;
+    height: 100%;
+`;
+
 const App = () => (
     <Router>
-        <div>
-            <Navigation />
-
-            <hr />
+        <GlobalStyle />
+        <Container>
+            <Drawer />
 
             <Route exact path={ROUTES.LANDING} component={LandingPage} />
             <Route path={ROUTES.HOME} component={HomePage} />
-        </div>
+        </Container>
     </Router>
 );
 

@@ -1,16 +1,24 @@
+// Blues
+const darkBlue = '#188aa1';
+const lightBlue = '#1ebad9';
+
 // Greens
-const lightGreen = '#c3ffb9';
 const darkGreen = '#5b8654';
+const lightGreen = '#c3ffb9';
 
 // Black/White/Greys
 const black = '#000000';
 const darkGrey = '#5b5b5b';
 const white = '#ffffff';
 
+// Reds
+const red = '#f34b4b';
+
 export const DarkTheme = {
-    accentColor: lightGreen,
+    accentColor: lightBlue,
+    altAccentColor: darkBlue,
     backgroundColor: darkGrey,
-    darkerAccentColor: darkGreen,
+    errorColor: red,
     hoverColor: white,
     overlayColor: white,
     shadowColor: black,
@@ -19,8 +27,9 @@ export const DarkTheme = {
 
 export const LightTheme = {
     accentColor: lightGreen,
+    altAccentColor: darkGreen,
     backgroundColor: white,
-    darkerAccentColor: darkGreen,
+    errorColor: red,
     hoverColor: black,
     overlayColor: darkGrey,
     shadowColor: black,

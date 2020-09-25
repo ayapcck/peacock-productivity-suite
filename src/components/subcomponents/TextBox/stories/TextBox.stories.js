@@ -14,5 +14,11 @@ const Template = (args) => <TextBox {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    placeholderText: 'Placeholder'
+    placeHolder: 'Placeholder'
 };
+
+export const Invalid = Template.bind({});
+Invalid.args = {
+    placeHolder: 'Placeholder',
+    valid: false
+}
