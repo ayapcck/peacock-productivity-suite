@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import { 
     emailValid,
     passwordValid
@@ -34,9 +36,4 @@ export const RegisterElements = {
     }
 };
 
-let InitialState = {};
-Object.keys(RegisterElements).forEach((key) => {
-    InitialState[key] = RegisterElements[key].initial;
-});
-
-export { InitialState };
+export const InitialState = _.mapValues(RegisterElements, 'initial');
