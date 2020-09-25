@@ -19,11 +19,12 @@ const Title = styled.h2`
 const DefaultForm = (props) => {
     const {
         children,
+        onSubmit,
         title
     } = props;
     
     return (
-        <StyledDefaultForm onSubmit={() => null}>
+        <StyledDefaultForm onSubmit={onSubmit}>
             <Title>{title}</Title>
             {children}
             <Button type="submit" />
