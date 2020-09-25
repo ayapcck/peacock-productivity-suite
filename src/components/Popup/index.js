@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { farTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../subcomponents/Icon';
 
 const CenterPanel = styled.div`
     background-color: ${({ theme }) => theme.backgroundColor};
@@ -21,8 +20,7 @@ const CenterPanel = styled.div`
     }
 `;
 
-const CloseIcon = styled(FontAwesomeIcon)`
-    color: ${({ theme }) => theme.textColor};
+const CloseIcon = styled(Icon)`
     position: absolute;
     right: 10px;
     border-radius: 15px;
@@ -32,7 +30,6 @@ const CloseIcon = styled(FontAwesomeIcon)`
 
     &:hover {
         color: ${({ theme }) => theme.hoverColor};
-        cursor: pointer;
     }
 `;
 

@@ -1,21 +1,9 @@
 import React, { useState } from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../subcomponents/Icon';
 import styled from 'styled-components';
 
 import Navigation from '../Navigation';
-
-const Icon = styled(FontAwesomeIcon)`
-    color: ${({ theme }) => theme.textColor};
-
-    &:hover {
-        cursor: pointer;
-    }
-`;
-
-// const CloseIcon = styled(Icon)`
-//     margin: 10px 10px 0 auto;
-// `;
 
 const MenuIcon = styled(Icon)`
     align-self: flex-end;
@@ -67,7 +55,6 @@ const renderMenuIcon = (open, onClick) => (
     <MenuIcon 
         icon="bars" 
         onClick={onClick}
-        open={open}
     />
 );
 
