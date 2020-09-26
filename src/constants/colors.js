@@ -1,3 +1,5 @@
+import ThemeCreator from '../utilities/themeCreator';
+
 // Blues
 const darkBlue = '#188aa1';
 const lightBlue = '#1ebad9';
@@ -14,24 +16,15 @@ const white = '#ffffff';
 // Reds
 const red = '#f34b4b';
 
-export const DarkTheme = {
-    accentColor: lightBlue,
-    altAccentColor: darkBlue,
-    backgroundColor: darkGrey,
-    errorColor: red,
-    hoverColor: white,
-    overlayColor: white,
-    shadowColor: black,
-    textColor: white
-};
+const themeCreator = new ThemeCreator();
+themeCreator.addColors('accentColor', lightBlue, lightGreen);
+themeCreator.addColors('altAccentColor', darkBlue, darkGreen);
+themeCreator.addColors('backgroundColor', darkGrey, white);
+themeCreator.addColors('errorColor', red, red);
+themeCreator.addColors('hoverColor', white, black);
+themeCreator.addColors('overlayColor', white, darkGrey);
+themeCreator.addColors('shadowColor', black, black);
+themeCreator.addColors('textColor', white, black);
 
-export const LightTheme = {
-    accentColor: lightGreen,
-    altAccentColor: darkGreen,
-    backgroundColor: white,
-    errorColor: red,
-    hoverColor: black,
-    overlayColor: darkGrey,
-    shadowColor: black,
-    textColor: black
-};
+export const DarkTheme = themeCreator.getDarkTheme();
+export const LightTheme = themeCreator.getLightTheme();
