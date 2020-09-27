@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 import _ from 'lodash';
 
 import ROUTES from '../../constants/routes';
+import { withAuth } from '../../config/authContext';
+import { withFirebase } from '../../config/firebase';
 
 import AuthControl from '../AuthControl';
 
@@ -27,7 +29,7 @@ const MenuItem = css`
     }
 `;
 
-const ShowLogin = styled.span`
+const ShowLoginLogout = styled.span`
     ${MenuItem}
     color: ${({ theme }) => theme.textColor};
 
@@ -49,18 +51,25 @@ const StyledNavigation = styled.div`
     padding: 10px;
 `;
 
-const Navigation = () => {
+const Navigation = ({ authUser, firebase }) => {
     const [ currentPage, setCurrentPage ] = useState(ROUTES.LANDING.navText);
     const [ showAuthControl, setShowAuthControl ] = useState(false);
 
-    const hideAuthControl = () => setShowAuthControl(false);
     const displayAuthControl = () => setShowAuthControl(true);
+    const hideAuthControl = () => setShowAuthControl(false);
+    const logout = () => firebase.signOut();
+
+    const loginText = authUser ? 'Sign out' : 'Login';
 
     return (
         <div>
             <StyledNavigation>
                 { renderNavLinks(currentPage, setCurrentPage) }
-                <ShowLogin onClick={displayAuthControl}>Login</ShowLogin>
+                <ShowLoginLogout
+                    onClick={authUser ? logout : displayAuthControl}
+                >
+                    {loginText}
+                </ShowLoginLogout>
             </StyledNavigation>
             { showAuthControl && <AuthControl handleClose={hideAuthControl} /> }
         </div>
@@ -83,4 +92,4 @@ const renderNavLinks = (currentPage, setCurrentPage) => {
     });
 };
 
-export default Navigation;
+export default withAuth(withFirebase(Navigation));

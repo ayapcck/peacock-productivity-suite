@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Icon from '../subcomponents/Icon';
 import Navigation from '../Navigation';
 
+import { withAuth } from '../../config/authContext';
+
 const MenuIcon = styled(Icon)`
     align-self: flex-end;
     margin: 10px 10px 0 10px;
@@ -23,7 +25,7 @@ const StyledDrawer = styled.div`
     width: auto;
 `;
 
-const Drawer = ({ startOpen }) => {
+const Drawer = ({ authUser, startOpen }) => {
     const [ open, setOpen ] = useState(startOpen);
     const [ showNavigation, setShowNavigation ] = useState(open);
     
@@ -39,6 +41,7 @@ const Drawer = ({ startOpen }) => {
 
     return (
         <StyledDrawer open={open}>
+            { authUser && authUser.email }
             { renderMenuIcon(open, toggleDrawer) }
             { showNavigation && <Navigation /> }
         </StyledDrawer>
@@ -60,4 +63,4 @@ Drawer.propTypes = {
     startOpen: bool
 };
 
-export default Drawer;
+export default withAuth(Drawer);

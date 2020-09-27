@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { 
+    useEffect, 
+    useState 
+} from 'react';
 import { 
     BrowserRouter as Router,
     Route
@@ -7,12 +10,14 @@ import styled, {
     createGlobalStyle
 } from 'styled-components';
 
+import { withFirebase } from './config/firebase';
+import AuthContext from './config/authContext';
+
+import * as ROUTES from './constants/routes';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 
 import Drawer from './components/Drawer';
-
-import * as ROUTES from './constants/routes';
 
 const GlobalStyle = createGlobalStyle`
     html, body, #root {
@@ -29,16 +34,26 @@ const Container = styled.div`
     height: 100%;
 `;
 
-const App = () => (
-    <Router>
-        <GlobalStyle />
-        <Container>
-            <Drawer />
+const App = (props) => {
+    const [ authUser, setAuthUser ] = useState(null);
 
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.HOME} component={HomePage} />
-        </Container>
-    </Router>
-);
+    const { firebase } = props;
+    
+    useEffect(() => firebase.auth.onAuthStateChanged(authUser => authUser ? setAuthUser(authUser) : setAuthUser(null)));
 
-export default App;
+    return (
+        <Router>
+            <GlobalStyle />
+            <AuthContext.Provider value={authUser}>
+                <Container>
+                    <Drawer />
+
+                    <Route exact path={ROUTES.LANDING} component={LandingPage} />
+                    <Route path={ROUTES.HOME} component={HomePage} />
+                </Container>
+            </AuthContext.Provider>
+        </Router>
+    );
+};
+
+export default withFirebase(App);

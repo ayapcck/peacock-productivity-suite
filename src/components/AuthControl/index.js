@@ -31,7 +31,7 @@ const ContentWrapper = styled.div`
 `;
 
 const AuthControl = ({ handleClose }) => {
-    const [ currentForm, changeForm ] = useState('Register');
+    const [ currentForm, changeForm ] = useState('Login');
 
     const loginShown = () => currentForm === 'Login';
 
