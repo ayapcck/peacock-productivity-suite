@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Button from '..';
+import $component_name from '..';
 
-describe('Button', () => {
+describe('$component_name', () => {
     it('should render without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<Button />, div);
+        ReactDOM.render(<$component_name />, div);
     });
 });

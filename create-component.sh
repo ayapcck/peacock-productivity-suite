@@ -51,3 +51,6 @@ type_script="s/\$component_type/$component_type/g"
 
 # add content to story file
 sed -e $name_script -e $type_script $templates/componentStory.txt > stories/$component_name.stories.js
+
+# add content to test file
+sed -e $name_script $templates/componentTest.txt > test/$component_name.test.js
