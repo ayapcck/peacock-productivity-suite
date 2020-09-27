@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { MemoryRouter } from 'react-router';
+import styled from 'styled-components';
 
 import Drawer from '../index';
 
@@ -13,9 +14,16 @@ export default {
     },
 };
 
+const Container = styled.div`
+    display: flex;
+    height: 100%;
+`;
+
 const Template = (args) => (
     <MemoryRouter initialEntries={['/']}>
-        <Drawer {...args} />
+        <Container>
+            <Drawer {...args} />
+        </Container>
     </MemoryRouter>
 );
 
