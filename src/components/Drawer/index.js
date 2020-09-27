@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
-import Icon from '../subcomponents/Icon';
+import { bool } from 'prop-types';
 import styled from 'styled-components';
 
+import Icon from '../subcomponents/Icon';
 import Navigation from '../Navigation';
 
 const MenuIcon = styled(Icon)`
@@ -23,12 +23,10 @@ const StyledDrawer = styled.div`
     width: auto;
 `;
 
-const Drawer = () => {
-    const [ open, setOpen ] = useState(false);
-    const [ showNavigation, setShowNavigation ] = useState(false);
-
-    // const closeDrawer = () => setOpen(false);
-    // const openDrawer = () => setOpen(true);
+const Drawer = ({ startOpen }) => {
+    const [ open, setOpen ] = useState(startOpen);
+    const [ showNavigation, setShowNavigation ] = useState(open);
+    
     const toggleDrawer = () => { 
         if (open) {
             setShowNavigation(false);
@@ -47,10 +45,6 @@ const Drawer = () => {
     );
 }
 
-
-// const renderCloseIcon = (onClick) => (
-//     <CloseIcon icon="times-circle" onClick={onClick} />
-// );
 const renderMenuIcon = (open, onClick) => (
     <MenuIcon 
         icon="bars" 
@@ -59,11 +53,11 @@ const renderMenuIcon = (open, onClick) => (
 );
 
 Drawer.defaultProps = {
-
+    startOpen: false
 };
 
 Drawer.propTypes = {
-
+    startOpen: bool
 };
 
 export default Drawer;
