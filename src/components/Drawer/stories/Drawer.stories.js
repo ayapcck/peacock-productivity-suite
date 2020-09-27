@@ -27,5 +27,8 @@ const Template = (args) => (
     </MemoryRouter>
 );
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Closed = Template.bind({});
+Closed.args = {};
+
+export const Open = Template.bind({});
+Open.args = { startOpen: true };

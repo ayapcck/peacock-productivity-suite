@@ -22,6 +22,8 @@ themeCreator.addColors('altAccentColor', darkBlue, darkGreen);
 themeCreator.addColors('backgroundColor', darkGrey, white);
 themeCreator.addColors('errorColor', red, red);
 themeCreator.addColors('hoverColor', white, black);
+themeCreator.addColors('menuSelected', white, black);
+themeCreator.addColors('menuTextSelected', black, white);
 themeCreator.addColors('overlayColor', white, darkGrey);
 themeCreator.addColors('shadowColor', black, black);
 themeCreator.addColors('textColor', white, black);
