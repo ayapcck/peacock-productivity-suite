@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { string, func } from 'prop-types';
+import { array, func, oneOfType, string } from 'prop-types';
 import styled from 'styled-components';
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -34,7 +34,7 @@ Icon.defaultProps = {
 };
 
 Icon.propTypes = {
-    icon: string,
+    icon: oneOfType([string, array]),
     onClick: func
 };
 
