@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import DefaultForm from '../DefaultForm';
 import { InitialState, RegisterElements } from './constants';
-import TextBox from '../subcomponents/TextBox';
 import { withFirebase } from '../../config/firebase';
 
 class RegisterFormBase extends  Component {
@@ -28,38 +27,17 @@ class RegisterFormBase extends  Component {
     }
 
     render() {
-        const {
-            confirmPassword,
-            password
-        } = this.state;
-
         return (
             <DefaultForm 
+                elements={RegisterElements}
+                keyPrefix="regBox"
+                onChange={this.onChange}
                 onSubmit={this.handleRegister}
                 title="Register"
-            >
-                { renderFormElements(this.onChange, password === confirmPassword) }
-            </DefaultForm>
-        );
-    }
-};
-
-const renderFormElements = (onChange, passwordsMatch) => {
-    return Object.keys(RegisterElements).map((key, index) => {
-        const element = RegisterElements[key];
-        return (
-            <TextBox
-                key={`regBox${index}`}
-                isValid={element.name === 'confirmPassword' 
-                    ? () => passwordsMatch
-                    : element.isValid}
-                name={element.name}
-                handleChange={onChange}
-                placeHolder={element.placeHolder}
-                type={element.type}
+                values={this.state}
             />
         );
-    });
+    }
 };
 
 const RegisterForm = withFirebase(RegisterFormBase);

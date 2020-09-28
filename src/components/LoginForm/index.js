@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 
 import DefaultForm from '../DefaultForm';
 import { InitialState, LoginElements } from './constants';
-import TextBox from '../subcomponents/TextBox';
 import { withFirebase } from '../../config/firebase';
 
 class LoginFormBase extends Component {
@@ -34,30 +32,16 @@ class LoginFormBase extends Component {
     render() {
         return (
             <DefaultForm 
+                elements={LoginElements}
+                keyPrefix="loginBox"
+                onChange={this.onChange}
                 onSubmit={this.handleLogin}
                 title="Log In"
-            >
-                { renderFormElements(this.onChange) }
-            </DefaultForm>
+                values={this.state}
+            />
         );
     };
 }
-
-const renderFormElements = (onChange) => {
-    return _.map(_.keys(LoginElements), (key, index) => {
-        const element = LoginElements[key];
-        return (
-            <TextBox
-                key={`loginBox${index}`}
-                isValid={element.isValid}
-                name={element.name}
-                handleChange={onChange}
-                placeHolder={element.placeHolder}
-                type={element.type}
-            />
-        );
-    });
-};
 
 const LoginForm = withFirebase(LoginFormBase);
 
