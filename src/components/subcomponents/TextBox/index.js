@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+    bool,
     string
 } from 'prop-types';
 import styled from 'styled-components';
@@ -23,34 +24,31 @@ const StyledTextBox = styled.input`
 const TextBox = (props) => {
     const {
         handleChange,
-        isValid,
         name,
         placeHolder,
-        type
+        type,
+        valid
     } = props;
-
-    const [ value, setValue ] = useState('');
-
-    const onChange = (ev) => {
-        const val = ev.target.value;
-        setValue(val);
-        handleChange(ev);
-    }
 
     return (
         <StyledTextBox 
             name={name}
-            onChange={onChange}
+            onChange={handleChange}
             placeholder={placeHolder}
             type={type}
-            valid={value === '' || isValid(value)}
+            valid={valid}
         />
     );
 };
 
+TextBox.defaultTypes = {
+    valid: true
+};
+
 TextBox.propTypes = {
     name: string,
-    placeholder: string
+    placeholder: string,
+    valid: bool,
 };
 
 export default TextBox;
