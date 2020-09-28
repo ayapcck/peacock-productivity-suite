@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Icon from '../subcomponents/Icon';
 import Navigation from '../Navigation';
 
-import { withAuth } from '../../config/authContext';
+import { withAuthConsumer } from '../../config/session';
 
 const MenuIcon = styled(Icon)`
     align-self: flex-end;
@@ -63,4 +63,4 @@ Drawer.propTypes = {
     startOpen: bool
 };
 
-export default withAuth(Drawer);
+export default withAuthConsumer(Drawer);

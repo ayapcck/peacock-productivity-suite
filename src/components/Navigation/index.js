@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import _ from 'lodash';
 
 import ROUTES from '../../constants/routes';
-import { withAuth } from '../../config/authContext';
+import { withAuthConsumer } from '../../config/session';
 import { withFirebase } from '../../config/firebase';
 
 import AuthControl from '../AuthControl';
@@ -92,4 +92,4 @@ const renderNavLinks = (currentPage, setCurrentPage) => {
     });
 };
 
-export default withAuth(withFirebase(Navigation));
+export default withAuthConsumer(withFirebase(Navigation));
