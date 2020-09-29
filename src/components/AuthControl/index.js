@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import _ from 'lodash';
 
-import { Forms } from './constants';
+import { FormContent } from './constants';
 import Popup from '../Popup';
  
 const ChangeFormContainer = styled.div`
@@ -49,47 +50,23 @@ const AuthControl = ({ handleClose }) => {
 
 const renderPopupContent = (changeForm, currentForm, loginShown) => (
     <ContentWrapper>
-        { Forms[currentForm] }
+        { FormContent[currentForm].component }
         <ChangeForm changeForm={changeForm} currentForm={currentForm} />
     </ContentWrapper>
 );
 
 const ChangeForm = ({ changeForm, currentForm }) => {
-    const backToLoginText = "Back to Login? Click ";
-    const forgotText = "Forgot you password? Click ";
-    const logInText = "Already have an account? Log in ";
-    const noAccountText = "Don't have an account? Register ";
-
+    const links = FormContent[currentForm].links;
+    
     return (
         <ChangeFormContainer>
-            { currentForm === 'Login' && (
+            { _.map(links, (link, index) => (
                 <FormText
                     changeForm={changeForm}
-                    destinationForm="Forgot"
-                    text={forgotText}
+                    destinationForm={link.destination}
+                    text={link.text}
                 />
-            )}
-            { currentForm === 'Login' && (
-                <FormText
-                    changeForm={changeForm}
-                    destinationForm="Register"
-                    text={noAccountText}
-                />
-            )}
-            { currentForm === 'Register' && (
-                <FormText
-                    changeForm={changeForm}
-                    destinationForm="Login"
-                    text={logInText}
-                />
-            )}
-            { currentForm === 'Forgot' && (
-                <FormText
-                    changeForm={changeForm}
-                    destinationForm="Login"
-                    text={backToLoginText}
-                />
-            )}
+            )) }
         </ChangeFormContainer>
     );
 }

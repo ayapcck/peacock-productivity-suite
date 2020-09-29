@@ -4,25 +4,30 @@ import ForgotForm from '../ForgotForm';
 import LoginForm from '../LoginForm';
 import RegisterForm from '../RegisterForm';
 
-export const Forms = {
-    Forgot: <ForgotForm />,
-    Login: <LoginForm />,
-    // Login: {
-    //     form: <LoginForm />,
-    //     text: (
-    //         <Fragment>
-    //             <FormText
-    //                 changeForm={changeForm}
-    //                 destinationForm="Forgot"
-    //                 text={forgotText}
-    //             />
-    //             <FormText
-    //                 changeForm={changeForm}
-    //                 destinationForm="Register"
-    //                 text={noAccountText}
-    //             />
-    //         </Fragment>
-    //     )
-    // },
-    Register: <RegisterForm />
+const backToLoginText = "Back to Login? Click ";
+const forgotText = "Forgot you password? Click ";
+const logInText = "Already have an account? Log in ";
+const noAccountText = "Don't have an account? Register ";
+
+const link = (destination, text) => ({
+    destination,
+    text
+});
+
+export const FormContent = {
+    Forgot: {
+        component: <ForgotForm />,
+        links: [ link('Login', backToLoginText), ],
+    },
+    Login: {
+        component: <LoginForm />,
+        links: [ 
+            link('Forgot', forgotText),
+            link('Register', noAccountText),
+        ]
+    },
+    Register: {
+        component: <RegisterForm />,
+        links: [ link('Login', logInText), ],
+    },
 };
