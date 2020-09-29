@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import _ from 'lodash';
 
 import Button from '../subcomponents/Button';
+import Forms from './constants';
 import TextBox from '../subcomponents/TextBox';
+import { withFirebase } from '../../config/firebase';
 
 const StyledDefaultForm = styled.form`
     display: flex;
@@ -18,23 +20,50 @@ const Title = styled.h2`
     text-align: center;
 `;
 
-const DefaultForm = (props) => {
-    const {
-        elements,
-        keyPrefix,
-        onChange,
-        onSubmit,
-        title,
-        values
-    } = props;
+class DefaultFormBase extends Component {
+    constructor(props) {
+        super(props);
+        
+        const { InitialState } = this.props;
+
+        this.state = { ...InitialState }
+    }
+
+    onChange = ev => {
+        this.setState({ [ev.target.name]: ev.target.value });
+    }
+
+    onSubmit = ev => {
+        const { firebase, form } = this.props;
+        const { email, password='' } = this.state;
+        const { InitialState, onSubmit } = form;
+
+        ev.preventDefault();
+        onSubmit(firebase, email, password)
+            .then(() => {
+                this.setState({ ... InitialState });
+            })
+            .catch(error => {
+                this.setState({ error });
+            });
+    }
     
-    return (
-        <StyledDefaultForm onSubmit={onSubmit}>
-            <Title>{title}</Title>
-            {renderFormElements(elements, keyPrefix, onChange, values)}
-            <Button type="submit" />
-        </StyledDefaultForm>
-    );
+    render() {
+        const { form } = this.props;
+        const {
+            elements,
+            keyPrefix,
+            title
+        } = form;
+
+        return (
+            <StyledDefaultForm onSubmit={this.onSubmit}>
+                <Title>{title}</Title>
+                {renderFormElements(elements, keyPrefix, this.onChange, this.state)}
+                <Button type="submit" />
+            </StyledDefaultForm>
+        );
+    }
 };
 
 const renderFormElements = (elements, keyPrefix, onChange, values) => {
@@ -62,12 +91,25 @@ const elementIsValid = (element, values) => {
         : empty || element.isValid(value);
 };
 
-DefaultForm.defaultProps = {
-    title: 'Title'
+DefaultFormBase.defaultProps = {
+    form: {
+        elements: {
+            name: {
+                initial: '',
+                isValid: () => true,
+                name: 'name',
+                placeHolder: 'Name',
+                type: 'text',
+            }
+        },
+        title: 'Title',
+    }
 };
 
-DefaultForm.propTypes = {
+DefaultFormBase.propTypes = {
     title: PropTypes.string
 };
+
+const DefaultForm = withFirebase(DefaultFormBase)
 
 export default DefaultForm;
