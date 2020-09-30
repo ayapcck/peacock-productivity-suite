@@ -2,10 +2,18 @@ import React, { useState } from 'react';
 
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import _ from 'lodash';
 
-import LoginForm from '../LoginForm';
+import DefaultForm from '../DefaultForm';
+import Forms from '../Forms/constants';
 import Popup from '../Popup';
-import RegisterForm from '../RegisterForm';
+ 
+const ChangeFormContainer = styled.div`
+    color: ${({ theme }) => theme.textColor};
+    margin: auto 0 10px 0;
+    text-align: center;
+    user-select: none;
+`;
 
 const ChangeFormLink = styled.span`
     text-decoration: underline;
@@ -15,11 +23,9 @@ const ChangeFormLink = styled.span`
     }
 `;
 
-const ChangeFormText = styled.div`
-    color: ${({ theme }) => theme.textColor};
-    margin: auto 0 10px 0;
-    text-align: center;
-    user-select: none;
+const ChangeFormText = styled.p`
+    margin: 0;
+    padding: 0;
 `;
 
 const ContentWrapper = styled.div`
@@ -35,31 +41,43 @@ const AuthControl = ({ handleClose }) => {
 
     const loginShown = () => currentForm === 'Login';
 
-    const toggleForm = () => loginShown()
-        ? changeForm('Register')
-        : changeForm('Login');
-
     return (
         <Popup 
             closePopup={handleClose}
-            popupContent={renderPopupContent(loginShown, toggleForm)} 
+            popupContent={renderPopupContent(changeForm, currentForm, loginShown)} 
         />
     );
 };
 
-const renderPopupContent = (loginShown, toggleForm) => (
+const renderPopupContent = (changeForm, currentForm, loginShown) => (
     <ContentWrapper>
-        { loginShown() 
-            ? <LoginForm />
-            : <RegisterForm /> }
-        <ChangeFormText>
-            { loginShown()
-                ? "Don't have an account? Register "
-                : "Already have an account? Log in "}
-            <ChangeFormLink onClick={toggleForm}>here</ChangeFormLink>
-        </ChangeFormText>
+        <DefaultForm form={Forms[currentForm]} />
+        <ChangeForm changeForm={changeForm} currentForm={currentForm} />
     </ContentWrapper>
 );
+
+const ChangeForm = ({ changeForm, currentForm }) => {
+    const links = Forms[currentForm].links;
+    
+    return (
+        <ChangeFormContainer>
+            { _.map(links, (link, index) => (
+                <FormText
+                    changeForm={changeForm}
+                    destinationForm={link.destination}
+                    text={link.text}
+                />
+            )) }
+        </ChangeFormContainer>
+    );
+}
+
+const FormText = ({ text, changeForm, destinationForm }) => (
+    <ChangeFormText>
+        { text }
+        <ChangeFormLink onClick={() => changeForm(destinationForm)}>here</ChangeFormLink>
+    </ChangeFormText>
+)
 
 // AuthControl.defaultProps = {
 

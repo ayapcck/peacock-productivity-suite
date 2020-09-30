@@ -1,11 +1,10 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import Popup from '../../Popup';
-import RegisterForm from '../index';
+import { RegisterForm } from '../index';
 
 export default {
-    title: 'Components/RegisterForm',
+    title: 'Components/Forms/RegisterForm',
     component: RegisterForm,
     decorators: [withKnobs],
     argTypes: {
@@ -17,8 +16,3 @@ const Template = (args) => <RegisterForm {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
-
-const TemplateInPopup = (args) => <Popup popupContent={<RegisterForm {...args} />} />;
-
-export const InPopup = TemplateInPopup.bind({});
-InPopup.args = {};
