@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
 
-import { FormContent } from './constants';
+import DefaultForm from '../DefaultForm';
+import Forms from '../Forms/constants';
 import Popup from '../Popup';
  
 const ChangeFormContainer = styled.div`
@@ -50,13 +51,13 @@ const AuthControl = ({ handleClose }) => {
 
 const renderPopupContent = (changeForm, currentForm, loginShown) => (
     <ContentWrapper>
-        { FormContent[currentForm].component }
+        <DefaultForm form={Forms[currentForm]} />
         <ChangeForm changeForm={changeForm} currentForm={currentForm} />
     </ContentWrapper>
 );
 
 const ChangeForm = ({ changeForm, currentForm }) => {
-    const links = FormContent[currentForm].links;
+    const links = Forms[currentForm].links;
     
     return (
         <ChangeFormContainer>

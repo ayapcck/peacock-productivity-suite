@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import _ from 'lodash';
 
 import Button from '../subcomponents/Button';
-import Forms from './constants';
+import Forms from '../Forms/constants';
 import TextBox from '../subcomponents/TextBox';
 import { withFirebase } from '../../config/firebase';
 

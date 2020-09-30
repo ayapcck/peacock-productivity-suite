@@ -1,18 +1,18 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import ForgotForm from '../index';
+import { RegisterForm } from '../index';
 
 export default {
-    title: 'Components/ForgotForm',
-    component: ForgotForm,
+    title: 'Components/Forms/RegisterForm',
+    component: RegisterForm,
     decorators: [withKnobs],
     argTypes: {
         
     },
 };
 
-const Template = (args) => <ForgotForm {...args} />;
+const Template = (args) => <RegisterForm {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
