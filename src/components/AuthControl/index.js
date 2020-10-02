@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-// import PropTypes from 'prop-types';
+import {
+    func,
+    string
+} from 'prop-types';
 import styled from 'styled-components';
 import _ from 'lodash';
 
@@ -39,17 +42,15 @@ const ContentWrapper = styled.div`
 const AuthControl = ({ handleClose }) => {
     const [ currentForm, changeForm ] = useState('Login');
 
-    const loginShown = () => currentForm === 'Login';
-
     return (
         <Popup 
             closePopup={handleClose}
-            popupContent={renderPopupContent(changeForm, currentForm, loginShown)} 
+            popupContent={renderPopupContent(changeForm, currentForm)} 
         />
     );
 };
 
-const renderPopupContent = (changeForm, currentForm, loginShown) => (
+const renderPopupContent = (changeForm, currentForm) => (
     <ContentWrapper>
         <DefaultForm form={Forms[currentForm]} />
         <ChangeForm changeForm={changeForm} currentForm={currentForm} />
@@ -63,6 +64,7 @@ const ChangeForm = ({ changeForm, currentForm }) => {
         <ChangeFormContainer>
             { _.map(links, (link, index) => (
                 <FormText
+                    key={`link${index}`}
                     changeForm={changeForm}
                     destinationForm={link.destination}
                     text={link.text}
@@ -70,21 +72,32 @@ const ChangeForm = ({ changeForm, currentForm }) => {
             )) }
         </ChangeFormContainer>
     );
-}
+};
 
 const FormText = ({ text, changeForm, destinationForm }) => (
     <ChangeFormText>
         { text }
         <ChangeFormLink onClick={() => changeForm(destinationForm)}>here</ChangeFormLink>
     </ChangeFormText>
-)
+);
 
 // AuthControl.defaultProps = {
 
 // };
 
-// AuthControl.propTypes = {
+AuthControl.propTypes = {
+    handleClose: func,
+};
 
-// };
+ChangeForm.propTypes = {
+    changeForm: func,
+    currentForm: string,
+};
+
+FormText.propTypes = {
+    changeForm: func,
+    destinationForm: string,
+    text: string,
+};
 
 export default AuthControl;

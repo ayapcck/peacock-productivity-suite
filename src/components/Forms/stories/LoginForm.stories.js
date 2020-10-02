@@ -6,7 +6,7 @@ import { LoginForm } from '../index';
 export default {
     title: 'Components/Forms/LoginForm',
     component: LoginForm,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },

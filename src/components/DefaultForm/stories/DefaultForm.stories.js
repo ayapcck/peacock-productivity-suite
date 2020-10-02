@@ -8,7 +8,7 @@ import TextBox from '../../subcomponents/TextBox';
 export default {
     title: 'Components/DefaultForm',
     component: DefaultForm,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },
@@ -18,5 +18,5 @@ const Template = (args) => <DefaultForm {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: <TextBox placeHolder="Test" />
+    children: <TextBox placeHolder="Test" />,
 };

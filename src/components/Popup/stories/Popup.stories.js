@@ -18,11 +18,11 @@ const popupContent = (
 
 export const Default = Template.bind({});
 Default.args = {
-    popupContent
+    popupContent,
 };
 
 export const Short = Template.bind({});
 Short.args = {
     popupContent,
-    tall: false
-}
+    tall: false,
+};

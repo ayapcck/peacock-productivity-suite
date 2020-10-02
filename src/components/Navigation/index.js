@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import {
+    func,
+    object,
+    shape
+} from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import _ from 'lodash';
@@ -90,6 +95,13 @@ const renderNavLinks = (currentPage, setCurrentPage) => {
             </StyledLink>
         );
     });
+};
+
+Navigation.propTypes = {
+    authUser: object,
+    firebase: shape({
+        signOut: func,
+    }),
 };
 
 export default withAuthConsumer(withFirebase(Navigation));

@@ -7,14 +7,14 @@ import Navigation from '../index';
 export default {
     title: 'Components/Navigation',
     component: Navigation,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },
 };
 
 const Template = (args) => (
-    <MemoryRouter initialEntries={['/']}>
+    <MemoryRouter initialEntries={[ '/' ]}>
         <Navigation {...args} />
     </MemoryRouter>
 );

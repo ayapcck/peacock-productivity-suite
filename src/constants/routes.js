@@ -4,10 +4,10 @@ export const HOME = '/home';
 export default {
     HOME: {
         navText: 'Home',
-        route: '/home'
+        route: '/home',
     },
     LANDING: {
         navText: 'Landing',
-        route: '/'
-    }
-}
+        route: '/',
+    },
+};

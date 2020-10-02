@@ -33,12 +33,12 @@ const Container = styled.div`
 const App = () => (
     <Router>
         <GlobalStyle />
-            <Container>
-                <Drawer />
+        <Container>
+            <Drawer />
 
-                <Route exact path={ROUTES.LANDING} component={LandingPage} />
-                <Route path={ROUTES.HOME} component={HomePage} />
-            </Container>
+            <Route exact path={ROUTES.LANDING} component={LandingPage} />
+            <Route path={ROUTES.HOME} component={HomePage} />
+        </Container>
     </Router>
 );
 

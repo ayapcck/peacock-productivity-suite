@@ -8,18 +8,18 @@ import * as serviceWorker from './serviceWorker';
 import { addIcons } from './config/fontawesome';
 
 import App from './App';
-import { DarkTheme, LightTheme } from './constants/colors';
+import { DarkTheme } from './constants/colors';
 import Firebase, { FirebaseContext } from './config/firebase';
 
 addIcons();
 
 ReactDOM.render(
-  <ThemeProvider theme={DarkTheme}>
-    <FirebaseContext.Provider value={new Firebase()}>
-      <App />
-    </FirebaseContext.Provider>
-  </ThemeProvider>,
-  document.getElementById('root')
+    <ThemeProvider theme={DarkTheme}>
+        <FirebaseContext.Provider value={new Firebase()}>
+            <App />
+        </FirebaseContext.Provider>
+    </ThemeProvider>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

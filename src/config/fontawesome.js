@@ -7,7 +7,7 @@ import _ from 'lodash';
 const icons = [
     far,
     faBars,
-    faTimesCircle
+    faTimesCircle,
 ];
 
 export const addIcons = () => 

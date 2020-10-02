@@ -6,7 +6,7 @@ import AuthControl from '../index';
 export default {
     title: 'Components/AuthControl',
     component: AuthControl,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },
