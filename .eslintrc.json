@@ -60,6 +60,9 @@
                 "objectsInObjects": true
             }
         ],
+        "object-property-newline": [ "error", {
+            "allowAllPropertiesOnSameLine": false
+        }],
         "quotes": [
             "error",
             "single"
