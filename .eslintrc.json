@@ -49,7 +49,7 @@
             "mode": "strict"
         }],
         "linebreak-style": [
-            "error",
+            "off",
             "windows"
         ],
         "object-curly-spacing": [

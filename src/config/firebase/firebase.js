@@ -1,8 +1,11 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 
+// eslint-disable-next-line no-undef
 const env = process.env.NODE_ENV === 'production'
+// eslint-disable-next-line no-undef
     ? process.env.production
+// eslint-disable-next-line no-undef
     : process.env;
 
 const config = {
