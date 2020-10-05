@@ -20,4 +20,4 @@ jobs:
         run: yarn install
 
       - name: Lint Action
-        uses: yarn lint
+        run: yarn lint
