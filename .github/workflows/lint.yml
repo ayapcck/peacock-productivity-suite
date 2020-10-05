@@ -10,11 +10,19 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
 
       # Install your linters here
+      - name: Install dependencies
+        run: yarn install
 
       - name: Lint Action
         uses: wearerequired/lint-action@v1.6.0
         with:
           github_token: ${{ secrets.github_token }}
           # Enable your linters here
+          eslint: true
