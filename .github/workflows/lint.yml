@@ -16,11 +16,8 @@ jobs:
         with:
           node-version: 12
 
-      # Install your linters here
       - name: Install dependencies
         run: yarn install
 
       - name: Lint Action
         uses: yarn lint
-        with:
-          github_token: ${{ secrets.github_token }}
