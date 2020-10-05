@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
     func,
     object,
-    shape
+    shape,
 } from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
@@ -66,7 +66,7 @@ const Navigation = ({ authUser, firebase }) => {
     const displayAuthControl = () => setShowAuthControl(true);
     const displayChangePasswordForm = () => {
         setShowAuthControl(true);
-        setShowChangePassword(true)
+        setShowChangePassword(true);
     };
     const hideAuthControl = () => {
         setShowAuthControl(false);

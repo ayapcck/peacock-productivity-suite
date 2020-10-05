@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
     bool,
     shape,
-    string
+    string,
 } from 'prop-types';
 import styled from 'styled-components';
 

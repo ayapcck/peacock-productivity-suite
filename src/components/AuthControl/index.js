@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {
     bool,
     func,
-    string
+    string,
 } from 'prop-types';
 import styled from 'styled-components';
 import _ from 'lodash';

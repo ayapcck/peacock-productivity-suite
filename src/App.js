@@ -1,10 +1,10 @@
 import React from 'react';
 import { 
     BrowserRouter as Router,
-    Route
+    Route,
 } from 'react-router-dom';
 import styled, {
-    createGlobalStyle
+    createGlobalStyle,
 } from 'styled-components';
 
 import { withAuthProvider } from './config/session';

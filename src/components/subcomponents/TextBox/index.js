@@ -2,7 +2,7 @@ import React from 'react';
 import {
     bool,
     func,
-    string
+    string,
 } from 'prop-types';
 import styled from 'styled-components';
 
