@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
     func,
     object,
-    shape
+    shape,
 } from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
@@ -14,6 +14,7 @@ import { withFirebase } from '../../config/firebase';
 
 import AuthControl from '../AuthControl';
 
+/** General CSS for styled components */
 const MenuShadow = css`
     box-shadow: 0 2px 4px 0 ${({ theme }) => theme.shadowColor};
 `;
@@ -34,15 +35,7 @@ const MenuItem = css`
     }
 `;
 
-const ShowLoginLogout = styled.span`
-    ${MenuItem}
-    color: ${({ theme }) => theme.textColor};
-
-    &:hover {
-        cursor: pointer;
-    }
-`;
-
+/** Styled components for Navigation */
 const StyledLink = styled(Link)`
     ${MenuItem}    
     color: ${({ selected, theme }) => selected ? theme.menuTextSelected : theme.textColor};
@@ -56,30 +49,56 @@ const StyledNavigation = styled.div`
     padding: 10px;
 `;
 
+const StyledPopupLink = styled.span`
+    ${MenuItem}
+    color: ${({ theme }) => theme.textColor};
+
+    &:hover {
+        cursor: pointer;
+    }
+`;
+
 const Navigation = ({ authUser, firebase }) => {
     const [ currentPage, setCurrentPage ] = useState(ROUTES.LANDING.navText);
     const [ showAuthControl, setShowAuthControl ] = useState(false);
+    const [ showChangePassword, setShowChangePassword ] = useState(false);
 
     const displayAuthControl = () => setShowAuthControl(true);
-    const hideAuthControl = () => setShowAuthControl(false);
+    const displayChangePasswordForm = () => {
+        setShowAuthControl(true);
+        setShowChangePassword(true);
+    };
+    const hideAuthControl = () => {
+        setShowAuthControl(false);
+        setShowChangePassword(false);
+    };
     const logout = () => firebase.signOut();
 
+    const authControlProps = {
+        handleClose: hideAuthControl,
+        useChangePasswordForm: showChangePassword,
+    };
     const loginText = authUser ? 'Sign out' : 'Login';
 
     return (
         <div>
             <StyledNavigation>
                 { renderNavLinks(currentPage, setCurrentPage) }
-                <ShowLoginLogout
+                { authUser && renderChangePasswordLink(displayChangePasswordForm) }
+                <StyledPopupLink
                     onClick={authUser ? logout : displayAuthControl}
                 >
                     {loginText}
-                </ShowLoginLogout>
+                </StyledPopupLink>
             </StyledNavigation>
-            { showAuthControl && <AuthControl handleClose={hideAuthControl} /> }
+            { showAuthControl && <AuthControl {...authControlProps} /> }
         </div>
     );
 };
+
+const renderChangePasswordLink = (displayChangePasswordForm) => (
+    <StyledPopupLink onClick={displayChangePasswordForm}>Change Password</StyledPopupLink>
+);
 
 const renderNavLinks = (currentPage, setCurrentPage) => {
     return _.map(_.keys(ROUTES), (key) => {

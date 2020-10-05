@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import {
+    bool,
     func,
-    string
+    string,
 } from 'prop-types';
 import styled from 'styled-components';
 import _ from 'lodash';
@@ -39,8 +40,9 @@ const ContentWrapper = styled.div`
     padding-top: 10px;
 `;
 
-const AuthControl = ({ handleClose }) => {
-    const [ currentForm, changeForm ] = useState('Login');
+const AuthControl = ({ handleClose, useChangePasswordForm }) => {
+    const initialForm = useChangePasswordForm ? 'ChangePassword' : 'Login';
+    const [ currentForm, changeForm ] = useState(initialForm);
 
     return (
         <Popup 
@@ -81,12 +83,12 @@ const FormText = ({ text, changeForm, destinationForm }) => (
     </ChangeFormText>
 );
 
-// AuthControl.defaultProps = {
-
-// };
-
+AuthControl.defaultProps = {
+    useChangePasswordForm: false,
+};
 AuthControl.propTypes = {
     handleClose: func,
+    useChangePasswordForm: bool,
 };
 
 ChangeForm.propTypes = {

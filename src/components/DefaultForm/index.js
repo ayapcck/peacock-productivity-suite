@@ -5,7 +5,7 @@ import {
     func,
     object,
     shape,
-    string
+    string,
 } from 'prop-types';
 import styled from 'styled-components';
 import _ from 'lodash';
@@ -52,7 +52,7 @@ class DefaultFormBase extends Component {
         ev.preventDefault();
         onSubmit(props)
             .then(() => {
-                this.setState({ ... InitialState });
+                this.setState({ ...InitialState });
             })
             .catch(error => {
                 this.setState({ error });

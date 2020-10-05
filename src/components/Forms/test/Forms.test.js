@@ -2,10 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {
+    ChangePasswordForm,
     ForgotForm,
     LoginForm,
-    RegisterForm
+    RegisterForm,
 } from '..';
+
+describe('ChangePasswordForm', () => {
+    it('should render without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<ChangePasswordForm />, div);
+    });
+});
 
 describe('ForgotForm', () => {
     it('should render without crashing', () => {

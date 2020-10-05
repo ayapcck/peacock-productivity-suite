@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     func,
-    shape
+    shape,
 } from 'prop-types';
 
 import { AuthUserContext } from './';

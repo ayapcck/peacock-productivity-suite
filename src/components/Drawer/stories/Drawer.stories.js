@@ -3,6 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { MemoryRouter } from 'react-router';
 import styled from 'styled-components';
 
+import { AuthUserContext } from '../../../config/session';
 import Drawer from '../index';
 
 export default {
@@ -20,11 +21,13 @@ const Container = styled.div`
 `;
 
 const Template = (args) => (
-    <MemoryRouter initialEntries={[ '/' ]}>
-        <Container>
-            <Drawer {...args} />
-        </Container>
-    </MemoryRouter>
+    <AuthUserContext.Provider value={args.authUser}>
+        <MemoryRouter initialEntries={[ '/' ]}>
+            <Container>
+                <Drawer {...args} />
+            </Container>
+        </MemoryRouter>
+    </AuthUserContext.Provider>
 );
 
 export const Closed = Template.bind({});
@@ -32,3 +35,9 @@ Closed.args = {};
 
 export const Open = Template.bind({});
 Open.args = { startOpen: true };
+
+export const OpenAuthorized = Template.bind({});
+OpenAuthorized.args = { 
+    authUser: {},
+    startOpen: true,
+};

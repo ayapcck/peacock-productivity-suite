@@ -16,3 +16,8 @@ const Template = (args) => <AuthControl {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
+
+export const ChangePassword = Template.bind({});
+ChangePassword.args = {
+    useChangePasswordForm: true,
+};

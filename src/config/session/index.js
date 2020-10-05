@@ -1,5 +1,5 @@
 import AuthUserContext, {
-    withAuthConsumer
+    withAuthConsumer,
 } from './context';
 import withAuthProvider from './provider';
 
