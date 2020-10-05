@@ -6,7 +6,7 @@ import { ForgotForm } from '../index';
 export default {
     title: 'Components/Forms/ForgotForm',
     component: ForgotForm,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },

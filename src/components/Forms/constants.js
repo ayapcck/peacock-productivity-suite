@@ -2,14 +2,14 @@ import _ from 'lodash';
 
 import { emailValid, passwordValid } from '../../utilities/validation';
 
-const backToLoginText = "Back to Login? Click ";
-const forgotText = "Forgot you password? Click ";
-const logInText = "Already have an account? Log in ";
-const noAccountText = "Don't have an account? Register ";
+const backToLoginText = 'Back to Login? Click ';
+const forgotText = 'Forgot you password? Click ';
+const logInText = 'Already have an account? Log in ';
+const noAccountText = 'Don\'t have an account? Register ';
 
 const link = (destination, text) => ({
     destination,
-    text
+    text,
 });
 
 const textboxElement = (isValid, name, placeHolder, type = 'text') => ({
@@ -17,7 +17,7 @@ const textboxElement = (isValid, name, placeHolder, type = 'text') => ({
     isValid,
     name,
     placeHolder,
-    type
+    type,
 });
 const textboxElementNoValidity = (name, placeHolder, type = 'text') => 
     textboxElement(() => true, name, placeHolder, type);
@@ -55,8 +55,8 @@ const Forms = {
         elements: ForgotPasswordElements,
         InitialState: InitialForgotState,
         keyPrefix: 'forgotBox',
-        links: [ link('Login', backToLoginText), ],
-        onSubmit: (firebase, email, password) => firebase.sendPasswordResetEmail(email),
+        links: [ link('Login', backToLoginText) ],
+        onSubmit: ({ firebase, email }) => firebase.sendPasswordResetEmail(email),
         title: 'Forgot Password',
     },
     Login: {
@@ -67,15 +67,15 @@ const Forms = {
             link('Forgot', forgotText),
             link('Register', noAccountText),
         ],
-        onSubmit: (firebase, email, password) => firebase.signInWithEmailAndPassword(email, password),
+        onSubmit: ({ firebase, email, password }) => firebase.signInWithEmailAndPassword(email, password),
         title: 'Log In',
     },
     Register: {
         elements: RegisterElements,
         InitialState: InitialRegisterState,
         keyPrefix: 'regBox',
-        links: [ link('Login', logInText), ],
-        onSubmit: (firebase, email, password) => firebase.createUserWithEmailAndPassword(email, password),
+        links: [ link('Login', logInText) ],
+        onSubmit: ({ firebase, email, password }) => firebase.createUserWithEmailAndPassword(email, password),
         title: 'Register',
     },
 };

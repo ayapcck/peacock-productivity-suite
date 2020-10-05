@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     bool,
+    func,
     string
 } from 'prop-types';
 import styled from 'styled-components';
@@ -27,7 +28,7 @@ const TextBox = (props) => {
         name,
         placeHolder,
         type,
-        valid
+        valid,
     } = props;
 
     return (
@@ -42,12 +43,14 @@ const TextBox = (props) => {
 };
 
 TextBox.defaultTypes = {
-    valid: true
+    valid: true,
 };
 
 TextBox.propTypes = {
+    handleChange: func,
     name: string,
-    placeholder: string,
+    placeHolder: string,
+    type: string,
     valid: bool,
 };
 

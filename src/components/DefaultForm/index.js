@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
-import PropTypes from 'prop-types';
+import {
+    array,
+    func,
+    object,
+    shape,
+    string
+} from 'prop-types';
 import styled from 'styled-components';
 import _ from 'lodash';
 
 import Button from '../subcomponents/Button';
-import Forms from '../Forms/constants';
 import TextBox from '../subcomponents/TextBox';
 import { withFirebase } from '../../config/firebase';
 
@@ -24,9 +29,9 @@ class DefaultFormBase extends Component {
     constructor(props) {
         super(props);
         
-        const { InitialState } = this.props;
+        const { InitialState } = this.props.form;
 
-        this.state = { ...InitialState }
+        this.state = { ...InitialState };
     }
 
     onChange = ev => {
@@ -38,8 +43,14 @@ class DefaultFormBase extends Component {
         const { email, password='' } = this.state;
         const { InitialState, onSubmit } = form;
 
+        const props = {
+            email,
+            firebase,
+            password,
+        };
+
         ev.preventDefault();
-        onSubmit(firebase, email, password)
+        onSubmit(props)
             .then(() => {
                 this.setState({ ... InitialState });
             })
@@ -53,7 +64,7 @@ class DefaultFormBase extends Component {
         const {
             elements,
             keyPrefix,
-            title
+            title,
         } = form;
 
         return (
@@ -64,7 +75,7 @@ class DefaultFormBase extends Component {
             </StyledDefaultForm>
         );
     }
-};
+}
 
 const renderFormElements = (elements, keyPrefix, onChange, values) => {
     return _.map(_.keys(elements), (key, index) => {
@@ -100,16 +111,24 @@ DefaultFormBase.defaultProps = {
                 name: 'name',
                 placeHolder: 'Name',
                 type: 'text',
-            }
+            },
         },
         title: 'Title',
-    }
+    },
 };
 
 DefaultFormBase.propTypes = {
-    title: PropTypes.string
+    firebase: object,
+    form: shape({
+        elements: array,
+        InitialState: object,
+        keyPrefix: string,
+        onSubmit: func,
+        title: string,
+    }).isRequired,
+    title: string,
 };
 
-const DefaultForm = withFirebase(DefaultFormBase)
+const DefaultForm = withFirebase(DefaultFormBase);
 
 export default DefaultForm;

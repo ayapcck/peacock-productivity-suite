@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+    bool,
+    func,
+    object
+} from 'prop-types';
 import styled from 'styled-components';
 
 import Icon from '../subcomponents/Icon';
@@ -8,7 +13,7 @@ const CenterPanel = styled.div`
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 ${({ theme }) => theme.shadowColor};
     box-sizing: border-box;
-    height: ${({ tall }) => tall ? `60%` : `30%`};
+    height: ${({ tall }) => tall ? '60%' : '30%'};
     margin: auto;
     padding: 10px;
     position: relative;
@@ -53,7 +58,7 @@ const Popup = (props) => {
     const {
         closePopup,
         popupContent,
-        tall
+        tall,
     } = props;
 
     return (
@@ -62,7 +67,7 @@ const Popup = (props) => {
             <CenterPanel tall={tall}>
                 <CloseIcon 
                     onClick={closePopup}
-                    icon={['far', 'times-circle']} 
+                    icon={[ 'far', 'times-circle' ]} 
                 />
                 {popupContent}
             </CenterPanel>
@@ -72,7 +77,13 @@ const Popup = (props) => {
 
 Popup.defaultProps = {
     popupContent: '',
-    tall: true
+    tall: true,
+};
+
+Popup.propTypes = {
+    closePopup: func, 
+    popupContent: object,
+    tall: bool,
 };
 
 export default Popup;

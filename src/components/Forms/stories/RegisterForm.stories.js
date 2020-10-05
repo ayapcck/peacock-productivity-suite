@@ -6,7 +6,7 @@ import { RegisterForm } from '../index';
 export default {
     title: 'Components/Forms/RegisterForm',
     component: RegisterForm,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },

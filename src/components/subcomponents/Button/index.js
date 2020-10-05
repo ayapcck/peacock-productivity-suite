@@ -27,7 +27,7 @@ const StyledButton = styled.button`
 const Button = (props) => {
     const {
         text,
-        type
+        type,
     } = props;
 
     const buttonText = text || (type === 'submit' && 'Submit');
@@ -43,12 +43,12 @@ const Button = (props) => {
 
 Button.defaultProps = {
     text: '',
-    type: 'button'
+    type: 'button',
 };
 
 Button.propTypes = {
     text: PropTypes.string,
-    type: PropTypes.oneOf(['button', 'submit'])
-}
+    type: PropTypes.oneOf([ 'button', 'submit' ]),
+};
 
 export default Button;

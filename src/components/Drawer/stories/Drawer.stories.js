@@ -8,7 +8,7 @@ import Drawer from '../index';
 export default {
     title: 'Components/Drawer',
     component: Drawer,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },
@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Template = (args) => (
-    <MemoryRouter initialEntries={['/']}>
+    <MemoryRouter initialEntries={[ '/' ]}>
         <Container>
             <Drawer {...args} />
         </Container>

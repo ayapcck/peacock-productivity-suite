@@ -6,4 +6,4 @@ export const emailValid = email => {
 export const passwordValid = password => {
     const passwordRegex = RegExp(/([a-zA-Z0-9@!#$%&]{8,})$/);
     return passwordRegex.test(password);
-}
+};

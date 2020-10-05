@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { array, func, oneOfType, string } from 'prop-types';
 import styled from 'styled-components';
 
@@ -16,7 +16,7 @@ const Icon = (props) => {
     const { 
         className,
         icon, 
-        onClick
+        onClick,
     } = props;
     
     return (
@@ -34,8 +34,9 @@ Icon.defaultProps = {
 };
 
 Icon.propTypes = {
-    icon: oneOfType([string, array]),
-    onClick: func
+    className: string,
+    icon: oneOfType([ string, array ]),
+    onClick: func,
 };
 
 export default Icon;

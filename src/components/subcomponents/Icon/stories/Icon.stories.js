@@ -7,7 +7,7 @@ import Icon from '../index';
 export default {
     title: 'Subcomponents/Icon',
     component: Icon,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },
@@ -28,19 +28,19 @@ const icons = {
     bars: {
         iconText: 'bars',
         name: 'Bars',
-        story: Bars
+        story: Bars,
     },
     timesCircle: {
-        iconText: ['far', 'times-circle'],
+        iconText: [ 'far', 'times-circle' ],
         name: 'Times Circle',
         story: TimesCircle,
-    }
+    },
 };
 
 _.forIn(icons, (icon) => {
     const { iconText, name, story } = icon;
     story.args = {
-        icon: iconText
+        icon: iconText,
     };
     story.storyName = name;
 });

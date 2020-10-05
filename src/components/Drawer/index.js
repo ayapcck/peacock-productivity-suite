@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { bool } from 'prop-types';
+import {
+    bool,
+    shape,
+    string
+} from 'prop-types';
 import styled from 'styled-components';
 
 import Icon from '../subcomponents/Icon';
@@ -46,7 +50,7 @@ const Drawer = ({ authUser, startOpen }) => {
             { showNavigation && <Navigation /> }
         </StyledDrawer>
     );
-}
+};
 
 const renderMenuIcon = (open, onClick) => (
     <MenuIcon 
@@ -56,11 +60,14 @@ const renderMenuIcon = (open, onClick) => (
 );
 
 Drawer.defaultProps = {
-    startOpen: false
+    startOpen: false,
 };
 
 Drawer.propTypes = {
-    startOpen: bool
+    authUser: shape({
+        email: string,
+    }),
+    startOpen: bool,
 };
 
 export default withAuthConsumer(Drawer);

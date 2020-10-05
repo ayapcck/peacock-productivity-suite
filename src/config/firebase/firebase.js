@@ -12,7 +12,7 @@ const config = {
     projectId: env.REACT_APP_PROJECT_ID,
     storageBucket: env.REACT_APP_STORAGE_BUCKET,
     messagingSenderId: env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: env.REACT_APP_API_KEY    
+    appId: env.REACT_APP_API_KEY,    
 };
 
 class Firebase {

@@ -8,7 +8,7 @@ describe('Navigation', () => {
     it('should render without crashing', () => {
         const div = document.createElement('div');
         const Container = () => (
-            <MemoryRouter initialEntries={['/']}>
+            <MemoryRouter initialEntries={[ '/' ]}>
                 <Navigation />
             </MemoryRouter>
         );
