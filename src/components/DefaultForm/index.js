@@ -52,7 +52,7 @@ class DefaultFormBase extends Component {
         ev.preventDefault();
         onSubmit(props)
             .then(() => {
-                this.setState({ ... InitialState });
+                this.setState({ ...InitialState });
             })
             .catch(error => {
                 this.setState({ error });

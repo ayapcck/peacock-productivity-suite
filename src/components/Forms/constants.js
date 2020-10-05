@@ -22,11 +22,20 @@ const textboxElement = (isValid, name, placeHolder, type = 'text') => ({
 const textboxElementNoValidity = (name, placeHolder, type = 'text') => 
     textboxElement(() => true, name, placeHolder, type);
 
+const CONFIRM_PASSWORD = textboxElementNoValidity('confirmPassword', 'Confirm Password', 'password');
+
 const EMAIL_NO_VALIDITY = textboxElementNoValidity('email', 'Email');
 const EMAIL_WITH_VALIDITY = textboxElement(emailValid, 'email', 'Email');
 
 const PASSWORD_NO_VALIDITY = textboxElementNoValidity('password', 'Password', 'password');
 const PASSWORD_WITH_VALIDITY = textboxElement(passwordValid, 'password', 'Password', 'password');
+
+/** Textbox elements for ChangePasswordForm */
+const ChangePasswordElements = {
+    password: PASSWORD_WITH_VALIDITY,
+    confirmPassword: CONFIRM_PASSWORD,
+};
+const InitialChangePasswordState = _.mapValues(ChangePasswordElements, 'initial');
 
 /** Textbox elements for ForgotForm */
 const ForgotPasswordElements = {
@@ -46,11 +55,19 @@ const RegisterElements = {
     name: textboxElementNoValidity('name', 'Name'),
     email: EMAIL_WITH_VALIDITY,
     password: PASSWORD_WITH_VALIDITY,
-    confirmPassword: textboxElementNoValidity('confirmPassword', 'Confirm Password', 'password'),
+    confirmPassword: CONFIRM_PASSWORD,
 };
 const InitialRegisterState = _.mapValues(RegisterElements, 'initial');
 
 const Forms = {
+    ChangePassword: {
+        elements: ChangePasswordElements,
+        InitialState: InitialChangePasswordState,
+        keyPrefix: 'changePasswordBox',
+        links: [],
+        onSubmit: ({ firebase, password }) => firebase.updatePassword(password),
+        title: 'Change Password',
+    },
     Forgot: {
         elements: ForgotPasswordElements,
         InitialState: InitialForgotState,
