@@ -64,8 +64,10 @@ Drawer.defaultProps = {
 };
 
 Drawer.propTypes = {
-    authUser: shape({
-        email: string,
+    auth: shape({
+        user: shape({
+            email: string,
+        }),
     }),
     startOpen: bool,
 };

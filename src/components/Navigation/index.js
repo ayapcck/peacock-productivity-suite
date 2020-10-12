@@ -122,7 +122,9 @@ const renderNavLinks = (userPermissions, currentPage, setCurrentPage) => {
 };
 
 Navigation.propTypes = {
-    authUser: object,
+    auth: shape({
+        user: object,
+    }),
     firebase: shape({
         signOut: func,
     }),
