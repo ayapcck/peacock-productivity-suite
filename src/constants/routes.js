@@ -11,7 +11,7 @@ export default {
         route: '/home',
     },
     LANDING: {
-        minRequiredRole: 'user',
+        minRequiredRole: 'guest',
         navText: 'Landing',
         page: LandingPage,
         route: '/',

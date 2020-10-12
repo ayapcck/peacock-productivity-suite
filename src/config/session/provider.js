@@ -10,7 +10,7 @@ import { withFirebase } from '../firebase';
 const INITIAL_USER = {
     email: '',
     name: '',
-    role: 'user',
+    role: 'guest',
 };
 
 const withAuthProvider = Component => {
@@ -43,7 +43,7 @@ const withAuthProvider = Component => {
                                 }
                             });
                     } else {
-                        this.setState({ ...INITIAL_USER });
+                        this.setState({ user: { ...INITIAL_USER } });
                     }
                 }
             );

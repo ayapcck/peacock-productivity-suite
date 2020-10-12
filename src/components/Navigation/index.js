@@ -81,15 +81,16 @@ const Navigation = ({ authUser, firebase }) => {
         handleClose: hideAuthControl,
         useChangePasswordForm: showChangePassword,
     };
-    const loginText = authUser ? 'Sign out' : 'Login';
+    const signedIn = authUser.role !== 'guest';
+    const loginText = signedIn ? 'Sign out' : 'Login';
 
     return (
         <div>
             <StyledNavigation>
                 { renderNavLinks(role, currentPage, setCurrentPage) }
-                { authUser && renderChangePasswordLink(displayChangePasswordForm) }
+                { signedIn && renderChangePasswordLink(displayChangePasswordForm) }
                 <StyledPopupLink
-                    onClick={authUser ? logout : displayAuthControl}
+                    onClick={signedIn ? logout : displayAuthControl}
                 >
                     {loginText}
                 </StyledPopupLink>
