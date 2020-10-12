@@ -38,6 +38,7 @@ class Firebase {
     updatePassword = password => this.auth.currentUser.updatePassword(password);
 
     // User API
+    role = role => this.db.ref(`roles/${role}`);
     roles = () => this.db.ref('roles');
     user = uid => this.db.ref(`users/${uid}`);
     users = () => this.db.ref('users');

@@ -5,21 +5,28 @@ import LandingPage from '../pages/LandingPage';
 
 export default {
     HOME: {
-        minRequiredRole: 'user',
         navText: 'Home',
         page: HomePage,
+        permissions: {
+            administrator: false,
+            viewHomepage: true,
+        },
         route: '/home',
     },
     LANDING: {
-        minRequiredRole: 'guest',
         navText: 'Landing',
         page: LandingPage,
+        permissions: {
+            administrator: false,
+        },
         route: '/',
     },
     ADMIN_PANEL: {
-        minRequiredRole: 'admin',
         navText: 'Admin Panel',
         page: AdminPanelPage,
+        permissions: {
+            administrator: true,
+        },
         route: '/admin-panel',
     },
 };

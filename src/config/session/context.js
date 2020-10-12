@@ -1,10 +1,13 @@
 import React from 'react';
 
-const AuthUserContext = React.createContext(null);
+const AuthUserContext = React.createContext({
+    user: null,
+    userPermissions: null,
+});
 
 export const withAuthConsumer = Component => props => (
     <AuthUserContext.Consumer>
-        { authUser => <Component {...props} authUser={authUser} /> }
+        { auth => <Component {...props} auth={auth} /> }
     </AuthUserContext.Consumer>
 );
 

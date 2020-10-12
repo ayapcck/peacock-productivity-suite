@@ -9,8 +9,8 @@ describe('Navigation', () => {
     it('should render without crashing', () => {
         const div = document.createElement('div');
         const authUser = {
-            name: 'test',
-            role: 'user',
+            user: {},
+            userPermissions: {},
         };
         const Container = () => (
             <AuthUserContext.Provider value={authUser}>
