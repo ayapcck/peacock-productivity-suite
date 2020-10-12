@@ -8,7 +8,6 @@ export default {
         navText: 'Home',
         page: HomePage,
         permissions: {
-            administrator: false,
             viewHomepage: true,
         },
         route: '/home',
@@ -16,9 +15,7 @@ export default {
     LANDING: {
         navText: 'Landing',
         page: LandingPage,
-        permissions: {
-            administrator: false,
-        },
+        permissions: { },
         route: '/',
     },
     ADMIN_PANEL: {
