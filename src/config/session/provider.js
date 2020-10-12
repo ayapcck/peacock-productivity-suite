@@ -7,20 +7,44 @@ import {
 import { AuthUserContext } from './';
 import { withFirebase } from '../firebase';
 
+const INITIAL_USER = {
+    email: '',
+    name: '',
+    role: 'user',
+};
+
 const withAuthProvider = Component => {
     class WithAuthProvider extends React.Component {
         constructor(props) {
             super(props);
 
-            this.state = { authUser: null };
+            this.state = { user: { ...INITIAL_USER } };
         }
 
         componentDidMount() {
-            this.listener = this.props.firebase.auth.onAuthStateChanged(
+            const { firebase } = this.props;
+
+            this.listener = firebase.auth.onAuthStateChanged(
                 authUser => {
-                    authUser
-                        ? this.setState({ authUser })
-                        : this.setState({ authUser: null });
+                    if ( authUser ) {   
+                        firebase.user(authUser.uid)
+                            .once('value')
+                            .then(res => {
+                                const val = res.val();
+                                if (val) {
+                                    const user = {
+                                        email: val.email,
+                                        name: val.name,
+                                        role: val.role,
+                                    }
+                                    this.setState({
+                                        user: { ...user },
+                                    });
+                                }
+                            });
+                    } else {
+                        this.setState({ ...INITIAL_USER });
+                    }
                 }
             );
         }
@@ -31,7 +55,7 @@ const withAuthProvider = Component => {
         
         render() {
             return (
-                <AuthUserContext.Provider value={this.state.authUser}>
+                <AuthUserContext.Provider value={this.state.user}>
                     <Component {...this.props} />
                 </AuthUserContext.Provider>
             );

@@ -6,12 +6,11 @@ import {
 import styled, {
     createGlobalStyle,
 } from 'styled-components';
+import _ from 'lodash';
 
 import { withAuthProvider } from './config/session';
 
-import * as ROUTES from './constants/routes';
-import HomePage from './pages/HomePage';
-import LandingPage from './pages/LandingPage';
+import ROUTES from './constants/routes';
 
 import Drawer from './components/Drawer';
 
@@ -36,8 +35,9 @@ const App = () => (
         <Container>
             <Drawer />
 
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.HOME} component={HomePage} />
+            { _.map(ROUTES, (route, index) => {
+                return <Route exact={route.route === '/'} path={route.route} component={route.page} />
+            }) }
         </Container>
     </Router>
 );

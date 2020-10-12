@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import _ from 'lodash';
 
+import hasRole from '../../config/permissions';
 import ROUTES from '../../constants/routes';
 import { withAuthConsumer } from '../../config/session';
 import { withFirebase } from '../../config/firebase';
@@ -63,6 +64,8 @@ const Navigation = ({ authUser, firebase }) => {
     const [ showAuthControl, setShowAuthControl ] = useState(false);
     const [ showChangePassword, setShowChangePassword ] = useState(false);
 
+    const { role } = authUser;
+
     const displayAuthControl = () => setShowAuthControl(true);
     const displayChangePasswordForm = () => {
         setShowAuthControl(true);
@@ -83,7 +86,7 @@ const Navigation = ({ authUser, firebase }) => {
     return (
         <div>
             <StyledNavigation>
-                { renderNavLinks(currentPage, setCurrentPage) }
+                { renderNavLinks(role, currentPage, setCurrentPage) }
                 { authUser && renderChangePasswordLink(displayChangePasswordForm) }
                 <StyledPopupLink
                     onClick={authUser ? logout : displayAuthControl}
@@ -100,11 +103,13 @@ const renderChangePasswordLink = (displayChangePasswordForm) => (
     <StyledPopupLink onClick={displayChangePasswordForm}>Change Password</StyledPopupLink>
 );
 
-const renderNavLinks = (currentPage, setCurrentPage) => {
+const renderNavLinks = (role, currentPage, setCurrentPage) => {
     return _.map(_.keys(ROUTES), (key) => {
         const route = ROUTES[key];
+        
+        const hasPermissions = hasRole(route.minRequiredRole, role);
         const selected = currentPage === route.navText;
-        return (
+        return hasPermissions && (
             <StyledLink 
                 onClick={() => setCurrentPage(route.navText)}
                 selected={selected}
