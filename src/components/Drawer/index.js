@@ -29,7 +29,7 @@ const StyledDrawer = styled.div`
     width: auto;
 `;
 
-const Drawer = ({ authUser, startOpen }) => {
+const Drawer = ({ auth, startOpen }) => {
     const [ open, setOpen ] = useState(startOpen);
     const [ showNavigation, setShowNavigation ] = useState(open);
     
@@ -45,7 +45,7 @@ const Drawer = ({ authUser, startOpen }) => {
 
     return (
         <StyledDrawer open={open}>
-            { authUser && authUser.email }
+            { auth && auth.user && auth.user.email }
             { renderMenuIcon(open, toggleDrawer) }
             { showNavigation && <Navigation /> }
         </StyledDrawer>
@@ -64,8 +64,10 @@ Drawer.defaultProps = {
 };
 
 Drawer.propTypes = {
-    authUser: shape({
-        email: string,
+    auth: shape({
+        user: shape({
+            email: string,
+        }),
     }),
     startOpen: bool,
 };

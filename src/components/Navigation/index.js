@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import _ from 'lodash';
 
+import hasPermissions from '../../config/permissions';
 import ROUTES from '../../constants/routes';
 import { withAuthConsumer } from '../../config/session';
 import { withFirebase } from '../../config/firebase';
@@ -58,10 +59,12 @@ const StyledPopupLink = styled.span`
     }
 `;
 
-const Navigation = ({ authUser, firebase }) => {
+const Navigation = ({ auth, firebase }) => {
     const [ currentPage, setCurrentPage ] = useState(ROUTES.LANDING.navText);
     const [ showAuthControl, setShowAuthControl ] = useState(false);
     const [ showChangePassword, setShowChangePassword ] = useState(false);
+
+    const { user, userPermissions } = auth;
 
     const displayAuthControl = () => setShowAuthControl(true);
     const displayChangePasswordForm = () => {
@@ -78,15 +81,16 @@ const Navigation = ({ authUser, firebase }) => {
         handleClose: hideAuthControl,
         useChangePasswordForm: showChangePassword,
     };
-    const loginText = authUser ? 'Sign out' : 'Login';
+    const signedIn = user.role !== 'guest';
+    const loginText = signedIn ? 'Sign out' : 'Login';
 
     return (
         <div>
             <StyledNavigation>
-                { renderNavLinks(currentPage, setCurrentPage) }
-                { authUser && renderChangePasswordLink(displayChangePasswordForm) }
+                { renderNavLinks(userPermissions, currentPage, setCurrentPage) }
+                { signedIn && renderChangePasswordLink(displayChangePasswordForm) }
                 <StyledPopupLink
-                    onClick={authUser ? logout : displayAuthControl}
+                    onClick={signedIn ? logout : displayAuthControl}
                 >
                     {loginText}
                 </StyledPopupLink>
@@ -100,11 +104,12 @@ const renderChangePasswordLink = (displayChangePasswordForm) => (
     <StyledPopupLink onClick={displayChangePasswordForm}>Change Password</StyledPopupLink>
 );
 
-const renderNavLinks = (currentPage, setCurrentPage) => {
+const renderNavLinks = (userPermissions, currentPage, setCurrentPage) => {
     return _.map(_.keys(ROUTES), (key) => {
         const route = ROUTES[key];
+        
         const selected = currentPage === route.navText;
-        return (
+        return hasPermissions(route.permissions, userPermissions) && (
             <StyledLink 
                 onClick={() => setCurrentPage(route.navText)}
                 selected={selected}
@@ -117,7 +122,9 @@ const renderNavLinks = (currentPage, setCurrentPage) => {
 };
 
 Navigation.propTypes = {
-    authUser: object,
+    auth: shape({
+        user: object,
+    }),
     firebase: shape({
         signOut: func,
     }),

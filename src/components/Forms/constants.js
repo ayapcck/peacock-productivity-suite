@@ -100,8 +100,11 @@ const Forms = {
     Register: {
         andThen: ({ authUser, email, firebase, name }) => firebase
             .user(authUser.user.uid)
-            .set({ email,
-                name }),
+            .set({
+                email,
+                name,
+                role: 'user',
+            }),
         elements: RegisterElements,
         InitialState: InitialRegisterState,
         keyPrefix: 'regBox',
