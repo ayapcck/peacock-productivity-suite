@@ -79,7 +79,7 @@ const Forms = {
         title: 'Forgot Password',
     },
     Login: {
-        andThen: ({ authUser, email, firebase }) => {
+        andThen: ({ authUser, firebase }) => {
             firebase.user(authUser.user.uid)
                 .once('value')
                 .then(res => {
@@ -100,7 +100,8 @@ const Forms = {
     Register: {
         andThen: ({ authUser, email, firebase, name }) => firebase
             .user(authUser.user.uid)
-            .set({ email, name }),
+            .set({ email,
+                name }),
         elements: RegisterElements,
         InitialState: InitialRegisterState,
         keyPrefix: 'regBox',

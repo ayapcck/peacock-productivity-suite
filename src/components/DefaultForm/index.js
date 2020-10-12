@@ -46,8 +46,8 @@ class DefaultFormBase extends Component {
         const andThenProps = {
             email,
             firebase,
-            name
-        }
+            name,
+        };
         const onSubmitProps = {
             email,
             firebase,
@@ -56,7 +56,8 @@ class DefaultFormBase extends Component {
 
         ev.preventDefault();
         onSubmit(onSubmitProps)
-            .then(authUser => andThen({ ...andThenProps, authUser }))
+            .then(authUser => andThen({ ...andThenProps,
+                authUser }))
             .then(() => {
                 this.setState({ ...InitialState });
             })
