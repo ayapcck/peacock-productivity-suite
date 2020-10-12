@@ -36,7 +36,7 @@ const withAuthProvider = Component => {
                                         email: val.email,
                                         name: val.name,
                                         role: val.role,
-                                    }
+                                    };
                                     this.setState({
                                         user: { ...user },
                                     });

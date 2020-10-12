@@ -2,11 +2,11 @@ import React from 'react';
 
 const AdminPanelPage = () => {
 
-	return (
-		<div>
+    return (
+        <div>
 			Admin Panel
-		</div>
-	);
+        </div>
+    );
 };
 
 export default AdminPanelPage;

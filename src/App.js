@@ -36,7 +36,7 @@ const App = () => (
             <Drawer />
 
             { _.map(ROUTES, (route, index) => {
-                return <Route exact={route.route === '/'} path={route.route} component={route.page} />
+                return <Route key={index} exact={route.route === '/'} path={route.route} component={route.page} />;
             }) }
         </Container>
     </Router>
