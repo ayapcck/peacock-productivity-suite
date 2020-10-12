@@ -40,17 +40,23 @@ class DefaultFormBase extends Component {
 
     onSubmit = ev => {
         const { firebase, form } = this.props;
-        const { email, password='' } = this.state;
-        const { InitialState, onSubmit } = form;
+        const { email, name, password='' } = this.state;
+        const { andThen, InitialState, onSubmit } = form;
 
-        const props = {
+        const andThenProps = {
+            email,
+            firebase,
+            name
+        }
+        const onSubmitProps = {
             email,
             firebase,
             password,
         };
 
         ev.preventDefault();
-        onSubmit(props)
+        onSubmit(onSubmitProps)
+            .then(authUser => andThen({ ...andThenProps, authUser }))
             .then(() => {
                 this.setState({ ...InitialState });
             })

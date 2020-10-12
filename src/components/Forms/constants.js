@@ -61,6 +61,7 @@ const InitialRegisterState = _.mapValues(RegisterElements, 'initial');
 
 const Forms = {
     ChangePassword: {
+        andThen: () => null,
         elements: ChangePasswordElements,
         InitialState: InitialChangePasswordState,
         keyPrefix: 'changePasswordBox',
@@ -69,6 +70,7 @@ const Forms = {
         title: 'Change Password',
     },
     Forgot: {
+        andThen: () => null,
         elements: ForgotPasswordElements,
         InitialState: InitialForgotState,
         keyPrefix: 'forgotBox',
@@ -77,6 +79,14 @@ const Forms = {
         title: 'Forgot Password',
     },
     Login: {
+        andThen: ({ authUser, email, firebase }) => {
+            firebase.user(authUser.user.uid)
+                .once('value')
+                .then(res => {
+                    // This is a proof of concept method
+                    res.val() && console.log(res.val().name);
+                });
+        },
         elements: LoginElements,
         InitialState: InitialLoginState,
         keyPrefix: 'loginBox',
@@ -88,6 +98,9 @@ const Forms = {
         title: 'Log In',
     },
     Register: {
+        andThen: ({ authUser, email, firebase, name }) => firebase
+            .user(authUser.user.uid)
+            .set({ email, name }),
         elements: RegisterElements,
         InitialState: InitialRegisterState,
         keyPrefix: 'regBox',
