@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 
 // eslint-disable-next-line no-undef
 const env = process.env.NODE_ENV === 'production'
@@ -23,6 +24,7 @@ class Firebase {
         app.initializeApp(config);
 
         this.auth = app.auth();
+        this.db = app.database();
     }
 
     // Auth API
@@ -34,6 +36,11 @@ class Firebase {
         this.auth.signInWithEmailAndPassword(email, password);
     signOut = () => this.auth.signOut();
     updatePassword = password => this.auth.currentUser.updatePassword(password);
+
+    // User API
+
+    user = uid => this.db.ref(`users/${uid}`);
+    users = () => this.db.ref('users');
 }
 
 export default Firebase;
