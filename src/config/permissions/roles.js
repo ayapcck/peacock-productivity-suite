@@ -1,11 +1,7 @@
 import _ from 'lodash';
 
-const hasPermissions = (requiredPermissions, userPermissions) => {
-    return _.reduce(requiredPermissions, (res, required, key) => {
-        return res && (
-            ( required && userPermissions[key] ) || !required
-        );
-    }, true);
-}
+const hasPermissions = (requiredPermissions, userPermissions) => 
+    _.reduce(requiredPermissions, (res, required, key) =>
+        res && required && userPermissions[key], true);
 
 export default hasPermissions;
