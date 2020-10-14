@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MemoryRouter } from 'react-router';
+import { createMemoryHistory } from 'history';
 
 import { AuthUserContext } from '../../../config/session';
 import Navigation from '..';
@@ -12,9 +13,11 @@ describe('Navigation', () => {
             user: {},
             userPermissions: {},
         };
+        const history = createMemoryHistory();
+        
         const Container = () => (
             <AuthUserContext.Provider value={authUser}>
-                <MemoryRouter initialEntries={[ '/' ]}>
+                <MemoryRouter history={history} initialEntries={[ '/' ]}>
                     <Navigation />
                 </MemoryRouter>
             </AuthUserContext.Provider>
