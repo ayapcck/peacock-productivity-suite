@@ -57,5 +57,13 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.21.2",
     "react-is": "^16.13.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/serviceWorker.js",
+      "!src/**/*.stories.js",
+      "!<rootDir>/node_modules/"
+    ]
   }
 }
