@@ -18,7 +18,7 @@ const withPermissions = permissions => Component => {
             this.listener = firebase.auth.onAuthStateChanged(
                 authUser => {
                     const userPermissions = authUser && this.props.auth.userPermissions;
-                    if (!(userPermissions && hasPermissions(permissions(), userPermissions))) {
+                    if (!(userPermissions && hasPermissions(permissions, userPermissions))) {
                         history.push(ROUTES.LANDING.route);
                     }
                 }

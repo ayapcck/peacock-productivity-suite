@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { ROUTES } from '../../constants';
+import { withPermissions } from '../../config/permissions';
+
 const AdminPanelPage = () => {
 
     return (
@@ -9,4 +12,4 @@ const AdminPanelPage = () => {
     );
 };
 
-export default AdminPanelPage;
+export default withPermissions(ROUTES.ADMIN_PANEL.permissions)(AdminPanelPage);
