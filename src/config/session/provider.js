@@ -4,7 +4,7 @@ import {
     shape,
 } from 'prop-types';
 
-import { AuthUserContext } from './';
+import AuthUserContext from './context';
 import { withFirebase } from '../firebase';
 
 const INITIAL_USER = {

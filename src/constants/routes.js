@@ -1,29 +1,30 @@
+import _ from 'lodash';
 
-import AdminPanelPage from '../pages/AdminPanelPage';
-import HomePage from '../pages/HomePage';
-import LandingPage from '../pages/LandingPage';
-
-export default {
+const ROUTES = {
     HOME: {
+        key: 'home',
         navText: 'Home',
-        page: HomePage,
         permissions: {
             viewHomepage: true,
         },
         route: '/home',
     },
     LANDING: {
+        key: 'landing',
         navText: 'Landing',
-        page: LandingPage,
         permissions: { },
         route: '/',
     },
     ADMIN_PANEL: {
+        key: 'admin',
         navText: 'Admin Panel',
-        page: AdminPanelPage,
         permissions: {
             administrator: true,
         },
         route: '/admin-panel',
     },
 };
+
+export const getRouteByPath = path => _.find(ROUTES, route => route.route === path);
+
+export default ROUTES;

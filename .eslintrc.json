@@ -17,6 +17,7 @@
         "sourceType": "module"
     },
     "plugins": [
+        "import",
         "react"
     ],
     "rules": {
@@ -39,6 +40,7 @@
             "error",
             "always"
         ],
+        "import/no-cycle": "error",
         "indent": [
             "error",
             4

@@ -10,9 +10,19 @@ import _ from 'lodash';
 
 import { withAuthProvider } from './config/session';
 
-import ROUTES from './constants/routes';
+import { ROUTES } from './constants';
 
+import AdminPanelPage from './pages/AdminPanelPage';
+import HomePage from './pages/HomePage';
+import LandingPage from './pages/LandingPage';
 import Drawer from './components/Drawer';
+
+/** The keys in this should correspond to the 'key' value in src/constants/pages.js */
+const PAGE_COMPONENTS = {
+    admin: AdminPanelPage,
+    home: HomePage,
+    landing: LandingPage,
+};
 
 const GlobalStyle = createGlobalStyle`
     html, body, #root {
@@ -35,8 +45,8 @@ const App = () => (
         <Container>
             <Drawer />
 
-            { _.map(ROUTES, (route, index) => {
-                return <Route key={index} exact={route.route === '/'} path={route.route} component={route.page} />;
+            { _.map(ROUTES, (page, index) => {
+                return <Route key={index} exact={page.route === '/'} path={page.route} component={PAGE_COMPONENTS[page.key]} />;
             }) }
         </Container>
     </Router>

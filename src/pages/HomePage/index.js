@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { ROUTES } from '../../constants';
+import { withPermissions } from '../../config/permissions';
+
 const HomePage = () => {
 
     return (
@@ -9,4 +12,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default withPermissions(ROUTES.HOME.permissions)(HomePage);
