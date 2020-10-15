@@ -1,0 +1,23 @@
+name: Test
+
+on: push
+
+jobs:
+  run-linters:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Test Action
+        run: yarn test --watchAll=false
