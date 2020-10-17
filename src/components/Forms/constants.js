@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import { emailValid, passwordValid } from '../../utilities/validation';
 
 const backToLoginText = 'Back to Login? Click ';
