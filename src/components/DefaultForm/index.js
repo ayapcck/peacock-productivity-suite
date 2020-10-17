@@ -25,13 +25,16 @@ const Title = styled.h2`
     text-align: center;
 `;
 
-class DefaultFormBase extends Component {
+const getInitialState = (elements) => _.mapValues(elements, 'initial');
+
+class DefaultForm extends Component {
     constructor(props) {
         super(props);
         
-        const { InitialState } = this.props.form;
+        const { elements } = this.props.form;
+        const initialState = getInitialState(elements);
 
-        this.state = { ...InitialState };
+        this.state = { ...initialState };
     }
 
     onChange = ev => {
@@ -41,7 +44,9 @@ class DefaultFormBase extends Component {
     onSubmit = ev => {
         const { firebase, form } = this.props;
         const { email, name, password='' } = this.state;
-        const { andThen, InitialState, onSubmit } = form;
+        const { andThen, elements, onSubmit } = form;
+
+        const initialState = getInitialState(elements);
 
         const andThenProps = {
             email,
@@ -59,7 +64,7 @@ class DefaultFormBase extends Component {
             .then(authUser => andThen({ ...andThenProps,
                 authUser }))
             .then(() => {
-                this.setState({ ...InitialState });
+                this.setState({ ...initialState });
             })
             .catch(error => {
                 this.setState({ error });
@@ -109,7 +114,7 @@ const elementIsValid = (element, values) => {
         : empty || element.isValid(value);
 };
 
-DefaultFormBase.defaultProps = {
+DefaultForm.defaultProps = {
     form: {
         elements: {
             name: {
@@ -124,7 +129,7 @@ DefaultFormBase.defaultProps = {
     },
 };
 
-DefaultFormBase.propTypes = {
+DefaultForm.propTypes = {
     firebase: object,
     form: shape({
         elements: array,
@@ -136,6 +141,4 @@ DefaultFormBase.propTypes = {
     title: string,
 };
 
-const DefaultForm = withFirebase(DefaultFormBase);
-
-export default DefaultForm;
+export default withFirebase(DefaultForm);
