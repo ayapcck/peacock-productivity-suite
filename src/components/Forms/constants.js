@@ -35,20 +35,17 @@ const ChangePasswordElements = {
     password: PASSWORD_WITH_VALIDITY,
     confirmPassword: CONFIRM_PASSWORD,
 };
-const InitialChangePasswordState = _.mapValues(ChangePasswordElements, 'initial');
 
 /** Textbox elements for ForgotForm */
 const ForgotPasswordElements = {
     email: EMAIL_WITH_VALIDITY,
 };
-const InitialForgotState = _.mapValues(ForgotPasswordElements, 'initial');
 
 /** Textbox elements for LoginForm */
 const LoginElements = {
     email: EMAIL_NO_VALIDITY,
     password: PASSWORD_NO_VALIDITY,
 };
-const InitialLoginState = _.mapValues(LoginElements, 'initial');
 
 /** Textbox elements for RegisterForm */
 const RegisterElements = {
@@ -57,13 +54,11 @@ const RegisterElements = {
     password: PASSWORD_WITH_VALIDITY,
     confirmPassword: CONFIRM_PASSWORD,
 };
-const InitialRegisterState = _.mapValues(RegisterElements, 'initial');
 
-const Forms = {
+let Forms = {
     ChangePassword: {
         andThen: () => null,
         elements: ChangePasswordElements,
-        InitialState: InitialChangePasswordState,
         keyPrefix: 'changePasswordBox',
         links: [],
         onSubmit: ({ firebase, password }) => firebase.updatePassword(password),
@@ -72,7 +67,6 @@ const Forms = {
     Forgot: {
         andThen: () => null,
         elements: ForgotPasswordElements,
-        InitialState: InitialForgotState,
         keyPrefix: 'forgotBox',
         links: [ link('Login', backToLoginText) ],
         onSubmit: ({ firebase, email }) => firebase.sendPasswordResetEmail(email),
@@ -88,7 +82,6 @@ const Forms = {
                 });
         },
         elements: LoginElements,
-        InitialState: InitialLoginState,
         keyPrefix: 'loginBox',
         links: [ 
             link('Forgot', forgotText),
@@ -106,7 +99,6 @@ const Forms = {
                 role: 'user',
             }),
         elements: RegisterElements,
-        InitialState: InitialRegisterState,
         keyPrefix: 'regBox',
         links: [ link('Login', logInText) ],
         onSubmit: ({ firebase, email, password }) => firebase.createUserWithEmailAndPassword(email, password),
