@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 
 import $component_name from '..';
 
@@ -7,5 +8,11 @@ describe('$component_name', () => {
     it('should render without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<$component_name />, div);
+    });
+    it('should match snapshot', () => {
+        const tree = renderer
+            .create(<$component_name />)
+            .toJSON();
+        expect(tree).toMatchSnapshot();
     });
 });
