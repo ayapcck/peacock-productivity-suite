@@ -68,6 +68,9 @@
       "!src/serviceWorker.js",
       "!src/**/*.stories.js",
       "!<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "html"
     ]
   }
 }
