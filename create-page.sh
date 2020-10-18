@@ -16,7 +16,9 @@ mkdir stories test
 
 # create JavaScript files for page
 touch index.js
-touch test/index.test.js
+touch test/$page.test.js
 
 # add content to index.js
 sed "s/\$page/$page/g" ../../templates/page.txt > index.js
+
+sed "s/\$component_name/$page/g" ../../templates/componentTest.txt > test/$page.test.js

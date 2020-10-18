@@ -1,4 +1,4 @@
-import { emailValid } from './validation';
+import { emailValid, passwordValid } from './validation';
 
 describe('emailValid', () => {
     const validEmails = [
@@ -27,4 +27,32 @@ describe('emailValid', () => {
         });
     });
     
+});
+
+describe('passwordValid', () => {
+    const validPasswords = [
+        'aaaaaaaa',
+    ];
+
+    const invalidPasswords = [
+        'a',
+        'aa',
+        'aaa',
+        'aaaa',
+        'aaaaa',
+        'aaaaaa',
+        'aaaaaaa',
+    ];
+
+    validPasswords.forEach((password) => {
+        it(`should return true for ${password}`, () => {
+            expect(passwordValid(password)).toBeTruthy();
+        });
+    });
+
+    invalidPasswords.forEach((password) => {
+        it(`should return false for ${password}`, () => {
+            expect(passwordValid(password)).toBeFalsy();
+        });
+    });
 });

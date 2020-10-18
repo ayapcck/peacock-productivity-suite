@@ -14,8 +14,8 @@ const withPermissions = permissions => Component => {
     class WithPermissions extends React.Component {
         componentDidMount() {
             const { firebase, history } = this.props;
-
-            this.listener = firebase.auth.onAuthStateChanged(
+            
+            this.listener = !!firebase && firebase.auth.onAuthStateChanged(
                 authUser => {
                     const userPermissions = authUser && this.props.auth.userPermissions;
                     if (!(userPermissions && hasPermissions(permissions, userPermissions))) {
@@ -26,7 +26,7 @@ const withPermissions = permissions => Component => {
         }
 
         componentWillUnmount() {
-            this.listener();
+            !!this.props.firebase && this.listener();
         }
 
         render() {

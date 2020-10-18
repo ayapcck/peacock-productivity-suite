@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChangePasswordForm should match snapshot 1`] = `
+<form
+  className="sc-dlnjPT ipzAHw"
+  onSubmit={[Function]}
+>
+  <h2
+    className="sc-hKFyIo gtPKvJ"
+  >
+    Change Password
+  </h2>
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="password"
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+  />
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="confirmPassword"
+    onChange={[Function]}
+    placeholder="Confirm Password"
+    type="password"
+  />
+  <button
+    className="sc-bdnylx jVGWqE"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`ForgotForm should match snapshot 1`] = `
+<form
+  className="sc-dlnjPT ipzAHw"
+  onSubmit={[Function]}
+>
+  <h2
+    className="sc-hKFyIo gtPKvJ"
+  >
+    Forgot Password
+  </h2>
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="email"
+    onChange={[Function]}
+    placeholder="Email"
+    type="text"
+  />
+  <button
+    className="sc-bdnylx jVGWqE"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`LoginForm should match snapshot 1`] = `
+<form
+  className="sc-dlnjPT ipzAHw"
+  onSubmit={[Function]}
+>
+  <h2
+    className="sc-hKFyIo gtPKvJ"
+  >
+    Log In
+  </h2>
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="email"
+    onChange={[Function]}
+    placeholder="Email"
+    type="text"
+  />
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="password"
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+  />
+  <button
+    className="sc-bdnylx jVGWqE"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`RegisterForm should match snapshot 1`] = `
+<form
+  className="sc-dlnjPT ipzAHw"
+  onSubmit={[Function]}
+>
+  <h2
+    className="sc-hKFyIo gtPKvJ"
+  >
+    Register
+  </h2>
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    type="text"
+  />
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="email"
+    onChange={[Function]}
+    placeholder="Email"
+    type="text"
+  />
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="password"
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+  />
+  <input
+    className="sc-gtssRu kxlfKJ"
+    name="confirmPassword"
+    onChange={[Function]}
+    placeholder="Confirm Password"
+    type="password"
+  />
+  <button
+    className="sc-bdnylx jVGWqE"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

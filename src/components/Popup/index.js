@@ -2,7 +2,7 @@ import React from 'react';
 import {
     bool,
     func,
-    object,
+    node,
 } from 'prop-types';
 import styled from 'styled-components';
 
@@ -76,13 +76,13 @@ const Popup = (props) => {
 };
 
 Popup.defaultProps = {
-    popupContent: '',
+    popupContent: <div></div>,
     tall: true,
 };
 
 Popup.propTypes = {
     closePopup: func, 
-    popupContent: object,
+    popupContent: node,
     tall: bool,
 };
 

@@ -114,12 +114,13 @@ const renderChangePasswordLink = (displayChangePasswordForm) => (
 );
 
 const renderNavLinks = (userPermissions, currentPage) => {
-    return _.map(_.keys(ROUTES), (key) => {
+    return _.map(_.keys(ROUTES), (key, index) => {
         const route = ROUTES[key];
         
         const selected = currentPage === route.navText;
         return hasPermissions(route.permissions, userPermissions) && (
             <StyledLink
+                key={index}            
                 selected={selected}
                 to={route.route}
             >
