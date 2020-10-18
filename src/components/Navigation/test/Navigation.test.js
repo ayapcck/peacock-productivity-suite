@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { MemoryRouter } from 'react-router';
+import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 
 import { AuthUserContext } from '../../../config/session';
@@ -17,9 +17,9 @@ beforeAll(() => {
     
     Container = () => (
         <AuthUserContext.Provider value={authUser}>
-            <MemoryRouter history={history} initialEntries={[ '/' ]}>
+            <Router history={history} initialEntries={[ '/' ]}>
                 <Navigation />
-            </MemoryRouter>
+            </Router>
         </AuthUserContext.Provider>
     );
 });

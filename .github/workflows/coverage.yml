@@ -23,4 +23,4 @@ jobs:
         run: yarn install
 
       - name: Test Action
-        run: yarn test --coverage --watchAll=false
+        run: yarn coverage

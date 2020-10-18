@@ -28,7 +28,7 @@ exports[`Popup should match snapshot 1`] = `
         style={Object {}}
       />
     </svg>
-    
+    <div />
   </div>
 </div>
 `;

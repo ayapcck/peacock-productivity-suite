@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import {
-    array,
     func,
     object,
     shape,
@@ -132,7 +131,7 @@ DefaultForm.defaultProps = {
 DefaultForm.propTypes = {
     firebase: object,
     form: shape({
-        elements: array,
+        elements: object,
         InitialState: object,
         keyPrefix: string,
         onSubmit: func,

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { MemoryRouter } from 'react-router';
+import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 
 import { addIcons } from '../../../config/fontawesome';
@@ -14,9 +14,9 @@ beforeAll(() => {
 
     const history = createMemoryHistory();
     Container = () => (
-        <MemoryRouter history={history} initialEntries={[ '/' ]}>
+        <Router history={history} initialEntries={[ '/' ]}>
             <Drawer />
-        </MemoryRouter>
+        </Router>
     );
 });
 

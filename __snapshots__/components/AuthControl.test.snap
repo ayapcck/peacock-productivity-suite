@@ -69,7 +69,7 @@ exports[`AuthControl should match snapshot 1`] = `
         >
           Forgot you password? Click 
           <span
-            className="sc-jrsJCI hfCMIf"
+            className="sc-jrsJCI hfCMIf AuthControl_ChangeFormLink"
             onClick={[Function]}
           >
             here
@@ -80,7 +80,7 @@ exports[`AuthControl should match snapshot 1`] = `
         >
           Don't have an account? Register 
           <span
-            className="sc-jrsJCI hfCMIf"
+            className="sc-jrsJCI hfCMIf AuthControl_ChangeFormLink"
             onClick={[Function]}
           >
             here

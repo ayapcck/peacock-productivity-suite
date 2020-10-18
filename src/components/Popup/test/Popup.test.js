@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import { addIcons } from '../../../config/fontawesome';
 import Popup from '..';
@@ -11,8 +11,7 @@ beforeAll(() => {
 
 describe('Popup', () => {
     it('should render without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<Popup />, div);
+        shallow(<Popup />);
     });
     it('should match snapshot', () => {
         const tree = renderer

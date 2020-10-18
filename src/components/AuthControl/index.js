@@ -79,7 +79,12 @@ const ChangeForm = ({ changeForm, currentForm }) => {
 const FormText = ({ text, changeForm, destinationForm }) => (
     <ChangeFormText>
         { text }
-        <ChangeFormLink onClick={() => changeForm(destinationForm)}>here</ChangeFormLink>
+        <ChangeFormLink 
+            className="AuthControl_ChangeFormLink"
+            onClick={() => changeForm(destinationForm)}
+        >
+            here
+        </ChangeFormLink>
     </ChangeFormText>
 );
 
