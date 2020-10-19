@@ -26,7 +26,7 @@ jobs:
         run: yarn coverage
 
       - name: Publish updated coverage + files
-      - uses: EndBug/add-and-commit@v5
+        uses: EndBug/add-and-commit@v5
         with:
           add: '-A'
           branch: gh-pages
