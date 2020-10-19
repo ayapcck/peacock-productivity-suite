@@ -19,7 +19,7 @@ jobs:
         with:
           type: now
           from_branch: master
-          to_branch: gh-pages
+          target_branch: gh-pages
           github_token: ${{ github.token }}
 
       - name: Check out gh-pages
