@@ -1,7 +1,8 @@
 module.exports = {
 	jest: {
 		configure: {
-			snapshotResolver: "./__snapshots__/snapshotResolver.js",
+			coverageDirectory: 'docs',
+			snapshotResolver: './__snapshots__/snapshotResolver.js',
 		},
 	},
 }
