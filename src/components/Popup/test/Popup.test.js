@@ -13,6 +13,9 @@ describe('Popup', () => {
     it('should render without crashing', () => {
         shallow(<Popup />);
     });
+    it('should render without crashing in short mode', () => {
+        shallow(<Popup tall={false} />);
+    });
     it('should match snapshot', () => {
         const tree = renderer
             .create(<Popup />)
