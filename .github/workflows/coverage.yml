@@ -6,13 +6,26 @@ on:
       - master
 
 jobs:
-  run-linters:
-    name: Run Coverage Report
+  sync-and-run:
+    name: Run and Publish Coverage
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
+        
+      - name: Merge master -> gh-pages
+        uses: devmasx/merge-branch@v1.3.0
+        with:
+          type: now
+          from_branch: master
+          to_branch: gh-pages
+          github_token: ${{ github.token }}
+
+      - name: Check out gh-pages
+        uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
         
       - name: Set up Node.js
         uses: actions/setup-node@v1
@@ -30,7 +43,6 @@ jobs:
         with:
           add: '-A'
           branch: gh-pages
-          force: true
           message: 'Update coverage + files'
         env: 
           GITHUB_TOKEN: ${{ secrets. GITHUB_TOKEN }}
