@@ -24,3 +24,13 @@ jobs:
 
       - name: Test Action
         run: yarn coverage
+
+      - name: Publish updated coverage + files
+      - uses: EndBug/add-and-commit@v5
+        with:
+          add: '-A'
+          branch: gh-pages
+          force: true
+          message: 'Update coverage + files'
+        env: 
+          GITHUB_TOKEN: ${{ secrets. GITHUB_TOKEN }}
