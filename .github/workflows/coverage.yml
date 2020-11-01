@@ -12,19 +12,16 @@ jobs:
 
     steps:
       - name: Check out master
-        uses: actions/checkout@master
-        
-      - name: Check out gh-pages
         uses: actions/checkout@v2
-        with:
-          ref: 'gh-pages'
         
       - name: Merge master -> gh-pages
-        uses: devmasx/merge-branch@v1.3.0
-        with:
-          type: now
-          from_branch: master
-          target_branch: gh-pages
+        run: |
+          git fetch --unshallow
+          git checkout gh-pages
+          git pull
+          git merge --no-ff master -m "Auto-merge master back to dev"
+          git push
+        with: 
           github_token: ${{ github.token }}
         
       - name: Set up Node.js
