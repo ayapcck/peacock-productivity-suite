@@ -20,7 +20,7 @@ jobs:
           label_name: Merged in gh-pages
           target_branch: gh-pages
         env: 
-          GITHUB_TOKEN: ${{ secrets. GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check out gh-pages
         uses: actions/checkout@v2
@@ -45,4 +45,4 @@ jobs:
           branch: gh-pages
           message: 'Update coverage + files'
         env: 
-          GITHUB_TOKEN: ${{ secrets. GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
