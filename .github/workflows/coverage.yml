@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out master
+        uses: actions/checkout@master
+        
       - name: Check out gh-pages
         uses: actions/checkout@v2
         with:
