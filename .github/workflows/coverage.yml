@@ -17,7 +17,10 @@ jobs:
           ref: 'gh-pages'
         
       - name: Merge master -> gh-pages
-        run: git merge master
+        uses: devmasx/merge-branch@v1.3.0
+        with:
+          from_branch: master
+          target_branch: gh-pages
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
