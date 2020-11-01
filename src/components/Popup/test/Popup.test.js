@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { addIcons } from '../../../config/fontawesome';
 import Popup from '..';
@@ -10,11 +10,14 @@ beforeAll(() => {
 });
 
 describe('Popup', () => {
-    it('should render without crashing', () => {
+    it('should shallowly render without crashing', () => {
         shallow(<Popup />);
     });
+    it('should render without crashing', () => {
+        mount(<Popup />);
+    });
     it('should render without crashing in short mode', () => {
-        shallow(<Popup tall={false} />);
+        mount(<Popup tall={false} />);
     });
     it('should match snapshot', () => {
         const tree = renderer
