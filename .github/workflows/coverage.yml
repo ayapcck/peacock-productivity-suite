@@ -6,13 +6,26 @@ on:
       - master
 
 jobs:
-  run-linters:
-    name: Run Coverage Report
+  sync-and-run:
+    name: Run and Publish Coverage
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out Git repository
+      - name: Check out master
         uses: actions/checkout@v2
+        
+      - name: Set Git config
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+        
+      - name: Merge master -> gh-pages
+        run: |
+          git fetch --unshallow
+          git checkout gh-pages
+          git pull
+          git merge --no-ff master -m "Auto-merge master back to gh-pages"
+          git push
         
       - name: Set up Node.js
         uses: actions/setup-node@v1
@@ -24,3 +37,12 @@ jobs:
 
       - name: Test Action
         run: yarn coverage
+
+      - name: Publish updated coverage
+        uses: EndBug/add-and-commit@v5
+        with:
+          add: '-A'
+          branch: gh-pages
+          message: 'Update coverage'
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
