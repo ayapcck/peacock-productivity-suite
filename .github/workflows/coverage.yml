@@ -11,22 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
-        
-      - name: Merge master -> gh-pages
-        uses: devmasx/merge-branch@v1.3.0
-        with:
-          label_name: Merged in gh-pages
-          from_branch: master
-          target_branch: gh-pages
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Check out gh-pages
         uses: actions/checkout@v2
         with:
           ref: 'gh-pages'
+        
+      - name: Merge master -> gh-pages
+        run: git merge master
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync gh-pages
+        uses: EndBug/add-and-commit@v5
+        with:
+          branch: gh-pages
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Set up Node.js
         uses: actions/setup-node@v1
@@ -39,11 +39,11 @@ jobs:
       - name: Test Action
         run: yarn coverage
 
-      - name: Publish updated coverage + files
+      - name: Publish updated coverage
         uses: EndBug/add-and-commit@v5
         with:
           add: '-A'
           branch: gh-pages
-          message: 'Update coverage + files'
+          message: 'Update coverage'
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
