@@ -15,6 +15,7 @@ import { ROUTES } from './constants';
 import AdminPanelPage from './pages/AdminPanelPage';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
+import NotesPage from './pages/NotesPage';
 import Drawer from './components/Drawer';
 
 /** The keys in this should correspond to the 'key' value in src/constants/pages.js */
@@ -22,6 +23,7 @@ const PAGE_COMPONENTS = {
     admin: AdminPanelPage,
     home: HomePage,
     landing: LandingPage,
+    notes: NotesPage,
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -39,14 +41,28 @@ const Container = styled.div`
     height: 100%;
 `;
 
+const route = (props) => <Route {...props} />;
+const routeProps = (key, page) => ({
+    component: PAGE_COMPONENTS[page.key],
+    exact: page.route === '/',
+    key,
+    path: page.route,
+});
+
 const App = () => (
     <Router>
         <GlobalStyle />
         <Container>
             <Drawer />
 
-            { _.map(ROUTES, (page, index) => {
-                return <Route key={index} exact={page.route === '/'} path={page.route} component={PAGE_COMPONENTS[page.key]} />;
+            { _.map(ROUTES, (page, key) => {
+                if (key === 'APPS') {
+                    return _.map(page, (appPage, key) => {
+                        return route(routeProps(key, appPage));
+                    });
+                } else {
+                    return route(routeProps(key, page));
+                }
             }) }
         </Container>
     </Router>

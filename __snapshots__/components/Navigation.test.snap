@@ -3,18 +3,39 @@
 exports[`Navigation - Admin should match snapshot 1`] = `
 <div>
   <div
-    className="sc-dIsAE jipujT"
+    className="sc-bqGHjH dvUBuf"
   >
     <a
-      className="sc-crzoUp bWsIxM"
+      className="sc-dIsAE huunyz"
       href="/"
       onClick={[Function]}
       selected={true}
     >
       Landing
     </a>
+    <div
+      className="sc-crzoUp kMmHgM"
+    >
+      <span
+        className="sc-ksluoS gWrofP"
+      >
+        Apps:
+      </span>
+      <div
+        className="sc-hBMVcZ iyEoEZ"
+      >
+        <a
+          className="sc-dIsAE cJGFTb"
+          href="/notes"
+          onClick={[Function]}
+          selected={false}
+        >
+          Notes
+        </a>
+      </div>
+    </div>
     <a
-      className="sc-crzoUp bjsitY"
+      className="sc-dIsAE cJGFTb"
       href="/admin-panel"
       onClick={[Function]}
       selected={false}
@@ -22,13 +43,13 @@ exports[`Navigation - Admin should match snapshot 1`] = `
       Admin Panel
     </a>
     <span
-      className="sc-bqGHjH ZvGvQ"
+      className="sc-ksluoS gWrofP"
       onClick={[Function]}
     >
       Change Password
     </span>
     <span
-      className="sc-bqGHjH ZvGvQ Navigation_StyledPopupLink"
+      className="sc-ksluoS gWrofP Navigation_LoginRegisterLink"
       onClick={[Function]}
     >
       Sign out
@@ -40,18 +61,39 @@ exports[`Navigation - Admin should match snapshot 1`] = `
 exports[`Navigation - Guest should match snapshot 1`] = `
 <div>
   <div
-    className="sc-dIsAE jipujT"
+    className="sc-bqGHjH dvUBuf"
   >
     <a
-      className="sc-crzoUp bWsIxM"
+      className="sc-dIsAE huunyz"
       href="/"
       onClick={[Function]}
       selected={true}
     >
       Landing
     </a>
+    <div
+      className="sc-crzoUp kMmHgM"
+    >
+      <span
+        className="sc-ksluoS gWrofP"
+      >
+        Apps:
+      </span>
+      <div
+        className="sc-hBMVcZ iyEoEZ"
+      >
+        <a
+          className="sc-dIsAE cJGFTb"
+          href="/notes"
+          onClick={[Function]}
+          selected={false}
+        >
+          Notes
+        </a>
+      </div>
+    </div>
     <span
-      className="sc-bqGHjH ZvGvQ Navigation_StyledPopupLink"
+      className="sc-ksluoS gWrofP Navigation_LoginRegisterLink"
       onClick={[Function]}
     >
       Login
