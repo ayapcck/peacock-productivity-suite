@@ -38,14 +38,14 @@ const mountAndClickPopupLink = () => {
     const wrapper = mount(<Container />);
     wrapper.find('.Navigation_StyledPopupLink').at(0).simulate('click');
     return wrapper;
-}
+};
 
 const testCases = [
     {
         // Clicking StyledPopupLink executes signOut function
         clickLinkTest: () => {
             mountAndClickPopupLink();
-            expect(signOutSpy).toHaveBeenCalled()
+            expect(signOutSpy).toHaveBeenCalled();
         },
         user: Admin,
     },
