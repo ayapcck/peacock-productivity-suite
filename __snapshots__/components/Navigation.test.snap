@@ -15,6 +15,14 @@ exports[`Navigation - Admin should match snapshot 1`] = `
     </a>
     <a
       className="sc-crzoUp bjsitY"
+      href="/notes"
+      onClick={[Function]}
+      selected={false}
+    >
+      Notes
+    </a>
+    <a
+      className="sc-crzoUp bjsitY"
       href="/admin-panel"
       onClick={[Function]}
       selected={false}
@@ -49,6 +57,14 @@ exports[`Navigation - Guest should match snapshot 1`] = `
       selected={true}
     >
       Landing
+    </a>
+    <a
+      className="sc-crzoUp bjsitY"
+      href="/notes"
+      onClick={[Function]}
+      selected={false}
+    >
+      Notes
     </a>
     <span
       className="sc-bqGHjH ZvGvQ Navigation_StyledPopupLink"

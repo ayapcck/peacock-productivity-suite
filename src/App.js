@@ -15,6 +15,7 @@ import { ROUTES } from './constants';
 import AdminPanelPage from './pages/AdminPanelPage';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
+import NotesPage from './pages/NotesPage';
 import Drawer from './components/Drawer';
 
 /** The keys in this should correspond to the 'key' value in src/constants/pages.js */
@@ -22,6 +23,7 @@ const PAGE_COMPONENTS = {
     admin: AdminPanelPage,
     home: HomePage,
     landing: LandingPage,
+    notes: NotesPage,
 };
 
 const GlobalStyle = createGlobalStyle`
