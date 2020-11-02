@@ -190,6 +190,7 @@ const renderSubLinks = (props) => {
         const selected = currentPage === app.navText;
         const appProps = {
             ...props,
+            key: `subLink${index}`,
             route: app,
             selected,
         };
@@ -203,7 +204,7 @@ const renderSubLinks = (props) => {
                 { subLinks }
             </SubItemContainer>
         </AppsContainer>
-    )
+    );
 };
 
 Navigation.propTypes = {

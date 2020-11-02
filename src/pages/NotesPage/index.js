@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 
 const NotesPage = () => {
 
-	return (
-		<div>
+    return (
+        <div>
 			Notes
-		</div>
-	);
+        </div>
+    );
 };
 
 export default NotesPage;

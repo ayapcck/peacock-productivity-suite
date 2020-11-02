@@ -47,7 +47,7 @@ const routeProps = (key, page) => ({
     exact: page.route === '/',
     key,
     path: page.route,
-})
+});
 
 const App = () => (
     <Router>
