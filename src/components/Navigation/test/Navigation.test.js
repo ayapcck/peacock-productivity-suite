@@ -8,11 +8,12 @@ import { AuthUserContext } from '../../../config/session';
 import Firebase, { FirebaseContext } from '../../../config/firebase';
 import Navigation from '..';
 
+import MockFirebase from '../../../__mocks__/Firebase';
 import { Admin, Guest } from '../../../__mocks__/Users';
 
-const mockedFirebase = new Firebase();
-const signOutSpy = jest.spyOn(mockedFirebase, 'signOut')
-    .mockImplementation(() => true);
+const mockedFirebase = MockFirebase();
+// const signOutSpy = jest.spyOn(mockedFirebase, 'signOut')
+//     .mockImplementation(() => true);
 
 let Container;
 
@@ -45,7 +46,7 @@ const testCases = [
         // Clicking StyledPopupLink executes signOut function
         clickLinkTest: () => {
             mountAndClickPopupLink();
-            expect(signOutSpy).toHaveBeenCalled();
+            expect(mockedFirebase.signOut).toHaveBeenCalled();
         },
         user: Admin,
     },
