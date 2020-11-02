@@ -1,6 +1,10 @@
-import _ from 'lodash';
-
 const ROUTES = {
+    LANDING: {
+        key: 'landing',
+        navText: 'Landing',
+        permissions: { },
+        route: '/',
+    },
     HOME: {
         key: 'home',
         navText: 'Home',
@@ -9,11 +13,13 @@ const ROUTES = {
         },
         route: '/home',
     },
-    LANDING: {
-        key: 'landing',
-        navText: 'Landing',
-        permissions: { },
-        route: '/',
+    APPS: {
+        NOTES: {
+            key: 'notes',
+            navText: 'Notes',
+            permissions: {},
+            route: '/notes',
+        },
     },
     ADMIN_PANEL: {
         key: 'admin',
@@ -24,7 +30,5 @@ const ROUTES = {
         route: '/admin-panel',
     },
 };
-
-export const getRouteByPath = path => _.find(ROUTES, route => route.route === path);
 
 export default ROUTES;

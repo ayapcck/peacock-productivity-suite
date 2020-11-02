@@ -37,13 +37,13 @@ const updateContainer = (role, userPermissions) => {
 
 const mountAndClickPopupLink = () => {
     const wrapper = mount(<Container />);
-    wrapper.find('.Navigation_StyledPopupLink').at(0).simulate('click');
+    wrapper.find('.Navigation_LoginRegisterLink').at(0).simulate('click');
     return wrapper;
 };
 
 const testCases = [
     {
-        // Clicking StyledPopupLink executes signOut function
+        // Clicking LoginRegisterLink executes signOut function
         clickLinkTest: () => {
             mountAndClickPopupLink();
             expect(mockedFirebase.signOut).toHaveBeenCalled();
@@ -51,7 +51,7 @@ const testCases = [
         user: Admin,
     },
     {
-        // Clicking StyledPopupLink executes displayAuthControl
+        // Clicking LoginRegisterLink executes displayAuthControl
         clickLinkTest: () => {
             mountAndClickPopupLink();
         },

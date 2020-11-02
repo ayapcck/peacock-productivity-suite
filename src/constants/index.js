@@ -1,6 +1,5 @@
-import ROUTES, { getRouteByPath } from './routes';
+import ROUTES from './routes';
 
-export { 
-    getRouteByPath, 
+export {
     ROUTES
 };

@@ -11,8 +11,9 @@ import {
 import styled, { css } from 'styled-components';
 import _ from 'lodash';
 
+import { getRouteByPath } from '../../utilities/routeHelper';
 import { hasPermissions } from '../../config/permissions';
-import ROUTES, { getRouteByPath } from '../../constants/routes';
+import ROUTES from '../../constants/routes';
 import { withAuthConsumer } from '../../config/session';
 import { withFirebase } from '../../config/firebase';
 
@@ -40,6 +41,18 @@ const MenuItem = css`
 `;
 
 /** Styled components for Navigation */
+const AppsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    & a {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 5px 10px;
+        width: 100%;
+    }
+`;
+
 const StyledLink = styled(Link)`
     ${MenuItem}    
     color: ${({ selected, theme }) => selected ? theme.menuTextSelected : theme.textColor};
@@ -53,13 +66,24 @@ const StyledNavigation = styled.div`
     padding: 10px;
 `;
 
-const StyledPopupLink = styled.span`
+const StyledNavItem = styled.span`
     ${MenuItem}
     color: ${({ theme }) => theme.textColor};
 
     &:hover {
         cursor: pointer;
     }
+`;
+
+const SubItemContainer = styled.div`
+    border-style: solid;
+    border-width: 0 0 0 2px;
+    color: ${({ theme }) => theme.textColor};
+    display: flex;
+    margin: 0 auto 10px 20px;
+    padding: 5px 10px;
+    transition: box-shadow 0.2s;
+    width: 90%;
 `;
 
 const getCurrentPage = location => {
@@ -98,12 +122,12 @@ const Navigation = ({ auth, firebase }) => {
             <StyledNavigation>
                 { renderNavLinks(userPermissions, currentPage) }
                 { signedIn && renderChangePasswordLink(displayChangePasswordForm) }
-                <StyledPopupLink
-                    className="Navigation_StyledPopupLink"
+                <StyledNavItem
+                    className="Navigation_LoginRegisterLink"
                     onClick={signedIn ? logout : displayAuthControl}
                 >
                     {loginText}
-                </StyledPopupLink>
+                </StyledNavItem>
             </StyledNavigation>
             { showAuthControl && <AuthControl {...authControlProps} /> }
         </div>
@@ -111,24 +135,76 @@ const Navigation = ({ auth, firebase }) => {
 };
 
 const renderChangePasswordLink = (displayChangePasswordForm) => (
-    <StyledPopupLink onClick={displayChangePasswordForm}>Change Password</StyledPopupLink>
+    <StyledNavItem onClick={displayChangePasswordForm}>Change Password</StyledNavItem>
 );
 
 const renderNavLinks = (userPermissions, currentPage) => {
     return _.map(_.keys(ROUTES), (key, index) => {
         const route = ROUTES[key];
-        
-        const selected = currentPage === route.navText;
-        return hasPermissions(route.permissions, userPermissions) && (
-            <StyledLink
-                key={index}            
-                selected={selected}
-                to={route.route}
-            >
-                {route.navText}
-            </StyledLink>
-        );
+        const isApps = key === 'APPS';
+        const selected = !isApps && currentPage === route.navText;
+
+        const linkProps = { 
+            currentPage,
+            index,
+            route,
+            selected,
+            userPermissions,
+        };
+
+        return isApps ? renderSubLinks(linkProps) : renderNavLink(linkProps);
     });
+};
+
+const renderNavLink = (props) => {
+    const {
+        index,
+        route,
+        selected,
+        userPermissions,
+    } = props;
+    const {
+        navText,
+        permissions,
+    } = route;
+
+    return hasPermissions(permissions, userPermissions) && (
+        <StyledLink
+            key={index}            
+            selected={selected}
+            to={route.route}
+        >
+            {navText}
+        </StyledLink>
+    );
+};
+
+const renderSubLinks = (props) => {
+    const { 
+        currentPage,
+        route: apps,
+    } = props;
+    
+    const subLinks = _.map(_.keys(apps), (key, index) => {
+        const app = apps[key];
+        const selected = currentPage === app.navText;
+        const appProps = {
+            ...props,
+            key: `subLink${index}`,
+            route: app,
+            selected,
+        };
+        return renderNavLink(appProps);
+    });
+
+    return (
+        <AppsContainer>
+            <StyledNavItem>Apps:</StyledNavItem>
+            <SubItemContainer>
+                { subLinks }
+            </SubItemContainer>
+        </AppsContainer>
+    );
 };
 
 Navigation.propTypes = {

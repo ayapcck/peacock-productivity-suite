@@ -2,12 +2,12 @@
 
 exports[`Drawer should match snapshot 1`] = `
 <div
-  className="sc-hBMVcZ cSbBXR"
+  className="sc-fFSRdu gvdSrJ"
   open={false}
 >
   <svg
     aria-hidden="true"
-    className="svg-inline--fa fa-bars fa-w-14 sc-bdnylx yGPBD sc-ksluoS eduYDI"
+    className="svg-inline--fa fa-bars fa-w-14 sc-bdnylx yGPBD sc-fnVYJo ffSuSj"
     data-icon="bars"
     data-prefix="fas"
     focusable="false"
