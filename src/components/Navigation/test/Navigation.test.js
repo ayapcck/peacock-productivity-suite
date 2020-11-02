@@ -5,7 +5,7 @@ import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 
 import { AuthUserContext } from '../../../config/session';
-import Firebase, { FirebaseContext } from '../../../config/firebase';
+import { FirebaseContext } from '../../../config/firebase';
 import Navigation from '..';
 
 import MockFirebase from '../../../__mocks__/Firebase';
