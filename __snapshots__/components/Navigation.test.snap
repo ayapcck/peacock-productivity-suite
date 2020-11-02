@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation should match snapshot 1`] = `
+exports[`Navigation - Admin should match snapshot 1`] = `
 <div>
   <div
     className="sc-dIsAE jipujT"
@@ -28,10 +28,33 @@ exports[`Navigation should match snapshot 1`] = `
       Change Password
     </span>
     <span
-      className="sc-bqGHjH ZvGvQ"
+      className="sc-bqGHjH ZvGvQ Navigation_StyledPopupLink"
       onClick={[Function]}
     >
       Sign out
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Navigation - Guest should match snapshot 1`] = `
+<div>
+  <div
+    className="sc-dIsAE jipujT"
+  >
+    <a
+      className="sc-crzoUp bWsIxM"
+      href="/"
+      onClick={[Function]}
+      selected={true}
+    >
+      Landing
+    </a>
+    <span
+      className="sc-bqGHjH ZvGvQ Navigation_StyledPopupLink"
+      onClick={[Function]}
+    >
+      Login
     </span>
   </div>
 </div>

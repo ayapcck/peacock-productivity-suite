@@ -99,6 +99,7 @@ const Navigation = ({ auth, firebase }) => {
                 { renderNavLinks(userPermissions, currentPage) }
                 { signedIn && renderChangePasswordLink(displayChangePasswordForm) }
                 <StyledPopupLink
+                    className="Navigation_StyledPopupLink"
                     onClick={signedIn ? logout : displayAuthControl}
                 >
                     {loginText}

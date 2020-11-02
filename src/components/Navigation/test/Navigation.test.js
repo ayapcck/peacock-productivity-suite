@@ -1,40 +1,86 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
+import { mount, shallow } from 'enzyme';
 import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 
 import { AuthUserContext } from '../../../config/session';
+import Firebase, { FirebaseContext } from '../../../config/firebase';
 import Navigation from '..';
 
+import { Admin, Guest } from '../../../__mocks__/Users';
+
+const mockedFirebase = new Firebase();
+const signOutSpy = jest.spyOn(mockedFirebase, 'signOut')
+    .mockImplementation(() => true);
+
 let Container;
-beforeAll(() => {
+
+const updateContainer = (role, userPermissions) => {
     const authUser = {
-        user: {},
-        userPermissions: { administrator: true },
+        user: { role },
+        userPermissions: userPermissions,
     };
     const history = createMemoryHistory();
     
     Container = () => (
-        <AuthUserContext.Provider value={authUser}>
-            <Router history={history} initialEntries={[ '/' ]}>
-                <Navigation />
-            </Router>
-        </AuthUserContext.Provider>
+        <FirebaseContext.Provider value={mockedFirebase}>
+            <AuthUserContext.Provider value={authUser}>
+                <Router history={history} initialEntries={[ '/' ]}>
+                    <Navigation />
+                </Router>
+            </AuthUserContext.Provider>
+        </FirebaseContext.Provider>
     );
-});
+};
 
-describe('Navigation', () => {
-    it('should render without crashing', () => {
-        const div = document.createElement('div');
-        
-        ReactDOM.render(<Container />, div);
-    });
-    
-    it('should match snapshot', () => {
-        const tree = renderer
-            .create(<Container />)
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+const mountAndClickPopupLink = () => {
+    const wrapper = mount(<Container />);
+    wrapper.find('.Navigation_StyledPopupLink').at(0).simulate('click');
+    return wrapper;
+}
+
+const testCases = [
+    {
+        // Clicking StyledPopupLink executes signOut function
+        clickLinkTest: () => {
+            mountAndClickPopupLink();
+            expect(signOutSpy).toHaveBeenCalled()
+        },
+        user: Admin,
+    },
+    {
+        // Clicking StyledPopupLink executes displayAuthControl
+        clickLinkTest: () => {
+            mountAndClickPopupLink();
+        },
+        user: Guest,
+    },
+];
+
+testCases.forEach(test => {
+    const { clickLinkTest,  user } = test;
+    const { name, permissions, role } = user;
+
+    describe(`Navigation - ${name}`, () => {
+        beforeAll(() => {
+            updateContainer(role, permissions);
+        });
+
+        it('should shallowly render without crashing', () => {
+            shallow(<Navigation />);
+        });
+        it('should render without crashing', () => {
+            mount(<Container />);
+        });
+        it('should be able to click popup link', () => {
+            clickLinkTest();
+        });
+        it('should match snapshot', () => {
+            const tree = renderer
+                .create(<Container />)
+                .toJSON();
+            expect(tree).toMatchSnapshot();
+        });
     });
 });
