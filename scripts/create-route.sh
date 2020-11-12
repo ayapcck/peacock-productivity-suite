@@ -1,6 +1,7 @@
 #!/bin/bash
+source ./scripts/functions.sh
 
-echo What is the page called?
+echo "What is the route called?"
 
 read page_name
 
