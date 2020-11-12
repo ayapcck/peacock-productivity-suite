@@ -1,17 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
+import { mount, shallow } from 'enzyme';
 
-import AdminPanelPage from '..';
+import Notes from '..';
 
-describe('AdminPanelPage', () => {
+describe('Notes', () => {
+    it('should shallowly render without crashing', () => {
+        shallow(<Notes />);
+    });
     it('should render without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<AdminPanelPage />, div);
+        mount(<Notes />);
     });
     it('should match snapshot', () => {
         const tree = renderer
-            .create(<AdminPanelPage />)
+            .create(<Notes />)
             .toJSON();
         expect(tree).toMatchSnapshot();
     });

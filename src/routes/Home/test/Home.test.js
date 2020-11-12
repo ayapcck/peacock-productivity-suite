@@ -1,19 +1,17 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { mount, shallow } from 'enzyme';
 
-import NotesPage from '..';
+import Home from '..';
 
-describe('NotesPage', () => {
-    it('should shallowly render without crashing', () => {
-        shallow(<NotesPage />);
-    });
+describe('Home', () => {
     it('should render without crashing', () => {
-        mount(<NotesPage />);
+        const div = document.createElement('div');
+        ReactDOM.render(<Home />, div);
     });
     it('should match snapshot', () => {
         const tree = renderer
-            .create(<NotesPage />)
+            .create(<Home />)
             .toJSON();
         expect(tree).toMatchSnapshot();
     });

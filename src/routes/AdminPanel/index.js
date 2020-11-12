@@ -3,7 +3,7 @@ import React from 'react';
 import { ROUTES } from '../../constants';
 import { withPermissions } from '../../config/permissions';
 
-const AdminPanelPage = () => {
+const AdminPanel = () => {
 
     return (
         <div>
@@ -12,4 +12,4 @@ const AdminPanelPage = () => {
     );
 };
 
-export default withPermissions(ROUTES.ADMIN_PANEL.permissions)(AdminPanelPage);
+export default withPermissions(ROUTES.ADMIN_PANEL.permissions)(AdminPanel);

@@ -12,18 +12,20 @@ import { withAuthProvider } from './config/session';
 
 import { ROUTES } from './constants';
 
-import AdminPanelPage from './pages/AdminPanelPage';
-import HomePage from './pages/HomePage';
-import LandingPage from './pages/LandingPage';
-import NotesPage from './pages/NotesPage';
+import {
+    AdminPanel,
+    Home,
+    Landing,
+    Notes,
+} from './routes';
 import Drawer from './components/Drawer';
 
 /** The keys in this should correspond to the 'key' value in src/constants/pages.js */
 const PAGE_COMPONENTS = {
-    admin: AdminPanelPage,
-    home: HomePage,
-    landing: LandingPage,
-    notes: NotesPage,
+    admin: AdminPanel,
+    home: Home,
+    landing: Landing,
+    notes: Notes,
 };
 
 const GlobalStyle = createGlobalStyle`
