@@ -1,12 +1,12 @@
 import React from 'react';
 
-const LandingPage = () => {
+const Notes = () => {
 
     return (
         <div>
-            Landing
+			Notes
         </div>
     );
 };
 
-export default LandingPage;
+export default Notes;

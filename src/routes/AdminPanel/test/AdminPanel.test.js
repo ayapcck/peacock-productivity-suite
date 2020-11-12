@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
-import LandingPage from '..';
+import AdminPanel from '..';
 
-describe('LandingPage', () => {
+describe('AdminPanel', () => {
     it('should render without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<LandingPage />, div);
+        ReactDOM.render(<AdminPanel />, div);
     });
     it('should match snapshot', () => {
         const tree = renderer
-            .create(<LandingPage />)
+            .create(<AdminPanel />)
             .toJSON();
         expect(tree).toMatchSnapshot();
     });

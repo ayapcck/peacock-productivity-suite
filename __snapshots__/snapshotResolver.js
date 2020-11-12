@@ -1,5 +1,5 @@
 const snapshotPathResolver = (path, extension) => {
-    const fullMatch = /(src)[\/\\](components([\/\\]subcomponents)?|pages|utilities)([\/\\].*[\/\\]test)?([\/\\](.*)\.test\.js)/;
+    const fullMatch = /(src)[\/\\](components([\/\\]subcomponents)?|routes|utilities)([\/\\].*[\/\\]test)?([\/\\](.*)\.test\.js)/;
     const matchResult = path.match(fullMatch);
     const secondGroup = matchResult[2];
     const dirType = secondGroup.includes('subcomponents') ? 'subcomponents' : secondGroup;
@@ -10,7 +10,7 @@ const snapshotPathResolver = (path, extension) => {
 };
 const testPathResolver = (path, extension) => {
     // TODO: fix resolving for utilties and pages
-    const fullMatch = /__snapshots__[\/\\](subcomponents|components|pages|utilities)[\/\\](.*)(\.test\.snap)/
+    const fullMatch = /__snapshots__[\/\\](subcomponents|components|routes|utilities)[\/\\](.*)(\.test\.snap)/
     const matchResult = path.match(fullMatch);
     let dirSuffix = matchResult[1];
     const component = matchResult[2];
