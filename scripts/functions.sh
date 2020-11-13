@@ -11,8 +11,7 @@ echo_stars() {
     for ((i = 0; i < $1; i++)); do
         res="$res*"
     done
-    echo -e "$blue$res**"
-    reset_colors
+    echo -e "$blue$res**$NC"
 }
 
 fancy_echo() {
@@ -21,28 +20,30 @@ fancy_echo() {
     star="$blue*"
 
     echo_stars $size
-    printf "$star $NC$string $star\n"
+    echo -e "$star $NC$string $star"
     echo_stars $size
-    reset_colors
 }
 
 confirm_var() {
     var=$1
-    question=$2
-    fancy_echo "Is $green$var$NC correct?"
-    select yn in "Yes" "No"; do
-        case $yn in
-            Yes) echo $var; break;;
-            No) with_confirmation "$question"; break;;
-        esac
-    done
+    var_name=$2
+    question=$3
+    fancy_echo "Is $green$var$NC correct? (y/N)"
+    read -p "" yn
+    echo ""
+    if [[ $yn == "y" || $yn == "Y" ]]; then
+        return 0
+    elif [[ $yn == "n" || $yn == "N" ]]; then
+        with_confirmation "$question" "$var_name"
+    fi
 }
 
 with_confirmation() {
     question=$1
+    local -n val=$2
+    name=$2
     fancy_echo "$question"
-    read var; echo ""
-    confirm_var $var "$question"
+    read -p "" val
+    echo ""
+    confirm_var "$val" "$name" "$question"
 }
-
-with_confirmation "What is the route called?"

@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount, shallow } from 'enzyme';
 
-import Notes from '..';
+import Notes from '.';
 
 describe('Notes', () => {
     it('should shallowly render without crashing', () => {

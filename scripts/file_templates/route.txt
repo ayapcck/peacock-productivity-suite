@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const $page = () => {
+const $route_name = () => {
 
 	return (
 		<div>
@@ -10,4 +10,4 @@ const $page = () => {
 	);
 };
 
-export default $page;
+export default $route_name;

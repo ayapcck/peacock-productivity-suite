@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
-import Landing from '..';
+import Home from '.';
 
-describe('Landing', () => {
+describe('Home', () => {
     it('should render without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<Landing />, div);
+        ReactDOM.render(<Home />, div);
     });
     it('should match snapshot', () => {
         const tree = renderer
-            .create(<Landing />)
+            .create(<Home />)
             .toJSON();
         expect(tree).toMatchSnapshot();
     });

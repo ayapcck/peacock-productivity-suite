@@ -1,25 +1,20 @@
 #!/bin/bash
 source ./scripts/functions.sh
 
-echo "What is the route called?"
+with_confirmation "What is the route called?" route_name
 
-read page_name
+# Navigate to routes directory
+cd src/routes
 
-page_suffix="Page"
-page=$page_name$page_suffix
+# Create route directory
+mkdir $route_name
+cd $route_name
 
-cd src/pages
+# Create route + test files
+touch index.js $route_name.test.js
 
-# create directories
-mkdir $page
-cd $page
-mkdir stories test
+# Copy route file_template to index.js
+sed "s/\$route_name/$route_name/g" ../../../scripts/file_templates/route.txt > index.js
 
-# create JavaScript files for page
-touch index.js
-touch test/$page.test.js
-
-# add content to index.js
-sed "s/\$page/$page/g" ../../templates/page.txt > index.js
-
-sed "s/\$component_name/$page/g" ../../templates/componentTest.txt > test/$page.test.js
+# Copy routeTest file_template to *.test.js 
+sed "s/\$component_name/$route_name/g" ../../../scripts/file_templates/routeTest.txt > $route_name.test.js
