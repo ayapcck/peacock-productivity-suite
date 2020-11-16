@@ -14,7 +14,7 @@ echo_stars() {
     echo -e "$blue$res**$NC"
 }
 
-fancy_echo() {
+header_echo() {
     string="$1"
     size=$(length "$1")
     star="$blue*"
@@ -24,11 +24,17 @@ fancy_echo() {
     echo_stars $size
 }
 
+step_echo() {
+    step=$1
+    star="$green* "
+    echo -e "$star$step$NC"
+}
+
 confirm_var() {
-    var=$1
-    var_name=$2
-    question=$3
-    fancy_echo "Is $green$var$NC correct? (y/N)"
+    local -n var=$1
+    var_name=$1
+    question=$2
+    header_echo "Is $green$var$NC correct? (y/N)"
     read -p "" yn
     echo ""
     if [[ $yn == "y" || $yn == "Y" ]]; then
@@ -40,10 +46,36 @@ confirm_var() {
 
 with_confirmation() {
     question=$1
-    local -n val=$2
     name=$2
-    fancy_echo "$question"
+    prompt "$question" "$name"
+    confirm_var "$name" "$question"
+}
+
+prompt() {
+    question=$1
+    local -n val=$2
+    header_echo "$question"
     read -p "" val
     echo ""
-    confirm_var "$val" "$name" "$question"
+}
+
+options_prompt() {
+    local -n var=$1
+    question=$2
+    header_echo "$question"
+    select opt in "${@:3}"; do
+        var="$opt"
+        break
+    done
+}
+
+get_lowercase() {
+    word=$1
+    echo "$1" | tr [:upper:] [:lower:]
+}
+
+first_letter_capital() {
+    word=$1
+    lowercase=$(get_lowercase $word)
+    echo "${lowercase^}"
 }

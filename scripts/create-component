@@ -1,0 +1,32 @@
+#!/bin/bash
+
+source ./scripts/functions.sh
+
+options_prompt component_type "What type of component is this?" Atom Molecule Organism Template Page
+
+with_confirmation "What is this $pink${component_type^}$NC called?" component_name
+
+type=$(get_lowercase "$component_type")
+name="${component_name^}"
+
+# Create component directory and navigate to it
+component_dir="src/components/${type}s/${name}"
+mkdir $component_dir
+cd $component_dir
+
+# File templates folder relative to new component directory
+file_templates=../../../../scripts/file_templates
+
+# Define replacement scripts
+name_script="s/\$component_name/$component_name/g"
+type_script="s/\$component_type/$component_type/g"
+
+# Add Content to index file
+sed $name_script $file_templates/component.txt > index.js
+step_echo "Index file created and boilerplate code added"
+# Add content to story file
+sed -e $name_script -e $type_script $file_templates/componentStory.txt > $component_name.stories.js
+step_echo "Storybook file created and basic story added"
+# add content to test file
+sed -e $name_script $file_templates/componentTest.txt > $component_name.test.js
+step_echo "Test file created, shallow + deep render tests + snapshot test written"
