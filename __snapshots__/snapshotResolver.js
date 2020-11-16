@@ -1,5 +1,5 @@
 const snapshotPathResolver = (path, extension) => {
-    const fullMatch = /(src)[\/\\](components([\/\\]subcomponents)?|routes|utilities)([\/\\].*([\/\\]test)?)([\/\\](.*)\.test\.js)/;
+    const fullMatch = /(src)[\/\\](components([\/\\]subcomponents)?|routes|utilities)([\/\\].*([\/\\]test)?)?([\/\\](.*)\.test\.js)/;
     const matchResult = path.match(fullMatch);
     const secondGroup = matchResult[2];
     const dirType = secondGroup.includes('subcomponents') ? 'subcomponents' : secondGroup;
