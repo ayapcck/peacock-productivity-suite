@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import $component_name from '../index';
 
 export default {
-    title: '$component_type/$component_name',
+    title: '$component_types/$component_name',
     component: $component_name,
     decorators: [withKnobs],
     argTypes: {

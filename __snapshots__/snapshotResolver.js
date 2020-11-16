@@ -1,9 +1,9 @@
 const snapshotPathResolver = (path, extension) => {
-    const fullMatch = /(src)[\/\\](components([\/\\]subcomponents)?|routes|utilities)([\/\\].*[\/\\]test)?([\/\\](.*)\.test\.js)/;
+    const fullMatch = /(src)[\/\\](components([\/\\]subcomponents)?|routes|utilities)([\/\\].*([\/\\]test)?)?([\/\\](.*)\.test\.js)/;
     const matchResult = path.match(fullMatch);
     const secondGroup = matchResult[2];
     const dirType = secondGroup.includes('subcomponents') ? 'subcomponents' : secondGroup;
-    const component = matchResult[6];
+    const component = matchResult[7];
     
     const snapshotPath = `__snapshots__/${dirType}/${component}.test${extension}`;
     return snapshotPath;
@@ -16,11 +16,17 @@ const testPathResolver = (path, extension) => {
     const component = matchResult[2];
     
     let testPath = 'src/';
-    if (dirSuffix === 'utilities') {
-        testPath = testPath + `utilities/${component}`;
-    } else {
-        if (dirSuffix === 'subcomponents') dirSuffix = `components/${dirSuffix}`;
-        testPath = testPath + `${dirSuffix}/${component}/test/${component}`;
+    switch (dirSuffix) {
+        case 'utilities':
+            testPath = testPath + `utilities/${component}`;
+            break;
+        case 'routes':
+            testPath = testPath + `routes/${component}`;
+            break;
+        default:
+            if (dirSuffix === 'subcomponents') dirSuffix = `components/${dirSuffix}`;
+            testPath = testPath + `${dirSuffix}/${component}/test/${component}`;
+            break;
     }
     testPath = testPath + '.test.js';
     
