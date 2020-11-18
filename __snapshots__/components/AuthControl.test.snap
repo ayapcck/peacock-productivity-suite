@@ -55,7 +55,7 @@ exports[`AuthControl should match snapshot 1`] = `
           type="password"
         />
         <button
-          className="sc-bdnylx jVGWqE"
+          className="sc-bdnylx haaAXP"
           type="submit"
         >
           Submit

@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import { addIcons } from './config/fontawesome';
 
 import App from './App';
-import { DarkTheme } from './constants/colors';
+import { DarkTheme } from './constants/theme';
 import Firebase, { FirebaseContext } from './config/firebase';
 
 addIcons();

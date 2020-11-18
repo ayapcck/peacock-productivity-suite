@@ -2,7 +2,7 @@
 
 exports[`Button should match snapshot 1`] = `
 <button
-  className="sc-bdnylx jVGWqE"
+  className="sc-bdnylx haaAXP"
   type="button"
 />
 `;

@@ -9,7 +9,9 @@ import {
 import styled from 'styled-components';
 import _ from 'lodash';
 
-import Button from '../subcomponents/Button';
+import {
+    Button,
+} from '../atoms';
 import TextBox from '../subcomponents/TextBox';
 import { withFirebase } from '../../config/firebase';
 

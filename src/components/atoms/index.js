@@ -1,3 +1,5 @@
-// import all components here
+import Button from './Button';
 
-// export all components here
+export {
+    Button
+};

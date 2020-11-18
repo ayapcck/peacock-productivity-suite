@@ -2,7 +2,7 @@ import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { select } from '@storybook/addon-knobs';
 
-import { DarkTheme, LightTheme } from '../src/constants/colors';
+import { DarkTheme, LightTheme } from '../src/constants/theme';
 
 const GlobalStyle = createGlobalStyle`
     #root {
