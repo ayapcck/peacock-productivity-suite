@@ -30,3 +30,7 @@ step_echo "Storybook file created and basic story added"
 # add content to test file
 sed -e $name_script $file_templates/componentTest.txt > $component_name.test.js
 step_echo "Test file created, shallow + deep render tests + snapshot test written"
+echo ""
+
+cd ../../../../
+./scripts/fix-imports "${type}s"
