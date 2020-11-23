@@ -1,10 +1,12 @@
 import React from 'react';
+import { withKnobs } from '@storybook/addon-knobs';
 
-import TextBox from '../index';
+import TextBox from '.';
 
 export default {
-    title: 'Subcomponents/TextBox',
+    title: 'Atoms/TextBox',
     component: TextBox,
+    decorators: [withKnobs],
     argTypes: {
         
     },

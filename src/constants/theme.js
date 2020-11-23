@@ -16,7 +16,17 @@ const white = '#ffffff';
 // Reds
 const red = '#f34b4b';
 
-const themeCreator = new ThemeCreator();
+// Borders
+const border = {
+    radius: '5px',
+    style: 'solid',
+};
+
+const sharedStyles = {
+    border,
+}
+
+const themeCreator = new ThemeCreator(sharedStyles);
 themeCreator.addColors('accentColor', lightBlue, lightGreen);
 themeCreator.addColors('altAccentColor', darkBlue, darkGreen);
 themeCreator.addColors('backgroundColor', darkGrey, white);

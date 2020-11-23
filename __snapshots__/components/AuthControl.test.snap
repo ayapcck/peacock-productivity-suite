@@ -1,18 +1,184 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AuthControl should match snapshot 1`] = `
+.c9 {
+  background-color: #1ebad9;
+  border-color: #1ebad9;
+  border-radius: 5px;
+  border-style: solid;
+  box-shadow: 2px 2px #188aa1;
+  margin: 10px;
+  padding: 2.5px 5px;
+}
+
+.c9:active {
+  box-shadow: 1px 1px #188aa1;
+  -webkit-transform: translateY(1px) translateX(1px);
+  -ms-transform: translateY(1px) translateX(1px);
+  transform: translateY(1px) translateX(1px);
+}
+
+.c9:focus {
+  outline: 0;
+}
+
+.c9:hover {
+  cursor: pointer;
+}
+
+.c8 {
+  background-color: #5b5b5b;
+  border-style: solid;
+  color: #ffffff;
+  border-color: #1ebad9;
+  border-width: 0 0 2px 0;
+  margin: 7.5px 5px;
+}
+
+.c8:focus {
+  outline: 0;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.c8::-moz-placeholder {
+  color: #ffffff;
+}
+
+.c8:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.c8::placeholder {
+  color: #ffffff;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.c7 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.c3 {
+  color: #ffffff;
+}
+
+.c3:hover {
+  cursor: pointer;
+}
+
+.c2 {
+  background-color: #5b5b5b;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 #000000;
+  box-sizing: border-box;
+  height: 60%;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 30%;
+}
+
+.c2:hover {
+  box-shadow: 0 8px 16px 0 #000000;
+}
+
+.c4 {
+  position: absolute;
+  right: 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px 0 #000000;
+  top: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c4:hover {
+  color: #ffffff;
+}
+
+.c1 {
+  background-color: #ffffff;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c10 {
+  color: #ffffff;
+  margin: auto 0 10px 0;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c12 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12:hover {
+  cursor: pointer;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 10px;
+}
+
 <div
-  className="sc-fujyUd jckZIw"
+  className="c0"
 >
   <div
-    className="sc-iCoHVE gFQtYa"
+    className="c1"
   />
   <div
-    className="sc-jSFkmK hKAhHA"
+    className="c2"
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-times-circle fa-w-16 sc-eCApGN iIDrVw sc-gKAblj hNbhFL"
+      className="svg-inline--fa fa-times-circle fa-w-16 c3 c4"
       data-icon="times-circle"
       data-prefix="far"
       focusable="false"
@@ -29,58 +195,58 @@ exports[`AuthControl should match snapshot 1`] = `
       />
     </svg>
     <div
-      className="sc-iqAbSa bpCQPw"
+      className="c5"
     >
       <form
-        className="sc-dlnjPT ipzAHw"
+        className="c6"
         onSubmit={[Function]}
       >
         <h2
-          className="sc-hKFyIo gtPKvJ"
+          className="c7"
         >
           Log In
         </h2>
         <input
-          className="sc-gtssRu kxlfKJ"
+          className="c8"
           name="email"
           onChange={[Function]}
           placeholder="Email"
           type="text"
         />
         <input
-          className="sc-gtssRu kxlfKJ"
+          className="c8"
           name="password"
           onChange={[Function]}
           placeholder="Password"
           type="password"
         />
         <button
-          className="sc-bdnylx haaAXP"
+          className="c9"
           type="submit"
         >
           Submit
         </button>
       </form>
       <div
-        className="sc-pNWxx jwgywA"
+        className="c10"
       >
         <p
-          className="sc-kEqYlL ggCAmS"
+          className="c11"
         >
           Forgot you password? Click 
           <span
-            className="sc-jrsJCI hfCMIf AuthControl_ChangeFormLink"
+            className="c12 AuthControl_ChangeFormLink"
             onClick={[Function]}
           >
             here
           </span>
         </p>
         <p
-          className="sc-kEqYlL ggCAmS"
+          className="c11"
         >
           Don't have an account? Register 
           <span
-            className="sc-jrsJCI hfCMIf AuthControl_ChangeFormLink"
+            className="c12 AuthControl_ChangeFormLink"
             onClick={[Function]}
           >
             here

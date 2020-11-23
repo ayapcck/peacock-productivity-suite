@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextBox - Common Tests should match snapshot 1`] = `
+.c0 {
+  background-color: #5b5b5b;
+  border-style: solid;
+  color: #ffffff;
+  border-color: #f34b4b;
+  border-width: 0 0 2px 0;
+  margin: 7.5px 5px;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.c0::-moz-placeholder {
+  color: #ffffff;
+}
+
+.c0:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.c0::placeholder {
+  color: #ffffff;
+}
+
+<input
+  className="c0"
+/>
+`;

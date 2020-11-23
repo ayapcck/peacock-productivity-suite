@@ -4,23 +4,8 @@ import {
     func,
     string,
 } from 'prop-types';
-import styled from 'styled-components';
 
-const StyledTextBox = styled.input`
-    background-color: ${({ theme }) => theme.backgroundColor};
-    border-color: ${({ valid, theme }) => valid ? theme.accentColor : theme.errorColor };
-    border-style: solid;
-    border-width: 0 0 2px 0;
-    color: ${({ theme }) => theme.textColor};
-    margin: 7.5px 5px;
-
-    &:focus {
-        outline: 0;
-    }
-    ::placeholder {
-        color: ${({ theme }) => theme.textColor};
-    }
-`;
+import { StyledTextBox } from '../../styled-elements';
 
 const TextBox = (props) => {
     const {

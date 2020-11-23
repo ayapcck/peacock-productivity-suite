@@ -1,3 +1,9 @@
-// import all context here
+import {
+    withDarkTheme,
+    withLightTheme,
+} from './themeProvider';
 
-// export all context here
+export {
+    withDarkTheme,
+    withLightTheme,
+};

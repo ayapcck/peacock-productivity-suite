@@ -11,8 +11,8 @@ import _ from 'lodash';
 
 import {
     Button,
+    TextBox,
 } from '../atoms';
-import TextBox from '../subcomponents/TextBox';
 import { withFirebase } from '../../config/firebase';
 
 const StyledDefaultForm = styled.form`

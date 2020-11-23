@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-import borders from './Borders';
+import { elementBackground } from './styles/Backgrounds';
+import { regularBorders } from './styles/Borders';
 
 const StyledButton = styled.button`
-    ${borders}
-    background-color: ${({ theme }) => theme.accentColor};
-    /* border-color: ${({ theme }) => theme.accentColor};
-    border-radius: 5px;
-    border-style: solid; */
+    ${elementBackground}
+    ${regularBorders}
     box-shadow: 2px 2px ${({ theme }) => theme.altAccentColor};
     margin: 10px;
     padding: 2.5px 5px;
