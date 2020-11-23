@@ -6,7 +6,9 @@ import {
 } from 'prop-types';
 import styled from 'styled-components';
 
-import Icon from '../subcomponents/Icon';
+import {
+    Icon,
+} from '../atoms';
 
 const CenterPanel = styled.div`
     background-color: ${({ theme }) => theme.backgroundColor};

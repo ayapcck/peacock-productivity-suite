@@ -5,6 +5,7 @@ import {
     shallow,
 } from 'enzyme';
 
+import { addIcons } from '../src/config/fontawesome';
 import {
     withDarkTheme,
 } from '../src/context';
@@ -14,6 +15,10 @@ const runCommonTests = (Component) => {
         name,
     } = Component;
     const ThemedComponent = withDarkTheme(Component);
+
+    beforeAll(() => {
+        addIcons();
+    });
 
     describe(`${name} - Common Tests`, () => {
         it('should shallowly render without crashing', () => {

@@ -6,7 +6,9 @@ import {
 } from 'prop-types';
 import styled from 'styled-components';
 
-import Icon from '../subcomponents/Icon';
+import {
+    Icon,
+} from '../atoms';
 import Navigation from '../Navigation';
 
 import { withAuthConsumer } from '../../config/session';

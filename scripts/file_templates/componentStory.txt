@@ -6,7 +6,7 @@ import $component_name from '.';
 export default {
     title: '$component_types/$component_name',
     component: $component_name,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },

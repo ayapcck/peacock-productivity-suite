@@ -1,11 +1,11 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
-import _ from 'lodash';
+import forIn from 'lodash/forIn';
 
-import Icon from '../index';
+import Icon from '.';
 
 export default {
-    title: 'Subcomponents/Icon',
+    title: 'Atoms/Icon',
     component: Icon,
     decorators: [ withKnobs ],
     argTypes: {
@@ -18,8 +18,6 @@ const Template = (args) => (
         <Icon {...args} />
     </div>
 );
-
-
 
 export const Bars = Template.bind({});
 export const TimesCircle = Template.bind({});
@@ -37,7 +35,7 @@ const icons = {
     },
 };
 
-_.forIn(icons, (icon) => {
+forIn(icons, (icon) => {
     const { iconText, name, story } = icon;
     story.args = {
         icon: iconText,

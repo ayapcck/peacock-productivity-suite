@@ -55,6 +55,14 @@ exports[`AuthControl should match snapshot 1`] = `
   color: #ffffff;
 }
 
+.c3 {
+  color: #ffffff;
+}
+
+.c3:hover {
+  cursor: pointer;
+}
+
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -69,14 +77,6 @@ exports[`AuthControl should match snapshot 1`] = `
 .c7 {
   color: #ffffff;
   text-align: center;
-}
-
-.c3 {
-  color: #ffffff;
-}
-
-.c3:hover {
-  cursor: pointer;
 }
 
 .c2 {

@@ -1,27 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { 
-    mount,
-    shallow,
-} from 'enzyme';
+import { mount } from 'enzyme';
 
-import { addIcons } from '../../../../config/fontawesome';
-import Icon from '..';
+import Icon from '.';
+import runCommonTests from '../../../../test/commonTests';
 
-beforeAll(() => {
-    addIcons();
-});
+runCommonTests(Icon);
 
-describe('Icon', () => {
-    it('should render without crashing', () => {
-        shallow(<Icon />);
-    });
-    it('should match snapshot', () => {
-        const tree = renderer
-            .create(<Icon />)
-            .toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+describe('Icon - Unique Tests', () => {
     it('should not crash with default onClick', () => {
         const wrapper = mount(<div><Icon /></div>);
         wrapper.find(Icon).simulate('click');
