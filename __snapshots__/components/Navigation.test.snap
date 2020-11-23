@@ -2,6 +2,18 @@
 
 exports[`Navigation - Admin should match snapshot 1`] = `
 .c2 {
+  color: inherit;
+  margin: 0;
+  text-align: left;
+}
+
+.c5 {
+  color: #ffffff;
+  margin: 0;
+  text-align: left;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,7 +23,7 @@ exports[`Navigation - Admin should match snapshot 1`] = `
   flex-direction: column;
 }
 
-.c2 a {
+.c3 a {
   box-sizing: border-box;
   margin: 0;
   padding: 5px 10px;
@@ -36,7 +48,7 @@ exports[`Navigation - Admin should match snapshot 1`] = `
   box-shadow: 0 2px 4px 0 #000000;
 }
 
-.c5 {
+.c7 {
   border-radius: 5px;
   margin: 0 auto 10px auto;
   padding: 5px 10px;
@@ -48,7 +60,7 @@ exports[`Navigation - Admin should match snapshot 1`] = `
   text-decoration: none;
 }
 
-.c5:hover {
+.c7:hover {
   box-shadow: 0 2px 4px 0 #000000;
 }
 
@@ -64,28 +76,27 @@ exports[`Navigation - Admin should match snapshot 1`] = `
   padding: 10px;
 }
 
-.c3 {
+.c4 {
   border-radius: 5px;
   margin: 0 auto 10px auto;
   padding: 5px 10px;
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   width: 90%;
-  color: #ffffff;
 }
 
-.c3:hover {
+.c4:hover {
   box-shadow: 0 2px 4px 0 #000000;
 }
 
-.c3:hover {
+.c4:hover {
   cursor: pointer;
 }
 
-.c4 {
+.c6 {
+  border-color: #ffffff;
   border-style: solid;
   border-width: 0 0 0 2px;
-  color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -107,48 +118,84 @@ exports[`Navigation - Admin should match snapshot 1`] = `
       onClick={[Function]}
       selected={true}
     >
-      Landing
+      <h4
+        className="c2"
+        size="large"
+        type="body"
+      >
+        Landing
+      </h4>
     </a>
     <div
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
-      >
-        Apps:
-      </span>
-      <div
         className="c4"
       >
-        <a
+        <h4
           className="c5"
+          size="large"
+          type="body"
+        >
+          Apps:
+        </h4>
+      </span>
+      <div
+        className="c6"
+      >
+        <a
+          className="c7"
           href="/notes"
           onClick={[Function]}
           selected={false}
         >
-          Notes
+          <h4
+            className="c2"
+            size="large"
+            type="body"
+          >
+            Notes
+          </h4>
         </a>
       </div>
     </div>
     <a
-      className="c5"
+      className="c7"
       href="/admin-panel"
       onClick={[Function]}
       selected={false}
     >
-      Admin Panel
+      <h4
+        className="c2"
+        size="large"
+        type="body"
+      >
+        Admin Panel
+      </h4>
     </a>
     <span
-      className="c3"
+      className="c4"
       onClick={[Function]}
     >
-      Change Password
+      <h4
+        className="c5"
+        size="large"
+        type="body"
+      >
+        Change Password
+      </h4>
     </span>
     <span
-      className="c3 Navigation_LoginRegisterLink"
+      className="c4 Navigation_LoginRegisterLink"
       onClick={[Function]}
     >
-      Sign out
+      <h4
+        className="c5"
+        size="large"
+        type="body"
+      >
+        Sign out
+      </h4>
     </span>
   </div>
 </div>
@@ -156,6 +203,18 @@ exports[`Navigation - Admin should match snapshot 1`] = `
 
 exports[`Navigation - Guest should match snapshot 1`] = `
 .c2 {
+  color: inherit;
+  margin: 0;
+  text-align: left;
+}
+
+.c5 {
+  color: #ffffff;
+  margin: 0;
+  text-align: left;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -165,7 +224,7 @@ exports[`Navigation - Guest should match snapshot 1`] = `
   flex-direction: column;
 }
 
-.c2 a {
+.c3 a {
   box-sizing: border-box;
   margin: 0;
   padding: 5px 10px;
@@ -190,7 +249,7 @@ exports[`Navigation - Guest should match snapshot 1`] = `
   box-shadow: 0 2px 4px 0 #000000;
 }
 
-.c5 {
+.c7 {
   border-radius: 5px;
   margin: 0 auto 10px auto;
   padding: 5px 10px;
@@ -202,7 +261,7 @@ exports[`Navigation - Guest should match snapshot 1`] = `
   text-decoration: none;
 }
 
-.c5:hover {
+.c7:hover {
   box-shadow: 0 2px 4px 0 #000000;
 }
 
@@ -218,28 +277,27 @@ exports[`Navigation - Guest should match snapshot 1`] = `
   padding: 10px;
 }
 
-.c3 {
+.c4 {
   border-radius: 5px;
   margin: 0 auto 10px auto;
   padding: 5px 10px;
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   width: 90%;
-  color: #ffffff;
 }
 
-.c3:hover {
+.c4:hover {
   box-shadow: 0 2px 4px 0 #000000;
 }
 
-.c3:hover {
+.c4:hover {
   cursor: pointer;
 }
 
-.c4 {
+.c6 {
+  border-color: #ffffff;
   border-style: solid;
   border-width: 0 0 0 2px;
-  color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -261,34 +319,58 @@ exports[`Navigation - Guest should match snapshot 1`] = `
       onClick={[Function]}
       selected={true}
     >
-      Landing
+      <h4
+        className="c2"
+        size="large"
+        type="body"
+      >
+        Landing
+      </h4>
     </a>
     <div
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
-      >
-        Apps:
-      </span>
-      <div
         className="c4"
       >
-        <a
+        <h4
           className="c5"
+          size="large"
+          type="body"
+        >
+          Apps:
+        </h4>
+      </span>
+      <div
+        className="c6"
+      >
+        <a
+          className="c7"
           href="/notes"
           onClick={[Function]}
           selected={false}
         >
-          Notes
+          <h4
+            className="c2"
+            size="large"
+            type="body"
+          >
+            Notes
+          </h4>
         </a>
       </div>
     </div>
     <span
-      className="c3 Navigation_LoginRegisterLink"
+      className="c4 Navigation_LoginRegisterLink"
       onClick={[Function]}
     >
-      Login
+      <h4
+        className="c5"
+        size="large"
+        type="body"
+      >
+        Login
+      </h4>
     </span>
   </div>
 </div>

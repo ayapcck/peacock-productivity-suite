@@ -55,6 +55,12 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
   color: #ffffff;
 }
 
+.c1 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,17 +72,14 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
   padding: 10px;
 }
 
-.c1 {
-  color: #ffffff;
-  text-align: center;
-}
-
 <form
   className="c0"
   onSubmit={[Function]}
 >
   <h2
     className="c1"
+    size="medium"
+    type="title"
   >
     Change Password
   </h2>
@@ -158,6 +161,12 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
   color: #ffffff;
 }
 
+.c1 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -169,17 +178,14 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
   padding: 10px;
 }
 
-.c1 {
-  color: #ffffff;
-  text-align: center;
-}
-
 <form
   className="c0"
   onSubmit={[Function]}
 >
   <h2
     className="c1"
+    size="medium"
+    type="title"
   >
     Forgot Password
   </h2>
@@ -254,6 +260,12 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
   color: #ffffff;
 }
 
+.c1 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -265,17 +277,14 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
   padding: 10px;
 }
 
-.c1 {
-  color: #ffffff;
-  text-align: center;
-}
-
 <form
   className="c0"
   onSubmit={[Function]}
 >
   <h2
     className="c1"
+    size="medium"
+    type="title"
   >
     Log In
   </h2>
@@ -357,6 +366,12 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
   color: #ffffff;
 }
 
+.c1 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -368,17 +383,14 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
   padding: 10px;
 }
 
-.c1 {
-  color: #ffffff;
-  text-align: center;
-}
-
 <form
   className="c0"
   onSubmit={[Function]}
 >
   <h2
     className="c1"
+    size="medium"
+    type="title"
   >
     Register
   </h2>

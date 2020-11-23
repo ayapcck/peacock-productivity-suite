@@ -5,6 +5,11 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { AuthUserContext } from '../../../config/session';
 import Navigation from '../index';
 
+import {
+    AdminAuthUser,
+    GuestAuthUser,
+} from '../../../__mocks__/Users';
+
 export default {
     title: 'Components/Navigation',
     component: Navigation,
@@ -24,8 +29,10 @@ const Template = (args) => (
 
 export const Authorized = Template.bind({});
 Authorized.args = {
-    authUser: {},
+    authUser: AdminAuthUser,
 };
 
 export const NotAuthorized = Template.bind({});
-NotAuthorized.args = {};
+NotAuthorized.args = {
+    authUser: GuestAuthUser,
+};

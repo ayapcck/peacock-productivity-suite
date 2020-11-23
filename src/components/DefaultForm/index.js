@@ -11,6 +11,7 @@ import _ from 'lodash';
 
 import {
     Button,
+    Text,
     TextBox,
 } from '../atoms';
 import { withFirebase } from '../../config/firebase';
@@ -19,11 +20,6 @@ const StyledDefaultForm = styled.form`
     display: flex;
     flex-direction: column;
     padding: 10px;
-`;
-
-const Title = styled.h2`
-    color: ${({ theme }) => theme.textColor};
-    text-align: center;
 `;
 
 const getInitialState = (elements) => _.mapValues(elements, 'initial');
@@ -71,40 +67,53 @@ class DefaultForm extends Component {
                 this.setState({ error });
             });
     }
-    
-    render() {
-        const { form } = this.props;
+
+    _renderFormElements = () => {
         const {
-            elements,
-            keyPrefix,
-            title,
-        } = form;
+            form: {
+                elements,
+                keyPrefix,
+            },
+        } = this.props;
+
+        return _.map(_.keys(elements), (key, index) => {
+            const element = elements[key];
+            return (
+                <TextBox
+                    key={`${keyPrefix}${index}`}
+                    valid={elementIsValid(element, this.state)}
+                    name={element.name}
+                    handleChange={this.onChange}
+                    placeHolder={element.placeHolder}
+                    type={element.type}
+                />
+            );
+        });
+    };
+
+    _renderTitle = () => {
+        const { form: { title } } = this.props;
 
         return (
+            <Text
+                align="center"
+                size="medium"
+                text={title}
+                type="title"
+            />
+        );
+    }
+    
+    render() {
+        return (
             <StyledDefaultForm onSubmit={this.onSubmit}>
-                <Title>{title}</Title>
-                {renderFormElements(elements, keyPrefix, this.onChange, this.state)}
+                { this._renderTitle() }
+                { this._renderFormElements() }
                 <Button type="submit" />
             </StyledDefaultForm>
         );
     }
 }
-
-const renderFormElements = (elements, keyPrefix, onChange, values) => {
-    return _.map(_.keys(elements), (key, index) => {
-        const element = elements[key];
-        return (
-            <TextBox
-                key={`${keyPrefix}${index}`}
-                valid={elementIsValid(element, values)}
-                name={element.name}
-                handleChange={onChange}
-                placeHolder={element.placeHolder}
-                type={element.type}
-            />
-        );
-    });
-};
 
 const elementIsValid = (element, values) => {
     const value = values[element.name];

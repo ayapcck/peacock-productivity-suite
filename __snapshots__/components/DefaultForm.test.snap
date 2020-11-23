@@ -55,6 +55,12 @@ exports[`DefaultForm - Common Tests should match snapshot 1`] = `
   color: #ffffff;
 }
 
+.c1 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,17 +72,14 @@ exports[`DefaultForm - Common Tests should match snapshot 1`] = `
   padding: 10px;
 }
 
-.c1 {
-  color: #ffffff;
-  text-align: center;
-}
-
 <form
   className="c0"
   onSubmit={[Function]}
 >
   <h2
     className="c1"
+    size="medium"
+    type="title"
   >
     Title
   </h2>

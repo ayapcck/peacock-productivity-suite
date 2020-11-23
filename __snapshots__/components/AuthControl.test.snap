@@ -63,6 +63,12 @@ exports[`AuthControl should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c7 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -72,11 +78,6 @@ exports[`AuthControl should match snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 10px;
-}
-
-.c7 {
-  color: #ffffff;
-  text-align: center;
 }
 
 .c2 {
@@ -203,6 +204,8 @@ exports[`AuthControl should match snapshot 1`] = `
       >
         <h2
           className="c7"
+          size="medium"
+          type="title"
         >
           Log In
         </h2>

@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 const StyledTag = styled.h1`
     color: ${({ colorOverride, theme }) => colorOverride ?? theme.textColor};
+    margin: 0;
     text-align: ${(props) => props.align};
 `;
 

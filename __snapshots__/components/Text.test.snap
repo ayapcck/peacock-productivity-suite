@@ -3,6 +3,7 @@
 exports[`Text - Common Tests should match snapshot 1`] = `
 .c0 {
   color: #ffffff;
+  margin: 0;
   text-align: left;
 }
 
