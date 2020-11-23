@@ -6,7 +6,7 @@ import {
 import get from 'lodash/get';
 import styled from 'styled-components';
 
-const getStyledTag = (tag) => styled[tag]`
+const StyledTag = styled.h1`
     color: ${({ colorOverride, theme }) => colorOverride ?? theme.textColor};
     text-align: ${(props) => props.align};
 `;
@@ -31,11 +31,10 @@ const Text = (props) => {
         type,
     } = props;
 
-    const Tag = getTag(size, type);
-    const StyledTag = getStyledTag(Tag);
+    const tag = getTag(size, type);
 
     return (
-        <StyledTag { ...props }>
+        <StyledTag as={tag} { ...props }>
             {text}
         </StyledTag>
     );
