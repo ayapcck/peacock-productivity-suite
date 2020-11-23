@@ -1,18 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popup should match snapshot 1`] = `
+.c3:hover {
+  cursor: pointer;
+}
+
+.c2 {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0;
+  box-sizing: border-box;
+  height: 60%;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 30%;
+}
+
+.c2:hover {
+  box-shadow: 0 8px 16px 0;
+}
+
+.c4 {
+  position: absolute;
+  right: 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px 0;
+  top: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c1 {
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 <div
-  className="sc-eCApGN ixPklL"
+  className="c0"
 >
   <div
-    className="sc-hKFyIo jyuoNq"
+    className="c1"
   />
   <div
-    className="sc-gtssRu cdKtqO"
+    className="c2"
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-times-circle fa-w-16 sc-bdnylx yGPBD sc-dlnjPT lkSAia"
+      className="svg-inline--fa fa-times-circle fa-w-16 c3 c4"
       data-icon="times-circle"
       data-prefix="far"
       focusable="false"

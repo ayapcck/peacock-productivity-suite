@@ -6,7 +6,7 @@ import TextBox from '.';
 export default {
     title: 'Atoms/TextBox',
     component: TextBox,
-    decorators: [withKnobs],
+    decorators: [ withKnobs ],
     argTypes: {
         
     },

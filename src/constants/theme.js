@@ -24,7 +24,7 @@ const border = {
 
 const sharedStyles = {
     border,
-}
+};
 
 const themeCreator = new ThemeCreator(sharedStyles);
 themeCreator.addColors('accentColor', lightBlue, lightGreen);
