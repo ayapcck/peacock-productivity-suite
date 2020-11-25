@@ -1,6 +1,7 @@
 import {
     StyledCard,
     StyledButton,
+    StyledOverlay,
     StyledTextBox,
 } from './components';
 import {
@@ -11,5 +12,6 @@ export {
     PaddedWrapper,
     StyledCard,
     StyledButton,
+    StyledOverlay,
     StyledTextBox,
 };

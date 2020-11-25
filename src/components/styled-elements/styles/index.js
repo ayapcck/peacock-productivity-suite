@@ -1,6 +1,7 @@
 import {
     defaultBackground,
     elementBackground,
+    overlayBackground,
 } from './Backgrounds';
 import {
     borderColor,
@@ -23,6 +24,7 @@ export {
     defaultBackground,
     elementBackground,
     hoverShadow,
+    overlayBackground,
     regularBorders,
     shadow,
     textColor,

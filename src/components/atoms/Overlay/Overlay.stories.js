@@ -1,18 +1,18 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import $component_name from '.';
+import Overlay from '.';
 
 export default {
-    title: '$component_types/$component_name',
-    component: $component_name,
+    title: 'Atoms/Overlay',
+    component: Overlay,
     decorators: [ withKnobs ],
     argTypes: {
         
     },
 };
 
-const Template = (args) => <$component_name {...args} />;
+const Template = (args) => <Overlay {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
