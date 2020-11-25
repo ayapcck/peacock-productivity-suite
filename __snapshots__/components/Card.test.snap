@@ -17,9 +17,32 @@ exports[`Card - Common Tests should match snapshot 1`] = `
   box-shadow: 0 8px 16px 0 #000000;
 }
 
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
 <div
   className="c0"
   height="25%"
   width="20%"
-/>
+>
+  <div
+    className="c1"
+  >
+    
+  </div>
+</div>
 `;

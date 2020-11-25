@@ -5,10 +5,14 @@ import {
     StyledTextBox,
 } from './components';
 import {
+    AlignedContainer,
+    CenteredContainer,
     PaddedWrapper,
 } from './helpers';
 
 export {
+    AlignedContainer,
+    CenteredContainer,
     PaddedWrapper,
     StyledCard,
     StyledButton,

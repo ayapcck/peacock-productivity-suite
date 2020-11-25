@@ -10,7 +10,17 @@ export default {
     component: Card,
     decorators: [ withKnobs ],
     argTypes: {
-        
+        align: {
+            control: {
+                type: 'select',
+                options: [
+                    'middle',
+                    'left',
+                    'center',
+                    'right',
+                ],
+            },
+        },
     },
 };
 
@@ -25,3 +35,13 @@ Primary.args = {};
 
 export const CustomHeights = MultiCardTemplate.bind({});
 CustomHeights.storyName = 'Custom Heights';
+CustomHeights.args = {};
+
+const testContent = (
+    <div>I am a test!</div>
+);
+export const WithContent = Template.bind({});
+WithContent.storyName = 'With Content';
+WithContent.args = {
+    content: testContent,
+};
