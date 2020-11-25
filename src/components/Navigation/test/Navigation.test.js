@@ -4,16 +4,21 @@ import { mount, shallow } from 'enzyme';
 import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 
+import { addIcons } from '../../../config/fontawesome';
 import { AuthUserContext } from '../../../config/session';
 import { FirebaseContext } from '../../../config/firebase';
+import { withDarkTheme } from '../../../context';
 import Navigation from '..';
 
 import MockFirebase from '../../../__mocks__/Firebase';
 import { Admin, Guest } from '../../../__mocks__/Users';
 
 const mockedFirebase = MockFirebase();
-// const signOutSpy = jest.spyOn(mockedFirebase, 'signOut')
-//     .mockImplementation(() => true);
+const ThemedNavigation = withDarkTheme(Navigation);
+
+beforeAll(() => {
+    addIcons();
+});
 
 let Container;
 
@@ -28,7 +33,7 @@ const updateContainer = (role, userPermissions) => {
         <FirebaseContext.Provider value={mockedFirebase}>
             <AuthUserContext.Provider value={authUser}>
                 <Router history={history} initialEntries={[ '/' ]}>
-                    <Navigation />
+                    <ThemedNavigation />
                 </Router>
             </AuthUserContext.Provider>
         </FirebaseContext.Provider>

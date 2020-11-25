@@ -1,13 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Drawer should match snapshot 1`] = `
+.c1:hover {
+  cursor: pointer;
+}
+
+.c2 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin: 10px 10px 0 10px;
+}
+
+.c0 {
+  border-style: solid;
+  border-width: 0 2px 0 0;
+  box-shadow: 2px 0 4px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: auto;
+}
+
 <div
-  className="sc-fFSRdu gvdSrJ"
+  className="c0"
   open={false}
 >
   <svg
     aria-hidden="true"
-    className="svg-inline--fa fa-bars fa-w-14 sc-bdnylx yGPBD sc-fnVYJo ffSuSj"
+    className="svg-inline--fa fa-bars fa-w-14 c1 c2"
     data-icon="bars"
     data-prefix="fas"
     focusable="false"

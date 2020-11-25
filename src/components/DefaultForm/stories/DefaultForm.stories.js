@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import DefaultForm from '../index';
 
-import TextBox from '../../subcomponents/TextBox';
+import { TextBox } from '../../atoms';
 
 export default {
     title: 'Components/DefaultForm',

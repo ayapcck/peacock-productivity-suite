@@ -18,6 +18,7 @@ import { withAuthConsumer } from '../../config/session';
 import { withFirebase } from '../../config/firebase';
 
 import AuthControl from '../AuthControl';
+import { Text } from '../atoms';
 
 /** General CSS for styled components */
 const MenuShadow = css`
@@ -68,7 +69,6 @@ const StyledNavigation = styled.div`
 
 const StyledNavItem = styled.span`
     ${MenuItem}
-    color: ${({ theme }) => theme.textColor};
 
     &:hover {
         cursor: pointer;
@@ -76,9 +76,9 @@ const StyledNavItem = styled.span`
 `;
 
 const SubItemContainer = styled.div`
+    border-color: ${({ theme }) => theme.textColor};
     border-style: solid;
     border-width: 0 0 0 2px;
-    color: ${({ theme }) => theme.textColor};
     display: flex;
     margin: 0 auto 10px 20px;
     padding: 5px 10px;
@@ -126,7 +126,7 @@ const Navigation = ({ auth, firebase }) => {
                     className="Navigation_LoginRegisterLink"
                     onClick={signedIn ? logout : displayAuthControl}
                 >
-                    {loginText}
+                    { renderNavText(loginText) }
                 </StyledNavItem>
             </StyledNavigation>
             { showAuthControl && <AuthControl {...authControlProps} /> }
@@ -135,7 +135,9 @@ const Navigation = ({ auth, firebase }) => {
 };
 
 const renderChangePasswordLink = (displayChangePasswordForm) => (
-    <StyledNavItem onClick={displayChangePasswordForm}>Change Password</StyledNavItem>
+    <StyledNavItem onClick={displayChangePasswordForm}>
+        { renderNavText('Change Password') }
+    </StyledNavItem>
 );
 
 const renderNavLinks = (userPermissions, currentPage) => {
@@ -159,25 +161,34 @@ const renderNavLinks = (userPermissions, currentPage) => {
 const renderNavLink = (props) => {
     const {
         index,
-        route,
+        route: {
+            navText,
+            permissions,
+            route,
+        },
         selected,
         userPermissions,
     } = props;
-    const {
-        navText,
-        permissions,
-    } = route;
 
     return hasPermissions(permissions, userPermissions) && (
         <StyledLink
             key={index}            
             selected={selected}
-            to={route.route}
+            to={route}
         >
-            {navText}
+            { renderNavText(navText, 'inherit') }
         </StyledLink>
     );
 };
+
+const renderNavText = (text, colorOverride = null) => (
+    <Text
+        colorOverride={colorOverride}
+        size="large"
+        text={text}
+        type="body"
+    />
+);
 
 const renderSubLinks = (props) => {
     const { 
@@ -199,7 +210,9 @@ const renderSubLinks = (props) => {
 
     return (
         <AppsContainer>
-            <StyledNavItem>Apps:</StyledNavItem>
+            <StyledNavItem>
+                { renderNavText('Apps:') }
+            </StyledNavItem>
             <SubItemContainer>
                 { subLinks }
             </SubItemContainer>

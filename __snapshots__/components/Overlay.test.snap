@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overlay - Common Tests should match snapshot 1`] = `
+.c0 {
+  background-color: #ffffff;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+
+<div
+  className="c0"
+/>
+`;

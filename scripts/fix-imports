@@ -1,0 +1,43 @@
+#!/bin/bash
+
+source ./scripts/functions.sh
+
+sub_directory=""
+if [[ -z "$1" ]]; then
+    prompt "What directory is this for?" sub_directory
+else
+    sub_directory="$1"
+fi
+
+cd src/components/${sub_directory}
+
+# Go through each sub-directory in given directory and create an import / export file
+if [[ -e temp_index.js ]]; then rm temp_index.js; fi
+touch temp_index.js
+
+for d in */; do
+    component="${d::-1}"
+    echo "import ${component} from './${component}';" >> temp_index.js
+done
+
+echo -e "\nexport {" >> temp_index.js
+
+for d in */; do
+    component="${d::-1}"
+    echo "    ${component}," >> temp_index.js
+done
+
+echo "};" >> temp_index.js
+
+header_echo "The new index file will look like this"
+cat temp_index.js
+header_echo "Do you want to replace the existing index.js? (y/N)"
+read -p "" yn; echo ""
+
+if [[ $yn == "y" || $yn == "Y" ]]; then
+    step_echo "Replacing existing index.js"
+    mv temp_index.js index.js
+elif [[ $yn == "n" || $yn == "N" ]]; then
+    step_echo "Not replacing existing index.js"
+    step_echo "Newly created index file exists in same directory as 'temp_index.js'"
+fi

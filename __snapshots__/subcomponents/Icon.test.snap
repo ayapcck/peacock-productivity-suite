@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icon should match snapshot 1`] = `
+.c0:hover {
+  cursor: pointer;
+}
+
 <svg
   aria-hidden="true"
-  className="svg-inline--fa fa-bars fa-w-14 sc-bdnylx yGPBD"
+  className="svg-inline--fa fa-bars fa-w-14 c0"
   data-icon="bars"
   data-prefix="fas"
   focusable="false"

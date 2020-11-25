@@ -1,7 +1,7 @@
 export default class ThemeCreator {
-    constructor() {
-        this.darkTheme = {};
-        this.lightTheme = {};
+    constructor(sharedStyles) {
+        this.darkTheme = { ...sharedStyles };
+        this.lightTheme = { ...sharedStyles };
     }
 
     addColors = (colorName, darkThemeColor, lightThemeColor) => {

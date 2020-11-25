@@ -1,20 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount, shallow } from 'enzyme';
+import $component_name from '.';
+import runCommonTests from '../../../../test/commonTests';
 
-import $component_name from '..';
-
-describe('$component_name', () => {
-    it('should shallowly render without crashing', () => {
-        shallow(<$component_name />);
-    });
-    it('should render without crashing', () => {
-        mount(<$component_name />);
-    });
-    it('should match snapshot', () => {
-        const tree = renderer
-            .create(<$component_name />)
-            .toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+runCommonTests($component_name);

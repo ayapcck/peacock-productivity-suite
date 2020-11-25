@@ -6,6 +6,11 @@ import styled from 'styled-components';
 import { AuthUserContext } from '../../../config/session';
 import Drawer from '../index';
 
+import {
+    AdminAuthUser,
+    GuestAuthUser,
+} from '../../../__mocks__/Users';
+
 export default {
     title: 'Components/Drawer',
     component: Drawer,
@@ -34,10 +39,13 @@ export const Closed = Template.bind({});
 Closed.args = {};
 
 export const Open = Template.bind({});
-Open.args = { startOpen: true };
+Open.args = {
+    authUser: GuestAuthUser,
+    startOpen: true,
+};
 
 export const OpenAuthorized = Template.bind({});
 OpenAuthorized.args = { 
-    authUser: {},
+    authUser: AdminAuthUser,
     startOpen: true,
 };
