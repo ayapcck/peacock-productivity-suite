@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-import { elementBackground } from './styles/Backgrounds';
-import { regularBorders } from './styles/Borders';
+import {
+    elementBackground,
+    regularBorders,
+} from '../styles';
 
 const StyledButton = styled.button`
     ${elementBackground}

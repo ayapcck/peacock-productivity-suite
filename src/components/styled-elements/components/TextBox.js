@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-import { defaultBackground } from './styles/Backgrounds';
-import { borderStyle } from './styles/Borders';
-import { textColor } from './styles/Text';
+import {
+    borderStyle,
+    defaultBackground,
+    textColor,
+} from '../styles';
 
 const StyledTextBox = styled.input`
     ${defaultBackground}
