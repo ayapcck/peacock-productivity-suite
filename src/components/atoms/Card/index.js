@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    bool,
     node,
     oneOf,
     string,
@@ -27,6 +28,7 @@ const Card = ({ align, content, ...passThrough }) => {
 
 Card.defaultProps = {
     align: 'middle',
+    bordered: false,
     content: '',
     height: '25%',
     width: '20%',
@@ -34,6 +36,7 @@ Card.defaultProps = {
 
 Card.propTypes = {
     align: oneOf([ 'center', 'middle', 'left', 'right' ]),
+    bordered: bool,
     content: node,
     height: string,
     width: string,
