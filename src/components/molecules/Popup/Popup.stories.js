@@ -8,7 +8,10 @@ export default {
     component: Popup,
     decorators: [ withKnobs ],
     argTypes: {
-        handleClose: { action: 'popup closed' },
+        handleClose: {
+            action: 'popup closed',
+            defaultValue: null,
+        },
     },
 };
 

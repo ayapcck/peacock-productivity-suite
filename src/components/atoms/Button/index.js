@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    func,
     oneOf,
     string,
 } from 'prop-types';
@@ -8,6 +9,7 @@ import { StyledButton } from '../../styled-elements';
 
 const Button = (props) => {
     const {
+        onClick,
         text,
         type,
     } = props;
@@ -16,6 +18,7 @@ const Button = (props) => {
 
     return (
         <StyledButton
+            onClick={onClick}
             type={type}
         >
             {buttonText}
@@ -24,11 +27,13 @@ const Button = (props) => {
 };
 
 Button.defaultProps = {
+    onClick: () => null,
     text: '',
     type: 'button',
 };
 
 Button.propTypes = {
+    onClick: func,
     text: string,
     type: oneOf([ 'button', 'submit' ]),
 };

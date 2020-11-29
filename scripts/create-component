@@ -9,6 +9,8 @@ with_confirmation "What is this $pink${component_type^}$NC called?" component_na
 type=$(get_lowercase "$component_type")
 name="${component_name^}"
 
+prompt "Is this component clickable? (y/N)" clickable
+
 # Create component directory and navigate to it
 component_dir="src/components/${type}s/${name}"
 mkdir $component_dir
@@ -17,18 +19,32 @@ cd $component_dir
 # File templates folder relative to new component directory
 file_templates=../../../../scripts/file_templates
 
+# Define files
+index_file=index.js
+story_file="${component_name}.stories.js"
+test_file="${component_name}.test.js"
+
 # Define replacement scripts
 name_script="s/\$component_name/$component_name/g"
 type_script="s/\$component_type/$component_type/g"
 
 # Add Content to index file
-sed $name_script $file_templates/component.txt > index.js
+sed $name_script $file_templates/component.txt > $index_file
 step_echo "Index file created and boilerplate code added"
+
 # Add content to story file
-sed -e $name_script -e $type_script $file_templates/componentStory.txt > $component_name.stories.js
+sed -e $name_script -e $type_script $file_templates/componentStory.txt > $story_file
+
+if [[ $clickable == "y" || $clickable == "Y" ]]; then
+    sed -i 's/$clickable/onClick: { defaultValue: null, },/g' $story_file
+else
+    sed -i 's/$clickable//g' $story_file
+fi
+
 step_echo "Storybook file created and basic story added"
+
 # add content to test file
-sed -e $name_script $file_templates/componentTest.txt > $component_name.test.js
+sed -e $name_script $file_templates/componentTest.txt > $test_file
 step_echo "Test file created, shallow + deep render tests + snapshot test written"
 echo ""
 

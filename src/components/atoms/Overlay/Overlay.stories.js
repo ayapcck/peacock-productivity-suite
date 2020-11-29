@@ -8,7 +8,10 @@ export default {
     component: Overlay,
     decorators: [ withKnobs ],
     argTypes: {
-        
+        onClick: {
+            action: 'overlay clicked',
+            defaultValue: null,
+        },
     },
 };
 

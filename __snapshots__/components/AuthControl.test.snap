@@ -252,6 +252,7 @@ exports[`AuthControl should match snapshot 1`] = `
           />
           <button
             className="c10"
+            onClick={[Function]}
             type="submit"
           >
             Submit

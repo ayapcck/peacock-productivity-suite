@@ -28,6 +28,7 @@ exports[`Button - Common Tests should match snapshot 1`] = `
 
 <button
   className="c0"
+  onClick={[Function]}
   type="button"
 />
 `;

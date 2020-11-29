@@ -8,7 +8,9 @@ export default {
     component: Button,
     decorators: [ withKnobs ],
     argTypes: {
-        
+        onClick: {
+            defaultValue: null,
+        },
     },
 };
 
