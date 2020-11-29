@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 const StyledIcon = styled(FontAwesomeIcon)`
     color: ${({ theme }) => theme.textColor};
+    margin: 5px;
 
     &:hover {
         cursor: pointer;

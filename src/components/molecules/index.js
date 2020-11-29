@@ -1,3 +1,5 @@
-// import all components here
+import Popup from './Popup';
 
-// export all components here
+export {
+    Popup,
+};

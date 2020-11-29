@@ -8,9 +8,11 @@ import {
 import styled from 'styled-components';
 import _ from 'lodash';
 
+import {
+    Popup,
+} from '../molecules';
 import DefaultForm from '../DefaultForm';
 import Forms from '../Forms/constants';
-import Popup from '../Popup';
  
 const ChangeFormContainer = styled.div`
     color: ${({ theme }) => theme.textColor};
@@ -45,19 +47,17 @@ const AuthControl = ({ handleClose, useChangePasswordForm }) => {
     const [ currentForm, changeForm ] = useState(initialForm);
 
     return (
-        <Popup 
-            closePopup={handleClose}
-            popupContent={renderPopupContent(changeForm, currentForm)} 
-        />
+        <Popup
+            handleClose={handleClose}
+            tall
+        >
+            <ContentWrapper>
+                <DefaultForm form={Forms[currentForm]} />
+                <ChangeForm changeForm={changeForm} currentForm={currentForm} />
+            </ContentWrapper>
+        </Popup>
     );
 };
-
-const renderPopupContent = (changeForm, currentForm) => (
-    <ContentWrapper>
-        <DefaultForm form={Forms[currentForm]} />
-        <ChangeForm changeForm={changeForm} currentForm={currentForm} />
-    </ContentWrapper>
-);
 
 const ChangeForm = ({ changeForm, currentForm }) => {
     const links = Forms[currentForm].links;

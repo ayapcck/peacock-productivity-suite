@@ -2,7 +2,9 @@ import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
 import { ChangePasswordForm } from '../index';
-import Popup from '../../Popup';
+import {
+    Popup,
+} from '../../molecules';
 
 export default {
     title: 'Components/Forms/ChangePasswordForm',
@@ -14,11 +16,14 @@ export default {
 };
 
 const Template = (args) => <ChangePasswordForm {...args} />;
-const TemplateInPopup = (args) => 
-    <Popup closePopup={() => null} popupContent={<ChangePasswordForm {...args} />} />;
+const TemplateInPopup = (args) => (
+    <Popup tall>
+        <ChangePasswordForm {...args} />
+    </Popup>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};
 
 export const InPopup = TemplateInPopup.bind({});
-Primary.args = {};
+InPopup.args = {};

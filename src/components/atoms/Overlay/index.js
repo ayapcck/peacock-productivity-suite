@@ -1,20 +1,22 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import {
+    func,
+} from 'prop-types';
 
 import {
     StyledOverlay,
 } from '../../styled-elements';
 
-const Overlay = () => (
-    <StyledOverlay></StyledOverlay>
+const Overlay = ({ onClick }) => (
+    <StyledOverlay onClick={onClick}></StyledOverlay>
 );
 
 Overlay.defaultProps = {
-
+    onClick: () => null,
 };
 
 Overlay.propTypes = {
-
+    onClick: func,
 };
 
 export default Overlay;

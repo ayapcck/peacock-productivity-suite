@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Drawer should match snapshot 1`] = `
+.c1 {
+  margin: 5px;
+}
+
 .c1:hover {
   cursor: pointer;
 }

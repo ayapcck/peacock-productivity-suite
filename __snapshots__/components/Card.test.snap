@@ -4,10 +4,12 @@ exports[`Card - Common Tests should match snapshot 1`] = `
 .c0 {
   border-radius: 5px;
   border-style: solid;
+  background-color: #5b5b5b;
   box-shadow: 0 4px 8px 0 #000000;
   border-color: #5b5b5b;
   height: 25%;
   margin: 5px;
+  position: relative;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   width: 20%;
@@ -17,32 +19,11 @@ exports[`Card - Common Tests should match snapshot 1`] = `
   box-shadow: 0 8px 16px 0 #000000;
 }
 
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-}
-
 <div
   className="c0"
   height="25%"
   width="20%"
 >
-  <div
-    className="c1"
-  >
-    
-  </div>
+  
 </div>
 `;

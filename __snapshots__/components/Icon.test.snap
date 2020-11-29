@@ -3,6 +3,7 @@
 exports[`Icon - Common Tests should match snapshot 1`] = `
 .c0 {
   color: #ffffff;
+  margin: 5px;
 }
 
 .c0:hover {
