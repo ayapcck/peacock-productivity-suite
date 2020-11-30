@@ -11,7 +11,7 @@ export default {
     component: LoginForm,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 

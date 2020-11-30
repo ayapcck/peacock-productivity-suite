@@ -55,6 +55,7 @@
             "off",
             "windows"
         ],
+        "no-trailing-spaces": "error",
         "object-curly-spacing": [
             "error",
             "always",
@@ -71,6 +72,29 @@
             "single"
         ],
         "react/display-name": "off",
+        "react/jsx-closing-bracket-location": [ "error", "line-aligned" ],
+        "react/jsx-curly-newline": [ "error", {
+            "multiline": "require",
+            "singleline": "forbid"
+        }],
+        "react/jsx-first-prop-new-line": [ "error", "multiline-multiprop" ],
+        "react/jsx-max-props-per-line": [ "error", {
+            "maximum": 1,
+            "when": "always"
+        }],
+        "react/jsx-one-expression-per-line": [ "error", { "allow": "single-child" } ],
+        "react/jsx-tag-spacing": [ "error", {
+            "beforeClosing": "never"
+        }],
+        "react/jsx-wrap-multilines": [ "error", {
+            "arrow": "parens-new-line",
+            "assignment": "parens-new-line",
+            "condition": "parens-new-line",
+            "declaration": "parens-new-line",
+            "logical": "parens-new-line",
+            "prop": "parens-new-line",
+            "return": "parens-new-line"
+        }],
         "semi": [
             "error",
             "always"

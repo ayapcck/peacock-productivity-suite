@@ -17,7 +17,10 @@ beforeAll(() => {
 
     const history = createMemoryHistory();
     Container = () => (
-        <Router history={history} initialEntries={[ '/' ]}>
+        <Router
+            history={history}
+            initialEntries={[ '/' ]}
+        >
             <Drawer />
         </Router>
     );

@@ -35,7 +35,10 @@ const Text = (props) => {
     const tag = getTag(size, type);
 
     return (
-        <StyledTag as={tag} { ...props }>
+        <StyledTag
+            { ...props }
+            as={tag}
+        >
             {text}
         </StyledTag>
     );

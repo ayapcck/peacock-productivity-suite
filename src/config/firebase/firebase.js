@@ -16,7 +16,7 @@ const config = {
     projectId: env.REACT_APP_PROJECT_ID,
     storageBucket: env.REACT_APP_STORAGE_BUCKET,
     messagingSenderId: env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: env.REACT_APP_API_KEY,    
+    appId: env.REACT_APP_API_KEY,
 };
 
 class Firebase {
@@ -29,10 +29,10 @@ class Firebase {
 
     // Auth API
 
-    createUserWithEmailAndPassword = (email, password) => 
+    createUserWithEmailAndPassword = (email, password) =>
         this.auth.createUserWithEmailAndPassword(email, password);
     sendPasswordResetEmail = email => this.auth.sendPasswordResetEmail(email);
-    signInWithEmailAndPassword = (email, password) => 
+    signInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
     signOut = () => this.auth.signOut();
     updatePassword = password => this.auth.currentUser.updatePassword(password);

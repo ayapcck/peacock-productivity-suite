@@ -26,7 +26,7 @@ describe('emailValid', () => {
             expect(emailValid(email)).toBeFalsy();
         });
     });
-    
+
 });
 
 describe('passwordValid', () => {

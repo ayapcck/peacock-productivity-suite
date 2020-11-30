@@ -15,8 +15,14 @@ export default {
 const Template = withPaddedWrapper(Card);
 
 const customHeights = [ '25%', '50%', '75%', '90%' ];
-const Cards = cardProps => 
-    customHeights.map((height, i) => <Card { ...cardProps } height={height} key={i} />);
+const Cards = cardProps =>
+    customHeights.map((height, i) => (
+        <Card
+            { ...cardProps }
+            height={height}
+            key={i}
+        />
+    ));
 const MultiCardTemplate = withPaddedWrapper((args) => <><Cards { ...args } /></>);
 
 export const Primary = Template.bind({});

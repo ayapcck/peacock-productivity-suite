@@ -8,7 +8,7 @@ export default {
     component: Panel,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 

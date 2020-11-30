@@ -10,5 +10,5 @@ const icons = [
     faTimesCircle,
 ];
 
-export const addIcons = () => 
+export const addIcons = () =>
     _.each(icons, (icon) => library.add(icon));

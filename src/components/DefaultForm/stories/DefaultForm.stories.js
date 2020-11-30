@@ -10,7 +10,7 @@ export default {
     component: DefaultForm,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 

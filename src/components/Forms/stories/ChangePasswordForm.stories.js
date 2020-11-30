@@ -11,7 +11,7 @@ export default {
     component: ChangePasswordForm,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 

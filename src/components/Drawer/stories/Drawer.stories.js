@@ -16,7 +16,7 @@ export default {
     component: Drawer,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 
@@ -45,7 +45,7 @@ Open.args = {
 };
 
 export const OpenAuthorized = Template.bind({});
-OpenAuthorized.args = { 
+OpenAuthorized.args = {
     authUser: AdminAuthUser,
     startOpen: true,
 };

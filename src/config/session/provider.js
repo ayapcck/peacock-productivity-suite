@@ -42,7 +42,7 @@ const withAuthProvider = Component => {
         constructor(props) {
             super(props);
 
-            this.state = { 
+            this.state = {
                 user: { ...INITIAL_USER },
                 userPermissions: { ...INITIAL_USER_PERMISSIONS },
             };
@@ -59,7 +59,7 @@ const withAuthProvider = Component => {
                     this.setState({ user, userPermissions });
                 } else {
                     const guestPermissions = await getPermissions(firebase, 'guest');
-                    this.setState({ 
+                    this.setState({
                         user: { ...INITIAL_USER },
                         userPermissions: { ...guestPermissions },
                     });
@@ -70,10 +70,10 @@ const withAuthProvider = Component => {
         componentWillUnmount() {
             this.listener();
         }
-        
+
         render() {
             const { user, userPermissions } = this.state;
-            
+
             const auth = { user, userPermissions };
 
             return (
@@ -82,7 +82,7 @@ const withAuthProvider = Component => {
                 </AuthUserContext.Provider>
             );
         }
-    } 
+    }
 
     WithAuthProvider.propTypes = {
         firebase: shape({

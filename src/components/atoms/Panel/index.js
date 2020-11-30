@@ -21,7 +21,10 @@ const Panel = (props) => {
 
     const height = type === 'height';
     return (
-        <StyledPanel height={height} { ...props } />
+        <StyledPanel
+            { ...props }
+            height={height}
+        />
     );
 };
 

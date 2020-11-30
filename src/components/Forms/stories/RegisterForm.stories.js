@@ -11,7 +11,7 @@ export default {
     component: RegisterForm,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 

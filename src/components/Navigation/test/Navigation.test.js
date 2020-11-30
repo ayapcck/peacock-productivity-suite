@@ -28,11 +28,14 @@ const updateContainer = (role, userPermissions) => {
         userPermissions: userPermissions,
     };
     const history = createMemoryHistory();
-    
+
     Container = () => (
         <FirebaseContext.Provider value={mockedFirebase}>
             <AuthUserContext.Provider value={authUser}>
-                <Router history={history} initialEntries={[ '/' ]}>
+                <Router
+                    history={history}
+                    initialEntries={[ '/' ]}
+                >
                     <ThemedNavigation />
                 </Router>
             </AuthUserContext.Provider>

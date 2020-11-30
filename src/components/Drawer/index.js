@@ -34,8 +34,8 @@ const StyledDrawer = styled.div`
 const Drawer = ({ auth, startOpen }) => {
     const [ open, setOpen ] = useState(startOpen);
     const [ showNavigation, setShowNavigation ] = useState(open);
-    
-    const toggleDrawer = () => { 
+
+    const toggleDrawer = () => {
         if (open) {
             setShowNavigation(false);
             setOpen(false);
@@ -55,8 +55,8 @@ const Drawer = ({ auth, startOpen }) => {
 };
 
 const renderMenuIcon = (open, onClick) => (
-    <MenuIcon 
-        icon="bars" 
+    <MenuIcon
+        icon="bars"
         onClick={onClick}
     />
 );

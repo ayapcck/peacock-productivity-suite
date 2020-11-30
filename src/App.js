@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
     BrowserRouter as Router,
     Route,
 } from 'react-router-dom';
@@ -57,15 +57,17 @@ const App = () => (
         <Container>
             <Drawer />
 
-            { _.map(ROUTES, (page, key) => {
-                if (key === 'APPS') {
-                    return _.map(page, (appPage, key) => {
-                        return route(routeProps(key, appPage));
-                    });
-                } else {
-                    return route(routeProps(key, page));
-                }
-            }) }
+            {
+                _.map(ROUTES, (page, key) => {
+                    if (key === 'APPS') {
+                        return _.map(page, (appPage, key) => {
+                            return route(routeProps(key, appPage));
+                        });
+                    } else {
+                        return route(routeProps(key, page));
+                    }
+                })
+            }
         </Container>
     </Router>
 );

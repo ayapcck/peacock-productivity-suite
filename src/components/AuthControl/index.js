@@ -13,7 +13,7 @@ import {
 } from '../molecules';
 import DefaultForm from '../DefaultForm';
 import Forms from '../Forms/constants';
- 
+
 const ChangeFormContainer = styled.div`
     color: ${({ theme }) => theme.textColor};
     margin: auto 0 10px 0;
@@ -53,7 +53,10 @@ const AuthControl = ({ handleClose, useChangePasswordForm }) => {
         >
             <ContentWrapper>
                 <DefaultForm form={Forms[currentForm]} />
-                <ChangeForm changeForm={changeForm} currentForm={currentForm} />
+                <ChangeForm
+                    changeForm={changeForm}
+                    currentForm={currentForm}
+                />
             </ContentWrapper>
         </Popup>
     );
@@ -61,17 +64,19 @@ const AuthControl = ({ handleClose, useChangePasswordForm }) => {
 
 const ChangeForm = ({ changeForm, currentForm }) => {
     const links = Forms[currentForm].links;
-    
+
     return (
         <ChangeFormContainer>
-            { _.map(links, (link, index) => (
-                <FormText
-                    key={`link${index}`}
-                    changeForm={changeForm}
-                    destinationForm={link.destination}
-                    text={link.text}
-                />
-            )) }
+            {
+                _.map(links, (link, index) => (
+                    <FormText
+                        key={`link${index}`}
+                        changeForm={changeForm}
+                        destinationForm={link.destination}
+                        text={link.text}
+                    />
+                ))
+            }
         </ChangeFormContainer>
     );
 };
@@ -79,7 +84,7 @@ const ChangeForm = ({ changeForm, currentForm }) => {
 const FormText = ({ text, changeForm, destinationForm }) => (
     <ChangeFormText>
         { text }
-        <ChangeFormLink 
+        <ChangeFormLink
             className="AuthControl_ChangeFormLink"
             onClick={() => changeForm(destinationForm)}
         >

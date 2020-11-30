@@ -17,7 +17,7 @@ const TextBox = (props) => {
     } = props;
 
     return (
-        <StyledTextBox 
+        <StyledTextBox
             name={name}
             onChange={handleChange}
             placeholder={placeHolder}

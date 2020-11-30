@@ -8,7 +8,7 @@ export default {
     component: TextBox,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 

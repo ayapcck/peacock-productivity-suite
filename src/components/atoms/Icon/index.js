@@ -18,14 +18,14 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 const Icon = (props) => {
-    const { 
+    const {
         className,
-        icon, 
+        icon,
         onClick,
     } = props;
-    
+
     return (
-        <StyledIcon 
+        <StyledIcon
             className={className}
             icon={icon}
             onClick={onClick}

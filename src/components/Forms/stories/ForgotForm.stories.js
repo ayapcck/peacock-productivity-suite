@@ -11,7 +11,7 @@ export default {
     component: ForgotForm,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 
