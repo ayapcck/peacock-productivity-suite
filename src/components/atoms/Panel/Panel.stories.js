@@ -1,0 +1,30 @@
+import React from 'react';
+import { withKnobs } from '@storybook/addon-knobs';
+
+import Panel from '.';
+
+export default {
+    title: 'Atoms/Panel',
+    component: Panel,
+    decorators: [ withKnobs ],
+    argTypes: {
+        
+    },
+};
+
+const Template = (args) => <Panel {...args} />;
+const CenterPanelTemplate = (args) => (
+    <div style={{ display: 'flex', height: '100%', width: '100%' }}>
+        <Panel { ...args } />
+    </div>
+);
+
+export const Primary = Template.bind({});
+Primary.args = {};
+
+export const CenterPanel = CenterPanelTemplate.bind({});
+CenterPanel.args = {
+    centered: true,
+    position: 'width',
+    value: 50,
+};

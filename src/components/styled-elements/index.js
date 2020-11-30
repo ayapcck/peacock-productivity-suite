@@ -2,6 +2,7 @@ import {
     StyledCard,
     StyledButton,
     StyledOverlay,
+    StyledPanel,
     StyledTextBox,
 } from './components';
 import {
@@ -21,5 +22,6 @@ export {
     StyledCard,
     StyledButton,
     StyledOverlay,
+    StyledPanel,
     StyledTextBox,
 };

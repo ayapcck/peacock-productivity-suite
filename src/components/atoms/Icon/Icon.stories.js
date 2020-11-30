@@ -9,7 +9,7 @@ export default {
     component: Icon,
     decorators: [ withKnobs ],
     argTypes: {
-        
+        onClick: { defaultValue: null },
     },
 };
 

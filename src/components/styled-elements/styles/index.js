@@ -10,6 +10,7 @@ import {
     regularBorders,
 } from './Borders';
 import {
+    equalShadow,
     hoverShadow,
     shadow,
 } from './Shadows';
@@ -23,6 +24,7 @@ export {
     borderStyle,
     defaultBackground,
     elementBackground,
+    equalShadow,
     hoverShadow,
     overlayBackground,
     regularBorders,
