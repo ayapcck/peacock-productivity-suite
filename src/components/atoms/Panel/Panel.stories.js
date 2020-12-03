@@ -8,14 +8,26 @@ export default {
     component: Panel,
     decorators: [ withKnobs ],
     argTypes: {
-
+        borders: {
+            control: {
+                type: 'select',
+                options: [
+                    'all',
+                    'none',
+                    [ 'left' ],
+                    [ 'left', 'right' ],
+                    [ 'left', 'right', 'top' ],
+                    [ 'left', 'right', 'top', 'bottom' ],
+                ],
+            },
+        },
     },
 };
 
-const Template = (args) => <Panel {...args} />;
+const Template = (args) => <Panel {...args}>Test Content</Panel>;
 const CenterPanelTemplate = (args) => (
     <div style={{ display: 'flex', height: '100%', width: '100%' }}>
-        <Panel { ...args } />
+        <Panel { ...args }>Test Content</Panel>
     </div>
 );
 

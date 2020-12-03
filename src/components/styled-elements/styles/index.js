@@ -7,8 +7,12 @@ import {
     borderColor,
     borderRadius,
     borderStyle,
+    borderWidth,
     regularBorders,
 } from './Borders';
+import {
+    borderBox,
+} from './Misc';
 import {
     equalShadow,
     hoverShadow,
@@ -19,9 +23,11 @@ import {
 } from './Text';
 
 export {
+    borderBox,
     borderColor,
     borderRadius,
     borderStyle,
+    borderWidth,
     defaultBackground,
     elementBackground,
     equalShadow,

@@ -2,15 +2,23 @@
 
 exports[`Panel - Common Tests should match snapshot 1`] = `
 .c0 {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 2px;
   box-shadow: 0 0 8px 0 #000000;
+  border-color: #5b5b5b;
   height: 100%;
+  padding: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   width: 25%;
 }
 
 <div
   className="c0"
-  height={false}
   type="width"
   value={25}
-/>
+>
+  
+</div>
 `;
