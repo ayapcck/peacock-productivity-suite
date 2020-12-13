@@ -19,6 +19,14 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   box-shadow: 0 8px 16px 0 #000000;
 }
 
+.c6 {
+  color: #ffffff;
+}
+
+.c6:hover {
+  cursor: pointer;
+}
+
 .c1 {
   background-color: #ffffff;
   height: 100%;
@@ -76,14 +84,6 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c6 {
-  color: #ffffff;
-}
-
-.c6:hover {
-  cursor: pointer;
 }
 
 <div

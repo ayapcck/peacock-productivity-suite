@@ -1,24 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AuthControl should match snapshot 1`] = `
-.c2 {
-  border-radius: 5px;
-  border-style: solid;
-  background-color: #5b5b5b;
-  box-shadow: 0 4px 8px 0 #000000;
-  border-color: #5b5b5b;
-  height: 60%;
-  margin: 5px;
-  position: relative;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  width: 30%;
-}
-
-.c2:hover {
-  box-shadow: 0 8px 16px 0 #000000;
-}
-
 .c11 {
   background-color: #1ebad9;
   border-color: #1ebad9;
@@ -41,6 +23,32 @@ exports[`AuthControl should match snapshot 1`] = `
 }
 
 .c11:hover {
+  cursor: pointer;
+}
+
+.c2 {
+  border-radius: 5px;
+  border-style: solid;
+  background-color: #5b5b5b;
+  box-shadow: 0 4px 8px 0 #000000;
+  border-color: #5b5b5b;
+  height: 60%;
+  margin: 5px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 30%;
+}
+
+.c2:hover {
+  box-shadow: 0 8px 16px 0 #000000;
+}
+
+.c6 {
+  color: #ffffff;
+}
+
+.c6:hover {
   cursor: pointer;
 }
 
@@ -130,14 +138,6 @@ exports[`AuthControl should match snapshot 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.c6 {
-  color: #ffffff;
-}
-
-.c6:hover {
-  cursor: pointer;
 }
 
 .c9 {

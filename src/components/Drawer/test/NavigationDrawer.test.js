@@ -8,7 +8,7 @@ import {
 } from 'enzyme';
 
 import { addIcons } from '../../../config/fontawesome';
-import Drawer from '..';
+import NavigationDrawer from '..';
 
 let Container;
 
@@ -21,14 +21,14 @@ beforeAll(() => {
             history={history}
             initialEntries={[ '/' ]}
         >
-            <Drawer />
+            <NavigationDrawer />
         </Router>
     );
 });
 
-describe('Drawer', () => {
+describe('NavigationDrawer', () => {
     it('should shallowly render without crashing', () => {
-        shallow(<Drawer />);
+        shallow(<NavigationDrawer />);
     });
     it('should render without crashing', () => {
 
