@@ -1,8 +1,8 @@
-import StyledCard from './Card';
-import StyledButton from './Button';
-import StyledOverlay from './Overlay';
-import StyledPanel from './Panel';
-import StyledTextBox from './TextBox';
+import StyledCard from './StyledCard';
+import StyledButton from './StyledButton';
+import StyledOverlay from './StyledOverlay';
+import StyledPanel from './StyledPanel';
+import StyledTextBox from './StyledTextBox';
 
 export {
     StyledCard,
