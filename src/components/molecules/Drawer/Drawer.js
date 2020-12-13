@@ -55,7 +55,6 @@ const Drawer = (props) => {
             value={isOpen ? 25 : 3}
         >
             <MenuIcon
-                centered={!isOpen}
                 name="bars"
                 onClick={toggleOpen}
             />

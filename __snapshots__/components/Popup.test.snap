@@ -109,7 +109,6 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
         >
           <svg
             aria-hidden="true"
-            centered={false}
             className="svg-inline--fa fa-times-circle fa-w-16 c6"
             data-icon="times-circle"
             data-prefix="far"

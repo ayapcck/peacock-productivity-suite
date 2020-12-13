@@ -11,7 +11,6 @@ exports[`Icon - Common Tests should match snapshot 1`] = `
 
 <svg
   aria-hidden="true"
-  centered={false}
   className="svg-inline--fa fa-bars fa-w-14 c0"
   data-icon="bars"
   data-prefix="fas"
