@@ -7,7 +7,6 @@ exports[`Drawer - Common Tests should match snapshot 1`] = `
   border-width: 2px;
   box-shadow: 0 0 8px 0 #000000;
   border-color: #5b5b5b;
-  border-right-color: #1ebad9;
   height: 100%;
   padding: 5px;
   -webkit-transition: 0.3s;
@@ -30,7 +29,6 @@ exports[`Drawer - Common Tests should match snapshot 1`] = `
 
 .c2 {
   color: #ffffff;
-  margin: 5px;
 }
 
 .c2:hover {
@@ -47,10 +45,12 @@ exports[`Drawer - Common Tests should match snapshot 1`] = `
   >
     <svg
       aria-hidden="true"
+      centered={false}
       className="svg-inline--fa fa-bars fa-w-14 c2"
       data-icon="bars"
       data-prefix="fas"
       focusable="false"
+      name="bars"
       onClick={[Function]}
       role="img"
       style={Object {}}
@@ -69,10 +69,6 @@ exports[`Drawer - Common Tests should match snapshot 1`] = `
 `;
 
 exports[`Drawer should match snapshot 1`] = `
-.c1 {
-  margin: 5px;
-}
-
 .c1:hover {
   cursor: pointer;
 }
@@ -110,6 +106,7 @@ exports[`Drawer should match snapshot 1`] = `
 >
   <svg
     aria-hidden="true"
+    centered={false}
     className="svg-inline--fa fa-bars fa-w-14 c1 c2"
     data-icon="bars"
     data-prefix="fas"

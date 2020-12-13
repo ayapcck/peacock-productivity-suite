@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     array,
+    bool,
     func,
     oneOfType,
     string,
@@ -10,7 +11,8 @@ import styled from 'styled-components';
 
 const StyledIcon = styled(FontAwesomeIcon)`
     color: ${({ theme }) => theme.textColor};
-    margin: 5px;
+
+    ${({ centered }) => centered && 'margin: auto;'}
 
     &:hover {
         cursor: pointer;
@@ -19,26 +21,25 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
 const Icon = (props) => {
     const {
-        className,
-        icon,
-        onClick,
+        ...passThrough
     } = props;
 
     return (
         <StyledIcon
-            className={className}
-            icon={icon}
-            onClick={onClick}
+            { ...passThrough }
         />
     );
 };
 
 Icon.defaultProps = {
+    centered: false,
+    className: '',
     icon: 'bars',
     onClick: () => null,
 };
 
 Icon.propTypes = {
+    centered: bool,
     className: string,
     icon: oneOfType([ string, array ]),
     onClick: func,

@@ -4,6 +4,12 @@ import {
     func,
     node,
 } from 'prop-types';
+import flowRight from 'lodash/flowRight';
+
+import {
+    withPaddedWrapper,
+    withPullRight,
+} from '../../../logics';
 
 import {
     Card,
@@ -13,7 +19,6 @@ import {
 import {
     CenteredContainer,
     FlexColumn,
-    PullRight,
 } from '../../styled-elements';
 
 const Popup = (props) => {
@@ -28,17 +33,20 @@ const Popup = (props) => {
         width: '30%',
     };
 
+    const CloseIcon = flowRight([
+        withPullRight(true),
+        withPaddedWrapper,
+    ])(Icon);
+
     return (
         <CenteredContainer>
             <Overlay onClick={handleClose} />
             <Card { ...dimensions }>
                 <FlexColumn>
-                    <PullRight>
-                        <Icon
-                            icon={[ 'far', 'times-circle' ]}
-                            onClick={handleClose}
-                        />
-                    </PullRight>
+                    <CloseIcon
+                        icon={[ 'far', 'times-circle' ]}
+                        onClick={handleClose}
+                    />
                     { children }
                 </FlexColumn>
             </Card>

@@ -8,12 +8,13 @@ import {
 } from 'prop-types';
 
 import {
+    withPullRight,
+} from '../../../logics';
+
+import {
     Icon,
     Panel,
 } from '../../atoms';
-import {
-    PullRight,
-} from '../../styled-elements';
 
 const reverse = {
     left: 'right',
@@ -41,36 +42,11 @@ const Drawer = (props) => {
         }
     };
 
-    const _renderContent = () => {
-        const shouldPullRight = side === 'right';
-
-        return shouldPullRight
-            ? (
-                <PullRight>
-                    { children }
-                </PullRight>
-            ) : children;
-    };
-
-    const _renderIcon = () => {
-        const shouldPullRight = side === 'left';
-        const icon = (
-            <Icon
-                icon="bars"
-                onClick={toggleOpen}
-            />
-        );
-
-        return shouldPullRight
-            ? (
-                <PullRight>
-                    { icon }
-                </PullRight>
-            ) : icon;
-    };
-
     const revSide = reverse[side];
     const margin = `margin-${revSide}: auto;`;
+
+    const Content = withPullRight(side === 'right')(() => showContent && <>{ children }</>);
+    const MenuIcon = withPullRight(side === 'left')(Icon);
 
     return (
         <Panel
@@ -78,8 +54,12 @@ const Drawer = (props) => {
             styles={margin}
             value={isOpen ? 25 : 3}
         >
-            { _renderIcon() }
-            { showContent && _renderContent() }
+            <MenuIcon
+                centered={!isOpen}
+                name="bars"
+                onClick={toggleOpen}
+            />
+            <Content />
         </Panel>
     );
 };
