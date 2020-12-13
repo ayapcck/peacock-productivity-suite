@@ -20,17 +20,23 @@ cd $component_dir
 file_templates=../../../../scripts/file_templates
 
 # Define files
+component_file="${component_name}.js"
 index_file=index.js
 story_file="${component_name}.stories.js"
+style_file="../../styled-elements/components/Styled${component_name}.js"
 test_file="${component_name}.test.js"
 
 # Define replacement scripts
 name_script="s/\$component_name/$component_name/g"
 type_script="s/\$component_type/$component_type/g"
 
-# Add Content to index file
-sed $name_script $file_templates/component.txt > $index_file
-step_echo "Index file created and boilerplate code added"
+# Add content to component file
+sed $name_script $file_templates/component.txt > $component_file
+step_echo "Component file created and boilerplate code added"
+
+# Add content to index file
+sed $name_script $file_templates/componentIndex.txt > $index_file
+step_echo "Index file created and imports + exports added"
 
 # Add content to story file
 sed -e $name_script -e $type_script $file_templates/componentStory.txt > $story_file
@@ -43,7 +49,11 @@ fi
 
 step_echo "Storybook file created and basic story added"
 
-# add content to test file
+# Add content to style file
+sed -e $name_script $file_templates/componentStyle.txt > $style_file
+step_echo "Style file created and boilerplate code added"
+
+# Add content to test file
 sed -e $name_script $file_templates/componentTest.txt > $test_file
 step_echo "Test file created, shallow + deep render tests + snapshot test written"
 echo ""
