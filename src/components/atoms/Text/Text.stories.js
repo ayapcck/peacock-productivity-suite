@@ -2,7 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import Text from '.';
+import Text from './Text';
 import {
     capitalize,
     keys,

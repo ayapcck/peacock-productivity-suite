@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import TextBox from '.';
+import TextBox from './TextBox';
 
 export default {
     title: 'Atoms/TextBox',

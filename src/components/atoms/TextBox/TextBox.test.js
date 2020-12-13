@@ -1,4 +1,4 @@
-import TextBox from '.';
+import TextBox from './TextBox';
 import runCommonTests from '../../../../test/commonTests';
 
 runCommonTests(TextBox);

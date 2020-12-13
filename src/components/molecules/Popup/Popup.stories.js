@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import Popup from '.';
+import Popup from './Popup';
 
 export default {
     title: 'Molecules/Popup',

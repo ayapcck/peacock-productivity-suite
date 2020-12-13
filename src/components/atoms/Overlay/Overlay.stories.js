@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import Overlay from '.';
+import Overlay from './Overlay';
 
 export default {
     title: 'Atoms/Overlay',

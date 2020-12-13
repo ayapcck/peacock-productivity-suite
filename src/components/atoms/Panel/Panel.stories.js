@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import Panel from '.';
+import Panel from './Panel';
 
 export default {
     title: 'Atoms/Panel',

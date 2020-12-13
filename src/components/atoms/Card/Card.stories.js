@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import { withPaddedWrapper } from '../../../logics';
 
-import Card from '.';
+import Card from './Card';
 
 export default {
     title: 'Atoms/Card',
