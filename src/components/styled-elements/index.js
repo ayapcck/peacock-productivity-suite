@@ -1,6 +1,7 @@
 import {
     StyledButton,
     StyledCard,
+    StyledForm,
     StyledIcon,
     StyledOverlay,
     StyledPanel,
@@ -22,6 +23,7 @@ export {
     PullRight,
     StyledButton,
     StyledCard,
+    StyledForm,
     StyledIcon,
     StyledOverlay,
     StyledPanel,

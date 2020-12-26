@@ -2,7 +2,7 @@ import React from 'react';
 // import {} from 'prop-types';
 
 import {
-    Stlyed$component_name,
+    Styled$component_name,
 } from '../../styled-elements';
 
 const $component_name = () => (

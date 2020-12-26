@@ -12,7 +12,6 @@ const TextBox = (props) => {
         handleChange,
         name,
         placeHolder,
-        type,
         valid,
     } = props;
 
@@ -21,13 +20,16 @@ const TextBox = (props) => {
             name={name}
             onChange={handleChange}
             placeholder={placeHolder}
-            type={type}
+            type="text"
             valid={valid}
         />
     );
 };
 
-TextBox.defaultTypes = {
+TextBox.defaultProps = {
+    handleChange: () => null,
+    name: 'defaultName',
+    placeHolder: 'Placeholder',
     valid: true,
 };
 
@@ -35,7 +37,6 @@ TextBox.propTypes = {
     handleChange: func,
     name: string,
     placeHolder: string,
-    type: string,
     valid: bool,
 };
 

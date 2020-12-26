@@ -5,7 +5,7 @@ exports[`TextBox - Common Tests should match snapshot 1`] = `
   background-color: #5b5b5b;
   border-style: solid;
   color: #ffffff;
-  border-color: #f34b4b;
+  border-color: #1ebad9;
   border-width: 0 0 2px 0;
   margin: 7.5px 5px;
 }
@@ -32,5 +32,9 @@ exports[`TextBox - Common Tests should match snapshot 1`] = `
 
 <input
   className="c0"
+  name="defaultName"
+  onChange={[Function]}
+  placeholder="Placeholder"
+  type="text"
 />
 `;
