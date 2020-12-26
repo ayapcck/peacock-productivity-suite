@@ -17,7 +17,7 @@ const textboxElement = (isValid, name, placeHolder, type = 'text') => ({
     placeHolder,
     type,
 });
-const textboxElementNoValidity = (name, placeHolder, type = 'text') => 
+const textboxElementNoValidity = (name, placeHolder, type = 'text') =>
     textboxElement(() => true, name, placeHolder, type);
 
 const CONFIRM_PASSWORD = textboxElementNoValidity('confirmPassword', 'Confirm Password', 'password');
@@ -81,7 +81,7 @@ let Forms = {
         },
         elements: LoginElements,
         keyPrefix: 'loginBox',
-        links: [ 
+        links: [
             link('Forgot', forgotText),
             link('Register', noAccountText),
         ],

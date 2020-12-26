@@ -1,17 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Popup should match snapshot 1`] = `
-.c3:hover {
-  cursor: pointer;
-}
-
+exports[`Popup - Common Tests should match snapshot 1`] = `
 .c2 {
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0;
-  box-sizing: border-box;
-  height: 60%;
-  margin: auto;
-  padding: 10px;
+  border-style: solid;
+  background-color: #5b5b5b;
+  box-shadow: 0 4px 8px 0 #000000;
+  border-color: #5b5b5b;
+  height: 30%;
+  margin: 5px;
   position: relative;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -19,20 +16,19 @@ exports[`Popup should match snapshot 1`] = `
 }
 
 .c2:hover {
-  box-shadow: 0 8px 16px 0;
+  box-shadow: 0 8px 16px 0 #000000;
 }
 
-.c4 {
-  position: absolute;
-  right: 10px;
-  border-radius: 15px;
-  box-shadow: 0 2px 4px 0;
-  top: 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.c6 {
+  color: #ffffff;
+}
+
+.c6:hover {
+  cursor: pointer;
 }
 
 .c1 {
+  background-color: #ffffff;
   height: 100%;
   opacity: 0.5;
   position: absolute;
@@ -40,14 +36,54 @@ exports[`Popup should match snapshot 1`] = `
 }
 
 .c0 {
+  height: 100%;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  position: absolute;
-  top: 0;
+  padding: 10px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 <div
@@ -55,29 +91,44 @@ exports[`Popup should match snapshot 1`] = `
 >
   <div
     className="c1"
+    onClick={[Function]}
   />
   <div
     className="c2"
+    height="30%"
+    width="30%"
   >
-    <svg
-      aria-hidden="true"
-      className="svg-inline--fa fa-times-circle fa-w-16 c3 c4"
-      data-icon="times-circle"
-      data-prefix="far"
-      focusable="false"
-      onClick={[Function]}
-      role="img"
-      style={Object {}}
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      className="c3"
     >
-      <path
-        d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"
-        fill="currentColor"
-        style={Object {}}
-      />
-    </svg>
-    <div />
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-times-circle fa-w-16 c6"
+            data-icon="times-circle"
+            data-prefix="far"
+            focusable="false"
+            onClick={[Function]}
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      
+    </div>
   </div>
 </div>
 `;

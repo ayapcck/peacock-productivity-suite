@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const alignment = {
     center: 'center',
@@ -6,19 +6,31 @@ const alignment = {
     right: 'flex-end',
 };
 
-const AlignedContainer = styled.div`
-    display: flex;
-    height: 100%;
-    justify-content: ${({ align }) => alignment[align]};
+const maxContent = css`
+	height: 100%;
     width: 100%;
 `;
 
+const AlignedContainer = styled.div`
+	${maxContent}
+
+    display: flex;
+    justify-content: ${({ align }) => alignment[align]};
+`;
+
 const CenteredContainer = styled.div`
+	${maxContent}
+
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
-    width: 100%;
+`;
+
+const FlexColumn = styled.div`
+	${maxContent}
+
+	display: flex;
+    flex-direction: column;
 `;
 
 const PaddedWrapper = styled.div`
@@ -28,8 +40,16 @@ const PaddedWrapper = styled.div`
     padding: 10px;
 `;
 
+const PullRight = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+`;
+
 export {
     AlignedContainer,
     CenteredContainer,
+    FlexColumn,
     PaddedWrapper,
+    PullRight,
 };

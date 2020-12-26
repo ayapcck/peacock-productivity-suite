@@ -1,4 +1,4 @@
-import $component_name from '.';
+import $component_name from './$component_name';
 import runCommonTests from '../../../../test/commonTests';
 
 runCommonTests($component_name);

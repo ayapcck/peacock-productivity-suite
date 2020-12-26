@@ -11,5 +11,6 @@ exports[`Overlay - Common Tests should match snapshot 1`] = `
 
 <div
   className="c0"
+  onClick={[Function]}
 />
 `;

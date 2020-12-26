@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Icon from '.';
+import Icon from './Icon';
 import runCommonTests from '../../../../test/commonTests';
 
 runCommonTests(Icon);

@@ -14,7 +14,7 @@ const withPermissions = permissions => Component => {
     class WithPermissions extends React.Component {
         componentDidMount() {
             const { firebase, history } = this.props;
-            
+
             this.listener = !!firebase && firebase.auth.onAuthStateChanged(
                 authUser => {
                     const userPermissions = authUser && this.props.auth.userPermissions;

@@ -27,7 +27,7 @@ const getInitialState = (elements) => _.mapValues(elements, 'initial');
 class DefaultForm extends Component {
     constructor(props) {
         super(props);
-        
+
         const { elements } = this.props.form;
         const initialState = getInitialState(elements);
 
@@ -103,7 +103,7 @@ class DefaultForm extends Component {
             />
         );
     }
-    
+
     render() {
         return (
             <StyledDefaultForm onSubmit={this.onSubmit}>
@@ -119,7 +119,7 @@ const elementIsValid = (element, values) => {
     const value = values[element.name];
     const passwordsMatch = values['password'] === values['confirmPassword'];
     const empty = value === '';
-    return element.name === 'confirmPassword' 
+    return element.name === 'confirmPassword'
         ? passwordsMatch
         : empty || element.isValid(value);
 };

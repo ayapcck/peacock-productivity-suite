@@ -18,7 +18,7 @@ const MenuIcon = styled(Icon)`
     margin: 10px 10px 0 10px;
 `;
 
-const StyledDrawer = styled.div`
+const StyledNavigationDrawer = styled.div`
     border-color: ${({ theme }) => theme.accentColor};
     border-style: solid;
     border-width: 0 2px 0 0;
@@ -31,11 +31,11 @@ const StyledDrawer = styled.div`
     width: auto;
 `;
 
-const Drawer = ({ auth, startOpen }) => {
+const NavigationDrawer = ({ auth, startOpen }) => {
     const [ open, setOpen ] = useState(startOpen);
     const [ showNavigation, setShowNavigation ] = useState(open);
-    
-    const toggleDrawer = () => { 
+
+    const toggleNavigationDrawer = () => {
         if (open) {
             setShowNavigation(false);
             setOpen(false);
@@ -46,26 +46,26 @@ const Drawer = ({ auth, startOpen }) => {
     };
 
     return (
-        <StyledDrawer open={open}>
+        <StyledNavigationDrawer open={open}>
             { auth && auth.user && auth.user.email }
-            { renderMenuIcon(open, toggleDrawer) }
+            { renderMenuIcon(open, toggleNavigationDrawer) }
             { showNavigation && <Navigation /> }
-        </StyledDrawer>
+        </StyledNavigationDrawer>
     );
 };
 
 const renderMenuIcon = (open, onClick) => (
-    <MenuIcon 
-        icon="bars" 
+    <MenuIcon
+        icon="bars"
         onClick={onClick}
     />
 );
 
-Drawer.defaultProps = {
+NavigationDrawer.defaultProps = {
     startOpen: false,
 };
 
-Drawer.propTypes = {
+NavigationDrawer.propTypes = {
     auth: shape({
         user: shape({
             email: string,
@@ -74,4 +74,4 @@ Drawer.propTypes = {
     startOpen: bool,
 };
 
-export default withAuthConsumer(Drawer);
+export default withAuthConsumer(NavigationDrawer);

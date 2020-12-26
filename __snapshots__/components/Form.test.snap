@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form - Common Tests should match snapshot 1`] = `
+.c3 {
+  background-color: #1ebad9;
+  border-color: #1ebad9;
+  border-radius: 5px;
+  border-style: solid;
+  box-shadow: 2px 2px #188aa1;
+  margin: 10px;
+  padding: 2.5px 5px;
+}
+
+.c3:active {
+  box-shadow: 1px 1px #188aa1;
+  -webkit-transform: translateY(1px) translateX(1px);
+  -ms-transform: translateY(1px) translateX(1px);
+  transform: translateY(1px) translateX(1px);
+}
+
+.c3:focus {
+  outline: 0;
+}
+
+.c3:hover {
+  cursor: pointer;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  background-color: #5b5b5b;
+  border-style: solid;
+  color: #ffffff;
+  border-color: #1ebad9;
+  border-width: 0 0 2px 0;
+  margin: 7.5px 5px;
+}
+
+.c2:focus {
+  outline: 0;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.c2::-moz-placeholder {
+  color: #ffffff;
+}
+
+.c2:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.c2::placeholder {
+  color: #ffffff;
+}
+
+.c1 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
+<form
+  className="c0"
+>
+  <h1
+    className="c1"
+    size="large"
+    type="title"
+  >
+    Default
+  </h1>
+  <input
+    className="c2"
+    name="Test"
+    onChange={[Function]}
+    placeholder="Placeholder"
+    type="text"
+  />
+  <button
+    className="c3"
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

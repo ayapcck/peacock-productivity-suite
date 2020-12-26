@@ -88,17 +88,18 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
     name="password"
     onChange={[Function]}
     placeholder="Password"
-    type="password"
+    type="text"
   />
   <input
     className="c2"
     name="confirmPassword"
     onChange={[Function]}
     placeholder="Confirm Password"
-    type="password"
+    type="text"
   />
   <button
     className="c3"
+    onClick={[Function]}
     type="submit"
   >
     Submit
@@ -198,6 +199,7 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
   />
   <button
     className="c3"
+    onClick={[Function]}
     type="submit"
   >
     Submit
@@ -300,10 +302,11 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
     name="password"
     onChange={[Function]}
     placeholder="Password"
-    type="password"
+    type="text"
   />
   <button
     className="c3"
+    onClick={[Function]}
     type="submit"
   >
     Submit
@@ -413,17 +416,18 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
     name="password"
     onChange={[Function]}
     placeholder="Password"
-    type="password"
+    type="text"
   />
   <input
     className="c2"
     name="confirmPassword"
     onChange={[Function]}
     placeholder="Confirm Password"
-    type="password"
+    type="text"
   />
   <button
     className="c3"
+    onClick={[Function]}
     type="submit"
   >
     Submit

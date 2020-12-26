@@ -2,7 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import Text from '.';
+import Text from './Text';
 import {
     capitalize,
     keys,
@@ -13,7 +13,7 @@ export default {
     component: Text,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 
@@ -54,13 +54,15 @@ const Template = (args) => keys(configs).map((type, index) => {
     return (
         <div key={index}>
             <StoryTitle text={type} />
-            {sizes.map((config, sizeIndex) => (
-                <Text
-                    key={sizeIndex}
-                    { ...args }
-                    { ...config }
-                />
-            ))}
+            {
+                sizes.map((config, sizeIndex) => (
+                    <Text
+                        key={sizeIndex}
+                        { ...args }
+                        { ...config }
+                    />
+                ))
+            }
         </div>
     );
 });

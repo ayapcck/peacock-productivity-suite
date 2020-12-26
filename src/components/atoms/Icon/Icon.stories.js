@@ -2,14 +2,14 @@ import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import forIn from 'lodash/forIn';
 
-import Icon from '.';
+import Icon from './Icon';
 
 export default {
     title: 'Atoms/Icon',
     component: Icon,
     decorators: [ withKnobs ],
     argTypes: {
-        
+        onClick: { defaultValue: null },
     },
 };
 

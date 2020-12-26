@@ -4,9 +4,9 @@ import {
     object,
     shape,
 } from 'prop-types';
-import { 
+import {
     Link,
-    useLocation, 
+    useLocation,
 } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import _ from 'lodash';
@@ -146,7 +146,7 @@ const renderNavLinks = (userPermissions, currentPage) => {
         const isApps = key === 'APPS';
         const selected = !isApps && currentPage === route.navText;
 
-        const linkProps = { 
+        const linkProps = {
             currentPage,
             index,
             route,
@@ -172,7 +172,7 @@ const renderNavLink = (props) => {
 
     return hasPermissions(permissions, userPermissions) && (
         <StyledLink
-            key={index}            
+            key={index}
             selected={selected}
             to={route}
         >
@@ -191,11 +191,11 @@ const renderNavText = (text, colorOverride = null) => (
 );
 
 const renderSubLinks = (props) => {
-    const { 
+    const {
         currentPage,
         route: apps,
     } = props;
-    
+
     const subLinks = _.map(_.keys(apps), (key, index) => {
         const app = apps[key];
         const selected = currentPage === app.navText;

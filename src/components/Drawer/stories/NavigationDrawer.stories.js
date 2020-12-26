@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router';
 import styled from 'styled-components';
 
 import { AuthUserContext } from '../../../config/session';
-import Drawer from '../index';
+import NavigationDrawer from '../index';
 
 import {
     AdminAuthUser,
@@ -12,11 +12,11 @@ import {
 } from '../../../__mocks__/Users';
 
 export default {
-    title: 'Components/Drawer',
-    component: Drawer,
+    title: 'Components/NavigationDrawer',
+    component: NavigationDrawer,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 
@@ -29,7 +29,7 @@ const Template = (args) => (
     <AuthUserContext.Provider value={args.authUser}>
         <MemoryRouter initialEntries={[ '/' ]}>
             <Container>
-                <Drawer {...args} />
+                <NavigationDrawer {...args} />
             </Container>
         </MemoryRouter>
     </AuthUserContext.Provider>
@@ -45,7 +45,7 @@ Open.args = {
 };
 
 export const OpenAuthorized = Template.bind({});
-OpenAuthorized.args = { 
+OpenAuthorized.args = {
     authUser: AdminAuthUser,
     startOpen: true,
 };

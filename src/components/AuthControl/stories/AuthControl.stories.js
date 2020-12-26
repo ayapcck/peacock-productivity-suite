@@ -8,7 +8,7 @@ export default {
     component: AuthControl,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 

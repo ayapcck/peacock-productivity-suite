@@ -8,7 +8,7 @@ import {
 } from 'enzyme';
 
 import { addIcons } from '../../../config/fontawesome';
-import Drawer from '..';
+import NavigationDrawer from '..';
 
 let Container;
 
@@ -17,15 +17,18 @@ beforeAll(() => {
 
     const history = createMemoryHistory();
     Container = () => (
-        <Router history={history} initialEntries={[ '/' ]}>
-            <Drawer />
+        <Router
+            history={history}
+            initialEntries={[ '/' ]}
+        >
+            <NavigationDrawer />
         </Router>
     );
 });
 
-describe('Drawer', () => {
+describe('NavigationDrawer', () => {
     it('should shallowly render without crashing', () => {
-        shallow(<Drawer />);
+        shallow(<NavigationDrawer />);
     });
     it('should render without crashing', () => {
 

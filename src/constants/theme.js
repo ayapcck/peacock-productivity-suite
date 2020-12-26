@@ -20,6 +20,7 @@ const red = '#f34b4b';
 const border = {
     radius: '5px',
     style: 'solid',
+    width: '2px',
 };
 
 const sharedStyles = {

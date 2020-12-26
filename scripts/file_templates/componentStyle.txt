@@ -1,0 +1,7 @@
+import styled from 'styled-components';
+
+const Styled$component_name = styled.div`
+
+`;
+
+export default Styled$component_name;

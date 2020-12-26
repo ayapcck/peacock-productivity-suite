@@ -15,7 +15,7 @@ export default {
     component: Navigation,
     decorators: [ withKnobs ],
     argTypes: {
-        
+
     },
 };
 
