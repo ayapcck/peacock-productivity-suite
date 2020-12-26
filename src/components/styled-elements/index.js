@@ -6,6 +6,7 @@ import {
     StyledOverlay,
     StyledPanel,
     StyledTextBox,
+    StyledWrapper,
 } from './components';
 import {
     AlignedContainer,
@@ -28,4 +29,5 @@ export {
     StyledOverlay,
     StyledPanel,
     StyledTextBox,
+    StyledWrapper,
 };

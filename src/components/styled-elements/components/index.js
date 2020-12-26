@@ -5,6 +5,7 @@ import StyledIcon from './StyledIcon';
 import StyledOverlay from './StyledOverlay';
 import StyledPanel from './StyledPanel';
 import StyledTextBox from './StyledTextBox';
+import StyledWrapper from './StyledWrapper';
 
 export {
     StyledButton,
@@ -14,4 +15,5 @@ export {
     StyledOverlay,
     StyledPanel,
     StyledTextBox,
+    StyledWrapper,
 };

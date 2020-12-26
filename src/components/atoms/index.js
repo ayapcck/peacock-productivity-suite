@@ -5,6 +5,7 @@ import Overlay from './Overlay';
 import Panel from './Panel';
 import Text from './Text';
 import TextBox from './TextBox';
+import Wrapper from './Wrapper';
 
 export {
     Button,
@@ -14,4 +15,5 @@ export {
     Panel,
     Text,
     TextBox,
+    Wrapper,
 };
