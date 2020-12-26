@@ -6,6 +6,16 @@ length() {
     echo ${#stripped_var}
 }
 
+build_on_length() {
+    res="$1"
+    separator="$2"
+    length="$(($3))"
+    for ((i = 0; i < $length; i++)); do
+        res="$res$separator"
+    done
+    echo "$res"
+}
+
 echo_stars() {
     res="**"
     for ((i = 0; i < $1; i++)); do
@@ -21,6 +31,37 @@ header_echo() {
 
     echo_stars $size
     echo -e "$star $NC$string $star"
+    echo_stars $size
+}
+
+multi_header_echo() {
+    size=0
+    for string in "$@"; do
+        temp_size=$(length "$string")
+        if [[ $temp_size > $size ]]; then
+            size=$temp_size
+        fi
+    done
+
+    star="$blue*"
+    echo_stars $size
+    for string in "$@"; do
+        this_size=$(length "$string")
+        if [[ $size > $this_size ]]; then
+            difference=$size-$this_size
+            split=($size-$this_size)/2
+            res=$(build_on_length "$star" " " $split)
+            test=($size-$this_size)%2
+            if [[ $test -eq 1 ]]; then
+                split=$split+1
+            fi
+            res=$(build_on_length "$res $NC${string} " " " $split)
+            res="$res$star"
+            echo -e "$res"
+        else
+            echo -e "$star $NC${string} $star"
+        fi
+    done
     echo_stars $size
 }
 
@@ -45,16 +86,14 @@ confirm_var() {
 }
 
 with_confirmation() {
-    question=$1
-    name=$2
-    prompt "$question" "$name"
+    name=$1
+    prompt "$name" "${@:2}"
     confirm_var "$name" "$question"
 }
 
 prompt() {
-    question=$1
-    local -n val=$2
-    header_echo "$question"
+    local -n val=$1
+    multi_header_echo "${@:2}"
     read -p "" val
     echo ""
 }

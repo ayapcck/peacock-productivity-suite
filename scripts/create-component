@@ -4,59 +4,63 @@ source ./scripts/functions.sh
 
 options_prompt component_type "What type of component is this?" Atom Molecule Organism Template Page
 
-with_confirmation "What is this $pink${component_type^}$NC called?" component_name
+with_confirmation component_names "What is this $pink${component_type^}$NC called?" "Enter multiple names like: ${yellow}Name1 ${green}Name2 ${red}Name3"
 
 type=$(get_lowercase "$component_type")
-name="${component_name^}"
 
-prompt "Is this component clickable? (y/N)" clickable
+for component_name in $component_names; do
+    name="${component_name^}"
 
-# Create component directory and navigate to it
-component_dir="src/components/${type}s/${name}"
-mkdir $component_dir
-cd $component_dir
+    prompt clickable "Is ${name} clickable? (y/N)"
 
-# File templates folder relative to new component directory
-file_templates=../../../../scripts/file_templates
+    # Create component directory and navigate to it
+    component_dir="src/components/${type}s/${name}"
+    mkdir $component_dir
+    cd $component_dir
 
-# Define files
-component_file="${component_name}.js"
-index_file=index.js
-story_file="${component_name}.stories.js"
-style_file="../../styled-elements/components/Styled${component_name}.js"
-test_file="${component_name}.test.js"
+    # File templates folder relative to new component directory
+    file_templates=../../../../scripts/file_templates
 
-# Define replacement scripts
-name_script="s/\$component_name/$component_name/g"
-type_script="s/\$component_type/$component_type/g"
+    # Define files
+    component_file="${component_name}.js"
+    index_file=index.js
+    story_file="${component_name}.stories.js"
+    style_file="../../styled-elements/components/Styled${component_name}.js"
+    test_file="${component_name}.test.js"
 
-# Add content to component file
-sed $name_script $file_templates/component.txt > $component_file
-step_echo "Component file created and boilerplate code added"
+    # Define replacement scripts
+    name_script="s/\$component_name/$component_name/g"
+    type_script="s/\$component_type/$component_type/g"
 
-# Add content to index file
-sed $name_script $file_templates/componentIndex.txt > $index_file
-step_echo "Index file created and imports + exports added"
+    # Add content to component file
+    sed $name_script $file_templates/component.txt > $component_file
+    step_echo "Component file created and boilerplate code added"
 
-# Add content to story file
-sed -e $name_script -e $type_script $file_templates/componentStory.txt > $story_file
+    # Add content to index file
+    sed $name_script $file_templates/componentIndex.txt > $index_file
+    step_echo "Index file created and imports + exports added"
 
-if [[ $clickable == "y" || $clickable == "Y" ]]; then
-    sed -i 's/$clickable/onClick: { defaultValue: null, },/g' $story_file
-else
-    sed -i 's/$clickable//g' $story_file
-fi
+    # Add content to story file
+    sed -e $name_script -e $type_script $file_templates/componentStory.txt > $story_file
 
-step_echo "Storybook file created and basic story added"
+    if [[ $clickable == "y" || $clickable == "Y" ]]; then
+        sed -i 's/$clickable/onClick: { defaultValue: null, },/g' $story_file
+    else
+        sed -i 's/$clickable//g' $story_file
+    fi
 
-# Add content to style file
-sed -e $name_script $file_templates/componentStyle.txt > $style_file
-step_echo "Style file created and boilerplate code added"
+    step_echo "Storybook file created and basic story added"
 
-# Add content to test file
-sed -e $name_script $file_templates/componentTest.txt > $test_file
-step_echo "Test file created, shallow + deep render tests + snapshot test written"
+    # Add content to style file
+    sed -e $name_script $file_templates/componentStyle.txt > $style_file
+    step_echo "Style file created and boilerplate code added"
+
+    # Add content to test file
+    sed -e $name_script $file_templates/componentTest.txt > $test_file
+    step_echo "Test file created, shallow + deep render tests + snapshot test written"
+    
+    cd ../../../../
+done
+
 echo ""
-
-cd ../../../../
 ./scripts/fix-imports "${type}s"
