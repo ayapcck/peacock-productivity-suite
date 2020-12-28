@@ -16,11 +16,10 @@ const StyledCard = styled.div`
     ${shadow}
 
     border-color: ${({ bordered, theme }) => bordered ? theme.accentColor : theme.backgroundColor};
-    height: ${({ height }) => height };
+    flex: ${({ value }) => value};
     margin: 5px;
     position: relative;
     transition: 0.3s;
-    width: ${({ width }) => width };
 `;
 
 export default StyledCard;

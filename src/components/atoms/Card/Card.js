@@ -2,7 +2,7 @@ import React from 'react';
 import {
     bool,
     node,
-    string,
+    number,
 } from 'prop-types';
 
 import {
@@ -18,15 +18,13 @@ const Card = ({ children, ...passThrough }) => (
 Card.defaultProps = {
     bordered: false,
     children: '',
-    height: '25%',
-    width: '20%',
+    value: 0.25,
 };
 
 Card.propTypes = {
     bordered: bool,
     children: node,
-    height: string,
-    width: string,
+    value: number,
 };
 
 export default Card;

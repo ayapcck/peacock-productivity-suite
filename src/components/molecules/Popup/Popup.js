@@ -19,32 +19,29 @@ const Popup = (props) => {
         tall,
     } = props;
 
-    const dimensions = {
-        height: tall ? '60%' : '30%',
-        width: '30%',
-    };
-
     return (
-        <Wrapper centered>
+        <Wrapper justify="space-around">
             <Overlay onClick={handleClose} />
-            <Card { ...dimensions }>
-                <Wrapper
-                    flexDirection="column"
-                    position="relative"
-                    hasPadding
-                >
-                    <Wrapper
-                        position="absolute"
-                        right={10}
-                    >
-                        <Icon
-                            icon={[ 'far', 'times-circle' ]}
-                            onClick={handleClose}
-                        />
+            <Wrapper
+                flexDirection="column"
+                justify="space-around"
+                value={0.3}
+            >
+                <Card value={tall ? 0.6 : 0.3}>
+                    <Wrapper hasPadding>
+                        <Wrapper
+                            position="absolute"
+                            right={10}
+                        >
+                            <Icon
+                                icon={[ 'far', 'times-circle' ]}
+                                onClick={handleClose}
+                            />
+                        </Wrapper>
+                        { children }
                     </Wrapper>
-                    { children }
-                </Wrapper>
-            </Card>
+                </Card>
+            </Wrapper>
         </Wrapper>
     );
 };
