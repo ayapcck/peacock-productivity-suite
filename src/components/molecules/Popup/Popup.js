@@ -4,22 +4,13 @@ import {
     func,
     node,
 } from 'prop-types';
-import flowRight from 'lodash/flowRight';
-
-import {
-    withPaddedWrapper,
-    withPullRight,
-} from '../../../logics';
 
 import {
     Card,
     Icon,
     Overlay,
+    Wrapper,
 } from '../../atoms';
-import {
-    CenteredContainer,
-    FlexColumn,
-} from '../../styled-elements';
 
 const Popup = (props) => {
     const {
@@ -33,24 +24,28 @@ const Popup = (props) => {
         width: '30%',
     };
 
-    const CloseIcon = flowRight([
-        withPullRight(true),
-        withPaddedWrapper,
-    ])(Icon);
-
     return (
-        <CenteredContainer>
+        <Wrapper centered>
             <Overlay onClick={handleClose} />
             <Card { ...dimensions }>
-                <FlexColumn>
-                    <CloseIcon
-                        icon={[ 'far', 'times-circle' ]}
-                        onClick={handleClose}
-                    />
+                <Wrapper
+                    flexDirection="column"
+                    position="relative"
+                    hasPadding
+                >
+                    <Wrapper
+                        position="absolute"
+                        right={10}
+                    >
+                        <Icon
+                            icon={[ 'far', 'times-circle' ]}
+                            onClick={handleClose}
+                        />
+                    </Wrapper>
                     { children }
-                </FlexColumn>
+                </Wrapper>
             </Card>
-        </CenteredContainer>
+        </Wrapper>
     );
 };
 

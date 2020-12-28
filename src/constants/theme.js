@@ -25,6 +25,8 @@ const border = {
 
 const sharedStyles = {
     border,
+    margin: '10px',
+    padding: '10px',
 };
 
 const themeCreator = new ThemeCreator(sharedStyles);
