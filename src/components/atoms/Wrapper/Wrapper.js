@@ -4,6 +4,8 @@ import {
     node,
     number,
     oneOf,
+    oneOfType,
+    string,
 } from 'prop-types';
 
 import {
@@ -24,22 +26,32 @@ const Wrapper = (props) => {
 };
 
 Wrapper.defaultProps = {
-    align: 'start',
+    align: 'unset',
+    bottom: 'unset',
     centered: false,
     children: null,
     flexDirection: null,
     hasPadding: false,
-    justify: 'start',
+    justify: 'unset',
+    left: 'unset',
+    position: 'unset',
+    right: 'unset',
+    top: 'unset',
     value: 1,
 };
 
 Wrapper.propTypes = {
-    align: oneOf([ 'center', 'end', 'start' ]),
+    align: oneOf([ 'center', 'end', 'start', 'unset' ]),
+    bottom: oneOfType([ number, string ]),
     centered: bool,
     children: node,
     flexDirection: oneOf([ 'column', 'row' ]),
     hasPadding: bool,
-    justify: oneOf([ 'center', 'end', 'start' ]),
+    justify: oneOf([ 'center', 'end', 'start', 'unset' ]),
+    left: oneOfType([ number, string ]),
+    position: oneOf([ 'absolute', 'relative', 'unset' ]),
+    right: oneOfType([ number, string ]),
+    top: oneOfType([ number, string ]),
     value: number,
 };
 

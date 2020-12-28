@@ -28,10 +28,14 @@ const Popup = (props) => {
         <Wrapper centered>
             <Overlay onClick={handleClose} />
             <Card { ...dimensions }>
-                <Wrapper flexDirection="column">
+                <Wrapper
+                    flexDirection="column"
+                    position="relative"
+                    hasPadding
+                >
                     <Wrapper
-                        justify="end"
-                        hasPadding
+                        position="absolute"
+                        right={10}
                     >
                         <Icon
                             icon={[ 'far', 'times-circle' ]}
