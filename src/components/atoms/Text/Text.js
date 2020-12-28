@@ -24,8 +24,8 @@ const getTag = (size, type) => get(types, `${type}.${size}`);
 
 const Text = (props) => {
     const {
+        children,
         size,
-        text,
         type,
     } = props;
 
@@ -36,23 +36,23 @@ const Text = (props) => {
             { ...props }
             as={tag}
         >
-            {text}
+            { children }
         </StyledText>
     );
 };
 
 Text.defaultProps = {
     align: 'left',
+    children: '',
     size: 'medium',
-    text: '',
     type: 'body',
     variant: 'primary',
 };
 
 Text.propTypes = {
     align: oneOf([ 'left', 'center', 'right' ]),
+    children: string,
     size: oneOf([ 'small', 'medium', 'large' ]).isRequired,
-    text: string,
     type: oneOf([ 'body', 'title' ]).isRequired,
     variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };

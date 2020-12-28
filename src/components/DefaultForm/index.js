@@ -98,9 +98,10 @@ class DefaultForm extends Component {
             <Text
                 align="center"
                 size="medium"
-                text={title}
                 type="title"
-            />
+            >
+                { title }
+            </Text>
         );
     }
 

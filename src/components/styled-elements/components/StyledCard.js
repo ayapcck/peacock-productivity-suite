@@ -12,10 +12,16 @@ const StyledCard = styled.div`
     ${borderRadius}
     ${borderStyle}
     ${defaultBackground}
-    ${hoverShadow}
-    ${shadow}
 
-    border-color: ${({ bordered, theme, variant }) => bordered
+    ${({ clickable }) => clickable && `
+        &:hover {
+            cursor: pointer;
+        }
+    `}
+    ${({ hasHoverShadow }) => hasHoverShadow && hoverShadow}
+    ${({ hasShadow }) => hasShadow && shadow}
+
+    border-color: ${({ hasBorders, theme, variant }) => hasBorders
         ? theme.color[variant].accent
         : theme.color[variant].background};
     flex: ${({ value }) => value};

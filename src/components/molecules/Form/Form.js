@@ -19,9 +19,10 @@ const Title = ({ text }) => (
     <Text
         align="center"
         size="large"
-        text={text}
         type="title"
-    />
+    >
+        { text }
+    </Text>
 );
 Title.defaultProps = {
     text: 'Default',

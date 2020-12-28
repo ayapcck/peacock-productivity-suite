@@ -5,7 +5,6 @@ exports[`Card - Common Tests should match snapshot 1`] = `
   border-radius: 5px;
   border-style: solid;
   background-color: #5b5b5b;
-  box-shadow: 0 4px 8px 0 #000000;
   border-color: #5b5b5b;
   -webkit-flex: 0.25;
   -ms-flex: 0.25;
@@ -16,12 +15,9 @@ exports[`Card - Common Tests should match snapshot 1`] = `
   transition: 0.3s;
 }
 
-.c0:hover {
-  box-shadow: 0 8px 16px 0 #000000;
-}
-
 <div
   className="c0"
+  onClick={[Function]}
   value={0.25}
 >
   

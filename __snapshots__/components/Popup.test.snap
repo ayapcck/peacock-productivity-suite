@@ -5,7 +5,6 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   border-radius: 5px;
   border-style: solid;
   background-color: #5b5b5b;
-  box-shadow: 0 4px 8px 0 #000000;
   border-color: #5b5b5b;
   -webkit-flex: 0.3;
   -ms-flex: 0.3;
@@ -14,10 +13,6 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   position: relative;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-}
-
-.c3:hover {
-  box-shadow: 0 8px 16px 0 #000000;
 }
 
 .c6 {
@@ -159,6 +154,7 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   >
     <div
       className="c3"
+      onClick={[Function]}
       value={0.3}
     >
       <div

@@ -42,7 +42,7 @@ themeCreator.addColor(
 );
 themeCreator.addColor(
     'background',
-    [ darkGrey, darkGrey, darkGrey ],
+    [ darkGrey, white, darkGrey ],
     [ white, white, white ]
 );
 themeCreator.addColor(
