@@ -40,10 +40,10 @@ const configs = {
 const StoryTitle = ({ text }) => (
     <Text
         align="left"
-        colorOverride="cyan"
         size="large"
         text={capitalize(text)}
         type="title"
+        variant="secondary"
     />
 );
 StoryTitle.propTypes = {

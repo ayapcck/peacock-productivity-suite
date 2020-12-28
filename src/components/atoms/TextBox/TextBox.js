@@ -2,6 +2,7 @@ import React from 'react';
 import {
     bool,
     func,
+    oneOf,
     string,
 } from 'prop-types';
 
@@ -10,18 +11,16 @@ import { StyledTextBox } from '../../styled-elements';
 const TextBox = (props) => {
     const {
         handleChange,
-        name,
         placeHolder,
-        valid,
+        ...passThrough
     } = props;
 
     return (
         <StyledTextBox
-            name={name}
+            { ...passThrough }
             onChange={handleChange}
             placeholder={placeHolder}
             type="text"
-            valid={valid}
         />
     );
 };
@@ -31,6 +30,7 @@ TextBox.defaultProps = {
     name: 'defaultName',
     placeHolder: 'Placeholder',
     valid: true,
+    variant: 'primary',
 };
 
 TextBox.propTypes = {
@@ -38,6 +38,7 @@ TextBox.propTypes = {
     name: string,
     placeHolder: string,
     valid: bool,
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default TextBox;

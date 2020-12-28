@@ -36,6 +36,12 @@ exports[`Form - Common Tests should match snapshot 1`] = `
   flex-direction: column;
 }
 
+.c1 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c2 {
   background-color: #5b5b5b;
   border-style: solid;
@@ -63,12 +69,6 @@ exports[`Form - Common Tests should match snapshot 1`] = `
 
 .c2::placeholder {
   color: #ffffff;
-}
-
-.c1 {
-  color: #ffffff;
-  margin: 0;
-  text-align: center;
 }
 
 <form

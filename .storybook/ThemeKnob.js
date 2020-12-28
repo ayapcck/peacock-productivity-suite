@@ -6,7 +6,7 @@ import { DarkTheme, LightTheme } from '../src/constants/theme';
 
 const GlobalStyle = createGlobalStyle`
     #root {
-        background-color: ${({ theme }) => theme.backgroundColor};
+        background-color: ${({ theme }) => theme.color.primary.background};
     }
 `;
 

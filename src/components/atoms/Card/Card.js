@@ -3,6 +3,7 @@ import {
     bool,
     node,
     number,
+    oneOf,
 } from 'prop-types';
 
 import {
@@ -19,12 +20,14 @@ Card.defaultProps = {
     bordered: false,
     children: '',
     value: 0.25,
+    variant: 'primary',
 };
 
 Card.propTypes = {
     bordered: bool,
     children: node,
     value: number,
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default Card;

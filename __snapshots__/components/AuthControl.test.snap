@@ -61,6 +61,12 @@ exports[`AuthControl should match snapshot 1`] = `
   width: 100%;
 }
 
+.c9 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
 .c10 {
   background-color: #5b5b5b;
   border-style: solid;
@@ -199,12 +205,6 @@ exports[`AuthControl should match snapshot 1`] = `
   top: unset;
 }
 
-.c9 {
-  color: #ffffff;
-  margin: 0;
-  text-align: center;
-}
-
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -217,7 +217,6 @@ exports[`AuthControl should match snapshot 1`] = `
 }
 
 .c12 {
-  color: #ffffff;
   margin: auto 0 10px 0;
   text-align: center;
   -webkit-user-select: none;
@@ -286,6 +285,7 @@ exports[`AuthControl should match snapshot 1`] = `
             onClick={[Function]}
             role="img"
             style={Object {}}
+            variant="primary"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >

@@ -5,6 +5,7 @@ import {
     StyledIcon,
     StyledOverlay,
     StyledPanel,
+    StyledText,
     StyledTextBox,
     StyledWrapper,
 } from './components';
@@ -20,6 +21,7 @@ export {
     StyledIcon,
     StyledOverlay,
     StyledPanel,
+    StyledText,
     StyledTextBox,
     StyledWrapper,
 };

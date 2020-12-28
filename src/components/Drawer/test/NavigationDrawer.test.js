@@ -7,10 +7,13 @@ import {
     shallow,
 } from 'enzyme';
 
-import { addIcons } from '../../../config/fontawesome';
 import NavigationDrawer from '..';
+import { addIcons } from '../../../config/fontawesome';
+import { withDarkTheme } from '../../../context';
 
 let Container;
+
+const ThemedNavigation = withDarkTheme(NavigationDrawer);
 
 beforeAll(() => {
     addIcons();
@@ -21,14 +24,14 @@ beforeAll(() => {
             history={history}
             initialEntries={[ '/' ]}
         >
-            <NavigationDrawer />
+            <ThemedNavigation />
         </Router>
     );
 });
 
 describe('NavigationDrawer', () => {
     it('should shallowly render without crashing', () => {
-        shallow(<NavigationDrawer />);
+        shallow(<ThemedNavigation />);
     });
     it('should render without crashing', () => {
 

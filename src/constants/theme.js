@@ -30,16 +30,56 @@ const sharedStyles = {
 };
 
 const themeCreator = new ThemeCreator(sharedStyles);
-themeCreator.addColors('accentColor', lightBlue, lightGreen);
-themeCreator.addColors('altAccentColor', darkBlue, darkGreen);
-themeCreator.addColors('backgroundColor', darkGrey, white);
-themeCreator.addColors('errorColor', red, red);
-themeCreator.addColors('hoverColor', white, black);
-themeCreator.addColors('menuSelected', white, black);
-themeCreator.addColors('menuTextSelected', black, white);
-themeCreator.addColors('overlayColor', white, darkGrey);
-themeCreator.addColors('shadowColor', black, black);
-themeCreator.addColors('textColor', white, black);
+themeCreator.addColor(
+    'accent',
+    [ lightBlue, lightBlue, lightBlue ],
+    [ lightGreen, lightGreen, lightGreen ]
+);
+themeCreator.addColor(
+    'altAccent',
+    [ darkBlue, darkBlue, darkBlue ],
+    [ darkGreen, darkGreen, darkGreen ]
+);
+themeCreator.addColor(
+    'background',
+    [ darkGrey, darkGrey, darkGrey ],
+    [ white, white, white ]
+);
+themeCreator.addColor(
+    'error',
+    [ red, red, red ],
+    [ red, red, red ]
+);
+themeCreator.addColor(
+    'hover',
+    [ white, white, white ],
+    [ black, black, black ]
+);
+themeCreator.addColor(
+    'menuSelected',
+    [ white, white, white ],
+    [ black, black, black ]
+);
+themeCreator.addColor(
+    'menuTextSelected',
+    [ black, black, black ],
+    [ white, white, white ]
+);
+themeCreator.addColor(
+    'overlay',
+    [ white, white, white ],
+    [ darkGrey, darkGrey, darkGrey ]
+);
+themeCreator.addColor(
+    'shadow',
+    [ black, black, black ],
+    [ black, black, black ]
+);
+themeCreator.addColor(
+    'text',
+    [ white, lightBlue, white ],
+    [ black, black, black ]
+);
 
 export const DarkTheme = themeCreator.getDarkTheme();
 export const LightTheme = themeCreator.getLightTheme();

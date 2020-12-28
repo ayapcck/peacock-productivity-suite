@@ -15,7 +15,9 @@ const StyledCard = styled.div`
     ${hoverShadow}
     ${shadow}
 
-    border-color: ${({ bordered, theme }) => bordered ? theme.accentColor : theme.backgroundColor};
+    border-color: ${({ bordered, theme, variant }) => bordered
+        ? theme.color[variant].accent
+        : theme.color[variant].background};
     flex: ${({ value }) => value};
     margin: 5px;
     position: relative;

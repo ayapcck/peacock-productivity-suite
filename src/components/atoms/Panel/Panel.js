@@ -36,13 +36,13 @@ const Panel = (props) => {
 
     const usedBorderSides = mapValues(borderSides, side => borders.includes(side));
 
-    const boredered = borders !== 'none';
+    const bordered = borders !== 'none';
     const height = type === 'height';
     return (
         <StyledPanel
             { ...props }
             { ...usedBorderSides }
-            bordered={boredered}
+            bordered={bordered}
             isHeight={height}
         >
             { children }
@@ -57,6 +57,7 @@ Panel.defaultProps = {
     styles: '',
     type: 'width',
     value: 25,
+    variant: 'primary',
 };
 
 const isBordersProp = (props, propName, componentName) => {
@@ -83,6 +84,7 @@ Panel.propTypes = {
         'width',
     ]),
     value: number,
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default Panel;
