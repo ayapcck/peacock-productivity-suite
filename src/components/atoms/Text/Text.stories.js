@@ -1,12 +1,13 @@
 import React from 'react';
 import { string } from 'prop-types';
 import { withKnobs } from '@storybook/addon-knobs';
-
-import Text from './Text';
 import {
     capitalize,
     keys,
 } from 'lodash';
+
+import Text from './Text';
+import Wrapper from '../Wrapper';
 
 export default {
     title: 'Atoms/Text',
@@ -52,7 +53,11 @@ StoryTitle.propTypes = {
 const Template = (args) => keys(configs).map((type, index) => {
     const sizes = configs[type];
     return (
-        <div key={index}>
+        <Wrapper
+            flexDirection="column"
+            key={index}
+            hasPadding
+        >
             <StoryTitle text={type} />
             {
                 sizes.map((config, sizeIndex) => (
@@ -63,7 +68,7 @@ const Template = (args) => keys(configs).map((type, index) => {
                     />
                 ))
             }
-        </div>
+        </Wrapper>
     );
 });
 

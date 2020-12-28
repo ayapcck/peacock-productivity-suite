@@ -1,8 +1,6 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import { withPaddedWrapper } from '../../../logics';
-
 import Card from './Card';
 
 export default {
@@ -12,7 +10,7 @@ export default {
     argTypes: {},
 };
 
-const Template = withPaddedWrapper(Card);
+const Template = (args) => <Card { ...args } />;
 
 const customHeights = [ '25%', '50%', '75%', '90%' ];
 const Cards = cardProps =>
@@ -23,7 +21,7 @@ const Cards = cardProps =>
             key={i}
         />
     ));
-const MultiCardTemplate = withPaddedWrapper((args) => <><Cards { ...args } /></>);
+const MultiCardTemplate = (args) => <Cards { ...args } />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
@@ -32,12 +30,11 @@ export const CustomHeights = MultiCardTemplate.bind({});
 CustomHeights.storyName = 'Custom Heights';
 CustomHeights.args = {};
 
-const ContentCard = (args) => (
+const ContentTemplate = (args) => (
     <Card { ...args }>
         <div>I am a test!</div>
     </Card>
 );
-const ContentTemplate = withPaddedWrapper(ContentCard);
 export const WithContent = ContentTemplate.bind({});
 WithContent.storyName = 'With Content';
 WithContent.args = {};
