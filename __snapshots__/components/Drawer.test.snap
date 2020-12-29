@@ -23,6 +23,7 @@ exports[`Drawer - Common Tests should match snapshot 1`] = `
 
 .c0 {
   box-sizing: border-box;
+  border-color: #5b5b5b;
   box-shadow: 0 0 8px 0 #000000;
   height: 100%;
   padding: 5px;

@@ -2,6 +2,7 @@
 
 exports[`Wrapper - Common Tests should match snapshot 1`] = `
 .c0 {
+  border-color: #5b5b5b;
   -webkit-align-items: unset;
   -webkit-box-align: unset;
   -ms-flex-align: unset;

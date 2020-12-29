@@ -8,9 +8,9 @@ const borderStyle = css` border-style: ${({ theme }) => theme.border.style}; `;
 const borderWidth = css` border-width: ${({ theme }) => theme.border.width}; `;
 
 const customBorderSides = css`
+    border-color: ${({ borders, ...rest }) => borders === 'all' ? getThemeColor('accent', rest) : getThemeColor('background', rest)};
     ${({ borders }) => borders !== 'none' && borderStyle}
     ${({ borders }) => borders !== 'none' && borderWidth}
-    ${({ borders, ...rest }) => borders !== 'none' && `border-color: ${getThemeColor('accent', rest)};`}
     ${({ bottomBorder, ...rest }) => bottomBorder && `border-bottom-color: ${getThemeColor('accent', rest)};`}
     ${({ leftBorder, ...rest }) => leftBorder && `border-left-color: ${getThemeColor('accent', rest)};`}
     ${({ rightBorder, ...rest }) => rightBorder && `border-right-color: ${getThemeColor('accent', rest)};`}

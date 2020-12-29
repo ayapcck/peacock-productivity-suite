@@ -32,6 +32,7 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
 }
 
 .c0 {
+  border-color: #5b5b5b;
   -webkit-align-items: unset;
   -webkit-box-align: unset;
   -ms-flex-align: unset;
@@ -61,6 +62,7 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
 }
 
 .c2 {
+  border-color: #5b5b5b;
   -webkit-align-items: unset;
   -webkit-box-align: unset;
   -ms-flex-align: unset;
@@ -90,6 +92,7 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
 }
 
 .c4 {
+  border-color: #5b5b5b;
   padding: 10px;
   -webkit-align-items: unset;
   -webkit-box-align: unset;
@@ -120,6 +123,7 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
 }
 
 .c5 {
+  border-color: #5b5b5b;
   -webkit-align-items: unset;
   -webkit-box-align: unset;
   -ms-flex-align: unset;
