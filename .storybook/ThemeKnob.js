@@ -2,7 +2,10 @@ import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { select } from '@storybook/addon-knobs';
 
-import { DarkTheme, LightTheme } from '../src/constants/theme';
+import {
+    DARK_THEME,
+    LIGHT_THEME,
+} from '../src/constants';
 
 const GlobalStyle = createGlobalStyle`
     #root {
@@ -10,7 +13,10 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const themes = { Dark: DarkTheme, Light: LightTheme };
+const themes = {
+    Dark: DARK_THEME,
+    Light: LIGHT_THEME
+};
 const themeNames = Object.keys(themes);
 
 export default ({ children }) => {

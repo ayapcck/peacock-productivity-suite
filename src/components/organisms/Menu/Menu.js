@@ -25,9 +25,10 @@ const Menu = (props) => {
     return (
         <Wrapper flexDirection="column">
             {
-                items.map(({ text }, i) => (
+                items.map(({ isSubItem, text }, i) => (
                     <MenuItem
                         key={i}
+                        isSubItem={isSubItem}
                         onClick={() => setSelectedItem(text)}
                         selected={selectedItem === text}
                         text={text}
@@ -40,15 +41,17 @@ const Menu = (props) => {
 
 Menu.defaultProps = {
     items: [
-        { selected: true, text: 'item1' },
-        { selected: false, text: 'item2' },
-        { selected: false, text: 'item3' },
+        { isSubItem: false, text: 'item1' },
+        { isSubItem: false, text: 'item2' },
+        { isSubItem: true, text: 'sub-item1' },
+        { isSubItem: true, text: 'sub-item2' },
+        { isSubItem: false, text: 'item3' },
     ],
 };
 
 Menu.propTypes = {
     items: arrayOf(shape({
-        selected: bool,
+        isSubItem: bool,
         text: string,
     })),
 };

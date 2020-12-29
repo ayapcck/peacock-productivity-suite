@@ -16,16 +16,20 @@ const white = '#ffffff';
 // Reds
 const red = '#f34b4b';
 
-// Borders
+// Misc
 const border = {
     radius: '5px',
     style: 'solid',
     width: '2px',
 };
+const margin = {
+    big: '20px',
+    standard: '10px',
+};
 
 const sharedStyles = {
     border,
-    margin: '10px',
+    margin,
     padding: '10px',
 };
 
@@ -81,5 +85,5 @@ themeCreator.addColor(
     [ black, black, black ]
 );
 
-export const DarkTheme = themeCreator.getDarkTheme();
-export const LightTheme = themeCreator.getLightTheme();
+export const DARK_THEME = themeCreator.getDarkTheme();
+export const LIGHT_THEME = themeCreator.getLightTheme();

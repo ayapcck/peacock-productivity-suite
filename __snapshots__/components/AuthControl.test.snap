@@ -116,6 +116,8 @@ exports[`AuthControl should match snapshot 1`] = `
   position: unset;
   right: unset;
   top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .c2 {
@@ -143,6 +145,8 @@ exports[`AuthControl should match snapshot 1`] = `
   position: unset;
   right: unset;
   top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .c4 {
@@ -171,6 +175,8 @@ exports[`AuthControl should match snapshot 1`] = `
   position: unset;
   right: unset;
   top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .c5 {
@@ -198,6 +204,8 @@ exports[`AuthControl should match snapshot 1`] = `
   position: absolute;
   right: 10px;
   top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .c8 {

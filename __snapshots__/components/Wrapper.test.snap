@@ -26,6 +26,8 @@ exports[`Wrapper - Common Tests should match snapshot 1`] = `
   position: unset;
   right: unset;
   top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 <div

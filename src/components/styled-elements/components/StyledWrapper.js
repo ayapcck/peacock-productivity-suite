@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+import {
+    customBorderSides,
+    customMargins,
+} from '../styles';
+
 const handleFlexValue = val =>
     val === 'end' || val === 'start'
         ? `flex-${val}`
@@ -10,6 +15,9 @@ const handlePosition = val => typeof val === 'string'
     : `${val}px`;
 
 const StyledWrapper = styled.div`
+    ${customBorderSides}
+    ${customMargins}
+    
     ${({ hasPadding, theme: { padding } }) => hasPadding && `padding: ${padding};`}
     
     align-items: ${({ align, centered }) => centered ? 'center' : handleFlexValue(align)};
@@ -23,6 +31,7 @@ const StyledWrapper = styled.div`
     position: ${({ position }) => position};
     right: ${({ right }) => handlePosition(right)};
     top: ${({ top }) => handlePosition(top)};
+    transition: 0.3s;
 `;
 
 export default StyledWrapper;

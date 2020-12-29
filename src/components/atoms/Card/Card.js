@@ -5,6 +5,8 @@ import {
     node,
     number,
     oneOf,
+    oneOfType,
+    string,
 } from 'prop-types';
 
 import {
@@ -35,7 +37,7 @@ Card.propTypes = {
     hasHoverShadow: bool,
     hasShadow: bool,
     onClick: func,
-    value: number,
+    value: oneOfType([ number, string ]),
     variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 

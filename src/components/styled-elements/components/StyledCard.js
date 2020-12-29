@@ -4,8 +4,8 @@ import {
     borderRadius,
     borderStyle,
     defaultBackground,
-    hoverShadow,
-    shadow,
+    mediumShadow,
+    smallShadow,
 } from '../styles';
 
 const StyledCard = styled.div`
@@ -13,13 +13,7 @@ const StyledCard = styled.div`
     ${borderStyle}
     ${defaultBackground}
 
-    ${({ clickable }) => clickable && `
-        &:hover {
-            cursor: pointer;
-        }
-    `}
-    ${({ hasHoverShadow }) => hasHoverShadow && hoverShadow}
-    ${({ hasShadow }) => hasShadow && shadow}
+    ${({ hasShadow }) => hasShadow && mediumShadow}
 
     border-color: ${({ hasBorders, theme, variant }) => hasBorders
         ? theme.color[variant].accent
@@ -28,6 +22,11 @@ const StyledCard = styled.div`
     margin: 5px;
     position: relative;
     transition: 0.3s;
+
+    &:hover {
+        ${({ clickable }) => clickable && 'cursor: pointer;'}
+        ${({ hasHoverShadow }) => hasHoverShadow && smallShadow}
+    }
 `;
 
 export default StyledCard;
