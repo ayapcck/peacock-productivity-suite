@@ -20,7 +20,11 @@ const Popup = (props) => {
     } = props;
 
     return (
-        <Wrapper justify="space-around">
+        <Wrapper
+            justify="space-around"
+            position="absolute"
+            forceMaxContent
+        >
             <Overlay onClick={handleClose} />
             <Wrapper
                 flexDirection="column"

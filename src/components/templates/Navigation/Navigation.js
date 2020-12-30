@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+    useState,
+} from 'react';
 import { useHistory } from 'react-router-dom';
 import {
     object,
@@ -10,6 +12,7 @@ import {
     Drawer,
 } from '../../molecules';
 import {
+    Authentication,
     Menu,
 } from '../../organisms';
 
@@ -42,23 +45,36 @@ const Navigation = (props) => {
         routes,
     } = props;
 
+    const [ isAuthDisplayed, setIsAuthDisplayed ] = useState(true);
+    const showAuth = () => setIsAuthDisplayed(true);
+    const hideAuth = () => setIsAuthDisplayed(false);
+
     const history = useHistory();
     const navigate = destination => history.push(destination);
 
     const reducedRoutes = reduce(routes, itemReducer(navigate), []);
     const signInItem = {
-        onClick: () => null,
+        onClick: showAuth,
         text: 'Sign In',
         selectable: false,
     };
 
     return (
-        <Drawer>
-            <Menu
-                items={[ ...reducedRoutes, signInItem ]}
-                type="navigation"
-            />
-        </Drawer>
+        <>
+            <Drawer>
+                <Menu
+                    items={[ ...reducedRoutes, signInItem ]}
+                    type="navigation"
+                />
+            </Drawer>
+            {
+                isAuthDisplayed && (
+                    <Authentication
+                        handleClose={hideAuth}
+                    />
+                )
+            }
+        </>
     );
 };
 

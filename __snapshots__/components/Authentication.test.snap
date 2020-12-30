@@ -1,6 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Popup - Common Tests should match snapshot 1`] = `
+exports[`Authentication - Common Tests should match snapshot 1`] = `
+.c11 {
+  background-color: #1ebad9;
+  border-color: #1ebad9;
+  border-radius: 5px;
+  border-style: solid;
+  box-shadow: 2px 2px #188aa1;
+  margin: 10px;
+  padding: 2.5px 5px;
+}
+
+.c11:active {
+  box-shadow: 1px 1px #188aa1;
+  -webkit-transform: translateY(1px) translateX(1px);
+  -ms-transform: translateY(1px) translateX(1px);
+  transform: translateY(1px) translateX(1px);
+}
+
+.c11:focus {
+  outline: 0;
+}
+
+.c11:hover {
+  cursor: pointer;
+}
+
 .c3 {
   border-radius: 5px;
   border-style: solid;
@@ -13,6 +38,16 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   position: relative;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c6 {
@@ -31,6 +66,41 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.c9 {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
+.c10 {
+  background-color: #5b5b5b;
+  border-style: solid;
+  color: #ffffff;
+  border-color: #1ebad9;
+  border-width: 0 0 2px 0;
+  margin: 7.5px 5px;
+}
+
+.c10:focus {
+  outline: 0;
+}
+
+.c10::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.c10::-moz-placeholder {
+  color: #ffffff;
+}
+
+.c10:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.c10::placeholder {
+  color: #ffffff;
 }
 
 .c0 {
@@ -156,6 +226,36 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
   transition: 0.3s;
 }
 
+.c7 {
+  border-color: #5b5b5b;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 <div
   className="c0"
   value={1}
@@ -201,7 +301,50 @@ exports[`Popup - Common Tests should match snapshot 1`] = `
             />
           </svg>
         </div>
-        
+        <div
+          className="c7"
+          value={1}
+        >
+          <form
+            className="c8"
+          >
+            <h1
+              className="c9"
+              size="large"
+              type="title"
+            >
+              Log In
+            </h1>
+            <input
+              className="c10"
+              name="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="text"
+            />
+            <input
+              className="c10"
+              name="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="text"
+            />
+            <button
+              className="c11"
+              onClick={[Function]}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+          <h5
+            className="c9"
+            size="medium"
+            type="body"
+          >
+            Testing this text
+          </h5>
+        </div>
       </div>
     </div>
   </div>

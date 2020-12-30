@@ -32,6 +32,11 @@ const StyledWrapper = styled.div`
     right: ${({ right }) => handlePosition(right)};
     top: ${({ top }) => handlePosition(top)};
     transition: 0.3s;
+
+    ${({ forceMaxContent }) => forceMaxContent && `
+        height: 100%;
+        width: 100%;
+    `}
 `;
 
 export default StyledWrapper;
