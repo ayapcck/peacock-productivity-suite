@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import Icon from './Icon';
-import { withDarkTheme } from '../../../context';
+import { withDarkTheme } from '../../../logics';
 import runCommonTests from '../../../../test/commonTests';
 
 runCommonTests(Icon);

@@ -10,7 +10,9 @@ const lightGreen = '#c3ffb9';
 
 // Black/White/Greys
 const black = '#000000';
-const darkGrey = '#5b5b5b';
+const grey1 = '#b3b3b3';
+const grey2 = '#5b5b5b';
+const grey3 = '#232323';
 const white = '#ffffff';
 
 // Reds
@@ -36,17 +38,17 @@ const sharedStyles = {
 const themeCreator = new ThemeCreator(sharedStyles);
 themeCreator.addColor(
     'accent',
-    [ lightBlue, lightBlue, lightBlue ],
+    [ lightBlue, grey1, lightBlue ],
     [ lightGreen, lightGreen, lightGreen ]
 );
 themeCreator.addColor(
     'altAccent',
-    [ darkBlue, darkBlue, darkBlue ],
+    [ darkBlue, grey3, darkBlue ],
     [ darkGreen, darkGreen, darkGreen ]
 );
 themeCreator.addColor(
     'background',
-    [ darkGrey, white, darkGrey ],
+    [ grey2, white, grey2 ],
     [ white, white, white ]
 );
 themeCreator.addColor(
@@ -72,7 +74,7 @@ themeCreator.addColor(
 themeCreator.addColor(
     'overlay',
     [ white, white, white ],
-    [ darkGrey, darkGrey, darkGrey ]
+    [ grey2, grey2, grey2 ]
 );
 themeCreator.addColor(
     'shadow',

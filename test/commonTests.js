@@ -8,7 +8,7 @@ import {
 import { addIcons } from '../src/config/fontawesome';
 import {
     withDarkTheme,
-} from '../src/context';
+} from '../src/logics';
 
 const runCommonTests = (Component) => {
     const {

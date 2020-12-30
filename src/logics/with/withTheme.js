@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import {
     DARK_THEME,
     LIGHT_THEME,
-} from '../constants';
+} from '../../constants';
 
 const withLightTheme = (Component) => (props) => (
     <ThemeProvider theme={LIGHT_THEME}>

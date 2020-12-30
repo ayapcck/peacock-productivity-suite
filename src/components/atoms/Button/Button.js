@@ -34,9 +34,13 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+    /** Function called when button is pressed */
     onClick: func,
+    /** Text to display in the button */
     text: string,
+    /** The type of button. One of: */
     type: oneOf([ 'button', 'submit' ]),
+    /** Variant determines which color set to use. One of: */
     variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
