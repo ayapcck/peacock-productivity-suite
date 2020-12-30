@@ -4,8 +4,8 @@ import React, {
 import {
     arrayOf,
     bool,
+    func,
     object,
-    oneOf,
     shape,
     string,
 } from 'prop-types';
@@ -41,31 +41,31 @@ const Menu = (props) => {
     const {
         auth: { userPermissions },
         items,
-        type,
     } = props;
 
     const [ selectedItem, setSelectedItem ] = useState(items[0].text);
 
     const renderItem = (item, key, isSubItem = false) => {
         const {
-            destination,
+            onClick,
             permissions,
             text,
+            selectable,
             ...rest
         } = item;
 
-        const onClickProps = { onClick: () => setSelectedItem(text) };
-        const selectableProps = type === 'basic' || destination
-            ? { ...onClickProps, selected: selectedItem === text }
-            : { selected: false };
+        const clickMenuItem = () => {
+            selectable && setSelectedItem(text);
+            onClick();
+        };
 
         return hasPermissions(permissions, userPermissions) && (
             <MenuItem
                 { ...rest }
-                { ...selectableProps }
-                destination={destination}
                 isSubItem={isSubItem}
                 key={key}
+                onClick={clickMenuItem}
+                selected={selectedItem === text}
                 text={text}
             />
         );
@@ -97,7 +97,6 @@ Menu.defaultProps = {
         },
         { text: 'item3' },
     ],
-    type: 'basic',
 };
 
 Menu.propTypes = {
@@ -105,12 +104,11 @@ Menu.propTypes = {
         userPermissions: object,
     }).isRequired,
     items: arrayOf(shape({
-        destination: string,
         isSubItem: bool,
+        onClick: func,
         permissions: object,
         text: string,
     })),
-    type: oneOf([ 'basic', 'navigation' ]),
 };
 
 export default withAuthConsumer(Menu);

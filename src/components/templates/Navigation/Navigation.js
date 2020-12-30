@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import {
     object,
     objectOf,
@@ -12,19 +13,25 @@ import {
     Menu,
 } from '../../organisms';
 
-const itemReducer = (acc, route) => {
+const itemReducer = navigate => (acc, route) => {
     const {
         children,
         navText,
         permissions,
         route: destination,
+        selectable,
     } = route;
 
+    const onItemClick = destination
+        ? () => navigate(destination)
+        : () => null;
+
     acc.push({
-        children: children ? reduce(children, itemReducer, []) : null,
-        destination,
+        children: children ? reduce(children, itemReducer(navigate), []) : null,
+        onClick: onItemClick,
         permissions,
         text: navText,
+        selectable,
     });
 
     return acc;
@@ -35,10 +42,20 @@ const Navigation = (props) => {
         routes,
     } = props;
 
+    const history = useHistory();
+    const navigate = destination => history.push(destination);
+
+    const reducedRoutes = reduce(routes, itemReducer(navigate), []);
+    const signInItem = {
+        onClick: () => null,
+        text: 'Sign In',
+        selectable: false,
+    };
+
     return (
         <Drawer>
             <Menu
-                items={reduce(routes, itemReducer, [])}
+                items={[ ...reducedRoutes, signInItem ]}
                 type="navigation"
             />
         </Drawer>

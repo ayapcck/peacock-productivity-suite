@@ -5,6 +5,7 @@ const ROUTES = {
         navText: 'Landing',
         permissions: { },
         route: '/',
+        selectable: true,
     },
     HOME: {
         children: null,
@@ -14,6 +15,7 @@ const ROUTES = {
             viewHomepage: true,
         },
         route: '/home',
+        selectable: true,
     },
     APPS: {
         children: {
@@ -22,9 +24,11 @@ const ROUTES = {
                 navText: 'Notes',
                 permissions: {},
                 route: '/notes',
+                selectable: true,
             },
         },
         navText: 'Apps:',
+        selectable: false,
     },
     ADMIN_PANEL: {
         children: null,
@@ -34,6 +38,7 @@ const ROUTES = {
             administrator: true,
         },
         route: '/admin-panel',
+        selectable: true,
     },
 };
 
