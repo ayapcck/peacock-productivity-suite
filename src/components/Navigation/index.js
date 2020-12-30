@@ -197,8 +197,8 @@ const renderSubLinks = (props) => {
         route: apps,
     } = props;
 
-    const subLinks = _.map(_.keys(apps), (key, index) => {
-        const app = apps[key];
+    const subLinks = _.map(_.keys(apps.children), (key, index) => {
+        const app = apps.children[key];
         const selected = currentPage === app.navText;
         const appProps = {
             ...props,

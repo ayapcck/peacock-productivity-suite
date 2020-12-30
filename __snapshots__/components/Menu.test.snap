@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Menu - Common Tests should match snapshot 1`] = `
+exports[` - Common Tests should match snapshot 1`] = `
 .c2 {
   border-radius: 5px;
   border-style: solid;
@@ -254,6 +254,29 @@ exports[`Menu - Common Tests should match snapshot 1`] = `
           type="body"
         >
           item2
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+    value="unset"
+  >
+    <div
+      className="c5"
+      onClick={[Function]}
+      value={1}
+    >
+      <div
+        className="c6"
+        value={1}
+      >
+        <h5
+          className="c7"
+          size="medium"
+          type="body"
+        >
+          parent1:
         </h5>
       </div>
     </div>

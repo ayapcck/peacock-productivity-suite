@@ -2,6 +2,7 @@ import StyledButton from './StyledButton';
 import StyledCard from './StyledCard';
 import StyledForm from './StyledForm';
 import StyledIcon from './StyledIcon';
+import StyledNavLink from './StyledNavLink';
 import StyledOverlay from './StyledOverlay';
 import StyledPanel from './StyledPanel';
 import StyledText from './StyledText';
@@ -13,6 +14,7 @@ export {
     StyledCard,
     StyledForm,
     StyledIcon,
+    StyledNavLink,
     StyledOverlay,
     StyledPanel,
     StyledText,

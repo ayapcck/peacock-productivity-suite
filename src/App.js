@@ -18,7 +18,10 @@ import {
     Landing,
     Notes,
 } from './routes';
-import Drawer from './components/Drawer';
+import {
+    Navigation,
+} from './components/templates';
+// import Drawer from './components/Drawer';
 
 /** The keys in this should correspond to the 'key' value in src/constants/pages.js */
 const PAGE_COMPONENTS = {
@@ -34,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: ${({ theme }) => theme.backgroundColor};
+        background-color: ${({ theme }) => theme.color.primary.background};
     }
 `;
 
@@ -55,12 +58,13 @@ const App = () => (
     <Router>
         <GlobalStyle />
         <Container>
-            <Drawer />
+            <Navigation routes={ROUTES} />
+            {/* <Drawer /> */}
 
             {
                 _.map(ROUTES, (page, key) => {
                     if (key === 'APPS') {
-                        return _.map(page, (appPage, key) => {
+                        return _.map(page.children, (appPage, key) => {
                             return route(routeProps(key, appPage));
                         });
                     } else {

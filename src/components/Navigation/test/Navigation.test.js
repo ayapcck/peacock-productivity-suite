@@ -8,13 +8,13 @@ import { addIcons } from '../../../config/fontawesome';
 import { AuthUserContext } from '../../../config/session';
 import { FirebaseContext } from '../../../config/firebase';
 import { withDarkTheme } from '../../../logics';
-import Navigation from '..';
+import NavigationMenu from '..';
 
 import MockFirebase from '../../../__mocks__/Firebase';
 import { Admin, Guest } from '../../../__mocks__/Users';
 
 const mockedFirebase = MockFirebase();
-const ThemedNavigation = withDarkTheme(Navigation);
+const ThemedNavigation = withDarkTheme(NavigationMenu);
 
 beforeAll(() => {
     addIcons();
@@ -77,7 +77,7 @@ testCases.forEach(test => {
         });
 
         it('should shallowly render without crashing', () => {
-            shallow(<Navigation />);
+            shallow(<NavigationMenu />);
         });
         it('should render without crashing', () => {
             mount(<Container />);

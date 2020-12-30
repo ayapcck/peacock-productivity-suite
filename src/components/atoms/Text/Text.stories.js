@@ -41,10 +41,11 @@ const StoryTitle = ({ text }) => (
     <Text
         align="left"
         size="large"
-        text={capitalize(text)}
         type="title"
         variant="secondary"
-    />
+    >
+        { capitalize(text) }
+    </Text>
 );
 StoryTitle.propTypes = {
     text: string,
@@ -60,12 +61,14 @@ const Template = (args) => keys(configs).map((type, index) => {
         >
             <StoryTitle text={type} />
             {
-                sizes.map((config, sizeIndex) => (
+                sizes.map(({ text, ...rest }, sizeIndex) => (
                     <Text
                         key={sizeIndex}
                         { ...args }
-                        { ...config }
-                    />
+                        { ...rest }
+                    >
+                        { text }
+                    </Text>
                 ))
             }
         </Wrapper>
