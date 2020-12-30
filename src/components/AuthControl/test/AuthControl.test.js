@@ -7,7 +7,7 @@ import {
 
 import AuthControl from '..';
 import { addIcons } from '../../../config/fontawesome';
-import { withDarkTheme } from '../../../context';
+import { withDarkTheme } from '../../../logics';
 
 const ThemedAuthControl = withDarkTheme(AuthControl);
 

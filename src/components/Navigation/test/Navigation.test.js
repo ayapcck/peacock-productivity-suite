@@ -7,7 +7,7 @@ import { createMemoryHistory } from 'history';
 import { addIcons } from '../../../config/fontawesome';
 import { AuthUserContext } from '../../../config/session';
 import { FirebaseContext } from '../../../config/firebase';
-import { withDarkTheme } from '../../../context';
+import { withDarkTheme } from '../../../logics';
 import Navigation from '..';
 
 import MockFirebase from '../../../__mocks__/Firebase';
