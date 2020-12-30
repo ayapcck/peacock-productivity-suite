@@ -6,21 +6,14 @@ import {
     oneOf,
     string,
 } from 'prop-types';
-import {
-    isArray,
-    mapValues,
-} from 'lodash';
 
+import {
+    getUsedBorderSides,
+    isSidesProp,
+} from '../../../logics';
 import {
     StyledPanel,
 } from '../../styled-elements';
-
-const borderSides = {
-    bottomBorder: 'bottom',
-    leftBorder: 'left',
-    rightBorder: 'right',
-    topBorder: 'top',
-};
 
 /**
  * A panel, specified by a value and either 'height' or 'width'
@@ -34,15 +27,13 @@ const Panel = (props) => {
         type,
     } = props;
 
-    const usedBorderSides = mapValues(borderSides, side => borders.includes(side));
-
-    const boredered = borders !== 'none';
+    const bordered = borders !== 'none';
     const height = type === 'height';
     return (
         <StyledPanel
+            { ...getUsedBorderSides(borders) }
             { ...props }
-            { ...usedBorderSides }
-            bordered={boredered}
+            bordered={bordered}
             isHeight={height}
         >
             { children }
@@ -57,24 +48,11 @@ Panel.defaultProps = {
     styles: '',
     type: 'width',
     value: 25,
-};
-
-const isBordersProp = (props, propName, componentName) => {
-    const value = props[propName];
-    const sides = [ 'bottom', 'left', 'right', 'top' ];
-
-    if (value === 'all' || value === 'none') return null;
-    if (isArray(value)) {
-        const errors = [];
-        value.forEach(sideItem => !sides.includes(sideItem) &&
-                errors.push(`Invalid prop '${sideItem}' supplied to ${componentName}'s '${propName}' prop. Validation failed`));
-        if (errors.length !== 0) return new Error(errors[0]);
-    }
-    return null;
+    variant: 'primary',
 };
 
 Panel.propTypes = {
-    borders: isBordersProp,
+    borders: isSidesProp,
     centered: bool,
     children: node,
     styles: string,
@@ -83,6 +61,7 @@ Panel.propTypes = {
         'width',
     ]),
     value: number,
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default Panel;

@@ -8,13 +8,13 @@ import * as serviceWorker from './serviceWorker';
 import { addIcons } from './config/fontawesome';
 
 import App from './App';
-import { DarkTheme } from './constants/theme';
+import { DARK_THEME } from './constants';
 import Firebase, { FirebaseContext } from './config/firebase';
 
 addIcons();
 
 ReactDOM.render(
-    <ThemeProvider theme={DarkTheme}>
+    <ThemeProvider theme={DARK_THEME}>
         <FirebaseContext.Provider value={new Firebase()}>
             <App />
         </FirebaseContext.Provider>

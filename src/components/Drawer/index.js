@@ -13,11 +13,6 @@ import Navigation from '../Navigation';
 
 import { withAuthConsumer } from '../../config/session';
 
-const MenuIcon = styled(Icon)`
-    align-self: flex-end;
-    margin: 10px 10px 0 10px;
-`;
-
 const StyledNavigationDrawer = styled.div`
     border-color: ${({ theme }) => theme.accentColor};
     border-style: solid;
@@ -48,18 +43,14 @@ const NavigationDrawer = ({ auth, startOpen }) => {
     return (
         <StyledNavigationDrawer open={open}>
             { auth && auth.user && auth.user.email }
-            { renderMenuIcon(open, toggleNavigationDrawer) }
+            <Icon
+                icon="bars"
+                onClick={toggleNavigationDrawer}
+            />
             { showNavigation && <Navigation /> }
         </StyledNavigationDrawer>
     );
 };
-
-const renderMenuIcon = (open, onClick) => (
-    <MenuIcon
-        icon="bars"
-        onClick={onClick}
-    />
-);
 
 NavigationDrawer.defaultProps = {
     startOpen: false,

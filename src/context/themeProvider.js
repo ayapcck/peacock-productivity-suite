@@ -2,17 +2,17 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import {
-    DarkTheme,
-    LightTheme,
-} from '../constants/theme';
+    DARK_THEME,
+    LIGHT_THEME,
+} from '../constants';
 
 const withLightTheme = (Component) => (props) => (
-    <ThemeProvider theme={LightTheme}>
+    <ThemeProvider theme={LIGHT_THEME}>
         <Component { ...props } />
     </ThemeProvider>
 );
 const withDarkTheme = (Component) => (props) => (
-    <ThemeProvider theme={DarkTheme}>
+    <ThemeProvider theme={DARK_THEME}>
         <Component { ...props } />
     </ThemeProvider>
 );

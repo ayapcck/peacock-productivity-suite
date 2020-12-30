@@ -9,16 +9,16 @@ import { StyledButton } from '../../styled-elements';
 
 const Button = (props) => {
     const {
-        onClick,
         text,
         type,
+        ...buttonPassThrough
     } = props;
 
     const buttonText = text || (type === 'submit' && 'Submit');
 
     return (
         <StyledButton
-            onClick={onClick}
+            { ...buttonPassThrough }
             type={type}
         >
             {buttonText}
@@ -30,12 +30,14 @@ Button.defaultProps = {
     onClick: () => null,
     text: '',
     type: 'button',
+    variant: 'primary',
 };
 
 Button.propTypes = {
     onClick: func,
     text: string,
     type: oneOf([ 'button', 'submit' ]),
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default Button;

@@ -1,3 +1,5 @@
-// import all components here
+import Menu from './Menu';
 
-// export all components here
+export {
+    Menu,
+};

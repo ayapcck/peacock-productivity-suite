@@ -11,7 +11,9 @@ const StyledTextBox = styled.input`
     ${borderStyle}
     ${textColor}
 
-    border-color: ${({ valid, theme }) => valid ? theme.accentColor : theme.errorColor };
+    border-color: ${({ theme, valid, variant }) => valid
+        ? theme.color[variant].accent
+        : theme.color[variant].error };
     border-width: 0 0 2px 0;
     margin: 7.5px 5px;
 

@@ -1,15 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavigationDrawer should match snapshot 1`] = `
-.c1:hover {
-  cursor: pointer;
+.c1 {
+  color: #ffffff;
 }
 
-.c2 {
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  margin: 10px 10px 0 10px;
+.c1:hover {
+  cursor: pointer;
 }
 
 .c0 {
@@ -38,13 +35,14 @@ exports[`NavigationDrawer should match snapshot 1`] = `
 >
   <svg
     aria-hidden="true"
-    className="svg-inline--fa fa-bars fa-w-14 c1 c2"
+    className="svg-inline--fa fa-bars fa-w-14 c1"
     data-icon="bars"
     data-prefix="fas"
     focusable="false"
     onClick={[Function]}
     role="img"
     style={Object {}}
+    variant="primary"
     viewBox="0 0 448 512"
     xmlns="http://www.w3.org/2000/svg"
   >

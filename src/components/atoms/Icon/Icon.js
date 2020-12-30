@@ -2,6 +2,7 @@ import React from 'react';
 import {
     array,
     func,
+    oneOf,
     oneOfType,
     string,
 } from 'prop-types';
@@ -26,12 +27,14 @@ Icon.defaultProps = {
     className: '',
     icon: 'bars',
     onClick: () => null,
+    variant: 'primary',
 };
 
 Icon.propTypes = {
     className: string,
     icon: oneOfType([ string, array ]),
     onClick: func,
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default Icon;

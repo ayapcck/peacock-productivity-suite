@@ -4,13 +4,10 @@ import {
     string,
 } from 'prop-types';
 import get from 'lodash/get';
-import styled from 'styled-components';
 
-const StyledTag = styled.h1`
-    color: ${({ colorOverride, theme }) => colorOverride ?? theme.textColor};
-    margin: 0;
-    text-align: ${(props) => props.align};
-`;
+import {
+    StyledText,
+} from '../../styled-elements';
 
 const sizes = (typeSizes) => ({
     small: typeSizes[0],
@@ -27,37 +24,37 @@ const getTag = (size, type) => get(types, `${type}.${size}`);
 
 const Text = (props) => {
     const {
+        children,
         size,
-        text,
         type,
     } = props;
 
     const tag = getTag(size, type);
 
     return (
-        <StyledTag
+        <StyledText
             { ...props }
             as={tag}
         >
-            {text}
-        </StyledTag>
+            { children }
+        </StyledText>
     );
 };
 
 Text.defaultProps = {
     align: 'left',
-    colorOverride: null,
+    children: '',
     size: 'medium',
-    text: '',
     type: 'body',
+    variant: 'primary',
 };
 
 Text.propTypes = {
     align: oneOf([ 'left', 'center', 'right' ]),
-    colorOverride: string,
+    children: string,
     size: oneOf([ 'small', 'medium', 'large' ]).isRequired,
-    text: string,
     type: oneOf([ 'body', 'title' ]).isRequired,
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default Text;

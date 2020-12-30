@@ -16,30 +16,74 @@ const white = '#ffffff';
 // Reds
 const red = '#f34b4b';
 
-// Borders
+// Misc
 const border = {
     radius: '5px',
     style: 'solid',
     width: '2px',
 };
+const margin = {
+    big: '20px',
+    standard: '10px',
+};
 
 const sharedStyles = {
     border,
-    margin: '10px',
+    margin,
     padding: '10px',
 };
 
 const themeCreator = new ThemeCreator(sharedStyles);
-themeCreator.addColors('accentColor', lightBlue, lightGreen);
-themeCreator.addColors('altAccentColor', darkBlue, darkGreen);
-themeCreator.addColors('backgroundColor', darkGrey, white);
-themeCreator.addColors('errorColor', red, red);
-themeCreator.addColors('hoverColor', white, black);
-themeCreator.addColors('menuSelected', white, black);
-themeCreator.addColors('menuTextSelected', black, white);
-themeCreator.addColors('overlayColor', white, darkGrey);
-themeCreator.addColors('shadowColor', black, black);
-themeCreator.addColors('textColor', white, black);
+themeCreator.addColor(
+    'accent',
+    [ lightBlue, lightBlue, lightBlue ],
+    [ lightGreen, lightGreen, lightGreen ]
+);
+themeCreator.addColor(
+    'altAccent',
+    [ darkBlue, darkBlue, darkBlue ],
+    [ darkGreen, darkGreen, darkGreen ]
+);
+themeCreator.addColor(
+    'background',
+    [ darkGrey, white, darkGrey ],
+    [ white, white, white ]
+);
+themeCreator.addColor(
+    'error',
+    [ red, red, red ],
+    [ red, red, red ]
+);
+themeCreator.addColor(
+    'hover',
+    [ white, white, white ],
+    [ black, black, black ]
+);
+themeCreator.addColor(
+    'menuSelected',
+    [ white, white, white ],
+    [ black, black, black ]
+);
+themeCreator.addColor(
+    'menuTextSelected',
+    [ black, black, black ],
+    [ white, white, white ]
+);
+themeCreator.addColor(
+    'overlay',
+    [ white, white, white ],
+    [ darkGrey, darkGrey, darkGrey ]
+);
+themeCreator.addColor(
+    'shadow',
+    [ black, black, black ],
+    [ black, black, black ]
+);
+themeCreator.addColor(
+    'text',
+    [ white, lightBlue, white ],
+    [ black, black, black ]
+);
 
-export const DarkTheme = themeCreator.getDarkTheme();
-export const LightTheme = themeCreator.getLightTheme();
+export const DARK_THEME = themeCreator.getDarkTheme();
+export const LIGHT_THEME = themeCreator.getLightTheme();

@@ -1,7 +1,11 @@
 import React from 'react';
 import {
     bool,
+    func,
     node,
+    number,
+    oneOf,
+    oneOfType,
     string,
 } from 'prop-types';
 
@@ -16,17 +20,25 @@ const Card = ({ children, ...passThrough }) => (
 );
 
 Card.defaultProps = {
-    bordered: false,
     children: '',
-    height: '25%',
-    width: '20%',
+    clickable: false,
+    hasBorders: false,
+    hasHoverShadow: false,
+    hasShadow: false,
+    onClick: () => null,
+    value: 0.25,
+    variant: 'primary',
 };
 
 Card.propTypes = {
-    bordered: bool,
     children: node,
-    height: string,
-    width: string,
+    clickable: bool,
+    hasBorders: bool,
+    hasHoverShadow: bool,
+    hasShadow: bool,
+    onClick: func,
+    value: oneOfType([ number, string ]),
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default Card;

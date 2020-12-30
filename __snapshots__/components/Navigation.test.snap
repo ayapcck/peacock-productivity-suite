@@ -2,12 +2,6 @@
 
 exports[`Navigation - Admin should match snapshot 1`] = `
 .c2 {
-  color: inherit;
-  margin: 0;
-  text-align: left;
-}
-
-.c5 {
   color: #ffffff;
   margin: 0;
   text-align: left;
@@ -37,31 +31,29 @@ exports[`Navigation - Admin should match snapshot 1`] = `
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   width: 90%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px 0 #000000;
-  color: #000000;
+  background-color: undefined;
+  box-shadow: 0 2px 4px 0;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c1:hover {
-  box-shadow: 0 2px 4px 0 #000000;
+  box-shadow: 0 2px 4px 0;
 }
 
-.c7 {
+.c6 {
   border-radius: 5px;
   margin: 0 auto 10px auto;
   padding: 5px 10px;
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   width: 90%;
-  color: #ffffff;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c7:hover {
-  box-shadow: 0 2px 4px 0 #000000;
+.c6:hover {
+  box-shadow: 0 2px 4px 0;
 }
 
 .c0 {
@@ -86,15 +78,14 @@ exports[`Navigation - Admin should match snapshot 1`] = `
 }
 
 .c4:hover {
-  box-shadow: 0 2px 4px 0 #000000;
+  box-shadow: 0 2px 4px 0;
 }
 
 .c4:hover {
   cursor: pointer;
 }
 
-.c6 {
-  border-color: #ffffff;
+.c5 {
   border-style: solid;
   border-width: 0 0 0 2px;
   display: -webkit-box;
@@ -133,7 +124,7 @@ exports[`Navigation - Admin should match snapshot 1`] = `
         className="c4"
       >
         <h4
-          className="c5"
+          className="c2"
           size="large"
           type="body"
         >
@@ -141,10 +132,10 @@ exports[`Navigation - Admin should match snapshot 1`] = `
         </h4>
       </span>
       <div
-        className="c6"
+        className="c5"
       >
         <a
-          className="c7"
+          className="c6"
           href="/notes"
           onClick={[Function]}
           selected={false}
@@ -160,7 +151,7 @@ exports[`Navigation - Admin should match snapshot 1`] = `
       </div>
     </div>
     <a
-      className="c7"
+      className="c6"
       href="/admin-panel"
       onClick={[Function]}
       selected={false}
@@ -178,7 +169,7 @@ exports[`Navigation - Admin should match snapshot 1`] = `
       onClick={[Function]}
     >
       <h4
-        className="c5"
+        className="c2"
         size="large"
         type="body"
       >
@@ -190,7 +181,7 @@ exports[`Navigation - Admin should match snapshot 1`] = `
       onClick={[Function]}
     >
       <h4
-        className="c5"
+        className="c2"
         size="large"
         type="body"
       >
@@ -203,12 +194,6 @@ exports[`Navigation - Admin should match snapshot 1`] = `
 
 exports[`Navigation - Guest should match snapshot 1`] = `
 .c2 {
-  color: inherit;
-  margin: 0;
-  text-align: left;
-}
-
-.c5 {
   color: #ffffff;
   margin: 0;
   text-align: left;
@@ -238,31 +223,29 @@ exports[`Navigation - Guest should match snapshot 1`] = `
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   width: 90%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px 0 #000000;
-  color: #000000;
+  background-color: undefined;
+  box-shadow: 0 2px 4px 0;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c1:hover {
-  box-shadow: 0 2px 4px 0 #000000;
+  box-shadow: 0 2px 4px 0;
 }
 
-.c7 {
+.c6 {
   border-radius: 5px;
   margin: 0 auto 10px auto;
   padding: 5px 10px;
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   width: 90%;
-  color: #ffffff;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c7:hover {
-  box-shadow: 0 2px 4px 0 #000000;
+.c6:hover {
+  box-shadow: 0 2px 4px 0;
 }
 
 .c0 {
@@ -287,15 +270,14 @@ exports[`Navigation - Guest should match snapshot 1`] = `
 }
 
 .c4:hover {
-  box-shadow: 0 2px 4px 0 #000000;
+  box-shadow: 0 2px 4px 0;
 }
 
 .c4:hover {
   cursor: pointer;
 }
 
-.c6 {
-  border-color: #ffffff;
+.c5 {
   border-style: solid;
   border-width: 0 0 0 2px;
   display: -webkit-box;
@@ -334,7 +316,7 @@ exports[`Navigation - Guest should match snapshot 1`] = `
         className="c4"
       >
         <h4
-          className="c5"
+          className="c2"
           size="large"
           type="body"
         >
@@ -342,10 +324,10 @@ exports[`Navigation - Guest should match snapshot 1`] = `
         </h4>
       </span>
       <div
-        className="c6"
+        className="c5"
       >
         <a
-          className="c7"
+          className="c6"
           href="/notes"
           onClick={[Function]}
           selected={false}
@@ -365,7 +347,7 @@ exports[`Navigation - Guest should match snapshot 1`] = `
       onClick={[Function]}
     >
       <h4
-        className="c5"
+        className="c2"
         size="large"
         type="body"
       >

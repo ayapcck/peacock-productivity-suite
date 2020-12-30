@@ -2,6 +2,7 @@
 
 exports[`Wrapper - Common Tests should match snapshot 1`] = `
 .c0 {
+  border-color: #5b5b5b;
   -webkit-align-items: unset;
   -webkit-box-align: unset;
   -ms-flex-align: unset;
@@ -15,6 +16,9 @@ exports[`Wrapper - Common Tests should match snapshot 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
   -webkit-box-pack: unset;
   -webkit-justify-content: unset;
   -ms-flex-pack: unset;
@@ -23,6 +27,8 @@ exports[`Wrapper - Common Tests should match snapshot 1`] = `
   position: unset;
   right: unset;
   top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 <div

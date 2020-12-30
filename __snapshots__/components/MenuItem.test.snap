@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuItem - Common Tests should match snapshot 1`] = `
+.c1 {
+  border-radius: 5px;
+  border-style: solid;
+  background-color: #5b5b5b;
+  border-color: #5b5b5b;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 5px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c1:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 #000000;
+}
+
+.c3 {
+  color: #ffffff;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 {
+  border-color: #5b5b5b;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: unset;
+  -ms-flex: unset;
+  flex: unset;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c2 {
+  border-color: #5b5b5b;
+  padding: 10px;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+<div
+  className="c0"
+  value="unset"
+>
+  <div
+    className="c1"
+    onClick={[Function]}
+    value={1}
+  >
+    <div
+      className="c2"
+      value={1}
+    >
+      <h5
+        className="c3"
+        size="medium"
+        type="body"
+      >
+        Test
+      </h5>
+    </div>
+  </div>
+</div>
+`;

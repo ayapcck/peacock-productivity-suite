@@ -8,32 +8,40 @@ import {
     borderRadius,
     borderStyle,
     borderWidth,
+    customBorderSides,
     regularBorders,
 } from './Borders';
+import {
+    customMargins,
+} from './Margins';
 import {
     borderBox,
 } from './Misc';
 import {
+    bigShadow,
     equalShadow,
-    hoverShadow,
-    shadow,
+    mediumShadow,
+    smallShadow,
 } from './Shadows';
 import {
     textColor,
 } from './Text';
 
 export {
+    bigShadow,
     borderBox,
     borderColor,
     borderRadius,
     borderStyle,
     borderWidth,
+    customBorderSides,
+    customMargins,
     defaultBackground,
     elementBackground,
     equalShadow,
-    hoverShadow,
+    mediumShadow,
     overlayBackground,
     regularBorders,
-    shadow,
+    smallShadow,
     textColor,
 };

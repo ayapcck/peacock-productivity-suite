@@ -4,23 +4,29 @@ import {
     borderRadius,
     borderStyle,
     defaultBackground,
-    hoverShadow,
-    shadow,
+    mediumShadow,
+    smallShadow,
 } from '../styles';
 
 const StyledCard = styled.div`
     ${borderRadius}
     ${borderStyle}
     ${defaultBackground}
-    ${hoverShadow}
-    ${shadow}
 
-    border-color: ${({ bordered, theme }) => bordered ? theme.accentColor : theme.backgroundColor};
-    height: ${({ height }) => height };
+    ${({ hasShadow }) => hasShadow && mediumShadow}
+
+    border-color: ${({ hasBorders, theme, variant }) => hasBorders
+        ? theme.color[variant].accent
+        : theme.color[variant].background};
+    flex: ${({ value }) => value};
     margin: 5px;
     position: relative;
     transition: 0.3s;
-    width: ${({ width }) => width };
+
+    &:hover {
+        ${({ clickable }) => clickable && 'cursor: pointer;'}
+        ${({ hasHoverShadow }) => hasHoverShadow && smallShadow}
+    }
 `;
 
 export default StyledCard;
