@@ -307,6 +307,7 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
         >
           <form
             className="c8"
+            onSubmit={[Function]}
           >
             <h1
               className="c9"

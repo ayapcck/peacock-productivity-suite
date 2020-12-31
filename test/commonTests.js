@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import {
     mount,
@@ -9,12 +10,20 @@ import { addIcons } from '../src/config/fontawesome';
 import {
     withDarkTheme,
 } from '../src/logics';
+import store from '../src/redux';
 
 const runCommonTests = (Component) => {
     const {
         name,
     } = Component;
-    const ThemedComponent = withDarkTheme(Component);
+
+    const WrappedComponent = props => (
+        <Provider store={store}>
+            <Component { ...props } />
+        </Provider>
+    );
+
+    const ThemedComponent = withDarkTheme(WrappedComponent);
 
     beforeAll(() => {
         addIcons();
@@ -22,7 +31,7 @@ const runCommonTests = (Component) => {
 
     describe(`${name} - Common Tests`, () => {
         it('should shallowly render without crashing', () => {
-            shallow(<Component />);
+            shallow(<WrappedComponent />);
         });
         it('should render without crashing', () => {
             mount(<ThemedComponent />);
