@@ -2,12 +2,19 @@ import React, {
     useState,
 } from 'react';
 import {
-    func,
-} from 'prop-types';
+    useDispatch,
+} from 'react-redux';
+// import {
+//
+// } from 'prop-types';
 
 import {
     AUTHENTICATION_FORMS,
 } from '../../../constants';
+import {
+    closeAuthentication,
+    loginUser,
+} from '../../../redux';
 
 import {
     Text,
@@ -18,10 +25,10 @@ import {
     Popup,
 } from '../../molecules';
 
-const Authentication = (props) => {
-    const {
-        handleClose,
-    } = props;
+const Authentication = () => {
+    const dispatch = useDispatch();
+    const login = (user, password) => dispatch(loginUser({ user, password }));
+    const closeAuth = () => dispatch(closeAuthentication());
 
     // eslint-disable-next-line no-unused-vars
     const [ displayedFormName, setDisplayedFormName ] = useState('LOGIN');
@@ -29,12 +36,15 @@ const Authentication = (props) => {
     const displayedForm = AUTHENTICATION_FORMS[displayedFormName];
 
     return (
-        <Popup handleClose={handleClose}>
+        <Popup handleClose={closeAuth}>
             <Wrapper
                 flexDirection="column"
                 justify="center"
             >
-                <Form { ...displayedForm } />
+                <Form
+                    { ...displayedForm }
+                    onSubmit={() => login('testUser', 'testPassword')}
+                />
                 <Text align="center">
                     Testing this text
                 </Text>
@@ -44,11 +54,9 @@ const Authentication = (props) => {
 };
 
 Authentication.defaultProps = {
-    handleClose: () => null,
 };
 
 Authentication.propTypes = {
-    handleClose: func,
 };
 
 export default Authentication;

@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     arrayOf,
+    func,
     shape,
     string,
 } from 'prop-types';
@@ -33,9 +34,15 @@ Title.propTypes = {
 
 const Form = (props) => {
     const {
+        onSubmit,
         textFields,
         title,
     } = props;
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        onSubmit();
+    };
 
     const _renderTextFields = () => textFields.map((field, i) => (
         <TextBox
@@ -45,7 +52,7 @@ const Form = (props) => {
     ));
 
     return (
-        <StyledForm>
+        <StyledForm onSubmit={handleSubmit}>
             <Title text={title} />
             { _renderTextFields() }
             <Button type="submit" />
@@ -54,6 +61,7 @@ const Form = (props) => {
 };
 
 Form.defaultProps = {
+    onSubmit: () => null,
     textFields: [
         {
             name: 'Test',
@@ -64,6 +72,7 @@ Form.defaultProps = {
 };
 
 Form.propTypes = {
+    onSubmit: func,
     textFields: arrayOf(
         shape({
             name: string,

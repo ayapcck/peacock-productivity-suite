@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import {
     BrowserRouter as Router,
     Route,
@@ -9,8 +10,8 @@ import styled, {
 import _ from 'lodash';
 
 import { withAuthProvider } from './config/session';
-
 import { ROUTES } from './constants';
+import store from './redux';
 
 import {
     AdminPanel,
@@ -55,25 +56,27 @@ const routeProps = (key, page) => ({
 });
 
 const App = () => (
-    <Router>
-        <GlobalStyle />
-        <Container>
-            <Navigation routes={ROUTES} />
-            {/* <Drawer /> */}
+    <Provider store={store}>
+        <Router>
+            <GlobalStyle />
+            <Container>
+                <Navigation routes={ROUTES} />
+                {/* <Drawer /> */}
 
-            {
-                _.map(ROUTES, (page, key) => {
-                    if (key === 'APPS') {
-                        return _.map(page.children, (appPage, key) => {
-                            return route(routeProps(key, appPage));
-                        });
-                    } else {
-                        return route(routeProps(key, page));
-                    }
-                })
-            }
-        </Container>
-    </Router>
+                {
+                    _.map(ROUTES, (page, key) => {
+                        if (key === 'APPS') {
+                            return _.map(page.children, (appPage, key) => {
+                                return route(routeProps(key, appPage));
+                            });
+                        } else {
+                            return route(routeProps(key, page));
+                        }
+                    })
+                }
+            </Container>
+        </Router>
+    </Provider>
 );
 
 export default withAuthProvider(App);

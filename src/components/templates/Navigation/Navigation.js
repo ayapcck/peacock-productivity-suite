@@ -1,12 +1,19 @@
-import React, {
-    useState,
-} from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
+import {
+    useDispatch,
+    useSelector,
+} from 'react-redux';
 import {
     object,
     objectOf,
 } from 'prop-types';
 import reduce from 'lodash/reduce';
+
+import {
+    logoutUser,
+    openAuthentication,
+} from '../../../redux';
 
 import {
     Drawer,
@@ -45,17 +52,22 @@ const Navigation = (props) => {
         routes,
     } = props;
 
-    const [ isAuthDisplayed, setIsAuthDisplayed ] = useState(true);
-    const showAuth = () => setIsAuthDisplayed(true);
-    const hideAuth = () => setIsAuthDisplayed(false);
+    const dispatch = useDispatch();
+    const logout = () => dispatch(logoutUser());
+    const openAuth = () => dispatch(openAuthentication());
 
     const history = useHistory();
     const navigate = destination => history.push(destination);
 
+    const {
+        loggedIn,
+        modalOpen,
+    } = useSelector(state => state.authentication);
+
     const reducedRoutes = reduce(routes, itemReducer(navigate), []);
     const signInItem = {
-        onClick: showAuth,
-        text: 'Sign In',
+        onClick: loggedIn ? logout : openAuth,
+        text: loggedIn ? 'Log Out' : 'Sign In',
         selectable: false,
     };
 
@@ -67,13 +79,7 @@ const Navigation = (props) => {
                     type="navigation"
                 />
             </Drawer>
-            {
-                isAuthDisplayed && (
-                    <Authentication
-                        handleClose={hideAuth}
-                    />
-                )
-            }
+            { modalOpen && <Authentication /> }
         </>
     );
 };
