@@ -4,8 +4,10 @@ exports[`Overlay - Common Tests should match snapshot 1`] = `
 .c0 {
   background-color: #ffffff;
   height: 100%;
+  left: 0;
   opacity: 0.5;
   position: absolute;
+  top: 0;
   width: 100%;
 }
 

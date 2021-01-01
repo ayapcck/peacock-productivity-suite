@@ -1,359 +1,290 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation - Admin should match snapshot 1`] = `
+exports[`Navigation - Common Tests should match snapshot 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c5 {
+  border-radius: 5px;
+  border-style: solid;
+  background-color: #373737;
+  box-shadow: 0 4px 8px 0 #000000;
+  border-color: #373737;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 5px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c5:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 #000000;
+}
+
+.c8 {
+  border-radius: 5px;
+  border-style: solid;
+  background-color: #5b5b5b;
+  border-color: #5b5b5b;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 5px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c8:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 #000000;
+}
+
 .c2 {
+  color: #ffffff;
+}
+
+.c2:hover {
+  cursor: pointer;
+}
+
+.c0 {
+  box-sizing: border-box;
+  border-color: #5b5b5b;
+  box-shadow: 0 0 8px 0 #000000;
+  height: 100%;
+  padding: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 25%;
+  margin-right: auto;
+}
+
+.c7 {
+  color: #1ebad9;
+  margin: 0;
+  text-align: left;
+}
+
+.c10 {
   color: #ffffff;
   margin: 0;
   text-align: left;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 a {
+  border-color: #5b5b5b;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
   box-sizing: border-box;
-  margin: 0;
-  padding: 5px 10px;
-  width: 100%;
-}
-
-.c1 {
-  border-radius: 5px;
-  margin: 0 auto 10px auto;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
-  background-color: undefined;
-  box-shadow: 0 2px 4px 0;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c1:hover {
-  box-shadow: 0 2px 4px 0;
-}
-
-.c6 {
-  border-radius: 5px;
-  margin: 0 auto 10px auto;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c6:hover {
-  box-shadow: 0 2px 4px 0;
-}
-
-.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  list-style: none;
-  padding: 10px;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .c4 {
-  border-radius: 5px;
-  margin: 0 auto 10px auto;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
-}
-
-.c4:hover {
-  box-shadow: 0 2px 4px 0;
-}
-
-.c4:hover {
-  cursor: pointer;
-}
-
-.c5 {
-  border-style: solid;
-  border-width: 0 0 0 2px;
+  border-color: #5b5b5b;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto 10px 20px;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
+  -webkit-flex: unset;
+  -ms-flex: unset;
+  flex: unset;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-<div>
+.c6 {
+  border-color: #373737;
+  padding: 10px;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c9 {
+  border-color: #5b5b5b;
+  padding: 10px;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+<div
+  className="c0"
+  type="width"
+  value={25}
+>
   <div
-    className="c0"
+    className="c1"
   >
-    <a
-      className="c1"
-      href="/"
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-bars fa-w-14 c2"
+      data-icon="bars"
+      data-prefix="fas"
+      focusable="false"
+      name="bars"
       onClick={[Function]}
-      selected={true}
+      role="img"
+      style={Object {}}
+      variant="primary"
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <h4
-        className="c2"
-        size="large"
-        type="body"
-      >
-        Landing
-      </h4>
-    </a>
-    <div
-      className="c3"
-    >
-      <span
-        className="c4"
-      >
-        <h4
-          className="c2"
-          size="large"
-          type="body"
-        >
-          Apps:
-        </h4>
-      </span>
-      <div
-        className="c5"
-      >
-        <a
-          className="c6"
-          href="/notes"
-          onClick={[Function]}
-          selected={false}
-        >
-          <h4
-            className="c2"
-            size="large"
-            type="body"
-          >
-            Notes
-          </h4>
-        </a>
-      </div>
-    </div>
-    <a
-      className="c6"
-      href="/admin-panel"
-      onClick={[Function]}
-      selected={false}
-    >
-      <h4
-        className="c2"
-        size="large"
-        type="body"
-      >
-        Admin Panel
-      </h4>
-    </a>
-    <span
-      className="c4"
-      onClick={[Function]}
-    >
-      <h4
-        className="c2"
-        size="large"
-        type="body"
-      >
-        Change Password
-      </h4>
-    </span>
-    <span
-      className="c4 Navigation_LoginRegisterLink"
-      onClick={[Function]}
-    >
-      <h4
-        className="c2"
-        size="large"
-        type="body"
-      >
-        Sign out
-      </h4>
-    </span>
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </div>
-</div>
-`;
-
-exports[`Navigation - Guest should match snapshot 1`] = `
-.c2 {
-  color: #ffffff;
-  margin: 0;
-  text-align: left;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 a {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 5px 10px;
-  width: 100%;
-}
-
-.c1 {
-  border-radius: 5px;
-  margin: 0 auto 10px auto;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
-  background-color: undefined;
-  box-shadow: 0 2px 4px 0;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c1:hover {
-  box-shadow: 0 2px 4px 0;
-}
-
-.c6 {
-  border-radius: 5px;
-  margin: 0 auto 10px auto;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c6:hover {
-  box-shadow: 0 2px 4px 0;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  list-style: none;
-  padding: 10px;
-}
-
-.c4 {
-  border-radius: 5px;
-  margin: 0 auto 10px auto;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
-}
-
-.c4:hover {
-  box-shadow: 0 2px 4px 0;
-}
-
-.c4:hover {
-  cursor: pointer;
-}
-
-.c5 {
-  border-style: solid;
-  border-width: 0 0 0 2px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto 10px 20px;
-  padding: 5px 10px;
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 90%;
-}
-
-<div>
   <div
-    className="c0"
+    className="c3"
+    value={1}
   >
-    <a
-      className="c1"
-      href="/"
-      onClick={[Function]}
-      selected={true}
-    >
-      <h4
-        className="c2"
-        size="large"
-        type="body"
-      >
-        Landing
-      </h4>
-    </a>
     <div
-      className="c3"
+      className="c4"
+      value="unset"
     >
-      <span
-        className="c4"
-      >
-        <h4
-          className="c2"
-          size="large"
-          type="body"
-        >
-          Apps:
-        </h4>
-      </span>
       <div
         className="c5"
+        onClick={[Function]}
+        value={1}
       >
-        <a
+        <div
           className="c6"
-          href="/notes"
-          onClick={[Function]}
-          selected={false}
+          value={1}
         >
-          <h4
-            className="c2"
-            size="large"
+          <h5
+            className="c7"
+            size="medium"
             type="body"
           >
-            Notes
-          </h4>
-        </a>
+            Default
+          </h5>
+        </div>
       </div>
     </div>
-    <span
-      className="c4 Navigation_LoginRegisterLink"
-      onClick={[Function]}
+    <div
+      className="c4"
+      value="unset"
     >
-      <h4
-        className="c2"
-        size="large"
-        type="body"
+      <div
+        className="c8"
+        onClick={[Function]}
+        value={1}
       >
-        Login
-      </h4>
-    </span>
+        <div
+          className="c9"
+          value={1}
+        >
+          <h5
+            className="c10"
+            size="medium"
+            type="body"
+          >
+            Sign In
+          </h5>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

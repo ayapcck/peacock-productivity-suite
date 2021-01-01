@@ -1,0 +1,29 @@
+import {
+    ArgsTable,
+    Canvas,
+    Meta,
+    Story,
+} from '@storybook/addon-docs/blocks';
+
+import LoadingButton from './LoadingButton';
+import * as stories from './LoadingButton.stories.js';
+
+<Meta
+    component={LoadingButton}
+    title="Molecules/LoadingButton"
+/>
+
+# LoadingButton
+
+This is a basic LoadingButton
+<Canvas>
+    <Story
+        name="Primary"
+    >
+        <LoadingButton />
+    </Story>
+</Canvas>
+
+<ArgsTable story="Primary" />
+
+These are the LoadingButton variants with Dark and Light themes respectively:

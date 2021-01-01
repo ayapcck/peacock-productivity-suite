@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -6,19 +7,22 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import { addIcons } from './config/fontawesome';
+import Firebase, { FirebaseContext } from './config/firebase';
+import { DARK_THEME } from './constants';
+import store from './redux';
 
 import App from './App';
-import { DARK_THEME } from './constants';
-import Firebase, { FirebaseContext } from './config/firebase';
 
 addIcons();
 
 ReactDOM.render(
-    <ThemeProvider theme={DARK_THEME}>
-        <FirebaseContext.Provider value={new Firebase()}>
-            <App />
-        </FirebaseContext.Provider>
-    </ThemeProvider>,
+    <Provider store={store}>
+        <ThemeProvider theme={DARK_THEME}>
+            <FirebaseContext.Provider value={new Firebase()}>
+                <App />
+            </FirebaseContext.Provider>
+        </ThemeProvider>
+    </Provider>,
     document.getElementById('root')
 );
 

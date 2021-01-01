@@ -1,3 +1,4 @@
+import AUTHENTICATION_FORMS from './forms';
 import {
     BORDER_SIDES,
     MARGIN_SIDES,
@@ -9,6 +10,7 @@ import {
 } from './theme';
 
 export {
+    AUTHENTICATION_FORMS,
     BORDER_SIDES,
     DARK_THEME,
     LIGHT_THEME,

@@ -1,5 +1,8 @@
 import React from 'react';
 import {
+    useSelector,
+} from 'react-redux';
+import {
     BrowserRouter as Router,
     Route,
 } from 'react-router-dom';
@@ -9,7 +12,6 @@ import styled, {
 import _ from 'lodash';
 
 import { withAuthProvider } from './config/session';
-
 import { ROUTES } from './constants';
 
 import {
@@ -18,7 +20,13 @@ import {
     Landing,
     Notes,
 } from './routes';
-import Drawer from './components/Drawer';
+
+import {
+    LoadingOverlay,
+} from './components/organisms';
+import {
+    Navigation,
+} from './components/templates';
 
 /** The keys in this should correspond to the 'key' value in src/constants/pages.js */
 const PAGE_COMPONENTS = {
@@ -34,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: ${({ theme }) => theme.backgroundColor};
+        background-color: ${({ theme }) => theme.color.primary.background};
     }
 `;
 
@@ -51,25 +59,31 @@ const routeProps = (key, page) => ({
     path: page.route,
 });
 
-const App = () => (
-    <Router>
-        <GlobalStyle />
-        <Container>
-            <Drawer />
+const App = () => {
+    const { isLoadingOverlayOpen } = useSelector(state => state.utility);
 
-            {
-                _.map(ROUTES, (page, key) => {
-                    if (key === 'APPS') {
-                        return _.map(page, (appPage, key) => {
-                            return route(routeProps(key, appPage));
-                        });
-                    } else {
-                        return route(routeProps(key, page));
-                    }
-                })
-            }
-        </Container>
-    </Router>
-);
+    return (
+        <Router>
+            <GlobalStyle />
+            <Container>
+                <Navigation routes={ROUTES} />
+
+                {
+                    _.map(ROUTES, (page, key) => {
+                        if (key === 'APPS') {
+                            return _.map(page.children, (appPage, key) => {
+                                return route(routeProps(key, appPage));
+                            });
+                        } else {
+                            return route(routeProps(key, page));
+                        }
+                    })
+                }
+
+                { isLoadingOverlayOpen && <LoadingOverlay /> }
+            </Container>
+        </Router>
+    );
+};
 
 export default withAuthProvider(App);

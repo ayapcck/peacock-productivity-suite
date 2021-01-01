@@ -13,19 +13,14 @@ import * as stories from './Button.stories.js';
     title="Atoms/Button"
 />
 
-export const Primary = (args) => <Button { ...args } />;
-
 # Button
 
 This is a basic button
 <Canvas>
     <Story
         name="Primary"
-        args={{
-            text: 'Test Button'
-        }}
     >
-        { Primary.bind({}) }
+        <Button text="Test Button" />
     </Story>
 </Canvas>
 

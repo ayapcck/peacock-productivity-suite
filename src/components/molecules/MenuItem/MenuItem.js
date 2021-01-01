@@ -19,6 +19,8 @@ const MenuItem = (props) => {
         text,
     } = props;
 
+    const variant = selected ? 'secondary' : 'primary';
+
     return (
         <Wrapper
             borders={isSubItem ? [ 'left' ] :  'none'}
@@ -29,16 +31,16 @@ const MenuItem = (props) => {
                 hasShadow={selected}
                 onClick={onClick}
                 value={1}
-                variant={ selected ? 'secondary' : 'primary' }
+                variant={variant}
                 clickable
                 hasHoverShadow
             >
                 <Wrapper
-                    variant={ selected ? 'secondary' : 'primary' }
+                    variant={variant}
                     hasPadding
                 >
                     <Text
-                        variant={ selected ? 'secondary' : 'primary' }
+                        variant={variant}
                     >
                         { text }
                     </Text>

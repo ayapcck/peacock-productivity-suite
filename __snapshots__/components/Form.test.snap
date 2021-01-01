@@ -73,6 +73,7 @@ exports[`Form - Common Tests should match snapshot 1`] = `
 
 <form
   className="c0"
+  onSubmit={[Function]}
 >
   <h1
     className="c1"

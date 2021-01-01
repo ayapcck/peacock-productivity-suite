@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { RegisterForm } from '../index';
 import {
     Popup,
-} from '../../molecules';
+} from '../../organisms';
 
 export default {
     title: 'Components/Forms/RegisterForm',

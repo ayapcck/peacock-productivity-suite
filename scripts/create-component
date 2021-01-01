@@ -13,6 +13,8 @@ for component_name in $component_names; do
 
     prompt clickable "Is ${name} clickable? (y/N)"
 
+    prompt styled "Will ${name} have its own styles? (y/N)"
+
     # Create component directory and navigate to it
     component_dir="src/components/${type}s/${name}"
     mkdir $component_dir
@@ -52,8 +54,10 @@ for component_name in $component_names; do
     step_echo "Storybook file created and basic story added"
 
     # Add content to style file
-    sed -e $name_script $file_templates/componentStyle.txt > $style_file
-    step_echo "Style file created and boilerplate code added"
+    if [[ $styled == "y" || $styled == "Y" ]]; then
+        sed -e $name_script $file_templates/componentStyle.txt > $style_file
+        step_echo "Style file created and boilerplate code added"
+    fi
 
     # Add content to test file
     sed -e $name_script $file_templates/componentTest.txt > $test_file

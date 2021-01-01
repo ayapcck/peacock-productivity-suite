@@ -12,7 +12,8 @@ const lightGreen = '#c3ffb9';
 const black = '#000000';
 const grey1 = '#b3b3b3';
 const grey2 = '#5b5b5b';
-const grey3 = '#232323';
+const grey3 = '#373737';
+const grey4 = '#232323';
 const white = '#ffffff';
 
 // Reds
@@ -43,12 +44,12 @@ themeCreator.addColor(
 );
 themeCreator.addColor(
     'altAccent',
-    [ darkBlue, grey3, darkBlue ],
+    [ darkBlue, grey4, darkBlue ],
     [ darkGreen, darkGreen, darkGreen ]
 );
 themeCreator.addColor(
     'background',
-    [ grey2, white, grey2 ],
+    [ grey2, grey3, grey2 ],
     [ white, white, white ]
 );
 themeCreator.addColor(
@@ -80,6 +81,11 @@ themeCreator.addColor(
     'shadow',
     [ black, black, black ],
     [ black, black, black ]
+);
+themeCreator.addColor(
+    'spinner',
+    [ darkBlue, darkBlue, darkBlue ],
+    [ darkGreen, darkGreen, darkGreen ]
 );
 themeCreator.addColor(
     'text',

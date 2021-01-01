@@ -1,3 +1,4 @@
+import withLoading from './withLoading';
 import withPullRight from './withPullRight';
 import {
     withDarkTheme,
@@ -7,5 +8,6 @@ import {
 export {
     withDarkTheme,
     withLightTheme,
+    withLoading,
     withPullRight,
 };

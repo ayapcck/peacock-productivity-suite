@@ -10,6 +10,7 @@ import {
 import {
     withDarkTheme,
     withLightTheme,
+    withLoading,
     withPullRight,
 } from './with';
 
@@ -19,5 +20,6 @@ export {
     isSidesProp,
     withDarkTheme,
     withLightTheme,
+    withLoading,
     withPullRight,
 };

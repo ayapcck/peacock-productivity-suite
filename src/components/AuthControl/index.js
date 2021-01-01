@@ -10,7 +10,7 @@ import _ from 'lodash';
 
 import {
     Popup,
-} from '../molecules';
+} from '../organisms';
 import DefaultForm from '../DefaultForm';
 import Forms from '../Forms/constants';
 

@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentOverlay - Common Tests should match snapshot 1`] = `
+.c1 {
+  background-color: #ffffff;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c0 {
+  border-color: #5b5b5b;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  left: unset;
+  position: absolute;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 100%;
+  width: 100%;
+}
+
+.c2 {
+  border-color: #5b5b5b;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0.3;
+  -ms-flex: 0.3;
+  flex: 0.3;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+<div
+  className="c0"
+  value={1}
+>
+  <div
+    className="c1"
+    onClick={[Function]}
+  />
+  <div
+    className="c2"
+    value={0.3}
+  />
+</div>
+`;
