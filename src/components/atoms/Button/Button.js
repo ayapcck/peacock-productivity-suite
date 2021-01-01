@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     func,
+    node,
     oneOf,
     string,
 } from 'prop-types';
@@ -9,31 +10,37 @@ import { StyledButton } from '../../styled-elements';
 
 const Button = (props) => {
     const {
+        children,
         text,
         type,
         ...buttonPassThrough
     } = props;
 
-    const buttonText = text || (type === 'submit' && 'Submit');
+    const content = text
+        || children
+        || (type === 'submit' && 'Submit');
 
     return (
         <StyledButton
             { ...buttonPassThrough }
             type={type}
         >
-            {buttonText}
+            { content }
         </StyledButton>
     );
 };
 
 Button.defaultProps = {
+    children: null,
     onClick: () => null,
-    text: '',
+    text: null,
     type: 'button',
     variant: 'primary',
 };
 
 Button.propTypes = {
+    /** Content to display in button if text is not used */
+    children: node,
     /** Function called when button is pressed */
     onClick: func,
     /** Text to display in the button */

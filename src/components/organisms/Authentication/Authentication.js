@@ -22,8 +22,8 @@ import {
 } from '../../atoms';
 import {
     Form,
-    Popup,
 } from '../../molecules';
+import Popup from '../Popup';
 
 const Authentication = () => {
     const dispatch = useDispatch();

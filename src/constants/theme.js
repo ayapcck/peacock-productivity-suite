@@ -83,6 +83,11 @@ themeCreator.addColor(
     [ black, black, black ]
 );
 themeCreator.addColor(
+    'spinner',
+    [ darkBlue, darkBlue, darkBlue ],
+    [ darkGreen, darkGreen, darkGreen ]
+);
+themeCreator.addColor(
     'text',
     [ white, lightBlue, white ],
     [ black, black, black ]

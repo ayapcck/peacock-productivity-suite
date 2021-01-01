@@ -1,0 +1,29 @@
+import {
+    ArgsTable,
+    Canvas,
+    Meta,
+    Story,
+} from '@storybook/addon-docs/blocks';
+
+import Spinner from './Spinner';
+import * as stories from './Spinner.stories.js';
+
+<Meta
+    component={Spinner}
+    title="Atoms/Spinner"
+/>
+
+# Spinner
+
+This is a basic Spinner
+<Canvas>
+    <Story
+        name="Primary"
+    >
+        <Spinner />
+    </Story>
+</Canvas>
+
+<ArgsTable story="Primary" />
+
+These are the Spinner variants with Dark and Light themes respectively:

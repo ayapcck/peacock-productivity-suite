@@ -11,10 +11,10 @@ import {
 } from '../../styled-elements';
 
 import {
-    Button,
     Text,
     TextBox,
 } from '../../atoms';
+import LoadingButton from '../LoadingButton';
 
 const Title = ({ text }) => (
     <Text
@@ -55,7 +55,7 @@ const Form = (props) => {
         <StyledForm onSubmit={handleSubmit}>
             <Title text={title} />
             { _renderTextFields() }
-            <Button type="submit" />
+            <LoadingButton />
         </StyledForm>
     );
 };

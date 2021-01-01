@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import Popup from './Popup';
 
 export default {
-    title: 'Molecules/Popup',
+    title: 'Organisms/Popup',
     component: Popup,
     decorators: [ withKnobs ],
     argTypes: {

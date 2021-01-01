@@ -1,13 +1,19 @@
-import {
+import { actions } from './slices';
+
+const {
     closeAuthentication,
+    closeLoadingOverlay,
     loginUser,
     logoutUser,
     openAuthentication,
-} from './slices/authenticationSlice';
+    openLoadingOverlay,
+} = actions;
 
 export {
     closeAuthentication,
+    closeLoadingOverlay,
     loginUser,
     logoutUser,
     openAuthentication,
+    openLoadingOverlay,
 };

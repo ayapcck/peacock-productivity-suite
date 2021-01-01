@@ -3,6 +3,11 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 
+import {
+    closeLoadingOverlay,
+    openLoadingOverlay,
+} from './utilitySlice';
+
 const INITIAL_STATE = {
     loading: 'idle',
     loggedIn: false,
@@ -11,7 +16,7 @@ const INITIAL_STATE = {
 };
 
 const loginUser = createAsyncThunk(
-    'users/loginUser',
+    'authentication/loginUser',
     async ({ user, password }, { dispatch }) =>
         await new Promise(resolve => {
             setTimeout(() => {
@@ -22,10 +27,16 @@ const loginUser = createAsyncThunk(
 );
 
 const logoutUser = createAsyncThunk(
-    'users/logoutUser',
-    async () => await new Promise(resolve => {
-        setTimeout(resolve, 500);
-    })
+    'authentication/logoutUser',
+    async (payload, { dispatch }) => {
+        dispatch(openLoadingOverlay());
+        return await new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+                dispatch(closeLoadingOverlay());
+            }, 500);
+        });
+    }
 );
 
 const { actions, reducer } = createSlice({

@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { LoginForm } from '../index';
 import {
     Popup,
-} from '../../molecules';
+} from '../../organisms';
 
 export default {
     title: 'Components/Forms/LoginForm',

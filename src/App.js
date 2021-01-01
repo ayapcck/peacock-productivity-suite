@@ -1,5 +1,7 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import {
+    useSelector,
+} from 'react-redux';
 import {
     BrowserRouter as Router,
     Route,
@@ -11,7 +13,6 @@ import _ from 'lodash';
 
 import { withAuthProvider } from './config/session';
 import { ROUTES } from './constants';
-import store from './redux';
 
 import {
     AdminPanel,
@@ -19,10 +20,13 @@ import {
     Landing,
     Notes,
 } from './routes';
+
+import {
+    LoadingOverlay,
+} from './components/organisms';
 import {
     Navigation,
 } from './components/templates';
-// import Drawer from './components/Drawer';
 
 /** The keys in this should correspond to the 'key' value in src/constants/pages.js */
 const PAGE_COMPONENTS = {
@@ -55,13 +59,14 @@ const routeProps = (key, page) => ({
     path: page.route,
 });
 
-const App = () => (
-    <Provider store={store}>
+const App = () => {
+    const { isLoadingOverlayOpen } = useSelector(state => state.utility);
+
+    return (
         <Router>
             <GlobalStyle />
             <Container>
                 <Navigation routes={ROUTES} />
-                {/* <Drawer /> */}
 
                 {
                     _.map(ROUTES, (page, key) => {
@@ -74,9 +79,11 @@ const App = () => (
                         }
                     })
                 }
+
+                { isLoadingOverlayOpen && <LoadingOverlay /> }
             </Container>
         </Router>
-    </Provider>
-);
+    );
+};
 
 export default withAuthProvider(App);
