@@ -58,6 +58,23 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c9 {
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+
+.c13 {
+  text-align: left;
+  color: #ffffff;
+  margin: 0;
+}
+
+.c14 {
+  color: #ffffff;
+  margin: 0;
+}
+
 .c1 {
   background-color: #ffffff;
   height: 100%;
@@ -66,12 +83,6 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-.c9 {
-  color: #ffffff;
-  margin: 0;
-  text-align: center;
 }
 
 .c10 {
@@ -256,6 +267,36 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   transition: 0.3s;
 }
 
+.c12 {
+  border-color: #5b5b5b;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 <div
   className="c0"
   value={1}
@@ -311,8 +352,7 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
           >
             <h1
               className="c9"
-              size="large"
-              type="title"
+              type="h1"
             >
               Log In
             </h1>
@@ -338,13 +378,42 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
               Submit
             </button>
           </form>
-          <h5
-            className="c9"
-            size="medium"
-            type="body"
+          <div
+            className="c12"
+            value={1}
           >
-            Testing this text
-          </h5>
+            <p
+              className="c13"
+              type="p"
+            >
+              Forgot your password? Click 
+              <a
+                className="c14 "
+                href="/"
+                onClick={[Function]}
+              >
+                here
+              </a>
+            </p>
+          </div>
+          <div
+            className="c12"
+            value={1}
+          >
+            <p
+              className="c13"
+              type="p"
+            >
+              Don't have an account? Register 
+              <a
+                className="c14 "
+                href="/"
+                onClick={[Function]}
+              >
+                here
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

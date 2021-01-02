@@ -67,7 +67,7 @@ const Navigation = (props) => {
     const reducedRoutes = reduce(routes, itemReducer(navigate), []);
     const signInItem = {
         onClick: loggedIn ? logout : openAuth,
-        text: loggedIn ? 'Log Out' : 'Sign In',
+        text: loggedIn ? 'Log Out' : 'Register / Sign In',
         selectable: false,
     };
 

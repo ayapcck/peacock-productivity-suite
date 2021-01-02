@@ -41,15 +41,15 @@ exports[` - Common Tests should match snapshot 1`] = `
 }
 
 .c4 {
+  text-align: left;
   color: #1ebad9;
   margin: 0;
-  text-align: left;
 }
 
 .c7 {
+  text-align: left;
   color: #ffffff;
   margin: 0;
-  text-align: left;
 }
 
 .c0 {
@@ -225,13 +225,12 @@ exports[` - Common Tests should match snapshot 1`] = `
         className="c3"
         value={1}
       >
-        <h5
+        <p
           className="c4"
-          size="medium"
-          type="body"
+          type="p"
         >
           item1
-        </h5>
+        </p>
       </div>
     </div>
   </div>
@@ -248,13 +247,12 @@ exports[` - Common Tests should match snapshot 1`] = `
         className="c6"
         value={1}
       >
-        <h5
+        <p
           className="c7"
-          size="medium"
-          type="body"
+          type="p"
         >
           item2
-        </h5>
+        </p>
       </div>
     </div>
   </div>
@@ -271,13 +269,12 @@ exports[` - Common Tests should match snapshot 1`] = `
         className="c6"
         value={1}
       >
-        <h5
+        <p
           className="c7"
-          size="medium"
-          type="body"
+          type="p"
         >
           parent1:
-        </h5>
+        </p>
       </div>
     </div>
   </div>
@@ -294,13 +291,12 @@ exports[` - Common Tests should match snapshot 1`] = `
         className="c6"
         value={1}
       >
-        <h5
+        <p
           className="c7"
-          size="medium"
-          type="body"
+          type="p"
         >
           sub-item1
-        </h5>
+        </p>
       </div>
     </div>
   </div>
@@ -317,13 +313,12 @@ exports[` - Common Tests should match snapshot 1`] = `
         className="c6"
         value={1}
       >
-        <h5
+        <p
           className="c7"
-          size="medium"
-          type="body"
+          type="p"
         >
           sub-item2
-        </h5>
+        </p>
       </div>
     </div>
   </div>
@@ -340,13 +335,12 @@ exports[` - Common Tests should match snapshot 1`] = `
         className="c6"
         value={1}
       >
-        <h5
+        <p
           className="c7"
-          size="medium"
-          type="body"
+          type="p"
         >
           item3
-        </h5>
+        </p>
       </div>
     </div>
   </div>

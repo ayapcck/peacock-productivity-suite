@@ -184,8 +184,7 @@ const renderNavLink = (props) => {
 const renderNavText = (text, colorOverride = null) => (
     <Text
         colorOverride={colorOverride}
-        size="large"
-        type="body"
+        type="h4"
     >
         { text }
     </Text>

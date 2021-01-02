@@ -27,9 +27,9 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
@@ -78,8 +78,7 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Change Password
   </h2>
@@ -134,9 +133,9 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
@@ -185,8 +184,7 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Forgot Password
   </h2>
@@ -234,9 +232,9 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
@@ -285,8 +283,7 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Log In
   </h2>
@@ -341,9 +338,9 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
@@ -392,8 +389,7 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Register
   </h2>

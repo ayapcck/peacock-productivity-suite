@@ -48,6 +48,12 @@ exports[`AuthControl should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c9 {
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+
 .c1 {
   background-color: #ffffff;
   height: 100%;
@@ -56,12 +62,6 @@ exports[`AuthControl should match snapshot 1`] = `
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-.c9 {
-  color: #ffffff;
-  margin: 0;
-  text-align: center;
 }
 
 .c10 {
@@ -317,8 +317,7 @@ exports[`AuthControl should match snapshot 1`] = `
           >
             <h2
               className="c9"
-              size="medium"
-              type="title"
+              type="h2"
             >
               Log In
             </h2>

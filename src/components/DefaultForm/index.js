@@ -97,8 +97,7 @@ class DefaultForm extends Component {
         return (
             <Text
                 align="center"
-                size="medium"
-                type="title"
+                type="h2"
             >
                 { title }
             </Text>

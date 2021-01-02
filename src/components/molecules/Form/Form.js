@@ -19,8 +19,7 @@ import LoadingButton from '../LoadingButton';
 const Title = ({ text }) => (
     <Text
         align="center"
-        size="large"
-        type="title"
+        type="h1"
     >
         { text }
     </Text>

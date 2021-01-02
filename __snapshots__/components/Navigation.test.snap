@@ -60,6 +60,18 @@ exports[`Navigation - Common Tests should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c7 {
+  text-align: left;
+  color: #1ebad9;
+  margin: 0;
+}
+
+.c10 {
+  text-align: left;
+  color: #ffffff;
+  margin: 0;
+}
+
 .c0 {
   box-sizing: border-box;
   border-color: #5b5b5b;
@@ -70,18 +82,6 @@ exports[`Navigation - Common Tests should match snapshot 1`] = `
   transition: 0.3s;
   width: 25%;
   margin-right: auto;
-}
-
-.c7 {
-  color: #1ebad9;
-  margin: 0;
-  text-align: left;
-}
-
-.c10 {
-  color: #ffffff;
-  margin: 0;
-  text-align: left;
 }
 
 .c3 {
@@ -252,13 +252,12 @@ exports[`Navigation - Common Tests should match snapshot 1`] = `
           className="c6"
           value={1}
         >
-          <h5
+          <p
             className="c7"
-            size="medium"
-            type="body"
+            type="p"
           >
             Default
-          </h5>
+          </p>
         </div>
       </div>
     </div>
@@ -275,13 +274,12 @@ exports[`Navigation - Common Tests should match snapshot 1`] = `
           className="c9"
           value={1}
         >
-          <h5
+          <p
             className="c10"
-            size="medium"
-            type="body"
+            type="p"
           >
-            Sign In
-          </h5>
+            Register / Sign In
+          </p>
         </div>
       </div>
     </div>
