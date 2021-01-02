@@ -15,7 +15,7 @@ const handlePosition = val => typeof val === 'string'
     : `${val}px`;
 
 const StyledWrapper = styled.div`
-    ${customBorderSides}
+    ${customBorderSides()}
     ${customMargins}
     
     ${({ hasPadding, theme: { padding } }) => hasPadding && `padding: ${padding};`}

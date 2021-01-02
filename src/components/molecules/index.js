@@ -5,6 +5,7 @@ import Link from './Link';
 import LoadingButton from './LoadingButton';
 import MenuItem from './MenuItem';
 import NavLink from './NavLink';
+import Password from './Password';
 
 export {
     ContentOverlay,
@@ -14,4 +15,5 @@ export {
     LoadingButton,
     MenuItem,
     NavLink,
+    Password,
 };

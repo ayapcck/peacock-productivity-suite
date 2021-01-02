@@ -8,7 +8,7 @@ import {
 
 const StyledPanel = styled.div`
     ${borderBox}
-    ${customBorderSides}
+    ${customBorderSides()}
     ${equalShadow}
 
     ${({ centered }) => centered && 'margin: auto;'}

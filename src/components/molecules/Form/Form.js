@@ -15,6 +15,7 @@ import {
     TextBox,
 } from '../../atoms';
 import LoadingButton from '../LoadingButton';
+import Password from '../Password/Password';
 
 const Title = ({ text }) => (
     <Text
@@ -43,12 +44,19 @@ const Form = (props) => {
         onSubmit();
     };
 
-    const _renderTextFields = () => textFields.map((field, i) => (
-        <TextBox
-            { ...field }
-            key={i}
-        />
-    ));
+    const _renderTextFields = () => textFields.map((field, i) => {
+        const { name } = field;
+
+        const Field = name.toLowerCase().includes('password')
+            ? Password : TextBox;
+
+        return (
+            <Field
+                { ...field }
+                key={i}
+            />
+        );
+    });
 
     return (
         <StyledForm onSubmit={handleSubmit}>

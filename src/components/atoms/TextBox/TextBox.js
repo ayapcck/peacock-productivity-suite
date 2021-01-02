@@ -6,18 +6,24 @@ import {
     string,
 } from 'prop-types';
 
+import { getUsedBorderSides } from '../../../logics';
 import { StyledTextBox } from '../../styled-elements';
 
 const TextBox = (props) => {
     const {
+        bordered,
         handleChange,
         placeHolder,
         ...passThrough
     } = props;
 
+    const borders = bordered ? [ 'bottom' ] : 'none';
+
     return (
         <StyledTextBox
             { ...passThrough }
+            { ...getUsedBorderSides(borders) }
+            borders={borders}
             onChange={handleChange}
             placeholder={placeHolder}
             type="text"
@@ -26,6 +32,7 @@ const TextBox = (props) => {
 };
 
 TextBox.defaultProps = {
+    bordered: true,
     handleChange: () => null,
     name: 'defaultName',
     placeHolder: 'Placeholder',
@@ -34,6 +41,7 @@ TextBox.defaultProps = {
 };
 
 TextBox.propTypes = {
+    bordered: bool,
     handleChange: func,
     name: string,
     placeHolder: string,

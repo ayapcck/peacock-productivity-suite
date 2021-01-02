@@ -33,12 +33,16 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-color: #1ebad9;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
@@ -139,12 +143,16 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-color: #1ebad9;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
@@ -238,12 +246,16 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-color: #1ebad9;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
@@ -344,12 +356,16 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-color: #1ebad9;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
