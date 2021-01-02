@@ -20,7 +20,6 @@ const TextBox = (props) => {
             { ...passThrough }
             onChange={handleChange}
             placeholder={placeHolder}
-            type="text"
         />
     );
 };
@@ -29,6 +28,7 @@ TextBox.defaultProps = {
     handleChange: () => null,
     name: 'defaultName',
     placeHolder: 'Placeholder',
+    type: 'text',
     valid: true,
     variant: 'primary',
 };
@@ -37,6 +37,7 @@ TextBox.propTypes = {
     handleChange: func,
     name: string,
     placeHolder: string,
+    type: oneOf([ 'password', 'text' ]),
     valid: bool,
     variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };

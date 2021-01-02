@@ -1,21 +1,18 @@
 import React from 'react';
 import {
-    arrayOf,
-    bool,
+    element,
     oneOf,
-    oneOfType,
-    string,
 } from 'prop-types';
 
 import {
-    Icon,
     TextBox,
     Wrapper,
 } from '../../atoms';
 
 const TextField = (props) => {
     const {
-        icon,
+        LeftIcon,
+        RightIcon,
         ...textBoxPassThrough
     } = props;
 
@@ -25,22 +22,25 @@ const TextField = (props) => {
             borders={[ 'bottom' ]}
             padding="small"
         >
+            { LeftIcon && <LeftIcon /> }
             <TextBox
                 { ...textBoxPassThrough }
                 bordered={false}
             />
-            { icon !== 'none' && <Icon icon={icon} /> }
+            { RightIcon && <RightIcon /> }
         </Wrapper>
     );
 };
 
 TextField.defaultProps = {
-    icon: 'none',
+    LeftIcon: null,
+    RightIcon: null,
     variant: 'primary',
 };
 
 TextField.propTypes = {
-    icon: oneOfType([ string, arrayOf(string) ]),
+    LeftIcon: element,
+    RightIcon: element,
     variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 

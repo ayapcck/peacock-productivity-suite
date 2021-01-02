@@ -336,7 +336,7 @@ exports[`AuthControl should match snapshot 1`] = `
               name="password"
               onChange={[Function]}
               placeholder="Password"
-              type="text"
+              type="password"
             />
             <button
               className="c11"

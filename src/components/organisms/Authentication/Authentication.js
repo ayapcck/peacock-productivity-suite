@@ -22,9 +22,9 @@ import {
     Wrapper,
 } from '../../atoms';
 import {
-    Form,
     Link,
 } from '../../molecules';
+import Form from '../Form';
 import Popup from '../Popup';
 
 const NavText = (props) => {

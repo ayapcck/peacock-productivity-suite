@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {
+    useState,
+} from 'react';
 import {
     oneOf,
 } from 'prop-types';
 
+import {
+    Icon,
+} from '../../atoms';
 import {
     TextField,
 } from '../../molecules';
@@ -10,11 +15,25 @@ import {
 const Password = (props) => {
     const {
         variant,
+        ...textBoxPassThrough
     } = props;
+
+    const [ visible, setVisible ] = useState(false);
+
+    const iconType = visible ? 'eye-slash' : 'eye';
+
+    const Eye = () => (
+        <Icon
+            icon={[ 'far', iconType ]}
+            onClick={() => setVisible(!visible)}
+        />
+    );
 
     return (
         <TextField
-            icon={[ 'far', 'eye' ]}
+            { ...textBoxPassThrough }
+            RightIcon={Eye}
+            type={visible ? 'text' : 'password'}
             variant={variant}
         />
     );

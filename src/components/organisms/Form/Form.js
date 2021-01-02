@@ -13,8 +13,11 @@ import {
 import {
     Text,
 } from '../../atoms';
-import LoadingButton from '../LoadingButton';
-import TextField from '../TextField';
+import {
+    LoadingButton,
+    TextField,
+} from '../../molecules';
+import Password from '../Password';
 
 const Title = ({ text }) => (
     <Text
@@ -45,10 +48,13 @@ const Form = (props) => {
 
     const _renderTextFields = () => textFields.map((field, i) => {
         const { name } = field;
+
+        const isPassword = name.toLowerCase().includes('password');
+        const Field = isPassword ? Password : TextField;
+
         return (
-            <TextField
+            <Field
                 { ...field }
-                isPassword={name.toLowerCase().includes('password')}
                 key={i}
             />
         );
