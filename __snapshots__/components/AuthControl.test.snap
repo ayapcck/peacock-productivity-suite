@@ -71,7 +71,6 @@ exports[`AuthControl should match snapshot 1`] = `
   border-color: #5b5b5b;
   border-style: solid;
   border-width: 2px;
-  border-bottom-color: #1ebad9;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;

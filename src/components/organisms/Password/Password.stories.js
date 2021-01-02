@@ -1,18 +1,18 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import Link from './Link';
+import Password from './Password';
 
 export default {
-    title: 'Molecules/Link',
-    component: Link,
+    title: 'Organisms/Password',
+    component: Password,
     decorators: [ withKnobs ],
     argTypes: {
-        onClick: { defaultValue: null },
+        
     },
 };
 
-const Template = (args) => <Link { ...args } />;
+const Template = (args) => <Password {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

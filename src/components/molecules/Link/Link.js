@@ -16,11 +16,16 @@ const Link = (props) => {
         variant,
     } = props;
 
+    const handleClick = ev => {
+        ev.preventDefault();
+        onClick(ev);
+    };
+
     return (
         <StyledLink
             as={'a'}
             href="/"
-            onClick={ev => (ev.preventDefault(), onClick(ev))}
+            onClick={handleClick}
             variant={variant}
         >
             { text }

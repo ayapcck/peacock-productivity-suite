@@ -29,11 +29,15 @@ const margin = {
     big: '20px',
     standard: '10px',
 };
+const padding = {
+    small: '5px',
+    standard: '10px',
+};
 
 const sharedStyles = {
     border,
     margin,
-    padding: '10px',
+    padding,
 };
 
 const themeCreator = new ThemeCreator(sharedStyles);

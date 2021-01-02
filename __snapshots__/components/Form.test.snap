@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Form - Common Tests should match snapshot 1`] = `
-.c3 {
+.c4 {
   background-color: #1ebad9;
   border-color: #1ebad9;
   border-radius: 5px;
@@ -11,18 +11,18 @@ exports[`Form - Common Tests should match snapshot 1`] = `
   padding: 2.5px 5px;
 }
 
-.c3:active {
+.c4:active {
   box-shadow: 1px 1px #188aa1;
   -webkit-transform: translateY(1px) translateX(1px);
   -ms-transform: translateY(1px) translateX(1px);
   transform: translateY(1px) translateX(1px);
 }
 
-.c3:focus {
+.c4:focus {
   outline: 0;
 }
 
-.c3:hover {
+.c4:hover {
   cursor: pointer;
 }
 
@@ -42,37 +42,70 @@ exports[`Form - Common Tests should match snapshot 1`] = `
   margin: 0;
 }
 
-.c2 {
+.c3 {
   border-style: solid;
   background-color: #5b5b5b;
   color: #ffffff;
   border-color: #5b5b5b;
   border-style: solid;
   border-width: 2px;
-  border-bottom-color: #1ebad9;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c2:focus {
+.c3:focus {
   outline: 0;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #ffffff;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #ffffff;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #ffffff;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #ffffff;
+}
+
+.c2 {
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-color: #1ebad9;
+  padding: 5px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 <form
@@ -85,15 +118,20 @@ exports[`Form - Common Tests should match snapshot 1`] = `
   >
     Default
   </h1>
-  <input
+  <div
     className="c2"
-    name="Test"
-    onChange={[Function]}
-    placeholder="Placeholder"
-    type="text"
-  />
+    value={1}
+  >
+    <input
+      className="c3"
+      name="Test"
+      onChange={[Function]}
+      placeholder="Placeholder"
+      type="text"
+    />
+  </div>
   <button
-    className="c3"
+    className="c4"
     onClick={[Function]}
     type="submit"
   >

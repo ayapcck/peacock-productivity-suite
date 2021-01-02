@@ -27,7 +27,7 @@ const configs = [
 const Template = (args) => (
     <Wrapper
         flexDirection="column"
-        hasPadding
+        padding="standard"
     >
         {
             configs.map((type, i) => (

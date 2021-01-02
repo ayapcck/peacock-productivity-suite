@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Authentication - Common Tests should match snapshot 1`] = `
-.c13 {
+.c12 {
   background-color: #1ebad9;
   border-color: #1ebad9;
   border-radius: 5px;
@@ -11,18 +11,18 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   padding: 2.5px 5px;
 }
 
-.c13:active {
+.c12:active {
   box-shadow: 1px 1px #188aa1;
   -webkit-transform: translateY(1px) translateX(1px);
   -ms-transform: translateY(1px) translateX(1px);
   transform: translateY(1px) translateX(1px);
 }
 
-.c13:focus {
+.c12:focus {
   outline: 0;
 }
 
-.c13:hover {
+.c12:hover {
   cursor: pointer;
 }
 
@@ -64,13 +64,13 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   margin: 0;
 }
 
-.c15 {
+.c14 {
   text-align: left;
   color: #ffffff;
   margin: 0;
 }
 
-.c16 {
+.c15 {
   color: #ffffff;
   margin: 0;
 }
@@ -85,66 +85,35 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   width: 100%;
 }
 
-.c10 {
+.c11 {
   border-style: solid;
   background-color: #5b5b5b;
   color: #ffffff;
   border-color: #5b5b5b;
   border-style: solid;
   border-width: 2px;
-  border-bottom-color: #1ebad9;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c10:focus {
+.c11:focus {
   outline: 0;
 }
 
-.c10::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: #ffffff;
 }
 
-.c10::-moz-placeholder {
+.c11::-moz-placeholder {
   color: #ffffff;
 }
 
-.c10:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: #ffffff;
 }
 
-.c10::placeholder {
-  color: #ffffff;
-}
-
-.c12 {
-  border-style: solid;
-  background-color: #5b5b5b;
-  color: #ffffff;
-  border-color: #5b5b5b;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c12:focus {
-  outline: 0;
-}
-
-.c12::-webkit-input-placeholder {
-  color: #ffffff;
-}
-
-.c12::-moz-placeholder {
-  color: #ffffff;
-}
-
-.c12:-ms-input-placeholder {
-  color: #ffffff;
-}
-
-.c12::placeholder {
+.c11::placeholder {
   color: #ffffff;
 }
 
@@ -301,11 +270,12 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   transition: 0.3s;
 }
 
-.c11 {
+.c10 {
   border-color: #5b5b5b;
   border-style: solid;
   border-width: 2px;
   border-bottom-color: #1ebad9;
+  padding: 5px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -334,7 +304,7 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
   transition: 0.3s;
 }
 
-.c14 {
+.c13 {
   border-color: #5b5b5b;
   -webkit-align-items: unset;
   -webkit-box-align: unset;
@@ -423,46 +393,32 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
             >
               Log In
             </h1>
-            <input
-              className="c10"
-              name="email"
-              onChange={[Function]}
-              placeholder="Email"
-              type="text"
-            />
             <div
-              className="c11"
+              className="c10"
               value={1}
             >
               <input
-                className="c12"
+                className="c11"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="text"
+              />
+            </div>
+            <div
+              className="c10"
+              value={1}
+            >
+              <input
+                className="c11"
                 name="password"
                 onChange={[Function]}
                 placeholder="Password"
                 type="text"
               />
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-eye fa-w-18 c6"
-                data-icon="eye"
-                data-prefix="far"
-                focusable="false"
-                onClick={[Function]}
-                role="img"
-                style={Object {}}
-                variant="primary"
-                viewBox="0 0 576 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
             </div>
             <button
-              className="c13"
+              className="c12"
               onClick={[Function]}
               type="submit"
             >
@@ -470,16 +426,16 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
             </button>
           </form>
           <div
-            className="c14"
+            className="c13"
             value={1}
           >
             <p
-              className="c15"
+              className="c14"
               type="p"
             >
               Forgot your password? Click 
               <a
-                className="c16 "
+                className="c15 "
                 href="/"
                 onClick={[Function]}
               >
@@ -488,16 +444,16 @@ exports[`Authentication - Common Tests should match snapshot 1`] = `
             </p>
           </div>
           <div
-            className="c14"
+            className="c13"
             value={1}
           >
             <p
-              className="c15"
+              className="c14"
               type="p"
             >
               Don't have an account? Register 
               <a
-                className="c16 "
+                className="c15 "
                 href="/"
                 onClick={[Function]}
               >

@@ -5,7 +5,7 @@ import Link from './Link';
 import LoadingButton from './LoadingButton';
 import MenuItem from './MenuItem';
 import NavLink from './NavLink';
-import Password from './Password';
+import TextField from './TextField';
 
 export {
     ContentOverlay,
@@ -15,5 +15,5 @@ export {
     LoadingButton,
     MenuItem,
     NavLink,
-    Password,
+    TextField,
 };

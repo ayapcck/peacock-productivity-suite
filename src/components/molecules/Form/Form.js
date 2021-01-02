@@ -12,10 +12,9 @@ import {
 
 import {
     Text,
-    TextBox,
 } from '../../atoms';
 import LoadingButton from '../LoadingButton';
-import Password from '../Password/Password';
+import TextField from '../TextField';
 
 const Title = ({ text }) => (
     <Text
@@ -46,13 +45,10 @@ const Form = (props) => {
 
     const _renderTextFields = () => textFields.map((field, i) => {
         const { name } = field;
-
-        const Field = name.toLowerCase().includes('password')
-            ? Password : TextBox;
-
         return (
-            <Field
+            <TextField
                 { ...field }
+                isPassword={name.toLowerCase().includes('password')}
                 key={i}
             />
         );

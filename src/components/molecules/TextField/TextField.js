@@ -1,6 +1,10 @@
 import React from 'react';
 import {
+    arrayOf,
+    bool,
     oneOf,
+    oneOfType,
+    string,
 } from 'prop-types';
 
 import {
@@ -9,8 +13,9 @@ import {
     Wrapper,
 } from '../../atoms';
 
-const Password = (props) => {
+const TextField = (props) => {
     const {
+        icon,
         ...textBoxPassThrough
     } = props;
 
@@ -18,22 +23,25 @@ const Password = (props) => {
         <Wrapper
             align="center"
             borders={[ 'bottom' ]}
+            padding="small"
         >
             <TextBox
                 { ...textBoxPassThrough }
                 bordered={false}
             />
-            <Icon icon={[ 'far', 'eye' ]} />
+            { icon !== 'none' && <Icon icon={icon} /> }
         </Wrapper>
     );
 };
 
-Password.defaultProps = {
+TextField.defaultProps = {
+    icon: 'none',
     variant: 'primary',
 };
 
-Password.propTypes = {
+TextField.propTypes = {
+    icon: oneOfType([ string, arrayOf(string) ]),
     variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
-export default Password;
+export default TextField;
