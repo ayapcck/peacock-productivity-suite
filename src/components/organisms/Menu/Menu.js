@@ -1,6 +1,7 @@
 import React, {
     useState,
 } from 'react';
+import { useSelector } from 'react-redux';
 import {
     arrayOf,
     bool,
@@ -12,7 +13,6 @@ import {
 import reduce from 'lodash/reduce';
 
 import { hasPermissions } from '../../../config/permissions';
-import { withAuthConsumer } from '../../../config/session';
 
 import {
     Wrapper,
@@ -39,11 +39,12 @@ const itemReducer = renderItem => (acc, item, mainKey) => {
 
 const Menu = (props) => {
     const {
-        auth: { userPermissions },
         items,
     } = props;
 
     const [ selectedItem, setSelectedItem ] = useState(items[0].text);
+
+    const userPermissions = useSelector(state => state.permissions);
 
     const renderItem = (item, key, isSubItem = false) => {
         const {
@@ -111,4 +112,4 @@ Menu.propTypes = {
     })),
 };
 
-export default withAuthConsumer(Menu);
+export default Menu;

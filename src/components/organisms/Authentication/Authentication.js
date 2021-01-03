@@ -65,6 +65,10 @@ const Authentication = () => {
 
     const { navTexts, ...displayedForm } = AUTHENTICATION_FORMS[displayedFormName];
 
+    const handleSubmit = values => {
+        login(values);
+    };
+
     return (
         <Popup handleClose={closeAuth}>
             <Wrapper
@@ -73,7 +77,7 @@ const Authentication = () => {
             >
                 <Form
                     { ...displayedForm }
-                    onSubmit={() => login('testUser', 'testPassword')}
+                    onSubmit={handleSubmit}
                 />
                 {
                     navTexts && navTexts.map((text, i) => {

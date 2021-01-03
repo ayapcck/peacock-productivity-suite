@@ -5,6 +5,7 @@ import {
     shape,
     string,
 } from 'prop-types';
+import reduce from 'lodash/reduce';
 
 import {
     StyledForm,
@@ -43,7 +44,20 @@ const Form = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        onSubmit();
+        const values = reduce(
+            event.target,
+            (acc, element) => {
+                const {
+                    name,
+                    nodeName,
+                    value,
+                } = element;
+                nodeName === 'INPUT' && (acc[name] = value);
+                return acc;
+            },
+            {}
+        );
+        onSubmit(values);
     };
 
     const _renderTextFields = () => textFields.map((field, i) => {

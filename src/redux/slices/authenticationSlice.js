@@ -3,6 +3,16 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 
+import firebase from '../../config/firebase';
+
+import {
+    resetPermissions,
+    updatePermissions,
+} from './permissionsSlice';
+import {
+    resetUser,
+    updateUser,
+} from './userSlice';
 import {
     closeLoadingOverlay,
     openLoadingOverlay,
@@ -12,30 +22,61 @@ const INITIAL_STATE = {
     loading: 'idle',
     loggedIn: false,
     modalOpen: false,
-    user: {},
 };
+
+const pending = state => ({
+    ...state,
+    loading: 'pending',
+});
+
+const rejected = state => ({
+    ...state,
+    loading: 'idle',
+    loggedIn: false,
+});
+
+const resetAuth = dispatch => {
+    dispatch(resetPermissions());
+    dispatch(resetUser());
+};
+
+const loadAuthentication = createAsyncThunk(
+    'authentication/load',
+    async ({ authUser }, { dispatch }) => {
+        if (authUser) {
+            const { uid } = authUser;
+            const userRes = await firebase.getUser(uid);
+            const user = userRes.val();
+            if (user) {
+                dispatch(updateUser({ ...user }));
+                const { role } = user;
+                const roleRes = await firebase.getRole(role);
+                const permissions = roleRes.val();
+                dispatch(updatePermissions({ ...permissions }));
+                return true;
+            } else {
+                resetAuth(dispatch);
+                return false;
+            }
+        }
+    }
+);
 
 const loginUser = createAsyncThunk(
     'authentication/loginUser',
-    async ({ user, password }, { dispatch }) =>
-        await new Promise(resolve => {
-            setTimeout(() => {
-                resolve(`testing ${user} ${password}`);
-                dispatch(closeAuthentication());
-            }, 1000);
-        })
+    async ({ user: { email, password } }, { dispatch }) => {
+        await firebase.signInWithEmailAndPassword(email, password);
+        dispatch(closeAuthentication());
+    }
 );
 
 const logoutUser = createAsyncThunk(
     'authentication/logoutUser',
     async (payload, { dispatch }) => {
         dispatch(openLoadingOverlay());
-        return await new Promise(resolve => {
-            setTimeout(() => {
-                resolve();
-                dispatch(closeLoadingOverlay());
-            }, 500);
-        });
+        await firebase.signOut();
+        resetAuth(dispatch);
+        dispatch(closeLoadingOverlay());
     }
 );
 
@@ -51,41 +92,47 @@ const { actions, reducer } = createSlice({
             ...state,
             modalOpen: true,
         }),
+        updateLoggedIn: (state, { payload }) => ({
+            ...state,
+            loggedIn: payload,
+        }),
     },
     extraReducers: {
-        [loginUser.fulfilled]: (state, { payload }) => ({
+        [loadAuthentication.fulfilled]: (state, { payload }) => {
+            console.log(payload);
+            return {
+                ...state,
+                loading: 'idle',
+                loggedIn: !!payload,
+            };
+        },
+        [loadAuthentication.pending]: pending,
+        [loadAuthentication.rejected]: rejected,
+        [loginUser.fulfilled]: state => ({
             ...state,
             loading: 'idle',
             loggedIn: true,
-            user: payload,
         }),
-        [loginUser.pending]: state => ({
-            ...state,
-            loading: 'pending',
-        }),
-        [loginUser.rejected]: state => ({
-            ...state,
-            loading: 'idle',
-            loggedIn: false,
-        }),
+        [loginUser.pending]: pending,
+        [loginUser.rejected]: rejected,
         [logoutUser.fulfilled]: () => INITIAL_STATE,
-        [logoutUser.pending]: state => ({
-            ...state,
-            loading: 'pending',
-        }),
+        [logoutUser.pending]: pending,
     },
 });
 
 const {
     closeAuthentication,
     openAuthentication,
+    updateLoggedIn,
 } = actions;
 
 export {
     closeAuthentication,
+    loadAuthentication,
     loginUser,
     logoutUser,
     openAuthentication,
+    updateLoggedIn,
 };
 
 export default reducer;

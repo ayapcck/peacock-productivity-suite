@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {
+    useEffect,
+} from 'react';
 import {
+    useDispatch,
     useSelector,
 } from 'react-redux';
 import {
@@ -11,8 +14,11 @@ import styled, {
 } from 'styled-components';
 import _ from 'lodash';
 
-import { withAuthProvider } from './config/session';
+import firebase from './config/firebase';
 import { ROUTES } from './constants';
+import {
+    loadAuthentication,
+} from './redux';
 
 import {
     AdminPanel,
@@ -60,7 +66,13 @@ const routeProps = (key, page) => ({
 });
 
 const App = () => {
+    const dispatch = useDispatch();
+
     const { isLoadingOverlayOpen } = useSelector(state => state.utility);
+
+    useEffect(() => firebase.auth.onAuthStateChanged(
+        authUser => dispatch(loadAuthentication({ authUser }))
+    ));
 
     return (
         <Router>
@@ -86,4 +98,4 @@ const App = () => {
     );
 };
 
-export default withAuthProvider(App);
+export default App;

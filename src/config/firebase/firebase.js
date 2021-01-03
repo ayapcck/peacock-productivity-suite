@@ -42,6 +42,9 @@ class Firebase {
     roles = () => this.db.ref('roles');
     user = uid => this.db.ref(`users/${uid}`);
     users = () => this.db.ref('users');
+
+    getRole = role => this.role(role).once('value');
+    getUser = uid => this.user(uid).once('value');
 }
 
-export default Firebase;
+export default new Firebase();
