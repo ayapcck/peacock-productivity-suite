@@ -101,9 +101,6 @@ Menu.defaultProps = {
 };
 
 Menu.propTypes = {
-    auth: shape({
-        userPermissions: object,
-    }).isRequired,
     items: arrayOf(shape({
         isSubItem: bool,
         onClick: func,
