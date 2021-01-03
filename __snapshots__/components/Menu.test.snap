@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` - Common Tests should match snapshot 1`] = `
+exports[`Menu - Common Tests should match snapshot 1`] = `
 .c2 {
   border-radius: 5px;
   border-style: solid;
