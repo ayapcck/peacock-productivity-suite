@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const withLoading = Component => props => {
-    const { loading } = useSelector(state => state.authentication);
+    const { loadingState } = useSelector(state => state.authentication);
 
-    const isLoading = loading === 'pending';
+    const isLoading = loadingState === 'pending';
 
     return (
         <Component

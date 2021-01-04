@@ -4,16 +4,8 @@ import authenticationReducer, {
     loginUser,
     logoutUser,
     openAuthentication,
-    updateLoggedIn,
+    updateAuthentication,
 } from './authenticationSlice';
-import permissionsReducer, {
-    resetPermissions,
-    updatePermissions,
-} from './permissionsSlice';
-import userReducer, {
-    resetUser,
-    updateUser,
-} from './userSlice';
 import utilityReducer, {
     closeLoadingOverlay,
     openLoadingOverlay,
@@ -27,16 +19,10 @@ export const actions = {
     logoutUser,
     openAuthentication,
     openLoadingOverlay,
-    resetPermissions,
-    resetUser,
-    updateLoggedIn,
-    updatePermissions,
-    updateUser,
+    updateAuthentication,
 };
 
 export const reducers = {
     authenticationReducer,
-    permissionsReducer,
-    userReducer,
     utilityReducer,
 };

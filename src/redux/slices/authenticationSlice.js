@@ -6,39 +6,52 @@ import {
 import firebase from '../../config/firebase';
 
 import {
-    resetPermissions,
-    updatePermissions,
-} from './permissionsSlice';
-import {
-    resetUser,
-    updateUser,
-} from './userSlice';
+    INITIAL_AUTH_STATE,
+} from './state';
 import {
     closeLoadingOverlay,
     openLoadingOverlay,
 } from './utilitySlice';
 
-const INITIAL_STATE = {
-    loading: 'idle',
-    loggedIn: false,
-    modalOpen: false,
+const authReducer = (state, { payload }) => {
+    const {
+        permissions: prevPermissions,
+        user: prevUser,
+        ...prevRest
+    } = state;
+    const {
+        permissions = {},
+        user = {},
+        ...rest
+    } = payload;
+
+    return {
+        ...prevRest,
+        permissions: {
+            ...prevPermissions,
+            ...permissions,
+        },
+        user: {
+            ...prevUser,
+            ...user,
+        },
+        ...rest,
+    };
 };
 
+const idle = state => ({
+    ...state,
+    loadingState: 'idle',
+});
 const pending = state => ({
     ...state,
-    loading: 'pending',
+    loadingState: 'pending',
 });
-
 const rejected = state => ({
     ...state,
-    loading: 'idle',
-    loggedIn: false,
+    isLoggedIn: false,
+    loadingState: 'idle',
 });
-
-const resetAuth = dispatch => {
-    dispatch(resetPermissions());
-    dispatch(resetUser());
-};
 
 const loadAuthentication = createAsyncThunk(
     'authentication/load',
@@ -48,15 +61,14 @@ const loadAuthentication = createAsyncThunk(
             const userRes = await firebase.getUser(uid);
             const user = userRes.val();
             if (user) {
-                dispatch(updateUser({ ...user }));
                 const { role } = user;
                 const roleRes = await firebase.getRole(role);
                 const permissions = roleRes.val();
-                dispatch(updatePermissions({ ...permissions }));
-                return true;
-            } else {
-                resetAuth(dispatch);
-                return false;
+                dispatch(updateAuthentication({
+                    isLoggedIn: true,
+                    permissions,
+                    user,
+                }));
             }
         }
     }
@@ -75,55 +87,45 @@ const logoutUser = createAsyncThunk(
     async (payload, { dispatch }) => {
         dispatch(openLoadingOverlay());
         await firebase.signOut();
-        resetAuth(dispatch);
         dispatch(closeLoadingOverlay());
     }
 );
 
 const { actions, reducer } = createSlice({
-    initialState: INITIAL_STATE,
+    initialState: INITIAL_AUTH_STATE,
     name: 'authentication',
     reducers: {
         closeAuthentication: state => ({
             ...state,
-            modalOpen: false,
+            isModalOpen: false,
         }),
         openAuthentication: state => ({
             ...state,
-            modalOpen: true,
+            isModalOpen: true,
         }),
-        updateLoggedIn: (state, { payload }) => ({
+        updateAuthentication: authReducer,
+        updateLoadingState: (state, { payload }) => ({
             ...state,
-            loggedIn: payload,
+            loadingState: payload,
         }),
     },
     extraReducers: {
-        [loadAuthentication.fulfilled]: (state, { payload }) => {
-            console.log(payload);
-            return {
-                ...state,
-                loading: 'idle',
-                loggedIn: !!payload,
-            };
-        },
+        [loadAuthentication.fulfilled]: idle,
         [loadAuthentication.pending]: pending,
         [loadAuthentication.rejected]: rejected,
-        [loginUser.fulfilled]: state => ({
-            ...state,
-            loading: 'idle',
-            loggedIn: true,
-        }),
+        [loginUser.fulfilled]: idle,
         [loginUser.pending]: pending,
         [loginUser.rejected]: rejected,
-        [logoutUser.fulfilled]: () => INITIAL_STATE,
+        [logoutUser.fulfilled]: () => INITIAL_AUTH_STATE,
         [logoutUser.pending]: pending,
+        [logoutUser.rejected]: rejected,
     },
 });
 
 const {
     closeAuthentication,
     openAuthentication,
-    updateLoggedIn,
+    updateAuthentication,
 } = actions;
 
 export {
@@ -132,7 +134,7 @@ export {
     loginUser,
     logoutUser,
     openAuthentication,
-    updateLoggedIn,
+    updateAuthentication,
 };
 
 export default reducer;

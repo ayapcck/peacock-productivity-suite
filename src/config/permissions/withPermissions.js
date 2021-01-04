@@ -12,7 +12,7 @@ import firebase from '../firebase';
 
 const withPermissions = permissions => Component => props => {
     const history = useHistory();
-    const userPermissions = useSelector(state => state.permissions);
+    const userPermissions = useSelector(state => state.authentication.permissions);
 
     useEffect(() => firebase.auth.onAuthStateChanged(() => {
         if (!(hasPermissions(permissions, userPermissions))) {

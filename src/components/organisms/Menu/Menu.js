@@ -44,7 +44,7 @@ const Menu = (props) => {
 
     const [ selectedItem, setSelectedItem ] = useState(items[0].text);
 
-    const userPermissions = useSelector(state => state.permissions);
+    const userPermissions = useSelector(state => state.authentication.permissions);
 
     const renderItem = (item, key, isSubItem = false) => {
         const {
