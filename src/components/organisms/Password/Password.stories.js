@@ -7,9 +7,7 @@ export default {
     title: 'Organisms/Password',
     component: Password,
     decorators: [ withKnobs ],
-    argTypes: {
-        
-    },
+    argTypes: {},
 };
 
 const Template = (args) => <Password {...args} />;
