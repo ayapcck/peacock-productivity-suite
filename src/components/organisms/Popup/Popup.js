@@ -24,7 +24,7 @@ const Popup = (props) => {
     return (
         <ContentOverlay onOverlayClick={handleClose}>
             <Card value={tall ? 0.6 : 0.3}>
-                <Wrapper hasPadding>
+                <Wrapper padding="standard">
                     <Wrapper
                         position="absolute"
                         right={10}

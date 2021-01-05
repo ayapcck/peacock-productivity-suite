@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
+import configureMockStore from 'redux-mock-store';
 import {
     mount,
     shallow,
@@ -10,15 +11,22 @@ import { addIcons } from '../src/config/fontawesome';
 import {
     withDarkTheme,
 } from '../src/logics';
-import store from '../src/redux';
+
+const initialStore = {
+    authentication: {
+        loading: false,
+    },
+};
 
 const runCommonTests = (Component) => {
     const {
         name,
     } = Component;
 
+    const mockStore = configureMockStore([]);
+
     const WrappedComponent = props => (
-        <Provider store={store}>
+        <Provider store={mockStore(initialStore)}>
             <Component { ...props } />
         </Provider>
     );

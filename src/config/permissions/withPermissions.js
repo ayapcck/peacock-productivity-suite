@@ -1,56 +1,28 @@
-import React from 'react';
+import React, {
+    useEffect,
+} from 'react';
 import {
-    func,
-    object,
-    shape,
-} from 'prop-types';
+    useSelector,
+} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import hasPermissions from './roles';
 import ROUTES from '../../constants/routes';
-import { withAuthConsumer } from '../session';
-import { withFirebase } from '../firebase';
+import firebase from '../firebase';
 
-const withPermissions = permissions => Component => {
-    class WithPermissions extends React.Component {
-        componentDidMount() {
-            const { firebase, history } = this.props;
+const withPermissions = permissions => Component => props => {
+    const history = useHistory();
+    const userPermissions = useSelector(state => state.authentication.permissions);
 
-            this.listener = !!firebase && firebase.auth.onAuthStateChanged(
-                authUser => {
-                    const userPermissions = authUser && this.props.auth.userPermissions;
-                    if (!(userPermissions && hasPermissions(permissions, userPermissions))) {
-                        history.push(ROUTES.LANDING.route);
-                    }
-                }
-            );
+    useEffect(() => firebase.auth.onAuthStateChanged(() => {
+        if (!(hasPermissions(permissions, userPermissions))) {
+            history.push(ROUTES.LANDING.route);
         }
+    }));
 
-        componentWillUnmount() {
-            !!this.props.firebase && this.listener();
-        }
-
-        render() {
-            return (
-                <Component {...this.props} />
-            );
-        }
-    }
-
-    WithPermissions.propTypes = {
-        auth: shape({
-            userPermissions: object,
-        }),
-        firebase: shape({
-            auth: shape({
-                onAuthStateChanged: func,
-            }),
-        }),
-        history: shape({
-            push: func,
-        }),
-    };
-
-    return withAuthConsumer(withFirebase(WithPermissions));
+    return (
+        <Component { ...props } />
+    );
 };
 
 export default withPermissions;

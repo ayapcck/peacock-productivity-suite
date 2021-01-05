@@ -5,6 +5,7 @@ import {
     shape,
     string,
 } from 'prop-types';
+import reduce from 'lodash/reduce';
 
 import {
     StyledForm,
@@ -12,15 +13,17 @@ import {
 
 import {
     Text,
-    TextBox,
 } from '../../atoms';
-import LoadingButton from '../LoadingButton';
+import {
+    LoadingButton,
+    TextField,
+} from '../../molecules';
+import Password from '../Password';
 
 const Title = ({ text }) => (
     <Text
         align="center"
-        size="large"
-        type="title"
+        type="h1"
     >
         { text }
     </Text>
@@ -41,15 +44,35 @@ const Form = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        onSubmit();
+        const values = reduce(
+            event.target,
+            (acc, element) => {
+                const {
+                    name,
+                    nodeName,
+                    value,
+                } = element;
+                nodeName === 'INPUT' && (acc[name] = value);
+                return acc;
+            },
+            {}
+        );
+        onSubmit(values);
     };
 
-    const _renderTextFields = () => textFields.map((field, i) => (
-        <TextBox
-            { ...field }
-            key={i}
-        />
-    ));
+    const _renderTextFields = () => textFields.map((field, i) => {
+        const { name } = field;
+
+        const isPassword = name.toLowerCase().includes('password');
+        const Field = isPassword ? Password : TextField;
+
+        return (
+            <Field
+                { ...field }
+                key={i}
+            />
+        );
+    });
 
     return (
         <StyledForm onSubmit={handleSubmit}>

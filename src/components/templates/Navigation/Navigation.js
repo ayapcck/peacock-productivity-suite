@@ -60,14 +60,14 @@ const Navigation = (props) => {
     const navigate = destination => history.push(destination);
 
     const {
-        loggedIn,
-        modalOpen,
+        isLoggedIn,
+        isModalOpen,
     } = useSelector(state => state.authentication);
 
     const reducedRoutes = reduce(routes, itemReducer(navigate), []);
     const signInItem = {
-        onClick: loggedIn ? logout : openAuth,
-        text: loggedIn ? 'Log Out' : 'Sign In',
+        onClick: isLoggedIn ? logout : openAuth,
+        text: isLoggedIn ? 'Log Out' : 'Register / Sign In',
         selectable: false,
     };
 
@@ -79,7 +79,7 @@ const Navigation = (props) => {
                     type="navigation"
                 />
             </Drawer>
-            { modalOpen && <Authentication /> }
+            { isModalOpen && <Authentication /> }
         </>
     );
 };

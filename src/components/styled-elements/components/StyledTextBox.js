@@ -2,20 +2,18 @@ import styled from 'styled-components';
 
 import {
     borderStyle,
+    customBorderSides,
     defaultBackground,
     textColor,
 } from '../styles';
 
 const StyledTextBox = styled.input`
-    ${defaultBackground}
     ${borderStyle}
+    ${defaultBackground}
     ${textColor}
 
-    border-color: ${({ theme, valid, variant }) => valid
-        ? theme.color[variant].accent
-        : theme.color[variant].error };
-    border-width: 0 0 2px 0;
-    margin: 7.5px 5px;
+    ${({ valid }) => customBorderSides(valid ? 'accent' : 'error')}
+    flex: 1;
 
     &:focus {
         outline: 0;

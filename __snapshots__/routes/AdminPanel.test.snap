@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AdminPanel should match snapshot 1`] = `
+exports[` - Common Tests should match snapshot 1`] = `
 <div>
   Admin Panel
 </div>

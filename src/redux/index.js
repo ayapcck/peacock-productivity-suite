@@ -1,6 +1,7 @@
 import {
     closeAuthentication,
     closeLoadingOverlay,
+    loadAuthentication,
     loginUser,
     logoutUser,
     openAuthentication,
@@ -11,6 +12,7 @@ import store from './store';
 export {
     closeAuthentication,
     closeLoadingOverlay,
+    loadAuthentication,
     loginUser,
     logoutUser,
     openAuthentication,

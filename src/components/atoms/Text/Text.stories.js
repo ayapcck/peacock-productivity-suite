@@ -1,10 +1,5 @@
 import React from 'react';
-import { string } from 'prop-types';
 import { withKnobs } from '@storybook/addon-knobs';
-import {
-    capitalize,
-    keys,
-} from 'lodash';
 
 import Text from './Text';
 import Wrapper from '../Wrapper';
@@ -18,62 +13,35 @@ export default {
     },
 };
 
-const createConfig = (type, size) => ({
-    size,
-    text: 'Test Text',
-    type,
-});
+const configs = [
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'p',
+    'span',
+];
 
-const configs = {
-    body: [
-        createConfig('body', 'small'),
-        createConfig('body', 'medium'),
-        createConfig('body', 'large'),
-    ],
-    titles: [
-        createConfig('title', 'small'),
-        createConfig('title', 'medium'),
-        createConfig('title', 'large'),
-    ],
-};
-
-const StoryTitle = ({ text }) => (
-    <Text
-        align="left"
-        size="large"
-        type="title"
-        variant="secondary"
+const Template = (args) => (
+    <Wrapper
+        flexDirection="column"
+        padding="standard"
     >
-        { capitalize(text) }
-    </Text>
+        {
+            configs.map((type, i) => (
+                <Text
+                    { ...args }
+                    key={i}
+                    type={type}
+                >
+                    Test Text
+                </Text>
+            ))
+        }
+    </Wrapper>
 );
-StoryTitle.propTypes = {
-    text: string,
-};
-
-const Template = (args) => keys(configs).map((type, index) => {
-    const sizes = configs[type];
-    return (
-        <Wrapper
-            flexDirection="column"
-            key={index}
-            hasPadding
-        >
-            <StoryTitle text={type} />
-            {
-                sizes.map(({ text, ...rest }, sizeIndex) => (
-                    <Text
-                        key={sizeIndex}
-                        { ...args }
-                        { ...rest }
-                    >
-                        { text }
-                    </Text>
-                ))
-            }
-        </Wrapper>
-    );
-});
 
 export const Primary = Template.bind({});
 Primary.args = {};

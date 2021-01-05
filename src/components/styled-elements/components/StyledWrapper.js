@@ -15,10 +15,15 @@ const handlePosition = val => typeof val === 'string'
     : `${val}px`;
 
 const StyledWrapper = styled.div`
-    ${customBorderSides}
+    ${customBorderSides()}
     ${customMargins}
     
-    ${({ hasPadding, theme: { padding } }) => hasPadding && `padding: ${padding};`}
+    ${({ padding, theme }) => {
+        const paddingValue = padding !== 'none'
+            && theme.padding[padding];
+        return paddingValue &&
+            `padding: ${paddingValue};`;
+    }}
     
     align-items: ${({ align, centered }) => centered ? 'center' : handleFlexValue(align)};
     bottom: ${({ bottom }) => handlePosition(bottom)};

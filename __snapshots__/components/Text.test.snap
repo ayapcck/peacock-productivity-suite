@@ -2,16 +2,15 @@
 
 exports[`Text - Common Tests should match snapshot 1`] = `
 .c0 {
+  text-align: left;
   color: #ffffff;
   margin: 0;
-  text-align: left;
 }
 
-<h5
+<p
   className="c0"
-  size="medium"
-  type="body"
+  type="p"
 >
   
-</h5>
+</p>
 `;

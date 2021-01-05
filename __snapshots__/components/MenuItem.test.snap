@@ -21,9 +21,9 @@ exports[`MenuItem - Common Tests should match snapshot 1`] = `
 }
 
 .c3 {
+  text-align: left;
   color: #ffffff;
   margin: 0;
-  text-align: left;
 }
 
 .c0 {
@@ -100,13 +100,12 @@ exports[`MenuItem - Common Tests should match snapshot 1`] = `
       className="c2"
       value={1}
     >
-      <h5
+      <p
         className="c3"
-        size="medium"
-        type="body"
+        type="p"
       >
         Test
-      </h5>
+      </p>
     </div>
   </div>
 </div>

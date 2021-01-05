@@ -4,9 +4,10 @@ import React, {
 import {
     useDispatch,
 } from 'react-redux';
-// import {
-//
-// } from 'prop-types';
+import {
+    func,
+    string,
+} from 'prop-types';
 
 import {
     AUTHENTICATION_FORMS,
@@ -21,19 +22,52 @@ import {
     Wrapper,
 } from '../../atoms';
 import {
-    Form,
+    Link,
 } from '../../molecules';
+import Form from '../Form';
 import Popup from '../Popup';
+
+const NavText = (props) => {
+    const {
+        link,
+        main,
+        onClick,
+    } = props;
+
+    return (
+        <Wrapper
+            flexDirection="row"
+            justify="center"
+        >
+            <Text>
+                { main }
+                <Link
+                    onClick={onClick}
+                    text={link}
+                />
+            </Text>
+        </Wrapper>
+    );
+};
+
+NavText.propTypes = {
+    link: string.isRequired,
+    main: string.isRequired,
+    onClick: func.isRequired,
+};
 
 const Authentication = () => {
     const dispatch = useDispatch();
     const login = (user, password) => dispatch(loginUser({ user, password }));
     const closeAuth = () => dispatch(closeAuthentication());
 
-    // eslint-disable-next-line no-unused-vars
     const [ displayedFormName, setDisplayedFormName ] = useState('LOGIN');
 
-    const displayedForm = AUTHENTICATION_FORMS[displayedFormName];
+    const { navTexts, ...displayedForm } = AUTHENTICATION_FORMS[displayedFormName];
+
+    const handleSubmit = values => {
+        login(values);
+    };
 
     return (
         <Popup handleClose={closeAuth}>
@@ -43,11 +77,24 @@ const Authentication = () => {
             >
                 <Form
                     { ...displayedForm }
-                    onSubmit={() => login('testUser', 'testPassword')}
+                    onSubmit={handleSubmit}
                 />
-                <Text align="center">
-                    Testing this text
-                </Text>
+                {
+                    navTexts && navTexts.map((text, i) => {
+                        const {
+                            destination,
+                            ...rest
+                        } = text;
+
+                        return (
+                            <NavText
+                                { ...rest }
+                                key={i}
+                                onClick={() => setDisplayedFormName(destination)}
+                            />
+                        );
+                    })
+                }
             </Wrapper>
         </Popup>
     );

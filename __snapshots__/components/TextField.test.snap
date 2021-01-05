@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField - Common Tests should match snapshot 1`] = `
+.c1 {
+  border-style: solid;
+  background-color: #5b5b5b;
+  color: #ffffff;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c1:focus {
+  outline: 0;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.c1::-moz-placeholder {
+  color: #ffffff;
+}
+
+.c1:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.c1::placeholder {
+  color: #ffffff;
+}
+
+.c0 {
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-color: #1ebad9;
+  padding: 5px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  bottom: unset;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  left: unset;
+  position: unset;
+  right: unset;
+  top: unset;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+<div
+  className="c0"
+  value={1}
+>
+  <input
+    className="c1"
+    name="defaultName"
+    onChange={[Function]}
+    placeholder="Placeholder"
+    type="text"
+  />
+</div>
+`;

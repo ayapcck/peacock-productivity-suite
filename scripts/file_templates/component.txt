@@ -1,20 +1,26 @@
 import React from 'react';
-// import {} from 'prop-types';
+import {
+    oneOf,
+} from 'prop-types';
 
 import {
     Styled$component_name,
 } from '../../styled-elements';
 
-const $component_name = () => (
-    <Styled$component_name></Styled$component_name>
-);
+const $component_name = (props) => {
+    // const {} = props;
+
+    return (
+        <Styled$component_name></Styled$component_name>
+    );
+};
 
 $component_name.defaultProps = {
-
+    variant: 'primary',
 };
 
 $component_name.propTypes = {
-
+    variant: oneOf([ 'primary', 'secondary', 'tertiary' ]),
 };
 
 export default $component_name;

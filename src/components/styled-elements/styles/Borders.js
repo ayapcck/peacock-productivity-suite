@@ -7,14 +7,20 @@ const borderRadius = css` border-radius: ${({ theme }) => theme.border.radius}; 
 const borderStyle = css` border-style: ${({ theme }) => theme.border.style}; `;
 const borderWidth = css` border-width: ${({ theme }) => theme.border.width}; `;
 
-const customBorderSides = css`
-    border-color: ${({ borders, ...rest }) => borders === 'all' ? getThemeColor('accent', rest) : getThemeColor('background', rest)};
+const customBorderSides = (color = 'accent') => css`
+    border-color: ${({ borders, ...rest }) => borders === 'all'
+        ? getThemeColor(color, rest)
+        : getThemeColor('background', rest)};
     ${({ borders }) => borders !== 'none' && borderStyle}
     ${({ borders }) => borders !== 'none' && borderWidth}
-    ${({ bottomBorder, ...rest }) => bottomBorder && `border-bottom-color: ${getThemeColor('accent', rest)};`}
-    ${({ leftBorder, ...rest }) => leftBorder && `border-left-color: ${getThemeColor('accent', rest)};`}
-    ${({ rightBorder, ...rest }) => rightBorder && `border-right-color: ${getThemeColor('accent', rest)};`}
-    ${({ topBorder, ...rest }) => topBorder && `border-top-color: ${getThemeColor('accent', rest)};`}
+    ${({ bottomBorder, ...rest }) => bottomBorder
+        && `border-bottom-color: ${getThemeColor(color, rest)};`}
+    ${({ leftBorder, ...rest }) => leftBorder
+        && `border-left-color: ${getThemeColor(color, rest)};`}
+    ${({ rightBorder, ...rest }) => rightBorder
+        && `border-right-color: ${getThemeColor(color, rest)};`}
+    ${({ topBorder, ...rest }) => topBorder
+        && `border-top-color: ${getThemeColor(color, rest)};`}
 `;
 
 const regularBorders = css`

@@ -37,7 +37,7 @@ const MenuItem = (props) => {
             >
                 <Wrapper
                     variant={variant}
-                    hasPadding
+                    padding="standard"
                 >
                     <Text
                         variant={variant}

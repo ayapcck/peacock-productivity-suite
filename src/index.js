@@ -7,7 +7,6 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import { addIcons } from './config/fontawesome';
-import Firebase, { FirebaseContext } from './config/firebase';
 import { DARK_THEME } from './constants';
 import store from './redux';
 
@@ -18,9 +17,7 @@ addIcons();
 ReactDOM.render(
     <Provider store={store}>
         <ThemeProvider theme={DARK_THEME}>
-            <FirebaseContext.Provider value={new Firebase()}>
-                <App />
-            </FirebaseContext.Provider>
+            <App />
         </ThemeProvider>
     </Provider>,
     document.getElementById('root')

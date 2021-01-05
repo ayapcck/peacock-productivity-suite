@@ -27,18 +27,21 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
@@ -78,8 +81,7 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Change Password
   </h2>
@@ -88,14 +90,14 @@ exports[`ChangePasswordForm - Common Tests should match snapshot 1`] = `
     name="password"
     onChange={[Function]}
     placeholder="Password"
-    type="text"
+    type="password"
   />
   <input
     className="c2"
     name="confirmPassword"
     onChange={[Function]}
     placeholder="Confirm Password"
-    type="text"
+    type="password"
   />
   <button
     className="c3"
@@ -134,18 +136,21 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
@@ -185,8 +190,7 @@ exports[`ForgotForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Forgot Password
   </h2>
@@ -234,18 +238,21 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
@@ -285,8 +292,7 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Log In
   </h2>
@@ -302,7 +308,7 @@ exports[`LoginForm - Common Tests should match snapshot 1`] = `
     name="password"
     onChange={[Function]}
     placeholder="Password"
-    type="text"
+    type="password"
   />
   <button
     className="c3"
@@ -341,18 +347,21 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
 }
 
 .c1 {
+  text-align: center;
   color: #ffffff;
   margin: 0;
-  text-align: center;
 }
 
 .c2 {
-  background-color: #5b5b5b;
   border-style: solid;
+  background-color: #5b5b5b;
   color: #ffffff;
-  border-color: #1ebad9;
-  border-width: 0 0 2px 0;
-  margin: 7.5px 5px;
+  border-color: #5b5b5b;
+  border-style: solid;
+  border-width: 2px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2:focus {
@@ -392,8 +401,7 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
 >
   <h2
     className="c1"
-    size="medium"
-    type="title"
+    type="h2"
   >
     Register
   </h2>
@@ -416,14 +424,14 @@ exports[`RegisterForm - Common Tests should match snapshot 1`] = `
     name="password"
     onChange={[Function]}
     placeholder="Password"
-    type="text"
+    type="password"
   />
   <input
     className="c2"
     name="confirmPassword"
     onChange={[Function]}
     placeholder="Confirm Password"
-    type="text"
+    type="password"
   />
   <button
     className="c3"
