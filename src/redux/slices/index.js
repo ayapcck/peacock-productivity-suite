@@ -5,6 +5,7 @@ import authenticationReducer, {
     logoutUser,
     openAuthentication,
     updateAuthentication,
+    registerUser,
 } from './authenticationSlice';
 import utilityReducer, {
     closeLoadingOverlay,
@@ -19,6 +20,7 @@ export const actions = {
     logoutUser,
     openAuthentication,
     openLoadingOverlay,
+    registerUser,
     updateAuthentication,
 };
 

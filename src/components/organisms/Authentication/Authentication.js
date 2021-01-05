@@ -14,7 +14,6 @@ import {
 } from '../../../constants';
 import {
     closeAuthentication,
-    loginUser,
 } from '../../../redux';
 
 import {
@@ -58,16 +57,17 @@ NavText.propTypes = {
 
 const Authentication = () => {
     const dispatch = useDispatch();
-    const login = (user, password) => dispatch(loginUser({ user, password }));
     const closeAuth = () => dispatch(closeAuthentication());
 
     const [ displayedFormName, setDisplayedFormName ] = useState('LOGIN');
 
-    const { navTexts, ...displayedForm } = AUTHENTICATION_FORMS[displayedFormName];
+    const {
+        navTexts,
+        submitAction,
+        ...displayedForm
+    } = AUTHENTICATION_FORMS[displayedFormName];
 
-    const handleSubmit = values => {
-        login(values);
-    };
+    const handleSubmit = values => dispatch(submitAction(values));
 
     return (
         <Popup handleClose={closeAuth}>

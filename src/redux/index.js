@@ -6,6 +6,7 @@ import {
     logoutUser,
     openAuthentication,
     openLoadingOverlay,
+    registerUser,
 } from './actions';
 import store from './store';
 
@@ -17,6 +18,7 @@ export {
     logoutUser,
     openAuthentication,
     openLoadingOverlay,
+    registerUser,
 };
 
 export default store;

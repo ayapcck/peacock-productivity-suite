@@ -2,6 +2,7 @@ import {
     createAsyncThunk,
     createSlice,
 } from '@reduxjs/toolkit';
+import reduce from 'lodash/reduce';
 
 import firebase from '../../config/firebase';
 
@@ -76,7 +77,7 @@ const loadAuthentication = createAsyncThunk(
 
 const loginUser = createAsyncThunk(
     'authentication/loginUser',
-    async ({ user: { email, password } }, { dispatch }) => {
+    async ({ email, password }, { dispatch }) => {
         await firebase.signInWithEmailAndPassword(email, password);
         dispatch(closeAuthentication());
     }
@@ -90,6 +91,34 @@ const logoutUser = createAsyncThunk(
         dispatch(closeLoadingOverlay());
     }
 );
+
+const registerUser = createAsyncThunk(
+    'authentication/registerUser',
+    async (user, { dispatch }) => {
+        const {
+            email,
+            name,
+            password,
+        } = user;
+
+        const { user: { uid } } = await firebase.createUserWithEmailAndPassword(email, password);
+        const newUser = {
+            email,
+            name,
+            role: 'user',
+        };
+        await firebase.setUser(uid, newUser);
+        dispatch(closeAuthentication());
+    }
+);
+
+const thunks = [ loadAuthentication, loginUser, registerUser ];
+const extraReducers = reduce(thunks, (acc, thunk) => ({
+    ...acc,
+    [thunk.fulfilled]: idle,
+    [thunk.pending]: pending,
+    [thunk.rejected]: rejected,
+}), {});
 
 const { actions, reducer } = createSlice({
     initialState: INITIAL_AUTH_STATE,
@@ -110,12 +139,7 @@ const { actions, reducer } = createSlice({
         }),
     },
     extraReducers: {
-        [loadAuthentication.fulfilled]: idle,
-        [loadAuthentication.pending]: pending,
-        [loadAuthentication.rejected]: rejected,
-        [loginUser.fulfilled]: idle,
-        [loginUser.pending]: pending,
-        [loginUser.rejected]: rejected,
+        ...extraReducers,
         [logoutUser.fulfilled]: () => INITIAL_AUTH_STATE,
         [logoutUser.pending]: pending,
         [logoutUser.rejected]: rejected,
@@ -134,6 +158,7 @@ export {
     loginUser,
     logoutUser,
     openAuthentication,
+    registerUser,
     updateAuthentication,
 };
 

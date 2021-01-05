@@ -8,6 +8,7 @@ const {
     logoutUser,
     openAuthentication,
     openLoadingOverlay,
+    registerUser,
     updateAuthentication,
 } = actions;
 
@@ -19,5 +20,6 @@ export {
     logoutUser,
     openAuthentication,
     openLoadingOverlay,
+    registerUser,
     updateAuthentication,
 };

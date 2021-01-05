@@ -1,3 +1,8 @@
+import {
+    loginUser,
+    registerUser,
+} from '../redux';
+
 const AUTHENTICATION_FORMS = {
     CHANGE_PASSWORD: {
         title: 'Change Password',
@@ -28,6 +33,7 @@ const AUTHENTICATION_FORMS = {
                 main: 'Don\'t have an account? Register ',
             },
         ],
+        submitAction: user => loginUser(user),
         textFields: [
             { name: 'email', placeHolder: 'Email' },
             { name: 'password', placeHolder: 'Password' },
@@ -42,6 +48,7 @@ const AUTHENTICATION_FORMS = {
                 main: 'Already have an account? Click ',
             },
         ],
+        submitAction: user => registerUser(user),
         textFields: [
             { name: 'name', placeHolder: 'Name' },
             { name: 'email', placeHolder: 'Email' },

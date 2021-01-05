@@ -45,6 +45,7 @@ class Firebase {
 
     getRole = role => this.role(role).once('value');
     getUser = uid => this.user(uid).once('value');
+    setUser = (uid, user) => this.user(uid).set(user);
 }
 
 export default new Firebase();
